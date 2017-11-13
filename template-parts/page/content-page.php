@@ -1,11 +1,11 @@
-<?php /* @version 1.0.0 */
+<?php /* @version 1.0.1 */
 if ( ! defined('ABSPATH')) exit; ?>
 <?php do_action('totalpress_before_page'); ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> <?php totalpress_article_schema('CreativeWork'); ?>>
 	<div class="inside-article">
 		<?php do_action('totalpress_before_template_titles'); ?>
 		<header class="entry-header">	
-			<?php if (get_post_meta($post->ID,'page_options_hide_post_title',true)) {
+			<?php if (get_post_meta($post->ID,'page_options_hide_title',true)) {
 		   		the_title('<h1 class="entry-title hide" itemprop="headline">','</h1>');
 			  } else {
 		   		the_title('<h1 class="entry-title" itemprop="headline">','</h1>');

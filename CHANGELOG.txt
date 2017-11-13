@@ -1,0 +1,19 @@
+Theme Name: TotalPress
+Tags: blog, one-column, two-columns, three-columns, right-sidebar, left-sidebar, footer-widgets, custom-background, flexible-header, custom-menu, editor-style, featured-images, full-width-template, microformats, post-formats, sticky-post, translation-ready, theme-options, custom-logo, custom-colors
+Requires at least: 4.8.3
+Tested up to: 4.8.3
+Stable tag: 1.0.1
+License: GNU General Public License v3.0
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
+
+== Changelog ==
+
+= 1.0.1 =
+
+* Added CHANGELOG.txt file to keep track of changes made to the theme.
+* Removed an extra occurance of "add_theme_support('post-thumbnails');" which was located on line 31 of functions.php
+* Added unique prefix for everything the Theme defines in the public namespace, including options, functions, global variables, constants, post meta, etc.
+
+= 1.0.0 =
+
+* initial submission to the theme review team on 11/02/2017

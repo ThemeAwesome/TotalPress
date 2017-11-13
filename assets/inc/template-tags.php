@@ -1,4 +1,4 @@
-<?php /* @version 1.0.0 */
+<?php /* @version 1.0.1 */
 if ( ! defined('ABSPATH')) exit;
 
 // top sidebar
@@ -45,7 +45,7 @@ endif;
 if ( ! function_exists('totalpress_build_site_title')) :
 	function totalpress_build_site_title() {
 		if (is_front_page() && is_home()) {
-			echo apply_filters( 'totalpress_brand_text',sprintf(
+			echo apply_filters('totalpress_brand_text',sprintf(
 				'<div class="brand-text"><h1 class="site-title"><a href="%1$s" rel="home">%2$s</a></h1>',
 				esc_url(home_url( '/' )),
 				esc_attr(get_bloginfo('name','display'))
@@ -53,7 +53,7 @@ if ( ! function_exists('totalpress_build_site_title')) :
 		} else {
 			echo apply_filters('totalpress_alt_brand_text',sprintf(
 				'<div class="brand-text"><p class="site-title"><a href="%1$s" rel="home">%2$s</a></p>',
-				esc_url(home_url( '/' )),
+				esc_url(home_url('/')),
 				esc_attr(get_bloginfo('name','display'))
 			));
 		}
