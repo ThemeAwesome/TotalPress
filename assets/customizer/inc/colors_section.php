@@ -1,4 +1,4 @@
-<?php /* @version 1.0.1 */
+<?php /* @version 1.0.2 */
 if ( ! defined('ABSPATH')) exit;
 TotalPress_Kirki::add_section( 'totalpress_colors_section', array(
     'title'       => esc_attr__('Basic Color Options','totalpress'),

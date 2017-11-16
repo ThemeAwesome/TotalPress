@@ -1,4 +1,6 @@
-<?php
+<?php 
+/* @version 1.0.2 */
+
 /**
  * TGM Plugin Activation Configuration
  */

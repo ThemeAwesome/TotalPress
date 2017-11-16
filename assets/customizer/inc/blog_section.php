@@ -1,4 +1,4 @@
-<?php /* @version 1.0.1 */
+<?php /* @version 1.0.2 */
 if ( ! defined('ABSPATH')) exit;
 TotalPress_Kirki::add_section( 'totalpress_content_section', array(
     'title'      => esc_attr__('Blog Layout','totalpress'),
@@ -9,7 +9,7 @@ TotalPress_Kirki::add_section( 'totalpress_content_section', array(
 
 TotalPress_Kirki::add_field('totalpress_theme_customizer',array(
 	'type'        => 'radio-buttonset',
-	'settings'    => 'show_excerpt',
+	'settings'    => 'totalpress_show_excerpt',
 	'label'       => esc_attr__('Blog Post Display','totalpress'),
 	'tooltip'     => esc_attr__('Display the full content or an excerpt of the content of each post.','totalpress'),
 	'section'     => 'totalpress_content_section',

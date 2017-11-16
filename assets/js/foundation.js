@@ -1,4 +1,4 @@
-/* @version 1.0.1 */
+/* @version 1.0.2 */
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -1472,7 +1472,7 @@ var SpotSwipe = function () {
   function SpotSwipe($) {
     _classCallCheck(this, SpotSwipe);
 
-    this.version = '1.0.0';
+    this.version = '1.0.2';
     this.enabled = 'ontouchstart' in document.documentElement;
     this.preventDefault = false;
     this.moveThreshold = 75;

@@ -2,7 +2,7 @@
 Tags: blog, one-column, two-columns, three-columns, right-sidebar, left-sidebar, footer-widgets, custom-background, flexible-header, custom-menu, editor-style, featured-images, full-width-template, microformats, post-formats, sticky-post, translation-ready, theme-options, custom-logo, custom-colors
 Requires at least: 4.8.3
 Tested up to: 4.8.3
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -44,6 +44,11 @@ All of the components used in the creation of WP-Forge are licensed as follows:
 * Metabox code was created using Meta Box Generator over at GenerateWP https://generatewp.com/
 
 == Changelog ==
+
+= 1.0.2 =
+
+* Corrected issue where certain options were not working due to the fact that i did not updated those functions when i added the unique names in 1.0.1
+* Adjusted a few css styles.
 
 = 1.0.1 =
 

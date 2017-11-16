@@ -2,7 +2,7 @@
 /**
  * Template Name: Sidebar | Content | Sidebar
  * Template Post Type: post, page, aside, audio, chat, gallery, image, link, quote, status, video
- * @version 1.0.0
+ * @version 1.0.2
  */
 if ( ! defined('ABSPATH')) exit;
 get_header(); ?>

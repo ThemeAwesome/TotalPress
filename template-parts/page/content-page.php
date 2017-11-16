@@ -1,4 +1,4 @@
-<?php /* @version 1.0.1 */
+<?php /* @version 1.0.2 */
 if ( ! defined('ABSPATH')) exit; ?>
 <?php do_action('totalpress_before_page'); ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> <?php totalpress_article_schema('CreativeWork'); ?>>

@@ -1,4 +1,4 @@
-<?php /* @version 1.0.1 */
+<?php /* @version 1.0.2 */
 if ( ! defined('ABSPATH')) exit;
 
 // Flush transients used in totalpress_categorized_blog.
@@ -41,12 +41,12 @@ endif;
 // prints html for current post-date/time and author
 if ( ! function_exists( 'totalpress_posted_on' ) ) :
 	function totalpress_posted_on() {
-		$show_date = apply_filters( 'totalpress_post_date', true );
-		$show_author = apply_filters( 'totalpress_post_author', true );
-		$show_comments_top = apply_filters( 'totalpress_show_comments_top', true );
-		$show_edit_top = apply_filters( 'totalpress_show_edit_top', true );
+		$show_date = apply_filters('totalpress_post_date', true);
+		$show_author = apply_filters('totalpress_post_author', true);
+		$show_comments_top = apply_filters('totalpress_show_comments_top', true);
+		$show_edit_top = apply_filters('totalpress_show_edit_top', true);
 		$time_stamp = '<time class="entry-date published" datetime="%1$s" itemprop="datePublished">%2$s</time>';
-		if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
+		if ( get_the_time( 'U' ) !== get_the_modified_time('U')) {
 			$time_stamp .= '<time class="updated" datetime="%3$s" itemprop="dateModified">%4$s</time>';
 		}
 		$time_stamp = sprintf( $time_stamp,
@@ -108,12 +108,12 @@ if ( ! function_exists('totalpress_body_classes')) :
 		if ( ! is_singular() ) {
 			$classes[] = 'hfeed';
 		}
-	    if (get_theme_mod( 'totalpress_hide_sitetitle')) {
+	    if (get_theme_mod('totalpress_hide_sitetitle')) {
 	        $classes[] = 'no-site-title';
 	    } else {
 	        $classes[] = 'has-site-title';
 	    }
-	    if (get_theme_mod( 'totalpress_hide_tagline')) {
+	    if (get_theme_mod('totalpress_hide_tagline')) {
 	        $classes[] = 'no-site-tagline';
 	    } else {
 	        $classes[] = 'has-site-tagline';
@@ -127,27 +127,27 @@ endif;
 if ( ! function_exists('totalpress_layout_classes')) {
 	function totalpress_layout_classes($classes) {
 		// pagetemplate source ordering
-		if (get_theme_mod('theme_layout_container') == 'one_container')
+		if (get_theme_mod('totalpress_theme_layout_container') == 'one_container')
 			$classes[] = 'one-container';
-		if (get_theme_mod('top_sidebar_container') == 'full')
+		if (get_theme_mod('totalpress_top_sidebar_container') == 'full')
 			$classes[] = 'top-sidebar-full';
-		if (get_theme_mod('inner_top_sidebar_container') == 'full')
+		if (get_theme_mod('totalpress_inner_top_sidebar_container') == 'full')
 			$classes[] = 'inner-top-sidebar-full';
-		if (get_theme_mod('header_container') == 'full')
+		if (get_theme_mod('totalpress_header_container') == 'full')
 			$classes[] = 'header-container-full';
-		if (get_theme_mod('inner_head_container') == 'full')
+		if (get_theme_mod('totalpress_inner_head_container') == 'full')
 			$classes[] = 'inner-head-container-full';
-		if (get_theme_mod('nav_container') == 'full')
+		if (get_theme_mod('totalpress_nav_container') == 'full')
 			$classes[] = 'nav-container-full';
-		if (get_theme_mod('inner_nav_container') == 'full')
+		if (get_theme_mod('totalpress_inner_nav_container') == 'full')
 			$classes[] = 'top-bar-full';
-		if (get_theme_mod('footer_widgets_main_container') == 'full')
+		if (get_theme_mod('totalpress_footer_widgets_main_container') == 'full')
 			$classes[] = 'footer-widgets-full';
-		if (get_theme_mod('inner_footer_widgets_container') == 'full')
+		if (get_theme_mod('totalpress_inner_footer_widgets_container') == 'full')
 			$classes[] = 'inner-footer-widgets-full';
-		if (get_theme_mod('main_footer_container') == 'full')
+		if (get_theme_mod('totalpress_main_footer_container') == 'full')
 			$classes[] = 'site-footer-full';
-		if (get_theme_mod('inner_footer_container') == 'full')
+		if (get_theme_mod('totalpress_inner_footer_container') == 'full')
 			$classes[] = 'inner-footer-full';
 		return $classes;
 	}
@@ -157,15 +157,15 @@ if ( ! function_exists('totalpress_layout_classes')) {
 if ( ! function_exists('totalpress_order_classes')) {
 	function totalpress_order_classes($classes) {
 		// pagetemplate source ordering
-		if (get_theme_mod('blog_layout') == 'left_sidebar' || is_page_template('page-templates/sidebar-content.php'))
+		if (get_theme_mod('totalpress_blog_layout') == 'left_sidebar' || is_page_template('page-templates/sidebar-content.php'))
 			$classes[] = 'sc';
-		if (get_theme_mod('blog_layout') == 'sidebars_right' || is_page_template('page-templates/content-sidebar-sidebar.php'))
+		if (get_theme_mod('totalpress_blog_layout') == 'sidebars_right' || is_page_template('page-templates/content-sidebar-sidebar.php'))
 			$classes[] = 'css';
-		if (get_theme_mod('blog_layout') == 'sidebars_left' || is_page_template('page-templates/sidebar-sidebar-content.php'))
+		if (get_theme_mod('totalpress_blog_layout') == 'sidebars_left' || is_page_template('page-templates/sidebar-sidebar-content.php'))
 			$classes[] = 'ssc';
-		if (get_theme_mod('blog_layout') == 'both_sidebars' || is_page_template('page-templates/sidebar-content-sidebar.php'))
+		if (get_theme_mod('totalpress_blog_layout') == 'both_sidebars' || is_page_template('page-templates/sidebar-content-sidebar.php'))
 			$classes[] = 'scs';
-		if (get_theme_mod('blog_layout') == 'no_sidebars' || is_page_template('page-templates/full-width.php'))
+		if (get_theme_mod('totalpress_blog_layout') == 'no_sidebars' || is_page_template('page-templates/full-width.php'))
 			$classes[] = 'nsb';
 		if (get_post_meta(get_the_id(),'totalpress_hide_widget_one',true))
 			$classes[] = 'no-widget-one';

@@ -1,4 +1,4 @@
-<?php /* @version 1.0.1 */
+<?php /* @version 1.0.2 */
 if ( ! defined('ABSPATH')) exit;
 
 // top sidebar
@@ -85,7 +85,7 @@ endif;
 if ( ! function_exists('totalpress_build_header')) :
 	function totalpress_build_header() { ?>
 		<?php do_action('totalpress_before_header'); ?>
-		<?php if (get_theme_mod('nav_position','bottom_of_header') == 'top_of_header'): ?>
+		<?php if (get_theme_mod('totalpress_nav_position','bottom_of_header') == 'top_of_header'): ?>
 			<?php do_action('totalpress_topbar_menu'); ?>
 		<?php endif; ?>
 			<header id="masthead" class="site-header grid-container" itemtype="http://schema.org/WPHeader" itemscope="itemscope">
@@ -107,7 +107,7 @@ if ( ! function_exists('totalpress_build_header')) :
 				</div><!-- .inside-header -->
 			</header><!-- #masthead -->
 		<?php do_action('totalpress_after_header'); ?>
-		<?php if (get_theme_mod('nav_position','bottom_of_header') == 'bottom_of_header'): ?>
+		<?php if (get_theme_mod('totalpress_nav_position','bottom_of_header') == 'bottom_of_header'): ?>
 			<?php do_action('totalpress_topbar_menu'); ?>
 		<?php endif; ?>
 	<?php
@@ -123,7 +123,7 @@ if ( ! function_exists('totalpress_topbar_navigation')) :
 	            <button class="icon-menu" type="button" data-toggle><i class="fa fa-bars" aria-hidden="true"></i> <?php _e('Menu','totalpress'); ?></button>
 	        </div><!-- .title-bar -->
 	        <div class="top-bar grid-x grid-padding-x" id="main-menu">
-	        	<div class="<?php echo get_theme_mod('theme_nav_alignment','top-bar-left'); ?> hide-for-small-only"><?php do_action('totalpress_top_bar'); ?></div><!-- .top-bar -->
+	        	<div class="<?php echo get_theme_mod('totalpress_theme_nav_alignment','top-bar-left'); ?> hide-for-small-only"><?php do_action('totalpress_top_bar'); ?></div><!-- .top-bar -->
 	        	<div class="top-bar-left show-for-small-only"><?php do_action('totalpress_top_bar'); ?></div><!-- .top-bar -->
 			</div><!-- .top-bar .grid-x -->
 		</nav><!-- .main-navigation -->
@@ -235,22 +235,22 @@ endif;
 // show sidebars based on blog layout
 if ( ! function_exists('totalpress_build_sidebars')) :
 	function totalpress_build_sidebars() { ?>
-		<?php if (get_theme_mod('blog_layout','right_sidebar') == 'right_sidebar'): ?>
+		<?php if (get_theme_mod('totalpress_blog_layout','right_sidebar') == 'right_sidebar'): ?>
 			<?php get_sidebar(); ?>
 		<?php endif; ?>
-		<?php if (get_theme_mod('blog_layout') == 'left_sidebar'): ?>
+		<?php if (get_theme_mod('totalpress_blog_layout') == 'left_sidebar'): ?>
 			<?php get_sidebar('left'); ?>
 		<?php endif; ?>
-		<?php if (get_theme_mod('blog_layout') == 'sidebars_left'): ?>
+		<?php if (get_theme_mod('totalpress_blog_layout') == 'sidebars_left'): ?>
 			<?php get_sidebar('left'); get_sidebar(); ?>
 		<?php endif; ?>
-		<?php if (get_theme_mod('blog_layout') == 'sidebars_right'): ?>
+		<?php if (get_theme_mod('totalpress_blog_layout') == 'sidebars_right'): ?>
 			<?php get_sidebar('left'); get_sidebar(); ?>
 		<?php endif; ?>
-		<?php if (get_theme_mod('blog_layout') == 'both_sidebars'): ?>
+		<?php if (get_theme_mod('totalpress_blog_layout') == 'both_sidebars'): ?>
 			<?php get_sidebar('left'); get_sidebar(); ?>
 		<?php endif; ?>
-		<?php if (get_theme_mod('blog_layout') == 'no_sidebars'): ?>
+		<?php if (get_theme_mod('totalpress_blog_layout') == 'no_sidebars'): ?>
 			<?php get_footer(); ?>
 		<?php endif; ?>
 	<?php
@@ -317,7 +317,7 @@ if ( ! function_exists('totalpress_build_footer')) :
 		<?php do_action('totalpress_before_footer'); ?>
 		<footer id="colophon" class="site-footer grid-container" itemtype="http://schema.org/WPFooter" itemscope="itemscope" role="contentinfo">
 			<div class="inside-footer grid-x grid-padding-x">
-				<?php if ( is_active_sidebar( 'footer-sidebar' )): ?>
+				<?php if (is_active_sidebar( 'footer-sidebar')): ?>
 				<div class="site-info large-auto cell"><?php totalpress_footer_credits(); ?></div><!-- .site-info -->
 			    	<?php do_action('totalpress_footer_sidebar'); ?>
 				<?php else: ?>
@@ -347,7 +347,7 @@ endif;
 // filter: build back to top
 if ( ! function_exists('totalpress_back_to_top')) :
 	function totalpress_back_to_top() {
-		if (true == get_theme_mod('btp_switch',true)) {
+		if (true == get_theme_mod('totalpress_btp_switch',true)) {
 			$backtotop = sprintf( '<div class="back-to-top"><i class="fa fa-angle-up fa-lg" aria-hidden="true"></i></div>');
 			echo apply_filters('totalpress_back_to_top',$backtotop);
 		}

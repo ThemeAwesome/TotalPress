@@ -1,4 +1,4 @@
-<?php /* @version 1.0.1 */
+<?php /* @version 1.0.2 */
 if ( ! defined('ABSPATH')) exit; ?>
 <?php do_action('totalpress_before_post'); ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> <?php totalpress_article_schema('CreativeWork'); ?>>
@@ -13,7 +13,7 @@ if ( ! defined('ABSPATH')) exit; ?>
 		<?php do_action('totalpress_after_entry_header'); ?>
 		<div class="post-image"><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
 				<?php the_post_thumbnail('full',array('itemprop' => 'image')); ?></a></div><!-- .post-image -->
-		<?php if ( get_theme_mod('show_excerpt') == 'excerpt') : ?>
+		<?php if ( get_theme_mod('totalpress_show_excerpt') == 'excerpt') : ?>
 		<div class="entry-summary" itemprop="text">
 			<?php the_excerpt(); ?>
 		</div><!-- .entry-summary -->
