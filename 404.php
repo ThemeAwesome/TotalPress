@@ -1,8 +1,7 @@
-<?php /* @version 1.0.2 */
+<?php /* @version 1.0.4 */
 if ( ! defined('ABSPATH')) exit;
 get_header(); ?>
 	<div id="primary" class="content-area-404 small-12 cell">
-		<?php do_action('totalpress_before_404_content'); ?>
 		<main id="main" class="site-main" role="main">
 			<section class="error-404 not-found">
 				<header class="page-header">
@@ -13,7 +12,6 @@ get_header(); ?>
 					<?php get_search_form(); ?>
 				</div><!-- .page-content -->
 			</section><!-- .error-404 -->
-		<?php do_action('totalpress_after_404_content'); ?>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 <?php

@@ -1,4 +1,4 @@
-<?php /* @version 1.0.2 */
+<?php /* @version 1.0.4 */
 if ( ! defined('ABSPATH')) exit;
 TotalPress_Kirki::add_section( 'totalpress_footer_section', array(
     'title'       => esc_attr__('Footer Layout','totalpress'),
@@ -42,7 +42,7 @@ TotalPress_Kirki::add_field( 'theme_customizer', array(
 	'tooltip'     => esc_attr__('Switch the Back to Top button on or off.','totalpress'),
 	'section'     => 'totalpress_footer_section',
 	'default'     => '1',
-	'priority'    => 100,
+	'priority'    => 999,
 	'transport'   => 'auto',
 	'choices'     => array(
 		'on'  => esc_attr__('On','totalpress' ),

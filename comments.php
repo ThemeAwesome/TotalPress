@@ -1,4 +1,4 @@
-<?php /* @version 1.0.2 */
+<?php /* @version 1.0.4 */
 if ( ! defined('ABSPATH')) exit;
 if ( post_password_required() ) {
 	return; } ?>
@@ -71,6 +71,5 @@ if ( post_password_required() ) {
 			  ),
 			);
 			comment_form($comments_args); ?>
-		<?php do_action('totalpress_after_comments'); ?>
 </div><!-- end .inside-comments -->	
 </div><!-- end #comments -->

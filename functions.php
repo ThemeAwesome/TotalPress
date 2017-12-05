@@ -1,4 +1,4 @@
-<?php /* @version 1.0.2 */
+<?php /* @version 1.0.4 */
 if ( ! defined('ABSPATH')) exit;
 define('TOTALPRESS_VERSION','1.0.2');
 define('TOTALPRESS_URI',get_template_directory_uri());
@@ -68,37 +68,7 @@ require TOTALPRESS_DIR . '/assets/inc/metaboxes.php';
 require TOTALPRESS_DIR . '/assets/inc/extras.php';
 require TOTALPRESS_DIR . '/assets/inc/template-tags.php';
 require TOTALPRESS_DIR . '/assets/inc/plugin-support.php';
-
-// Custom Excerpt Length
-if ( ! function_exists('totalpress_custom_excerpt')) :
-	function totalpress_custom_excerpt( $number ) {
-		return 65;
-	}
-	add_filter('excerpt_length','totalpress_custom_excerpt');
-endif;
-
-// excerpt more
-if ( ! function_exists('totalpress_excerpt_more') && ! is_admin() ) :
-	function totalpress_excerpt_more( $more ) {
-		$link = sprintf( '<a href="%1$s" class="more-link">%2$s</a>',
-			esc_url( get_permalink( get_the_ID() ) ),
-				sprintf( __('Continue reading %s <span class="meta-nav">&raquo;</span>','totalpress' ), '<span class="screen-reader-text">' . get_the_title( get_the_ID() ) . '</span>')
-			);
-		return ' &hellip; ' . $link;
-	}
-	add_filter('excerpt_more','totalpress_excerpt_more');
-endif;
-
-// style the visual editor to resemble the theme front end.
-if ( ! function_exists( 'totalpress_add_editor_styles' ) ) :
-	function totalpress_add_editor_styles() {
-	    $font_url = str_replace( ',', '%2C', '//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,900');
-	    add_editor_style( array(
-	    	'style.css', $font_url,
-	 	));
-	}
-	add_action('after_setup_theme','totalpress_add_editor_styles');
-endif;
+//require TOTALPRESS_DIR . '/assets/inc/hook-tests.php';
 
 // enqueue scripts and styles.
 if ( ! function_exists('totalpress_scripts')) :
@@ -128,10 +98,10 @@ endif;
 if ( ! function_exists('totalpress_widgets_init')) :
 	function totalpress_widgets_init() {	
 		$widgets = array(
-			'sidebar-1' => __('Main Sidebar','totalpress'),
-			'sidebar-2' => __('Left Sidebar','totalpress'),
 			'top-sidebar' => __('Top Sidebar','totalpress'),
 			'header-sidebar' => __('Header Sidebar','totalpress'),
+			'cs1-sidebar' => __('Content Sidebar One','totalpress'),
+			'cs2-sidebar' => __('Content Sidebar Two','totalpress'),
 			'footer-1' => __('Footer Widget Area One','totalpress'),
 			'footer-2' => __('Footer Widget Area Two','totalpress'),
 			'footer-3' => __('Footer Widget Area Three','totalpress'),
@@ -151,6 +121,37 @@ if ( ! function_exists('totalpress_widgets_init')) :
 		}
 	}
 	add_action('widgets_init','totalpress_widgets_init');
+endif;
+
+// Custom Excerpt Length
+if ( ! function_exists('totalpress_custom_excerpt')) :
+	function totalpress_custom_excerpt( $number ) {
+		return 65;
+	}
+	add_filter('excerpt_length','totalpress_custom_excerpt');
+endif;
+
+// excerpt more
+if ( ! function_exists('totalpress_excerpt_more') && ! is_admin() ) :
+	function totalpress_excerpt_more( $more ) {
+		$link = sprintf( '<a href="%1$s" class="more-link">%2$s</a>',
+			esc_url( get_permalink( get_the_ID() ) ),
+				sprintf( __('Continue reading %s <span class="meta-nav">&raquo;</span>','totalpress' ), '<span class="screen-reader-text">' . get_the_title( get_the_ID() ) . '</span>')
+			);
+		return ' &hellip; ' . $link;
+	}
+	add_filter('excerpt_more','totalpress_excerpt_more');
+endif;
+
+// style the visual editor to resemble the theme front end.
+if ( ! function_exists('totalpress_add_editor_styles')) :
+	function totalpress_add_editor_styles() {
+	    $font_url = str_replace(',', '%2C','//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,900');
+	    add_editor_style( array(
+	    	'style.css', $font_url,
+	 	));
+	}
+	add_action('after_setup_theme','totalpress_add_editor_styles');
 endif;
 
 // remove .sticky from the post_class array

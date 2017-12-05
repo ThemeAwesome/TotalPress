@@ -1,4 +1,4 @@
-<?php /* @version 1.0.2 */
+<?php /* @version 1.0.4 */
 if ( ! defined('ABSPATH')) exit;
 
 // top sidebar
@@ -71,10 +71,8 @@ endif;
 if ( ! function_exists('totalpress_build_header_sidebar')) :
     function totalpress_build_header_sidebar() {
 	if ( is_active_sidebar('header-sidebar')) : ?>
-        <div class="header-sidebar small-12 large-auto cell">
-        	<?php do_action('totalpress_before_header_sidebar'); ?>
+        <div class="header-sidebar small-12 large-6 cell">
             <?php dynamic_sidebar('header-sidebar'); ?>
-            <?php do_action('totalpress_after_header_sidebar'); ?>
         </div><!-- .header-sidebar -->
 	<?php endif;
     }
@@ -84,32 +82,31 @@ endif;
 // Build the header
 if ( ! function_exists('totalpress_build_header')) :
 	function totalpress_build_header() { ?>
-		<?php do_action('totalpress_before_header'); ?>
 		<?php if (get_theme_mod('totalpress_nav_position','bottom_of_header') == 'top_of_header'): ?>
 			<?php do_action('totalpress_topbar_menu'); ?>
 		<?php endif; ?>
 			<header id="masthead" class="site-header grid-container" itemtype="http://schema.org/WPHeader" itemscope="itemscope">
-				<div class="inside-header grid-x grid-padding-x">
-					<?php if (is_active_sidebar('header-sidebar')): ?>
-						<div class="site-branding small-12 large-auto cell">
-							<?php do_action('totalpress_before_header_content'); ?>
-							<?php totalpress_header_items(); ?>
-							<?php do_action('totalpress_after_header_content'); ?>
-						</div><!-- .site-branding -->
-					    <?php do_action('totalpress_header_sidebar'); ?>
-					<?php else: ?>
-						<div class="site-branding small-12 large-auto cell">
-							<?php do_action('totalpress_before_header_content'); ?>
-							<?php totalpress_header_items(); ?>
-							<?php do_action('totalpress_after_header_content'); ?>
-						</div>
-					<?php endif; ?>
+				<div class="inside-header grid-container">
+					<?php do_action('totalpress_before_header_content'); ?>
+					<div class="grid-x grid-padding-x">
+						<?php if (is_active_sidebar('header-sidebar')): ?>
+							<div class="site-branding small-12 large-6 cell">
+								<?php totalpress_header_items(); ?>
+							</div><!-- .site-branding -->
+						    <?php do_action('totalpress_header_sidebar'); ?>
+						<?php else: ?>
+							<div class="site-branding small-12 large-auto cell">
+								<?php totalpress_header_items(); ?>
+							</div>
+						<?php endif; ?>
+					</div><!-- .grid-x .grid-padding-x -->
+					<?php do_action('totalpress_after_header_content'); ?>
 				</div><!-- .inside-header -->
 			</header><!-- #masthead -->
-		<?php do_action('totalpress_after_header'); ?>
 		<?php if (get_theme_mod('totalpress_nav_position','bottom_of_header') == 'bottom_of_header'): ?>
 			<?php do_action('totalpress_topbar_menu'); ?>
 		<?php endif; ?>
+		<?php do_action('totalpress_after_header'); ?>
 	<?php
 	}
 	add_action('totalpress_header','totalpress_build_header');
@@ -135,12 +132,134 @@ endif;
 // start the content container
 if ( ! function_exists('totalpress_content_container')) :
 	function totalpress_content_container() { ?>
-		<?php do_action('totalpress_before_main_content'); ?>
+	<?php do_action('totalpress_before_main_content'); ?>
 			<div id="content" class="site-content grid-container">
 				<div class="grid-x grid-padding-x">
 	<?php
 	}
 	add_action('totalpress_open_content_container','totalpress_content_container');
+endif;
+
+// open the post container
+if ( ! function_exists('totalpress_post_open_container')) :
+	function totalpress_post_open_container() { ?>
+		<div id="primary" class="content-area small-12 large-8 cell">
+			<main id="main" class="site-main" role="main">
+	<?php
+	}
+	add_action('totalpress_open_post_container','totalpress_post_open_container');
+endif;
+
+// open article container
+if ( ! function_exists('totalpress_article_open_container')) :
+	function totalpress_article_open_container() { ?>
+		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> <?php totalpress_article_schema('CreativeWork'); ?>>
+			<div class="inside-article">
+	<?php
+	}
+	add_action('totalpress_open_article_container','totalpress_article_open_container');
+endif;
+
+// page entry header
+if ( ! function_exists('totalpress_build_content_page_entry_header')) :
+	function totalpress_build_content_page_entry_header() { 
+	global $post; ?>
+		<header class="entry-header">	
+			<?php if (get_post_meta($post->ID,'page_options_hide_title',true)) {
+		   		the_title('<h1 class="entry-title hide" itemprop="headline">','</h1>');
+			  } else {
+		   		the_title('<h1 class="entry-title" itemprop="headline">','</h1>');
+			  } ?>
+		</header><!-- .entry-header -->
+	<?php
+	}
+	add_action('totalpress_content_page_entry_header','totalpress_build_content_page_entry_header');
+endif;
+
+// page entry header single
+if ( ! function_exists('totalpress_content_single_entry_header')) :
+	function totalpress_content_single_entry_header() { 
+	global $post; ?>
+		<header class="entry-header">
+			<?php if (get_post_meta($post->ID,'page_options_hide_title',true)) {
+		   		the_title('<h1 class="entry-title hide" itemprop="headline">','</h1>');
+			  } else {
+		   		the_title('<h1 class="entry-title" itemprop="headline">','</h1>');
+			  } ?>
+		<?php totalpress_posted_on(); ?>
+		</header><!-- .entry-header -->
+	<?php
+	}
+	add_action('totalpress_content_single_entry_header','totalpress_content_single_entry_header');
+endif;
+
+// content entry header
+if ( ! function_exists('totalpress_build_content_entry_header')) :
+	function totalpress_build_content_entry_header() { ?>
+	<header class="entry-header">
+		<?php do_action( 'totalpress_before_entry_title'); ?>
+		<?php the_title( sprintf( '<h2 class="entry-title" itemprop="headline"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
+		<?php totalpress_posted_on(); ?>
+	</header><!-- .entry-header -->
+	<?php
+	}
+	add_action('totalpress_content_entry_header','totalpress_build_content_entry_header');
+endif;
+
+// close article container
+if ( ! function_exists('totalpress_article_close_container')) :
+	function totalpress_article_close_container() { ?>
+			</div><!-- .inside-article -->
+		</article><!-- #post-## -->
+	<?php
+	}
+	add_action('totalpress_close_article_container','totalpress_article_close_container');
+endif;
+
+// close the post container
+if ( ! function_exists('totalpress_post_close_container')) :
+	function totalpress_post_close_container() { ?>
+			</main><!-- #main -->
+		</div><!-- #primary -->
+	<?php
+	}
+	add_action('totalpress_close_post_container','totalpress_post_close_container');
+endif;
+
+// open the right sidebar container
+if ( ! function_exists('totalpress_right_sidebar_open_container')) :
+	function totalpress_right_sidebar_open_container() { ?>
+		<div id="right-sidebar" itemtype="http://schema.org/WPSideBar" itemscope="itemscope" role="complementary" class="rts widget-area  small-12 large-4 cell">
+	<?php
+	}
+	add_action('totalpress_open_right_sidebar_container','totalpress_right_sidebar_open_container');
+endif;
+
+// close the right sidebar container
+if ( ! function_exists('totalpress_right_sidebar_close_container')) :
+	function totalpress_right_sidebar_close_container() { ?>
+		</div><!-- #right-sidebar -->
+	<?php
+	}
+	add_action('totalpress_close_right_sidebar_container','totalpress_right_sidebar_close_container');
+endif;
+
+// open the left sidebar container
+if ( ! function_exists('totalpress_left_sidebar_open_container')) :
+	function totalpress_left_sidebar_open_container() { ?>
+		<div id="left-sidebar" itemtype="http://schema.org/WPSideBar" itemscope="itemscope" role="complementary" class="lfts widget-area  small-12 large-4 cell">
+	<?php
+	}
+	add_action('totalpress_open_left_sidebar_container','totalpress_left_sidebar_open_container');
+endif;
+
+// close the left sidebar container
+if ( ! function_exists('totalpress_left_sidebar_close_container')) :
+	function totalpress_left_sidebar_close_container() { ?>
+		</div><!-- #left-sidebar -->
+	<?php
+	}
+	add_action('totalpress_close_left_sidebar_container','totalpress_left_sidebar_close_container');
 endif;
 
 // close the content container
@@ -154,82 +273,72 @@ if ( ! function_exists('totalpress_content_container_close')) :
 	add_action('totalpress_close_content_container','totalpress_content_container_close');
 endif;
 
-// hook before page template title
-if ( ! function_exists('totalpress_build_before_template_titles')) :
-	function totalpress_build_before_template_titles() { ?>
-		<?php if (is_page_template('page-templates/content-sidebar.php')): ?>
-			<?php do_action( 'totalpress_before_cs_title'); ?>
+// page template opening containers
+if ( ! function_exists('totalpress_build_page_template_container')) :
+	function totalpress_build_page_template_container() { ?>
+		<?php if (is_page_template('page-templates/content-sidebar.php') || is_page_template('page-templates/sidebar-content.php')): ?>
+			<div id="primary" class="content-area small-12 large-8 cell">
+				<main id="main" class="site-main" role="main">
 		<?php endif; ?>
-		<?php if (is_page_template('page-templates/sidebar-content.php')): ?>
-			<?php do_action( 'totalpress_before_sc_title'); ?>
-		<?php endif; ?>
-		<?php if (is_page_template('page-templates/content-sidebar-sidebar.php')): ?>
-			<?php do_action( 'totalpress_before_css_title'); ?>
-		<?php endif; ?>
-		<?php if (is_page_template('page-templates/sidebar-sidebar-content.php')): ?>
-			<?php do_action( 'totalpress_before_ssc_title'); ?>
-		<?php endif; ?>
-		<?php if (is_page_template('page-templates/sidebar-content-sidebar.php')): ?>
-			<?php do_action( 'totalpress_before_scs_title'); ?>
+		<?php if (is_page_template('page-templates/content-sidebar-sidebar.php') || is_page_template('page-templates/sidebar-sidebar-content.php') || is_page_template('page-templates/sidebar-content-sidebar.php')): ?>
+			<div id="primary" class="content-area small-12 large-6 cell">
+				<main id="main" class="site-main" role="main">
 		<?php endif; ?>
 		<?php if (is_page_template('page-templates/full-width.php')): ?>
-			<?php do_action( 'totalpress_before_fw_title'); ?>
+			<div id="primary" class="content-area small-12 cell">
+				<main id="main" class="site-main" role="main">
 		<?php endif; ?>
 	<?php
 	}
-	add_action('totalpress_before_template_titles','totalpress_build_before_template_titles');
+	add_action('totalpress_page_template_container','totalpress_build_page_template_container');
 endif;
 
-// hook after page template title
-if ( ! function_exists('totalpress_build_after_template_titles')) :
-	function totalpress_build_after_template_titles() { ?>
-		<?php if (is_page_template('page-templates/content-sidebar.php')): ?>
-			<?php do_action( 'totalpress_after_cs_title'); ?>
-		<?php endif; ?>
-		<?php if (is_page_template('page-templates/sidebar-content.php')): ?>
-			<?php do_action( 'totalpress_after_sc_title'); ?>
-		<?php endif; ?>
-		<?php if (is_page_template('page-templates/content-sidebar-sidebar.php')): ?>
-			<?php do_action( 'totalpress_after_css_title'); ?>
-		<?php endif; ?>
-		<?php if (is_page_template('page-templates/sidebar-sidebar-content.php')): ?>
-			<?php do_action( 'totalpress_after_ssc_title'); ?>
-		<?php endif; ?>
-		<?php if (is_page_template('page-templates/sidebar-content-sidebar.php')): ?>
-			<?php do_action( 'totalpress_after_scs_title'); ?>
-		<?php endif; ?>
-		<?php if (is_page_template('page-templates/full-width.php')): ?>
-			<?php do_action( 'totalpress_after_fw_title'); ?>
-		<?php endif; ?>
+// page template loop
+if ( ! function_exists('totalpress_build_page_template_loop')) :
+	function totalpress_build_page_template_loop() { ?>
+		<?php while ( have_posts() ) : the_post(); ?>
+			<?php if(is_single()) { ?>
+				<?php get_template_part('template-parts/post/content','single'); ?>
+			<?php } ?>
+			<?php if(is_page()) { ?>
+				<?php get_template_part('template-parts/page/content','page'); ?>
+			<?php } ?>
+			<?php if ( comments_open() || '0' != get_comments_number() ) : comments_template(); endif; ?>
+		<?php endwhile; ?>
 	<?php
 	}
-	add_action('totalpress_after_template_titles','totalpress_build_after_template_titles');
+	add_action('totalpress_page_template_loop','totalpress_build_page_template_loop');
 endif;
 
-// hook after page template content
-if ( ! function_exists('totalpress_build_after_template_post')) :
-	function totalpress_build_after_template_post() { ?>
-		<?php if (is_page_template('page-templates/content-sidebar.php')): ?>
-			<?php do_action( 'totalpress_after_cs_post'); ?>
-		<?php endif; ?>
-		<?php if (is_page_template('page-templates/sidebar-content.php')): ?>
-			<?php do_action( 'totalpress_after_sc_post'); ?>
-		<?php endif; ?>
-		<?php if (is_page_template('page-templates/content-sidebar-sidebar.php')): ?>
-			<?php do_action( 'totalpress_after_css_post'); ?>
-		<?php endif; ?>
-		<?php if (is_page_template('page-templates/sidebar-sidebar-content.php')): ?>
-			<?php do_action( 'totalpress_after_ssc_post'); ?>
-		<?php endif; ?>
-		<?php if (is_page_template('page-templates/sidebar-content-sidebar.php')): ?>
-			<?php do_action( 'totalpress_after_scs_post'); ?>
-		<?php endif; ?>
-		<?php if (is_page_template('page-templates/full-width.php')): ?>
-			<?php do_action( 'totalpress_after_fw_post'); ?>
+// featured image - linked
+if ( ! function_exists('totalpress_build_featured_image')) :
+	function totalpress_build_featured_image() { ?>
+		<div class="post-image">
+			<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+			<?php the_post_thumbnail('full',array('itemprop' => 'image')); ?></a>
+		</div><!-- .post-image -->
+	<?php
+	}
+	add_action('totalpress_featured_image','totalpress_build_featured_image');
+endif;
+
+// featured image: single post/pages
+if ( ! function_exists('totalpress_build_featured_image_single')) :
+	function totalpress_build_featured_image_single() {
+	// get current post
+	global $post; ?>
+		<?php if (get_post_meta($post->ID,'page_options_hide_featured_image',true)): ?>
+			<div class="post-image hide">
+				<?php the_post_thumbnail('full',array('itemprop' => 'image')); ?>
+			</div><!-- .post-image -->
+		<?php else: ?>
+			<div class="post-image">
+				<?php the_post_thumbnail('full',array('itemprop' => 'image')); ?>
+			</div><!-- .post-image -->
 		<?php endif; ?>
 	<?php
 	}
-	add_action('totalpress_after_template_post','totalpress_build_after_template_post');
+	add_action('totalpress_featured_image_single','totalpress_build_featured_image_single');
 endif;
 
 // show sidebars based on blog layout
@@ -263,37 +372,37 @@ if ( ! function_exists( 'totalpress_build_footer_widgets' ) ) :
 	function totalpress_build_footer_widgets() { 
 		if ( ! is_active_sidebar('footer-1') && ! is_active_sidebar('footer-2') && ! is_active_sidebar('footer-3') && ! is_active_sidebar('footer-4') && ! is_active_sidebar('footer-5'))
 		return; ?>
-		<div id="footer-secondary" itemtype="http://schema.org/WPSideBar" itemscope="itemscope" role="complementary" class="footer-widgets widget-area grid-container">
+		<div id="footer-secondary" class="footer-widgets grid-container widget-area" itemtype="http://schema.org/WPSideBar" itemscope="itemscope" role="complementary">
+			<?php do_action('totalpress_before_footer_widgets_content'); ?>
 	 		<div class="inside-footer-widgets grid-x grid-padding-x">
-	 			<?php do_action('totalpress_before_footer_widgets'); ?>
 				<?php if (is_active_sidebar('footer-1')) : ?>
 					<div class="fw_one large-auto cell">
 			            <?php dynamic_sidebar('footer-1'); ?>
-			        </div>
+			        </div><!-- .fw_one -->
 		        <?php endif; ?>
 		        <?php if (is_active_sidebar('footer-2')) : ?>
 					<div class="fw_two large-auto cell">
 			            <?php dynamic_sidebar('footer-2'); ?>
-			        </div>
+			        </div><!-- .fw_two -->
 		        <?php endif; ?>
 		        <?php if (is_active_sidebar('footer-3')) : ?>
 					<div class="fw_three large-auto cell">
 			            <?php dynamic_sidebar('footer-3'); ?>
-			        </div>
+			        </div><!-- .fw_three -->
 		        <?php endif; ?>
 		        <?php if (is_active_sidebar('footer-4')) : ?>
 					<div class="fw_four large-auto cell">
 			            <?php dynamic_sidebar('footer-4'); ?>
-			        </div>
+			        </div><!-- .fw_four -->
 		        <?php endif; ?>
 		        <?php if (is_active_sidebar('footer-5')) : ?>
 					<div class="fw_five large-auto cell">
 			            <?php dynamic_sidebar('footer-5'); ?>
-			        </div>
+			        </div><!-- .fw_five -->
 		        <?php endif; ?>
-		        <?php do_action('totalpress_after_footer_widgets'); ?>
 	    	</div><!-- .inside-footer .grid-x -->
-    	</div><!-- .footer-sidebar -->
+	    	<?php do_action('totalpress_after_footer_widgets_content'); ?>
+    	</div><!-- .footer-widgets -->
 	<?php
 	}
 	add_action('totalpress_footer_widgets','totalpress_build_footer_widgets');
@@ -314,16 +423,18 @@ endif;
 // build footer
 if ( ! function_exists('totalpress_build_footer')) :
 	function totalpress_build_footer() { ?>
-		<?php do_action('totalpress_before_footer'); ?>
+	<?php do_action('totalpress_before_footer');?>
 		<footer id="colophon" class="site-footer grid-container" itemtype="http://schema.org/WPFooter" itemscope="itemscope" role="contentinfo">
+			<?php do_action('totalpress_before_footer_content'); ?>
 			<div class="inside-footer grid-x grid-padding-x">
 				<?php if (is_active_sidebar( 'footer-sidebar')): ?>
-				<div class="site-info large-auto cell"><?php totalpress_footer_credits(); ?></div><!-- .site-info -->
+					<div class="site-info large-auto cell"><?php totalpress_footer_credits(); ?></div><!-- .site-info -->
 			    	<?php do_action('totalpress_footer_sidebar'); ?>
 				<?php else: ?>
-				<div class="site-info large-auto cell text-center"><?php totalpress_footer_credits(); ?></div><!-- .site-info -->
+					<div class="site-info large-auto cell text-center"><?php totalpress_footer_credits(); ?></div><!-- .site-info -->
 				<?php endif; ?>
 			</div><!-- .inside-footer -->
+			<?php do_action('totalpress_after_footer_content'); ?>
 		</footer><!-- .site-footer .grid-container -->
 		<?php do_action('totalpress_after_footer'); ?>
 	<?php

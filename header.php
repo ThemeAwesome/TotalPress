@@ -1,4 +1,4 @@
-<?php /* @version 1.0.2 */
+<?php /* @version 1.0.4 */
 if ( ! defined('ABSPATH')) exit; ?><!DOCTYPE html>
 <html <?php language_attributes(); ?> class="no-js">
 <head>
@@ -9,7 +9,7 @@ if ( ! defined('ABSPATH')) exit; ?><!DOCTYPE html>
 </head>
 
 <body <?php totalpress_body_schema();?> <?php body_class(); ?>><section><a class="skip-link screen-reader-text" href="#content"><?php esc_html_e('Skip to content','totalpress'); ?></a></section>
-<?php do_action('totalpress_theme_start');
-	do_action('totalpress_top_sidebar');
-	do_action('totalpress_header');
-	do_action('totalpress_open_content_container'); ?>
+<?php do_action('totalpress_before_header'); ?>
+<?php do_action('totalpress_top_sidebar'); ?>
+<?php do_action('totalpress_header'); ?>
+<?php do_action('totalpress_open_content_container'); ?>

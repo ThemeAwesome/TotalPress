@@ -1,4 +1,4 @@
-<?php /* @version 1.0.2 */
+<?php /* @version 1.0.4 */
 if ( ! defined('ABSPATH')) exit; ?>
 <section class="no-results not-found">
 	<?php do_action( 'totalpress_before_post'); ?>
@@ -12,7 +12,7 @@ if ( ! defined('ABSPATH')) exit; ?>
 			<p><?php echo apply_filters('totalpress_404_text', __('Try doing another search, making sure any spelling, cApitALiZaTiOn, and punctuation are correct.','totalpress')); ?></p>
 			<?php get_search_form(); ?>
 		<?php else : ?>
-			<p><?php _e('Sorry, we can&rsquo;t find what you&rsquo;re looking for. Perhaps trying another search will help.','totalpress'); ?></p>
+			<p><?php _e('Sorry, we can&rsquo;t find what you&rsquo;re looking for. Maybe trying another search will help.','totalpress'); ?></p>
 			<?php get_search_form(); ?>
 		<?php endif; ?>
 	</div><!-- .page-content -->

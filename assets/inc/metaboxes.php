@@ -1,4 +1,4 @@
-<?php /* @version 1.0.2 */
+<?php /* @version 1.0.4 */
 if ( ! defined('ABSPATH')) exit;
 
 /**************************************
@@ -21,7 +21,7 @@ if ( ! function_exists('totalpress_footer_widgets_meta_box')) :
 				public function add_metabox() {
 					add_meta_box(
 						'footer_widgets',
-						__('Hide Footer Widgets','totalpress'),
+						__('Hide Individual Footer Widgets','totalpress'),
 						array($this,'render_hide_footer_widget_metabox'),
 						array('post','page'),
 						'side',
@@ -45,16 +45,11 @@ if ( ! function_exists('totalpress_footer_widgets_meta_box')) :
 
 					// Form fields.
 					echo '<p><label><input type="checkbox" name="totalpress_hide_widget_one" class="totalpress_footer_widget_one_field" 
-					value="' . $totalpress_hide_widget_one . '" ' . checked( $totalpress_hide_widget_one, 'checked', false ) . '> ' . '</label>';
-					echo '<label for="totalpress_footer_widget_one" class="totalpress_footer_widget_one_label">' . __( 'Hide Footer Widget One', 'totalpress' ) . '</label></p>';
-					echo '<p><label><input type="checkbox" name="totalpress_hide_widget_two" class="totalpress_footer_widget_two_field" value="' . $totalpress_hide_widget_two . '" ' . checked( $totalpress_hide_widget_two, 'checked', false ) . '> ' . '</label>';
-					echo '<label for="totalpress_footer_widget_two" class="totalpress_footer_widget_two_label">' . __( 'Hide Footer Widget Two', 'totalpress') . '</label></p>';
-					echo '<p><label><input type="checkbox" name="totalpress_hide_widget_three" class="totalpress_footer_widget_three_field" value="' . $totalpress_hide_widget_three . '" ' . checked( $totalpress_hide_widget_three, 'checked', false ) . '> ' . '</label>';
-					echo '<label for="totalpress_footer_widget_three" class="totalpress_footer_widget_three_label">' . __( 'Hide Footer Widget Three','totalpress') . '</label></p>';
-					echo '<p><label><input type="checkbox" name="totalpress_hide_widget_four" class="totalpress_footer_widget_four_field" value="' . $totalpress_hide_widget_four . '" ' . checked( $totalpress_hide_widget_four,'checked', false ) . '> ' . '</label>';
-					echo '<label for="totalpress_footer_widget_four" class="totalpress_footer_widget_four_label">' . __('Hide Footer Widget Four','totalpress') . '</label></p>';
-					echo '<p><label><input type="checkbox" name="totalpress_hide_widget_five" class="totalpress_footer_widget_five_field" value="' . $totalpress_hide_widget_five . '" ' . checked( $totalpress_hide_widget_five,'checked',false) . '> ' . '</label>';
-					echo '<label for="totalpress_footer_widget_five" class="totalpress_footer_widget_five_label">' . __('Hide Footer Widget Five', 'totalpress' ) . '</label></p>';
+					value="' . $totalpress_hide_widget_one . '" ' . checked( $totalpress_hide_widget_one, 'checked', false ) . '> ' . __( 'Hide Footer Widget One', 'totalpress' ) . '</label></p>';
+					echo '<p><label><input type="checkbox" name="totalpress_hide_widget_two" class="totalpress_footer_widget_two_field" value="' . $totalpress_hide_widget_two . '" ' . checked( $totalpress_hide_widget_two, 'checked', false ) . '> ' . __( 'Hide Footer Widget Two', 'totalpress') . '</label></p>';
+					echo '<p><label><input type="checkbox" name="totalpress_hide_widget_three" class="totalpress_footer_widget_three_field" value="' . $totalpress_hide_widget_three . '" ' . checked( $totalpress_hide_widget_three, 'checked', false ) . '> ' . __( 'Hide Footer Widget Three','totalpress') . '</label></p>';
+					echo '<p><label><input type="checkbox" name="totalpress_hide_widget_four" class="totalpress_footer_widget_four_field" value="' . $totalpress_hide_widget_four . '" ' . checked( $totalpress_hide_widget_four,'checked', false ) . '> ' . __('Hide Footer Widget Four','totalpress') . '</label></p>';
+					echo '<p><label><input type="checkbox" name="totalpress_hide_widget_five" class="totalpress_footer_widget_five_field" value="' . $totalpress_hide_widget_five . '" ' . checked( $totalpress_hide_widget_five,'checked',false) . '> ' . __('Hide Footer Widget Five', 'totalpress' ) . '</label></p>';
 				}
 
 				public function save_metabox( $post_id, $post ) {
@@ -131,8 +126,7 @@ if ( ! function_exists( 'totalpress_page_options_meta_box' ) ) :
 					// Set default values.
 
 					// Form fields.
-					echo '<p><label><input type="checkbox" name="page_options_hide_title" class="page_options_post_title__field" value="' . $page_options_hide_title . '" ' . checked( $page_options_hide_title,'checked',false) . '> ' . '</label>';
-					echo '<label for="page_options_post_title_" class="page_options_post_title__label">' . __('Hide Title','totalpress') . '</label></p>';
+					echo '<p><label><input type="checkbox" name="page_options_hide_title" class="page_options_post_title__field" value="' . $page_options_hide_title . '" ' . checked( $page_options_hide_title,'checked',false) . '> ' . __('Hide Title','totalpress') . '</label></p>';
 				}
 
 				public function save_metabox( $post_id, $post ) {
@@ -202,8 +196,7 @@ if ( ! function_exists('totalpress_page_builder_meta_box')) :
 					// Set default values.
 
 					// Form fields.
-					echo '<p><label><input type="checkbox" name="totalpress_remove_content_padding" class="totalpress_remove_content_padding_field" value="' . $totalpress_remove_content_padding . '" ' . checked( $totalpress_remove_content_padding,'checked',false) . '> ' . '</label>';
-					echo '<label for="totalpress_remove_content_padding" class="totalpress_remove_content_padding_label">' . __('Remove Content Padding','totalpress') . '</label></p>';
+					echo '<p><label><input type="checkbox" name="totalpress_remove_content_padding" class="totalpress_remove_content_padding_field" value="' . $totalpress_remove_content_padding . '" ' . checked( $totalpress_remove_content_padding,'checked',false) . '> ' . __('Remove Content Padding','totalpress') . '</label></p>';
 				}
 
 				public function save_metabox( $post_id, $post ) {

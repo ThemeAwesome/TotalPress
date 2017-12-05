@@ -1,4 +1,4 @@
-<?php /* @version 1.0.2 */
+<?php /* @version 1.0.4 */
 if ( ! defined('ABSPATH')) exit;
 function totalpress_setup_woocommerce() {
 	if ( ! class_exists('WooCommerce') ) {
@@ -21,8 +21,7 @@ if ( ! function_exists('totalpress_woocommerce_start')) :
 	function totalpress_woocommerce_start() { ?>
 	<div id="primary" class="woo- cell">
 		<main id="main" class="site-main" role="main">
-			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> <?php totalpress_article_schema('CreativeWork'); ?>>
-				<div class="inside-article">
+			<?php do_action('totalpress_open_article_container'); ?>
 					<div class="entry-content" itemprop="text">
 	<?php 
 	}
@@ -33,8 +32,7 @@ endif;
 if ( ! function_exists('totalpress_woocommerce_end')) :
 	function totalpress_woocommerce_end() { ?>
 					</div><!-- .entry-content -->
-				</div><!-- .inside-article -->
-			</article><!-- article -->
+			<?php do_action('totalpress_close_article_container'); ?>
 		</main><!-- .site-main -->
 	</div><!-- #primary -->
 	<?php
