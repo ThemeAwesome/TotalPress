@@ -1,5 +1,4 @@
-TotalPress
-===
+# TotalPress #
 
 [![TotalPress Screenshot](https://raw.githubusercontent.com/ThemeAwesome/TotalPress/master/screenshot.png)](https://themeawesome.com/themes/totalpress)
 
