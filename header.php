@@ -1,14 +1,7 @@
-<?php /* @version 1.0.4 */
-if ( ! defined('ABSPATH')) exit; ?><!DOCTYPE html>
-<html <?php language_attributes(); ?> class="no-js">
-<head>
-<meta charset="<?php bloginfo('charset'); ?>">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<link rel="profile" href="http://gmpg.org/xfn/11">
-<?php wp_head(); ?>
-</head>
-
-<body <?php totalpress_body_schema();?> <?php body_class(); ?>><section><a class="skip-link screen-reader-text" href="#content"><?php esc_html_e('Skip to content','totalpress'); ?></a></section>
+<?php /* @version 1.0.5 */
+if ( ! defined('ABSPATH')) exit; ?>
+<?php do_action('totalpress_start_theme') ;?>
+<?php do_action('totalpress_open_body'); ?>
 <?php do_action('totalpress_before_header'); ?>
 <?php do_action('totalpress_top_sidebar'); ?>
 <?php do_action('totalpress_header'); ?>

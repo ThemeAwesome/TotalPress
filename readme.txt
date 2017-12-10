@@ -2,7 +2,7 @@
 Tags: blog, one-column, two-columns, three-columns, right-sidebar, left-sidebar, footer-widgets, custom-background, flexible-header, custom-menu, editor-style, featured-images, full-width-template, microformats, post-formats, sticky-post, translation-ready, theme-options, custom-logo, custom-colors
 Requires at least: 4.9.1
 Tested up to: 4.91
-Stable tag: 1.0.4
+Stable tag: 1.0.5
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -44,6 +44,10 @@ All of the components used in the creation of TotalPress are licensed as follows
 * Metabox code was created using Meta Box Generator over at GenerateWP https://generatewp.com/
 
 == Changelog ==
+
+= 1.0.5 =
+* Turned all the loops into hooks for easier modification.
+* moved all html into hooks as well, still have a few files with html in them. That is for 1.0.6
 
 = 1.0.4 =
 * Changed the order of the sidebars to reflect a "top down" approach.

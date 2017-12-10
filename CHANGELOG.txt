@@ -2,18 +2,23 @@ Theme Name: TotalPress
 Tags: blog, one-column, two-columns, three-columns, right-sidebar, left-sidebar, footer-widgets, custom-background, flexible-header, custom-menu, editor-style, featured-images, full-width-template, microformats, post-formats, sticky-post, translation-ready, theme-options, custom-logo, custom-colors
 Requires at least: 4.9.1
 Tested up to: 4.9.1
-Stable tag: 1.0.4
+Stable tag: 1.0.5
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
 == Changelog ==
+
+= 1.0.5 =
+* Turned all the loops into hooks for easier modification.
+* moved all html into hooks as well, still have a few files with html in them. That is for 1.0.6
+
 
 = 1.0.4 =
 * Changed the order of the sidebars to reflect a "top down" approach.
 * renamed sidebar-1 and sidebar-2 in functions.php, sidebar-1 is now content sidebar one and sidebar-2 is now content sidebar two. Someone pointed out to me that right and left sidebars do not matter on mobile as the content is stacked. Made sense so I changed the names.
 
 = 1.0.3.1 =
-*corrected an issue with a PHP short tag in one of the files.
+* corrected an issue with a PHP short tag in one of the files.
 
 = 1.0.3 =
 * Removed admin.css. It was not being used.

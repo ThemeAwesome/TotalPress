@@ -1,4 +1,4 @@
-/* @version 1.0.4 */
+/* @version 1.0.5 */
 jQuery(document).foundation();
 
 	// Add button class submit buttons in the theme

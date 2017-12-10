@@ -1,7 +1,7 @@
-TotalPress 1.0.4
+TotalPress 1.0.5
 ====================
 
-### Updated December 5, 2017
+### Updated December 9, 2017
 
 Hello world, I'm TotalPress! I'm Based off _s (Underscores) and I also come with Zurb's Foundation for Sites fully integrated. What makes me awesome? I am fully responsive, meaning I adjust seamlessly to any screen resolution so I look good on any device. There's Schema microdata built in for posts and pages, I've got 9 widget areas built in as well as 6 different sidebar page templates. Did I mention hooks and filters? I got a ton of those. Another reason I'm awesome is I use the Kirki plugin. The Kirki plugin provides 30 custom control types for the theme customizer ranging from simple sliders and tooltips to complex typography controls including Google-Fonts. Kirki makes developing themes a lot faster and easier for developers and more meaningful for users. I also work really well with page builders like Elementor, Site Origin and many others. So what are you waiting for? Download me now and take me for a spin.
 
@@ -27,7 +27,7 @@ Support
 [TotalPress Support Forums](https://github.com/ThemeAwesome/TotalPress/issues) - For now, if you if you run into issues, you can post your questions/issues there.
 
 ### TotalPress was built with the following tools
-* [WordPress Beta Tester](https://make.wordpress.org/core/handbook/testing/beta/) - This ensures TotalPress is future proof. It also ensures that I use the latest bleeding edge nightlies of WordPress. As of this update the latest version is **5.0-alpha-42191**.
+* [WordPress Beta Tester](https://make.wordpress.org/core/handbook/testing/beta/) - This ensures TotalPress is future proof. It also ensures that I use the latest bleeding edge nightlies of WordPress. As of this update the latest version is **5.0-alpha-42380**.
 * [WordPress Theme Standards](http://codex.wordpress.org/Theme_Development) - A list of standards that all themes should be coded with set forth by WordPress.
 * [WP-Test](http://wptest.io/) - An exhaustive set of test data that was developed over three years to measure the integrity of themes and plugins.
 * [Debug Bar](http://wordpress.org/plugins/debug-bar/) - a debugging menu added to the admin bar that quickly shows query, cache, and other helpful debugging information.

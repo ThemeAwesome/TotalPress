@@ -1,4 +1,4 @@
-<?php /* @version 1.0.4 */
+<?php /* @version 1.0.5 */
 if ( ! defined('ABSPATH')) exit;
 get_header(); ?>
 	<div id="primary" class="content-area-404 small-12 cell">

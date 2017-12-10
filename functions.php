@@ -1,4 +1,4 @@
-<?php /* @version 1.0.4 */
+<?php /* @version 1.0.5 */
 if ( ! defined('ABSPATH')) exit;
 define('TOTALPRESS_VERSION','1.0.2');
 define('TOTALPRESS_URI',get_template_directory_uri());
@@ -60,15 +60,14 @@ if ( ! function_exists('setup_totalpress') ) :
 endif; //setup_totalpress
 
 // Load files we need
+require_once TOTALPRESS_DIR . '/assets/inc/template-functions.php';
 require_once TOTALPRESS_DIR . '/assets/inc/tgm-plugin-activation/class-tgm-plugin-activation.php';
-require TOTALPRESS_DIR . '/assets/inc/tgm-config.php';
-require TOTALPRESS_DIR . '/assets/inc/include_kirki.php';
-require TOTALPRESS_DIR . '/assets/customizer/customizer.php';
-require TOTALPRESS_DIR . '/assets/inc/metaboxes.php';
-require TOTALPRESS_DIR . '/assets/inc/extras.php';
-require TOTALPRESS_DIR . '/assets/inc/template-tags.php';
-require TOTALPRESS_DIR . '/assets/inc/plugin-support.php';
-//require TOTALPRESS_DIR . '/assets/inc/hook-tests.php';
+require_once TOTALPRESS_DIR . '/assets/inc/tgm-config.php';
+require_once TOTALPRESS_DIR . '/assets/inc/include_kirki.php';
+require_once TOTALPRESS_DIR . '/assets/customizer/customizer.php';
+require_once TOTALPRESS_DIR . '/assets/inc/metaboxes.php';
+require_once TOTALPRESS_DIR . '/assets/inc/extras.php';
+require_once TOTALPRESS_DIR . '/assets/inc/plugin-support.php';
 
 // enqueue scripts and styles.
 if ( ! function_exists('totalpress_scripts')) :
