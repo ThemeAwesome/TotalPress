@@ -38,7 +38,7 @@ Changelog
 * moved all html into hooks as well, still have a few files with html in them. That is for 1.0.6
 
 
-###### [1.0.4] 2017-12-5 ######
+###### [1.0.4] 2017-12-05 ######
 
 * Changed the order of the sidebars to reflect a "top down" approach.
 * renamed sidebar-1 and sidebar-2 in functions.php, sidebar-1 is now content sidebar one and sidebar-2 is now content sidebar two. Someone pointed out to me that right and left sidebars do not matter on mobile as the content is stacked. Made sense so I changed the names.
@@ -68,6 +68,6 @@ Changelog
 * Removed an extra occurance of "add_theme_support('post-thumbnails');" which was located on line 31 of functions.php
 * Added unique prefix for everything the Theme defines in the public namespace, including options, functions, global variables, constants, post meta, etc.
 
-###### [1.0.0] 2017-11-0 ######
+###### [1.0.0] 2017-11-02 ######
 
 * initial submission to the theme review team on 11/02/20175.0-alpha-42202
