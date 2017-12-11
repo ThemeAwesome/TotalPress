@@ -17,7 +17,7 @@ Hello world, I'm TotalPress! I'm Based off _s (Underscores) and I also come with
 
 ### Demo ###
 
-[TotalPress demo site](https://themeawesome.com/themes/totalpress/) - Check it out.
+[TotalPress Theme Demo](https://themeawesome.com/themes/totalpress/)
 
 Installation
 ===
@@ -31,44 +31,43 @@ Installation
 
 Changelog
 ===
-#### 1.0.6 ####
-* Removed `CHANGELOG.txt` file from the theme. One less file means overall smaller file size. Not by much. Changes will be available via the `README.md` file on the GitHub Repository.
 
-#### 1.0.5 ####
+#### [1.0.5] 2017-12-10 ####
 
 * Turned all the loops into hooks for easier modification.
 * moved all html into hooks as well, still have a few files with html in them. That is for 1.0.6
 
 
-#### 1.0.4 ####
+###### [1.0.4] 2017-12-5 ######
 
 * Changed the order of the sidebars to reflect a "top down" approach.
 * renamed sidebar-1 and sidebar-2 in functions.php, sidebar-1 is now content sidebar one and sidebar-2 is now content sidebar two. Someone pointed out to me that right and left sidebars do not matter on mobile as the content is stacked. Made sense so I changed the names.
 
-#### 1.0.3.1 ####
+###### [1.0.3.1] 2017-12-04 ######
 
 * corrected an issue with a PHP short tag in one of the files.
-
-#### 1.0.3 ####
-
 * Removed admin.css. It was not being used.
 * Corrected typo in the header sidebar area.
 * Added styles to top sidebar and footer sidebar so sub menu items will not display. Top Sidebar and Footer Sidebar menus are meant to be simple.
 * Adjusted the layout of the header. Also adjusted where some of the hooks were being displayed in the header as well as removed some hooks from the header.
 * Changed the name of the right sidebar from Main to Right Sidebar.
 
-#### 1.0.2 ####
+###### [1.0.3] 2017-12-04 ######
+
+* This version did not make it into the theme repo. There was an error with a PHP short tag being used in the theme.
+
+###### [1.0.2] 2017-11-16 ######
 
 * Corrected issue where certain options were not working due to the fact that i did not updated those functions when i added the unique names in 1.0.1
 * Adjusted a few css styles.
 * Changed the order of appearance in the customizer of Header Alignment.
 
-#### 1.0.1 ####
+###### [1.0.1] 2017-11-13 ######
 
 * Added CHANGELOG.txt file to keep track of changes made to the theme.
 * Removed an extra occurance of "add_theme_support('post-thumbnails');" which was located on line 31 of functions.php
 * Added unique prefix for everything the Theme defines in the public namespace, including options, functions, global variables, constants, post meta, etc.
 
-#### 1.0.0 ####
+###### [1.0.0] 2017-11-0 ######
 
 * initial submission to the theme review team on 11/02/20175.0-alpha-42202
