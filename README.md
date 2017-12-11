@@ -1,13 +1,13 @@
 # TotalPress #
 
-[![TotalPress Screenshot](https://raw.githubusercontent.com/ThemeAwesome/TotalPress/master/screenshot.png)](https://themeawesome.com/themes/totalpress)
+[![TotalPress Screenshot](https://raw.githubusercontent.com/ThemeAwesome/TotalPress/master/screenshot.png)](https://themeawesome.com/totalpress-wordpress-foundation-theme/)
 
 **Theme Name:** TotalPress<br />
 **Tags:** blog, one-column, two-columns, three-columns, right-sidebar, left-sidebar, footer-widgets, custom-background, flexible-header, custom-menu, editor-style, featured-images, full-width-template, microformats, post-formats, sticky-post, translation-ready, theme-options, custom-logo, custom-colors<br />
 **Donate:** [TotalPress Project](https://www.paypal.me/themeawesome)<br />
 **Requires at least:** 4.9.1<br />
 **Tested up to:** 5.0-alpha-42380<br />
-**Stable tag:** 1.0.6<br />
+**Stable tag:** 1.0.5<br />
 **License:** GNU General Public License v3.0<br />
 **License URI:** [http://www.gnu.org/licenses/gpl-3.0.html](http://www.gnu.org/licenses/gpl-3.0.html)<br />
 
@@ -31,6 +31,8 @@ Installation
 
 Changelog
 ===
+#### 1.0.6 ####
+* Removed `CHANGELOG.txt` file from the theme. One less file means overall smaller file size. Not by much. Changes will be available via the `README.md` file on the GitHub Repository.
 
 #### 1.0.5 ####
 
