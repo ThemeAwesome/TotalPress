@@ -1,18 +1,8 @@
-<?php /* @version 1.0.5 */
+<?php /* @version 1.0.6 */
 if ( ! defined('ABSPATH')) exit;
 get_header(); ?>
-	<div id="primary" class="content-area-404 small-12 cell">
-		<main id="main" class="site-main" role="main">
-			<section class="error-404 not-found">
-				<header class="page-header">
-					<h1 class="page-title" itemprop="headline"><?php echo apply_filters('totalpress_404_headline', __('Oops! Nothing was found.','totalpress')); ?></h1>
-				</header><!-- .page-header -->
-				<div class="page-content" itemprop="text">
-					<p><?php echo apply_filters('totalpress_404_text', __('Try doing another search, making sure that any spelling, cApitALiZaTiOn, and punctuation are correct.','totalpress')); ?></p>
-					<?php get_search_form(); ?>
-				</div><!-- .page-content -->
-			</section><!-- .error-404 -->
-		</main><!-- #main -->
-	</div><!-- #primary -->
+<?php do_action('totalpress_404_start') ;?>
+<?php do_action('totalpress_404_entry_content') ;?>
+<?php do_action('totalpress_404_end') ;?>
 <?php
 get_footer();

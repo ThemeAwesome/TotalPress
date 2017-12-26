@@ -1,8 +1,7 @@
-<?php
+<?php /* @version 1.0.6 */
 /**
  * Template Name: Content | Sidebar | Sidebar
  * Template Post Type: post, page, aside, audio, chat, gallery, image, link, quote, status, video
- * @version 1.0.5
  */
 if ( ! defined('ABSPATH')) exit;
 get_header(); ?>

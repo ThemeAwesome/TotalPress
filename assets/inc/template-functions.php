@@ -1,4 +1,4 @@
-<?php /* @version 1.0.5 */
+<?php /* @version 1.0.6 */
 if ( ! defined('ABSPATH')) exit;
 /**************************************
  * Start theme
@@ -231,32 +231,18 @@ if ( ! function_exists('totalpress_article_close_container')) :
 	add_action('totalpress_close_article_container','totalpress_article_close_container');
 endif;
 /**************************************
- * entry header - used to display titles on pages
- *************************************/
-if ( ! function_exists('totalpress_build_content_page_entry_header')) :
-	function totalpress_build_content_page_entry_header() { 
-	global $post; ?>
-		<header class="entry-header">	
-			<?php if (get_post_meta($post->ID,'page_options_hide_title',true)) {
-		   		the_title('<h1 class="entry-title hide" itemprop="headline">','</h1>');
-			  } else {
-		   		the_title('<h1 class="entry-title" itemprop="headline">','</h1>');
-			  } ?>
-		</header><!-- .entry-header -->
-	<?php
-	}
-	add_action('totalpress_content_page_entry_header','totalpress_build_content_page_entry_header');
-endif;
-/**************************************
  * Content entry header used to display titles on blog and archive pages ect.
  *************************************/
 if ( ! function_exists('totalpress_build_blog_entry_header')) :
 	function totalpress_build_blog_entry_header() { ?>
+	<?php do_action('totalpress_before_entry_header'); ?>
 	<header class="entry-header">
 		<?php do_action( 'totalpress_before_entry_title'); ?>
 		<?php the_title( sprintf( '<h2 class="entry-title" itemprop="headline"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
-		<?php totalpress_posted_on(); ?>
+		<?php do_action('totalpress_posted_on'); ?>
 	</header><!-- .entry-header -->
+	<?php do_action('totalpress_after_entry_header'); ?>
+	<?php do_action('totalpress_featured_image'); ?>
 	<?php
 	}
 	add_action('totalpress_blog_entry_header','totalpress_build_blog_entry_header');
@@ -267,17 +253,40 @@ endif;
 if ( ! function_exists('totalpress_content_single_entry_header')) :
 	function totalpress_content_single_entry_header() { 
 	global $post; ?>
+		<?php do_action('totalpress_before_entry_header'); ?>
 		<header class="entry-header">
-			<?php if (get_post_meta($post->ID,'page_options_hide_title',true)) {
+			<?php if (get_post_meta($post->ID,'totalpress_page_options_hide_title',true)) {
 		   		the_title('<h1 class="entry-title hide" itemprop="headline">','</h1>');
 			  } else {
 		   		the_title('<h1 class="entry-title" itemprop="headline">','</h1>');
 			  } ?>
-		<?php totalpress_posted_on(); ?>
+		<?php do_action('totalpress_posted_on'); ?>
 		</header><!-- .entry-header -->
+		<?php do_action('totalpress_after_entry_header'); ?>
+		<?php do_action('totalpress_featured_image_single'); ?>
 	<?php
 	}
 	add_action('totalpress_content_single_entry_header','totalpress_content_single_entry_header');
+endif;
+/**************************************
+ * entry header - used to display titles on pages
+ *************************************/
+if ( ! function_exists('totalpress_build_content_page_entry_header')) :
+	function totalpress_build_content_page_entry_header() { 
+	global $post; ?>
+		<?php do_action('totalpress_before_entry_header'); ?>
+		<header class="entry-header">	
+			<?php if (get_post_meta($post->ID,'totalpress_page_options_hide_title',true)) {
+		   		the_title('<h1 class="entry-title hide" itemprop="headline">','</h1>');
+			  } else {
+		   		the_title('<h1 class="entry-title" itemprop="headline">','</h1>');
+			  } ?>
+		</header><!-- .entry-header -->
+		<?php do_action('totalpress_after_entry_header'); ?>
+		<?php do_action('totalpress_featured_image_single'); ?>
+	<?php
+	}
+	add_action('totalpress_content_page_entry_header','totalpress_build_content_page_entry_header');
 endif;
 /**************************************
  * Show entry content - used in content-page.php and content single.php
@@ -352,13 +361,57 @@ endif;
 if ( ! function_exists('totalpress_build_page_loop')) :
 	function totalpress_build_page_loop() { ?>
 		<?php while ( have_posts() ) : the_post(); ?>
-			<?php get_template_part('template-parts/post/content','single'); ?>
+			<?php get_template_part('template-parts/page/content','page'); ?>
 		<?php if ( comments_open() || '0' != get_comments_number() ) : comments_template(); endif; ?>
 		<?php endwhile; ?>
 	<?php
 	}
 	add_action('totalpress_page_loop','totalpress_build_page_loop');
 endif;
+
+/**************************************
+ * 404 opening containers - used in 404.php
+ *************************************/
+if ( ! function_exists('totalpress_build_404_start')) :
+	function totalpress_build_404_start() { ?>
+		<div id="primary" class="content-area-404 small-12 cell">
+			<main id="main" class="site-main" role="main">
+				<section class="error-404 not-found">
+	<?php
+	}
+	add_action('totalpress_404_start','totalpress_build_404_start');
+endif;
+
+/**************************************
+ * 404 entry content - used in 404.php
+ *************************************/
+if ( ! function_exists('totalpress_build_404_entry_content')) :
+	function totalpress_build_404_entry_content() { ?>
+		<header class="page-header">
+			<h1 class="page-title" itemprop="headline"><?php echo apply_filters('totalpress_404_headline', __('Sorry! Nothing was found.','totalpress')); ?></h1>
+		</header><!-- .page-header -->
+		<div class="page-content" itemprop="text">
+			<p><?php echo apply_filters('totalpress_404_text', __('Try doing another search, making sure that any spelling, cApitALiZaTiOn, and punctuation are correct.','totalpress')); ?></p>
+			<?php get_search_form(); ?>
+		</div><!-- .page-content -->
+	<?php
+	}
+	add_action('totalpress_404_entry_content','totalpress_build_404_entry_content');
+endif;
+
+/**************************************
+ * 404 closing containers - used in 404.php
+ *************************************/
+if ( ! function_exists('totalpress_build_404_end')) :
+	function totalpress_build_404_end() { ?>
+				</section><!-- .error-404 -->
+			</main><!-- #main -->
+		</div><!-- #primary -->
+	<?php
+	}
+	add_action('totalpress_404_end','totalpress_build_404_end');
+endif;
+
 /**************************************
  * Search loop - used in search.php
  *************************************/
@@ -475,18 +528,10 @@ endif;
  * featured image: shows on single post/pages - not linked
  *************************************/
 if ( ! function_exists('totalpress_build_featured_image_single')) :
-	function totalpress_build_featured_image_single() {
-	// get current post
-	global $post; ?>
-		<?php if (get_post_meta($post->ID,'page_options_hide_featured_image',true)): ?>
-			<div class="post-image hide">
-				<?php the_post_thumbnail('full',array('itemprop' => 'image')); ?>
-			</div><!-- .post-image -->
-		<?php else: ?>
-			<div class="post-image">
-				<?php the_post_thumbnail('full',array('itemprop' => 'image')); ?>
-			</div><!-- .post-image -->
-		<?php endif; ?>
+	function totalpress_build_featured_image_single() { ?>
+		<div class="post-image">
+			<?php the_post_thumbnail('full',array('itemprop' => 'image')); ?>
+		</div><!-- .post-image -->
 	<?php
 	}
 	add_action('totalpress_featured_image_single','totalpress_build_featured_image_single');

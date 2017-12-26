@@ -1,6 +1,6 @@
-<?php /* @version 1.0.5 */
+<?php /* @version 1.0.6 */
 if ( ! defined('ABSPATH')) exit;
-define('TOTALPRESS_VERSION','1.0.2');
+define('TOTALPRESS_VERSION','1.0.6');
 define('TOTALPRESS_URI',get_template_directory_uri());
 define('TOTALPRESS_DIR',get_template_directory());
 //Sets up theme defaults and registers support for various WordPress features.
@@ -25,12 +25,14 @@ if ( ! function_exists('setup_totalpress') ) :
 		add_theme_support('automatic-feed-links');
 		//Enable support for Post Thumbnails on posts and pages.
 		add_theme_support('post-thumbnails');
-		set_post_thumbnail_size(840, 9999); // Unlimited height, soft crop
+		set_post_thumbnail_size(785, 9999); // Unlimited height, soft crop
+		//Full width image size added for featured image support in pages
+		add_image_size('full-width-thumb', 1200, 9999); // Fixed width, Unlimited height, soft crop
 		// Register any menus
 		register_nav_menus( array(
 			'primary' => esc_html__('Main Menu','totalpress'), ));
 		// Full width image size added for featured image support in pages
-		add_image_size('full-width-thumb',1200,9999 ); // Fixed width, Unlimited height, soft crop
+		add_image_size('full-width-thumb', 1200, 9999); // Fixed width, Unlimited height, soft crop
 		// Enable support for Post Formats
 		add_theme_support('post-formats', array('aside','audio','chat','gallery','image','link','quote','status','video'));
 		// Enable support for WooCommerce
@@ -40,7 +42,7 @@ if ( ! function_exists('setup_totalpress') ) :
 		// Switch default core markup for search form, comment form, and comments
 		add_theme_support('html5', array('search-form','comment-form','comment-list','gallery','caption',));
 		// add support for custom logo
-		add_theme_support('custom-logo', array('height' => 70,'width' => 350,'flex-width' => true,'flex-height' => true, ));
+		add_theme_support('custom-logo', array('height' => 70,'width' => 350,'flex-width' => true,'flex-height' => true,));
 		// Add support for custom background
 		add_theme_support('custom-background',apply_filters('totalpress_custom_background_args', array(
 			'default-color' => 'efefef',)));
@@ -72,11 +74,7 @@ require_once TOTALPRESS_DIR . '/assets/inc/plugin-support.php';
 // enqueue scripts and styles.
 if ( ! function_exists('totalpress_scripts')) :
 	function totalpress_scripts() {
-		wp_enqueue_style('font-awesome',TOTALPRESS_URI . '/assets/css/font-awesome.css','',TOTALPRESS_VERSION );
-		wp_enqueue_style('foundation',TOTALPRESS_URI . '/assets/css/foundation.css','',TOTALPRESS_VERSION );
-		wp_enqueue_style('motion-ui',TOTALPRESS_URI . '/assets/css/motion-ui.css','',TOTALPRESS_VERSION );
 		wp_enqueue_style('totalpress',get_stylesheet_uri(),'',TOTALPRESS_VERSION );
-		wp_enqueue_style('media-query',TOTALPRESS_URI . '/assets/css/media-query.css','',TOTALPRESS_VERSION );
 		wp_enqueue_script('what-input',TOTALPRESS_URI.'/assets/js/what-input.js',array('jquery'),TOTALPRESS_VERSION,true);
 		wp_enqueue_script('foundation',TOTALPRESS_URI.'/assets/js/foundation.js',array('jquery'),TOTALPRESS_VERSION,true);
 		wp_enqueue_script ('app',TOTALPRESS_URI.'/assets/js/app.js',array('foundation'),TOTALPRESS_VERSION,true);
@@ -199,7 +197,6 @@ if ( ! function_exists('totalpress_article_schema')) :
 		echo "itemtype='http://schema.org/$itemtype' itemscope='itemscope'";
 	}
 endif;
-
 // Top-Bar Menu Walker
 class TotalPress_Topbar_Menu_Walker extends Walker_Nav_Menu {
     function start_lvl(&$output, $depth = 0, $args = Array() ) {

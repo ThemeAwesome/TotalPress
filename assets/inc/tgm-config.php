@@ -1,25 +1,19 @@
-<?php 
-/* @version 1.0.5 */
-
-/**
- * TGM Plugin Activation Configuration
- */
-
+<?php /* @version 1.0.6 */
+// TGM Plugin Activation Configuration
 function totalpress_require_plugins() {
- 
  	//Plugins
     $plugins = array( 
     	array(
-			'name'     				=> esc_html( 'Kirki Plugin', 'totalpress' ),
+			'name'     				=> esc_html('Kirki Plugin','totalpress'),
 			'slug'     				=> 'kirki',
-			'required' 				=> false,
-			'version' 				=> '',
-			'force_activation' 		=> false,
-			'force_deactivation' 	=> false,
-			'external_url' 			=> '',
+			'required' 				=> true,
+		),
+    	array(
+			'name'     				=> esc_html('Meta Box','totalpress'),
+			'slug'     				=> 'meta-box',
+			'required' 				=> true,
 		)
 	);
-
     //Configs
     $config = array( 
     	'id'           => 'totalpress',            // Unique ID for hashing notices for multiple instances of TGMPA.
@@ -31,9 +25,7 @@ function totalpress_require_plugins() {
 		'is_automatic' => false,                   // Automatically activate plugins after installation or not.
 		'message'      => '',                      // Message to output right before the plugins table.
     );
- 
-    tgmpa( $plugins, $config );
- 
-}
 
-add_action( 'tgmpa_register', 'totalpress_require_plugins' );
+    tgmpa( $plugins, $config );
+}
+add_action('tgmpa_register','totalpress_require_plugins');
