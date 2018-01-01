@@ -1,4 +1,4 @@
-<?php /* @version 1.0.6 */
+<?php /* @version 1.0.7 */
 if ( ! defined('ABSPATH')) exit;
 if ( post_password_required() ) {
 	return; } ?>

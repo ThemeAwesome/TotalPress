@@ -2,7 +2,7 @@
 Tags: blog, one-column, two-columns, three-columns, right-sidebar, left-sidebar, footer-widgets, custom-background, flexible-header, custom-menu, editor-style, featured-images, full-width-template, microformats, post-formats, sticky-post, translation-ready, theme-options, custom-logo, custom-colors
 Requires at least: 4.9.1
 Tested up to: 5.0-alpha-42419
-Stable tag: 1.0.6
+Stable tag: 1.0.7
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -12,22 +12,26 @@ Hello world, I'm TotalPress! I'm Based off _s (Underscores) and I also come with
 
 == Installation ==
 
-1. In your admin panel, go to Appearance > Themes and click the Add New button.
-2. Click Upload and Choose File, then select the theme's .zip file. Click Install Now.
-3. Click Activate to start using TotalPress.
-4. Once you have activated TotalPress, you will be promted by the TGM Plugin to install the Kirki Plugin: This theme recommends the following plugin: Kirki Plugin.
-5. You will also be promted in the customizer screen to install and activate the Kirki plugin.
-6. Keep in mind that if you you do not install the Kirki Plugin you will not be able to see or take advantage of the Theme Options section in the customizer.
-7. Once you have installed and activated the Kirki Plugin, go to Appearance > Customizer > Theme Options to start customizing your site.
+1. In your admin panel, go to `Appearance > Themes` and click the "Add New" button.
+2. Use the Search or Filter options to locate the TotalPress theme or click `Upload Theme`, then click "Choose File", then select the TotalPress's ZIP file. Click Install Now.
+3. Click Activate to start using Totalpress.
+4. Once you have activated TotalPress, you will be promted by the TGM Plugin to install the Kirki Plugin, as well as the the Meta Box Plugin. You will be promted to do so with the following message: "This theme requires the following plugins: Kirki Plugin and Meta Box".
+5. Keep in mind that if you do not install either one of these plugins, you will not be able to see the "Theme Options" section in the customizer nor will you will see the metaboxes in the post/page editor..
+6. Once you have installed and activated the Kirki Plugin, go to `Appearance > Customizer > Theme Options` and start customizing your site.
+7. Once you have installed the Meta Box plugin, you will see an additional metabox below the editor. This is a tabbed metabox called TotalPress Post/Page Options.
 
 == Frequently Asked Questions ==
-- Question: Why do I need to install the Kirki Plugin
+- Question: Why do I need to install the Kirki Plugin?
 - Answer: The Kirki Plugin provides a set of customizer controls that were built using WordPress standards. Without the Kirki plugin, you will not have access to the TotalPress theme options in the customizer.
+
+- Question: Why do I need to install the Meta Box Plugin?
+- Answer: The Meta Box plugin provides an easier way for developers to create, maintain and present custom meta boxes and custom fields to the user.
 
 = Supported Plugins =
 
-* Jetpack Infinite Scroll.
 * WooCommerce
+* Yoast SEO
+* Jetpack Infinite Scroll
 
 == License ==
 All of the components used in the creation of TotalPress are licensed as follows:
@@ -41,7 +45,7 @@ All of the components used in the creation of TotalPress are licensed as follows
 == Credits ==
 
 * Some of the code (a very small amount) used in TotalPress was derived from the GeneratePress theme created by Tom Usborne https://wordpress.org/themes/generatepress/ - GPLv2 or later, https://www.gnu.org/licenses/gpl-2.0.html - You created a very nice theme Tom. Thanks for the inspiration.
-* Metabox code was created using the online generator of MetaBox.io, https://metabox.io/ to work with thier Meta Box Plugin, https://wordpress.org/plugins/meta-box/
+* Metaboxes were created using the "Meta Box PLugin" as well as the "Meta Box Builder" plugin extension, both from MetaBox.io. If you would like more inforamtion please visit the following: https://wordpress.org/plugins/meta-box/ and https://metabox.io/plugins/meta-box-builder/
 
 == Changelog ==
 

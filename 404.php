@@ -1,4 +1,4 @@
-<?php /* @version 1.0.6 */
+<?php /* @version 1.0.7 */
 if ( ! defined('ABSPATH')) exit;
 get_header(); ?>
 <?php do_action('totalpress_404_start') ;?>

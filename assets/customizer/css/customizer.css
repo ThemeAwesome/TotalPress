@@ -1,22 +1,10 @@
-/* @version 1.0.6 */
+/* @version 1.0.7 */
 #customize-theme-controls .customize-pane-child.current-section-parent,
-.in-sub-panel #customize-theme-controls .customize-pane-child.current-panel-parent{
-	-webkit-transform:translateX(-100%);
-	-ms-transform:translateX(-100%);
+.in-sub-panel #customize-theme-controls .customize-pane-child.current-panel-parent{	-webkit-transform:translateX(-100%);-ms-transform:translateX(-100%);
 	transform:translateX(-100%)}
-#customize-controls .description,
-li.customize-section-description-container .description{
-	font-size:12px}
-.customize-control-title,
-.tooltip-wrapper .tooltip-content.open{
-	font-size:12px}
-.customize-control-kirki-radio-buttonset .buttonset .switch-input:checked+.switch-label,
-.customize-control-kirki-switch .switch input:checked+label{
-	background:#3f3f3f}
-.tooltip-wrapper .tooltip-content{
-	z-index:9999999!important}
-#customize-control-blogdescription,
-#customize-control-blogname{
-	margin-bottom:0!important}
-.customize-control-kirki-switch .switch-off{
-	display:inline-block;float:right;}
+#customize-controls .description,li.customize-section-description-container .description{font-size:12px}
+.customize-control-title,.tooltip-wrapper .tooltip-content.open{font-size:12px}
+.customize-control-kirki-radio-buttonset .buttonset .switch-input:checked+.switch-label,.customize-control-kirki-switch .switch input:checked+label{background:#3f3f3f}
+.tooltip-wrapper .tooltip-content{z-index:9999999!important}
+#customize-control-blogdescription,#customize-control-blogname{margin-bottom:0!important}
+.customize-control-kirki-switch .switch-off{display:inline-block;float:right;}

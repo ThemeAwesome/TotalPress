@@ -1,4 +1,4 @@
-<?php /* @version 1.0.6 */
+<?php /* @version 1.0.7 */
 // TGM Plugin Activation Configuration
 function totalpress_require_plugins() {
  	//Plugins

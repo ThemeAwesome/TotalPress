@@ -1,4 +1,4 @@
-<?php /* @version 1.0.6 */
+<?php /* @version 1.0.7 */
 if ( ! defined('ABSPATH')) exit;
 TotalPress_Kirki::add_section( 'totalpress_header_section', array(
     'title'       => esc_attr__('Header Layout','totalpress'),
@@ -42,7 +42,7 @@ TotalPress_Kirki::add_field('totalpress_theme_customizer',array(
 	'label'       => esc_attr__('Header Alignment','totalpress'),
 	'tooltip'     => esc_attr__('Set the alignment of the Header area.','totalpress'),
 	'default'     => 'left',
-	'priority'    => 999,
+	'priority'    => 6,
 	'transport'   => 'auto',
 	'choices'     => array(
 		'left'   => esc_attr__('Left','totalpress'),

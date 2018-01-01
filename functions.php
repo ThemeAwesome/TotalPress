@@ -1,6 +1,6 @@
-<?php /* @version 1.0.6 */
+<?php /* @version 1.0.7 */
 if ( ! defined('ABSPATH')) exit;
-define('TOTALPRESS_VERSION','1.0.6');
+define('TOTALPRESS_VERSION','1.0.7');
 define('TOTALPRESS_URI',get_template_directory_uri());
 define('TOTALPRESS_DIR',get_template_directory());
 //Sets up theme defaults and registers support for various WordPress features.
@@ -31,8 +31,6 @@ if ( ! function_exists('setup_totalpress') ) :
 		// Register any menus
 		register_nav_menus( array(
 			'primary' => esc_html__('Main Menu','totalpress'), ));
-		// Full width image size added for featured image support in pages
-		add_image_size('full-width-thumb', 1200, 9999); // Fixed width, Unlimited height, soft crop
 		// Enable support for Post Formats
 		add_theme_support('post-formats', array('aside','audio','chat','gallery','image','link','quote','status','video'));
 		// Enable support for WooCommerce
@@ -70,10 +68,12 @@ require_once TOTALPRESS_DIR . '/assets/customizer/customizer.php';
 require_once TOTALPRESS_DIR . '/assets/inc/metaboxes.php';
 require_once TOTALPRESS_DIR . '/assets/inc/extras.php';
 require_once TOTALPRESS_DIR . '/assets/inc/plugin-support.php';
+require_once TOTALPRESS_DIR . '/assets/extensions/meta-box-tabs/meta-box-tabs.php';
 
 // enqueue scripts and styles.
 if ( ! function_exists('totalpress_scripts')) :
 	function totalpress_scripts() {
+		wp_enqueue_script('fa-brands',TOTALPRESS_URI.'/assets/fonts/fa-brands.js',array('jquery'),TOTALPRESS_VERSION,false);
 		wp_enqueue_style('totalpress',get_stylesheet_uri(),'',TOTALPRESS_VERSION );
 		wp_enqueue_script('what-input',TOTALPRESS_URI.'/assets/js/what-input.js',array('jquery'),TOTALPRESS_VERSION,true);
 		wp_enqueue_script('foundation',TOTALPRESS_URI.'/assets/js/foundation.js',array('jquery'),TOTALPRESS_VERSION,true);

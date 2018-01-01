@@ -1,4 +1,4 @@
-<?php /* @version 1.0.6 */
+<?php /* @version 1.0.7 */
 if ( ! defined('ABSPATH')) exit;
 
 if ( class_exists('WP_Customize_Panel')) {
@@ -108,49 +108,49 @@ if ( ! function_exists('totalpress_customize_register')) :
     $wp_customize->add_panel( $totalpress_theme_options );
 
         $totalpress_general_options = new TotalPress_WP_Customize_Panel($wp_customize,'totalpress_general_options',array(
-          'title' => __('General Options','totalpress'),
+          'title' => __('General','totalpress'),
           'panel' => 'totalpress_theme_options',
           'priority' => 1,
         ));
         $wp_customize->add_panel($totalpress_general_options);
 
         $totalpress_top_sidebar_options = new TotalPress_WP_Customize_Panel($wp_customize,'totalpress_top_sidebar_options',array(
-          'title' => __('Top Sidebar Options','totalpress'),
+          'title' => __('Top Sidebar','totalpress'),
           'panel' => 'totalpress_theme_options',
           'priority' => 2,
         ));
         $wp_customize->add_panel($totalpress_top_sidebar_options);
 
         $totalpress_header_options = new TotalPress_WP_Customize_Panel($wp_customize,'totalpress_header_options',array(
-          'title' => __('Header Options','totalpress'),
+          'title' => __('Header','totalpress'),
           'panel' => 'totalpress_theme_options',
           'priority' => 3,
         ));
         $wp_customize->add_panel($totalpress_header_options);
 
         $totalpress_header_sidebar_options = new TotalPress_WP_Customize_Panel($wp_customize,'totalpress_header_sidebar_options',array(
-          'title' => __('Header Sidebar Options','totalpress'),
+          'title' => __('Header Sidebar','totalpress'),
           'panel' => 'totalpress_theme_options',
           'priority' => 4,
         ));
         $wp_customize->add_panel($totalpress_header_sidebar_options);
 
         $totalpress_navigation_options = new TotalPress_WP_Customize_Panel($wp_customize,'totalpress_navigation_options',array(
-          'title' => __('Navigation Options','totalpress'),
+          'title' => __('Navigation','totalpress'),
           'panel' => 'totalpress_theme_options',
           'priority' => 5,
         ));
         $wp_customize->add_panel($totalpress_navigation_options);
 
         $totalpress_content_options = new TotalPress_WP_Customize_Panel($wp_customize,'totalpress_content_options',array(
-          'title' => __('Content Options','totalpress'),
+          'title' => __('Content','totalpress'),
           'panel' => 'totalpress_theme_options',
           'priority' => 6,
         ));
         $wp_customize->add_panel($totalpress_content_options);
 
               $totalpress_blog_options = new TotalPress_WP_Customize_Panel($wp_customize,'totalpress_blog_options',array(
-                'title' => __('Blog Options','totalpress'),
+                'title' => __('Posts','totalpress'),
                 'panel' => 'totalpress_content_options',
                 'priority' => 1,
               ));
@@ -159,21 +159,21 @@ if ( ! function_exists('totalpress_customize_register')) :
         // Load these panels if TP-Primo is active
         if ( is_plugin_active( 'tp-primo/tp-primo.php' ) ) {
           $totalpress_page_options = new TotalPress_WP_Customize_Panel($wp_customize,'totalpress_page_options',array(
-            'title' => __('Page Options','totalpress'),
+            'title' => __('Pages','totalpress'),
             'panel' => 'totalpress_content_options',
             'priority' => 2,
           ));
           $wp_customize->add_panel($totalpress_page_options);
 
           $totalpress_main_sidebar_options = new TotalPress_WP_Customize_Panel($wp_customize,'totalpress_main_sidebar_options',array(
-            'title' => __('Main Sidebar Options','totalpress'),
+            'title' => __('Conten Sidebar One','totalpress'),
             'panel' => 'totalpress_theme_options',
             'priority' => 7,
           ));
           $wp_customize->add_panel($totalpress_main_sidebar_options);
 
           $totalpress_left_sidebar_options = new TotalPress_WP_Customize_Panel($wp_customize,'totalpress_left_sidebar_options',array(
-            'title' => __('Left Sidebar Options','totalpress'),
+            'title' => __('Content Sidebar Two','totalpress'),
             'panel' => 'totalpress_theme_options',
             'priority' => 8,
           ));
@@ -181,14 +181,14 @@ if ( ! function_exists('totalpress_customize_register')) :
         }
 
         $totalpress_footer_widget_options = new TotalPress_WP_Customize_Panel($wp_customize,'totalpress_footer_widget_options',array(
-          'title' => __('Footer Widget Options','totalpress'),
+          'title' => __('Footer Widgets','totalpress'),
           'panel' => 'totalpress_theme_options',
           'priority' => 9,
         ));
         $wp_customize->add_panel($totalpress_footer_widget_options);
 
         $totalpress_footer_options = new TotalPress_WP_Customize_Panel($wp_customize,'totalpress_footer_options',array(
-          'title' => __('Footer Options','totalpress'),
+          'title' => __('Footer','totalpress'),
           'panel' => 'totalpress_theme_options',
           'priority' => 10,
         ));

@@ -13,7 +13,7 @@
 
 Description
 ===
-Hello world, I'm TotalPress! I'm Based off _s (Underscores) and I also come with Zurb's Foundation for Sites fully integrated. What makes me awesome? I am fully responsive, meaning I adjust seamlessly to any screen resolution so I look good on any device. I've got a ton of hooks and filters, I've got ten (10) widget areas built in as well as 6 different sidebar page templates. I use the Kirki plugin. Kirki provides 30 custom control types for the theme customizer ranging from simple sliders and tooltips to complex typography controls including Google-Fonts. Kirki makes developing themes a lot faster and easier for developers and more meaningful for users. I also use the Meta Box plugin which is a powerful, professional toolkit for developers to create and handle everything related to custom meta boxes and custom fields for WordPress. I also work really well with page builders like Elementor. So what are you waiting for? Get to downloading and take me for a spin.
+Hello world, meet TotalPress! I'm Based off _s (Underscores) and I also come with Zurb's Foundation for Sites fully integrated. What makes me awesome? I am small and fast **(I'm just 387kb compressed)**. I am fully responsive, meaning I adjust seamlessly to any screen resolution so I look good on any device. I've got a ton of hooks and filters, I've got ten (10) widget areas built in as well as 6 different sidebar page templates. I use [Kirki Plugin](https://wordpress.org/plugins/kirki/). Kirki provides 30 custom control types for the theme customizer ranging from simple sliders and tooltips to complex typography controls including Google-Fonts. Kirki makes developing themes a lot faster and easier for developers and more meaningful for users. I also use the [Meta Box Plugin](https://wordpress.org/plugins/meta-box/) which is a powerful, professional toolkit for developers to create and handle everything related to custom meta boxes and custom fields for WordPress. Did I mention that I work really well with page builders like Elementor. So what are you waiting for? Get to downloading and take me for a spin.
 
 ### Demo ###
 
@@ -24,14 +24,25 @@ Installation
 * In your admin panel, go to `Appearance > Themes` and click the `Add New` button.
 * Use the Search or Filter options to locate the TotalPress theme or click `Upload Theme`, then click `Choose File`, then select the TotalPress's ZIP file. Click Install Now.
 * Click Activate to start using Totalpress.
-* Once you have activated TotalPress, you will be promted by the TGM Plugin to install the [Kirki Plugin](https://wordpress.org/plugins/kirki/): `This theme recommends the following plugin: Kirki Plugin`.
-* If you you do not install the Kirki Plugin you will not be able to see or take advantage of the `Theme Options` section in the customizer.
+* Once you have activated TotalPress, you will be promted by the TGM Plugin to install the [Kirki Plugin](https://wordpress.org/plugins/kirki/) as well as the the [Meta Box Plugin](https://wordpress.org/plugins/meta-box/): `This theme requires the following plugins: Kirki Plugin and Meta Box.`.
+* Keep in mind that if you do not install either one of these plugins, you will not be able to see the `Theme Options` section in the customizer nor will you will see the metaboxes in the post/page editor..
 * Once you have installed and activated the Kirki Plugin, go to `Appearance > Customizer > Theme Options` and start customizing your site.
+* Once you have installed the Meta Box plugin, you will see an additional metabox below the editor. This is a tabbed metabox called TotalPress Post/Page Options.
 
 
 Changelog
 ===
-### [1.0.6] 2017-26-17 ###
+### [1.0.7] 2018-01-01
+* Rewrote the installation instructions above, as well as in the `README.txt` file
+* Updated Font-Awesome to 5.0.2 - Using `fa-brands.js` for the social icons.
+* Removed the `Font-Awesome` css from `style.css`, also removed all of the `Font-Awesome` web fonts. Now the only file in the `fonts` folder is `fa-brands.js`. This has reduced the size of the theme significantly. ***387kb compressesd!***
+* Changed the `Back To Top` arrow from a Font-Awesome directional arrow to a regular up arrow using css.
+* Removed the word `Options` from the titles of the option panels in the customizer.
+* Removed `global $post` and `$post->ID` so I could just use `get_the_ID()` which is a cleaner way of doing things.
+* Removed an extra occurrence of `add_image_size('full-width-thumb', 1200, 9999);` from `functions.php` - I do not know how it got there, but obviously I added it when I wasn't paying attention. Derpy derp!
+* Added the `meta-box-tabs` extension from `metabox.io` - I did this so the meta boxes will display in a tabbed format instead of taking up all of the realestate on the right hand side of the post editor. Looks reall nice if I do say so myself.
+
+###### [1.0.6] 2017-12-26
 * Moved all css files to `style.css` - This was done in order to make less calls as well as to make the site load faster.
 * Removed `CHANGELOG.txt` file from the theme. One less file means overall smaller file size. Granted, not by much. Changes will be available via the `README.md` file on the GitHub Repository.
 * Turned the `totalpress_entry_footer` into an action instead of just a function.
@@ -48,18 +59,18 @@ Changelog
 * Added `no-footer-widets` body class. If all of the boxes are checked under `Hide Footer Widgets` metabox, then the footer widget area will be hidden. Before, without the body class, the footer area would still be visible.
 * Added `full-width-thumb` thumbnail size to `functions.php`. The actual size is 1200 wide with unlimited height.
 
-###### [1.0.5] 2017-12-10 ######
+###### [1.0.5] 2017-12-10
 
 * Turned all the loops into hooks for easier modification.
 * Moved all html into hooks as well, still have a few files with html in them. That is for 1.0.6
 
 
-###### [1.0.4] 2017-12-05 ######
+###### [1.0.4] 2017-12-05
 
 * Changed the order of the sidebars to reflect a "top down" approach.
 * renamed sidebar-1 and sidebar-2 in functions.php, sidebar-1 is now content sidebar one and sidebar-2 is now content sidebar two. Someone pointed out to me that right and left sidebars do not matter on mobile as the content is stacked. Made sense so I changed the names.
 
-###### [1.0.3.1] 2017-12-04 ######
+###### [1.0.3.1] 2017-12-04
 
 * Corrected an issue with a PHP short tag in one of the files.
 * Removed `admin.css` as it was not being used.
@@ -68,22 +79,22 @@ Changelog
 * Adjusted the layout of the header. Also adjusted where some of the hooks were being displayed in the header as well as removed some hooks from the header.
 * Changed the name of the right sidebar from Main to Right Sidebar.
 
-###### [1.0.3] 2017-12-04 ######
+###### [1.0.3] 2017-12-04
 
 * This version did not make it into the theme repo. There was an error with a PHP short tag being used in the theme.
 
-###### [1.0.2] 2017-11-16 ######
+###### [1.0.2] 2017-11-16
 
 * Corrected issue where certain options were not working due to the fact that I did not updated those functions when I added the unique names in 1.0.1
 * Adjusted a few css styles.
 * Changed the order of appearance in the customizer of Header Alignment.
 
-###### [1.0.1] 2017-11-13 ######
+###### [1.0.1] 2017-11-13
 
 * Added CHANGELOG.txt file to keep track of changes made to the theme.
-* Removed an extra occurance of "add_theme_support('post-thumbnails');" which was located on line 31 of `functions.php`.
+* Removed an extra occurance of `add_theme_support('post-thumbnails');` which was located on line 31 of `functions.php`.
 * Added unique prefix for everything the Theme defines in the public namespace, including options, functions, global variables, constants, post meta, etc.
 
-###### [1.0.0] 2017-11-02 ######
+###### [1.0.0] 2017-11-02
 
 * Initial submission to the theme review team on 11/02/2017

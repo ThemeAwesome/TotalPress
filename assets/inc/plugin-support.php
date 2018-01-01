@@ -1,14 +1,12 @@
-<?php /* @version 1.0.6 */
+<?php /* @version 1.0.7 */
 if ( ! defined('ABSPATH')) exit;
 function totalpress_setup_woocommerce() {
 	if ( ! class_exists('WooCommerce') ) {
-		return;
-	}
+		return; }
 	// Add support for WooCommerce features
 	add_theme_support('wc-product-gallery-zoom');
 	add_theme_support('wc-product-gallery-lightbox');
 	add_theme_support('wc-product-gallery-slider');
-	
 	//Remove default WooCommerce wrappers
 	remove_action('woocommerce_before_main_content','woocommerce_output_content_wrapper',10);
 	remove_action('woocommerce_after_main_content','woocommerce_output_content_wrapper_end',10);

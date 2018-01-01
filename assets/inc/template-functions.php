@@ -1,4 +1,4 @@
-<?php /* @version 1.0.6 */
+<?php /* @version 1.0.7 */
 if ( ! defined('ABSPATH')) exit;
 /**************************************
  * Start theme
@@ -248,14 +248,13 @@ if ( ! function_exists('totalpress_build_blog_entry_header')) :
 	add_action('totalpress_blog_entry_header','totalpress_build_blog_entry_header');
 endif;
 /**************************************
- * Single content entry header used to display title in single post view
+ * Post entry header used to display the header for posts
  *************************************/
 if ( ! function_exists('totalpress_content_single_entry_header')) :
-	function totalpress_content_single_entry_header() { 
-	global $post; ?>
+	function totalpress_content_single_entry_header() { ?>
 		<?php do_action('totalpress_before_entry_header'); ?>
 		<header class="entry-header">
-			<?php if (get_post_meta($post->ID,'totalpress_page_options_hide_title',true)) {
+			<?php if (get_post_meta(get_the_ID(),'totalpress_page_options_hide_title',true)) {
 		   		the_title('<h1 class="entry-title hide" itemprop="headline">','</h1>');
 			  } else {
 		   		the_title('<h1 class="entry-title" itemprop="headline">','</h1>');
@@ -269,14 +268,13 @@ if ( ! function_exists('totalpress_content_single_entry_header')) :
 	add_action('totalpress_content_single_entry_header','totalpress_content_single_entry_header');
 endif;
 /**************************************
- * entry header - used to display titles on pages
+ * Page entry header - used to display the header for pages
  *************************************/
 if ( ! function_exists('totalpress_build_content_page_entry_header')) :
-	function totalpress_build_content_page_entry_header() { 
-	global $post; ?>
+	function totalpress_build_content_page_entry_header() { ?>
 		<?php do_action('totalpress_before_entry_header'); ?>
 		<header class="entry-header">	
-			<?php if (get_post_meta($post->ID,'totalpress_page_options_hide_title',true)) {
+			<?php if (get_post_meta(get_the_ID(),'totalpress_page_options_hide_title',true)) {
 		   		the_title('<h1 class="entry-title hide" itemprop="headline">','</h1>');
 			  } else {
 		   		the_title('<h1 class="entry-title" itemprop="headline">','</h1>');
@@ -580,7 +578,6 @@ endif;
 /**************************************
  * Build footer widgets
  *************************************/
-// Build footer widgets
 if ( ! function_exists( 'totalpress_build_footer_widgets' ) ) :
 	function totalpress_build_footer_widgets() { 
 		if ( ! is_active_sidebar('footer-1') && ! is_active_sidebar('footer-2') && ! is_active_sidebar('footer-3') && ! is_active_sidebar('footer-4') && ! is_active_sidebar('footer-5'))
@@ -676,7 +673,7 @@ endif;
 if ( ! function_exists('totalpress_back_to_top')) :
 	function totalpress_back_to_top() {
 		if (true == get_theme_mod('totalpress_btp_switch',true)) {
-			$backtotop = sprintf( '<div class="back-to-top"><i class="fa fa-angle-up fa-lg" aria-hidden="true"></i></div>');
+			$backtotop = sprintf( '<div class="back-to-top"><i class="arrow up"></i></div>');
 			echo apply_filters('totalpress_back_to_top',$backtotop);
 		}
 	}
@@ -693,7 +690,7 @@ if ( ! function_exists('totalpress_build_close_body')) :
 	add_action('totalpress_close_body','totalpress_build_close_body');
 endif;
 /**************************************
- * close theme
+ * close our theme
  *************************************/
 if ( ! function_exists('totalpress_build_close_theme')) :
 	function totalpress_build_close_theme() { ?>
