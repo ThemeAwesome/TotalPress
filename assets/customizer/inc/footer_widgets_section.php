@@ -1,4 +1,4 @@
-<?php /* @version 1.0.7 */
+<?php /* @version 1.0.8 */
 if ( ! defined('ABSPATH')) exit;
 TotalPress_Kirki::add_section( 'totalpress_footer_widgets_section', array(
     'title'       => esc_attr__('Footer Widget Layout','totalpress'),
@@ -6,7 +6,6 @@ TotalPress_Kirki::add_section( 'totalpress_footer_widgets_section', array(
     'priority'    => 1,
     'capability'  => 'edit_theme_options',
 ) );
-
 TotalPress_Kirki::add_field('totalpress_theme_customizer',array(
 	'type'        => 'select',
 	'settings'    => 'totalpress_footer_widgets_main_container',
@@ -20,7 +19,6 @@ TotalPress_Kirki::add_field('totalpress_theme_customizer',array(
 		'full' => esc_attr__('Full Width','totalpress'),
 	),
 ) );
-
 TotalPress_Kirki::add_field('totalpress_theme_customizer',array(
 	'type'        => 'select',
 	'settings'    => 'totalpress_inner_footer_widgets_container',

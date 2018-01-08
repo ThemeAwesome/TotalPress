@@ -1,8 +1,6 @@
-<?php /* @version 1.0.7 */
+<?php /* @version 1.0.8 */
 if ( ! defined('ABSPATH')) exit;
-/**************************************
- * Add our tabbed metabox
- *************************************/
+// Add our tabbed metabox
 function totalpress_register_tabbed_meta_boxes($meta_boxes) {
     $meta_boxes[] = array (
       'id' => 'totalpress-post-page-options',
@@ -95,3 +93,14 @@ function totalpress_register_tabbed_meta_boxes($meta_boxes) {
     return $meta_boxes;
 }
 add_filter('rwmb_meta_boxes','totalpress_register_tabbed_meta_boxes');
+
+// hide our featured image options tab if there is no featured image being used.
+add_filter( 'rwmb_outside_conditions', function ( $conditions ) {
+  $conditions['.rwmb-tab-totalpress_featured_image_options'] = array(
+    'visible' => array('_thumbnail_id', '!=', '-1'),
+  );
+  $conditions['.rwmb-tab-panel-totalpress_featured_image_options'] = array(
+    'visible' => array('_thumbnail_id', '!=', '-1'),
+  );
+  return $conditions;
+} );

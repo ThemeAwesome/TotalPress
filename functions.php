@@ -1,6 +1,6 @@
-<?php /* @version 1.0.7 */
+<?php
 if ( ! defined('ABSPATH')) exit;
-define('TOTALPRESS_VERSION','1.0.7');
+define('TOTALPRESS_VERSION','1.0.8');
 define('TOTALPRESS_URI',get_template_directory_uri());
 define('TOTALPRESS_DIR',get_template_directory());
 //Sets up theme defaults and registers support for various WordPress features.
@@ -19,8 +19,6 @@ if ( ! function_exists('setup_totalpress') ) :
 			}
 			add_action('template_redirect','totalpress_adjust_content_width');
 		}
-		// Make theme available for translation
-		load_theme_textdomain('totalpress', get_template_directory() . '/assets/language');
 		// Add default posts and comments RSS feed links to head.
 		add_theme_support('automatic-feed-links');
 		//Enable support for Post Thumbnails on posts and pages.
@@ -68,6 +66,7 @@ require_once TOTALPRESS_DIR . '/assets/customizer/customizer.php';
 require_once TOTALPRESS_DIR . '/assets/inc/metaboxes.php';
 require_once TOTALPRESS_DIR . '/assets/inc/extras.php';
 require_once TOTALPRESS_DIR . '/assets/inc/plugin-support.php';
+require_once TOTALPRESS_DIR . '/assets/extensions/meta-box-conditional-logic/meta-box-conditional-logic.php';
 require_once TOTALPRESS_DIR . '/assets/extensions/meta-box-tabs/meta-box-tabs.php';
 
 // enqueue scripts and styles.
@@ -90,15 +89,14 @@ if ( ! function_exists('totalpress_scripts')) :
 	}
 	add_action('wp_enqueue_scripts','totalpress_scripts');
 endif;
-
 // Set up our sidebar areas
 if ( ! function_exists('totalpress_widgets_init')) :
 	function totalpress_widgets_init() {	
 		$widgets = array(
 			'top-sidebar' => __('Top Sidebar','totalpress'),
 			'header-sidebar' => __('Header Sidebar','totalpress'),
-			'cs1-sidebar' => __('Content Sidebar One','totalpress'),
-			'cs2-sidebar' => __('Content Sidebar Two','totalpress'),
+			'right-sidebar' => __('Right Sidebar','totalpress'),
+			'left-sidebar' => __('Left Sidebar','totalpress'),
 			'footer-1' => __('Footer Widget Area One','totalpress'),
 			'footer-2' => __('Footer Widget Area Two','totalpress'),
 			'footer-3' => __('Footer Widget Area Three','totalpress'),
@@ -119,7 +117,6 @@ if ( ! function_exists('totalpress_widgets_init')) :
 	}
 	add_action('widgets_init','totalpress_widgets_init');
 endif;
-
 // Custom Excerpt Length
 if ( ! function_exists('totalpress_custom_excerpt')) :
 	function totalpress_custom_excerpt( $number ) {
@@ -127,7 +124,6 @@ if ( ! function_exists('totalpress_custom_excerpt')) :
 	}
 	add_filter('excerpt_length','totalpress_custom_excerpt');
 endif;
-
 // excerpt more
 if ( ! function_exists('totalpress_excerpt_more') && ! is_admin() ) :
 	function totalpress_excerpt_more( $more ) {
@@ -139,7 +135,6 @@ if ( ! function_exists('totalpress_excerpt_more') && ! is_admin() ) :
 	}
 	add_filter('excerpt_more','totalpress_excerpt_more');
 endif;
-
 // style the visual editor to resemble the theme front end.
 if ( ! function_exists('totalpress_add_editor_styles')) :
 	function totalpress_add_editor_styles() {
@@ -150,7 +145,6 @@ if ( ! function_exists('totalpress_add_editor_styles')) :
 	}
 	add_action('after_setup_theme','totalpress_add_editor_styles');
 endif;
-
 // remove .sticky from the post_class array
 if (! function_exists('totalpress_filter_post_class')) :
 	function totalpress_filter_post_class( $classes ) {
@@ -162,7 +156,6 @@ if (! function_exists('totalpress_filter_post_class')) :
 	}
 	add_filter('post_class','totalpress_filter_post_class',20);
 endif;
-
 // removes recent comments styling
 if ( ! function_exists('totalpress_remove_recent_comments_style')) {
 	function totalpress_remove_recent_comments_style() {
@@ -170,7 +163,6 @@ if ( ! function_exists('totalpress_remove_recent_comments_style')) {
 		remove_action('wp_head',array( $wp_widget_factory->widgets['WP_Widget_Recent_Comments'],'recent_comments_style')); }
 	add_action('widgets_init','totalpress_remove_recent_comments_style');
 }
-
 // threaded comments in footer
 if ( ! function_exists('totalpress_enqueue_comments_reply')) {
 	function totalpress_enqueue_comments_reply() {
@@ -179,7 +171,13 @@ if ( ! function_exists('totalpress_enqueue_comments_reply')) {
 	}
 	add_action('comment_form_before','totalpress_enqueue_comments_reply');
 }
-
+// remove hentry from post_class
+function totalpress_remove_hentry_class($classes) {
+	$classes = array_diff( $classes, array('hentry'));
+	return $classes;
+}
+add_filter('post_class','totalpress_remove_hentry_class');
+// add body schema
 if ( ! function_exists('totalpress_body_schema')) :
 	function totalpress_body_schema() {
 		$blog = ( is_home() || is_archive() || is_attachment() || is_tax() || is_single() ) ? true : false;
@@ -190,7 +188,7 @@ if ( ! function_exists('totalpress_body_schema')) :
 		echo "itemtype='http://schema.org/$result' itemscope='itemscope'";
 	}
 endif;
-
+// add articl schema
 if ( ! function_exists('totalpress_article_schema')) :
 	function totalpress_article_schema( $type = 'CreativeWork' ) {
 		$itemtype = apply_filters('totalpress_article_itemtype',$type);

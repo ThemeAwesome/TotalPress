@@ -1,4 +1,4 @@
-/* @version 1.0.7 */
+/* @version 1.0.8 */
 ( function( $ ) {
 
   var api = wp.customize;

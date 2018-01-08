@@ -1,4 +1,4 @@
-<?php /* @version 1.0.7 */
+<?php /* @version 1.0.8 */
 if ( ! defined('ABSPATH')) exit;
 /**************************************
  * Start theme
@@ -151,7 +151,7 @@ if ( ! function_exists('totalpress_topbar_navigation')) :
     function totalpress_topbar_navigation() { ?>
 		<nav id="site-navigation" class="main-navigation grid-container" itemtype="http://schema.org/SiteNavigationElement" itemscope="itemscope" role="navigation">
 	        <div class="title-bar" data-responsive-toggle="main-menu">
-	            <button class="icon-menu" type="button" data-toggle><i class="fa fa-bars" aria-hidden="true"></i> <?php _e('Menu','totalpress'); ?></button>
+	            <button class="icon-menu" type="button" data-toggle><?php _e('&#9776; Menu','totalpress'); ?></button>
 	        </div><!-- .title-bar -->
 	        <div class="top-bar grid-x grid-padding-x" id="main-menu">
 	        	<div class="<?php echo get_theme_mod('totalpress_theme_nav_alignment','top-bar-left'); ?> hide-for-small-only"><?php do_action('totalpress_top_bar'); ?></div><!-- .top-bar -->
@@ -672,10 +672,8 @@ endif;
  *************************************/
 if ( ! function_exists('totalpress_back_to_top')) :
 	function totalpress_back_to_top() {
-		if (true == get_theme_mod('totalpress_btp_switch',true)) {
-			$backtotop = sprintf( '<div class="back-to-top"><i class="arrow up"></i></div>');
-			echo apply_filters('totalpress_back_to_top',$backtotop);
-		}
+		$backtotop = sprintf( '<div class="back-to-top"><i class="arrow-up"></i></div>');
+		echo apply_filters('totalpress_back_to_top',$backtotop);
 	}
 	add_action('wp_footer','totalpress_back_to_top');
 endif;

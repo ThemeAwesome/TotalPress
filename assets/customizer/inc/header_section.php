@@ -1,4 +1,4 @@
-<?php /* @version 1.0.7 */
+<?php /* @version 1.0.8 */
 if ( ! defined('ABSPATH')) exit;
 TotalPress_Kirki::add_section( 'totalpress_header_section', array(
     'title'       => esc_attr__('Header Layout','totalpress'),
@@ -6,7 +6,6 @@ TotalPress_Kirki::add_section( 'totalpress_header_section', array(
     'priority'    => 2,
     'capability'  => 'edit_theme_options',
 ) );
-
 TotalPress_Kirki::add_field('totalpress_theme_customizer',array(
 	'type'        => 'select',
 	'settings'    => 'totalpress_header_container',
@@ -20,7 +19,6 @@ TotalPress_Kirki::add_field('totalpress_theme_customizer',array(
 		'full' => esc_attr__('Full Width','totalpress'),
 	),
 ) );
-
 TotalPress_Kirki::add_field('totalpress_theme_customizer',array(
 	'type'        => 'select',
 	'settings'    => 'totalpress_inner_head_container',
@@ -34,7 +32,6 @@ TotalPress_Kirki::add_field('totalpress_theme_customizer',array(
 		'full' => esc_attr__('Full Width','totalpress'),
 	),
 ) );
-
 TotalPress_Kirki::add_field('totalpress_theme_customizer',array(
 	'type'        => 'radio-buttonset',
 	'settings'    => 'totalpress_head_alignment',

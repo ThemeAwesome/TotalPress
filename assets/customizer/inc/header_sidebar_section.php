@@ -1,12 +1,11 @@
-<?php /* @version 1.0.7 */
+<?php /* @version 1.0.8 */
 if ( ! defined('ABSPATH')) exit;
 TotalPress_Kirki::add_section( 'totalpress_header_sidebar_layout_section', array(
     'title'       => esc_attr__('Header Sidebar Layout','totalpress'),
     'panel'       => 'totalpress_header_sidebar_options',
     'priority'    => 1,
     'capability'  => 'edit_theme_options',
-) );
-
+));
 TotalPress_Kirki::add_field('totalpress_theme_customizer',array(
 	'type'        => 'radio-buttonset',
 	'settings'    => 'totalpress_head_sidebar_alignment',
@@ -28,4 +27,4 @@ TotalPress_Kirki::add_field('totalpress_theme_customizer',array(
 			'property' => 'text-align',
 		),
 	),
-) );
+));

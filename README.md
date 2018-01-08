@@ -6,8 +6,8 @@
 **Tags:** blog, one-column, two-columns, three-columns, right-sidebar, left-sidebar, footer-widgets, custom-background, flexible-header, custom-menu, editor-style, featured-images, full-width-template, microformats, post-formats, sticky-post, translation-ready, theme-options, custom-logo, custom-colors<br />
 **Donate:** [TotalPress Project](https://www.paypal.me/themeawesome)<br />
 **Requires at least:** 4.9.1<br />
-**Tested up to:** 5.0-alpha-42419<br />
-**Stable tag:** 1.0.6<br />
+**Tested up to:** 5.0-alpha-42426<br />
+**Stable tag:** 1.0.9<br />
 **License:** GNU General Public License v3.0<br />
 **License URI:** [http://www.gnu.org/licenses/gpl-3.0.html](http://www.gnu.org/licenses/gpl-3.0.html)<br />
 
@@ -32,7 +32,17 @@ Installation
 
 Changelog
 ===
-### [1.0.7] 2018-01-01
+### [1.0.8] 2018-01-08
+* Added some styles to `style.css` to help with landing pages.
+* Changed the name of the main sidebars back to `Right Sidebar` and `Left Sidebar`.
+* Removed the `language` folder as well as `load_theme_textdomain('totalpress', get_template_directory() . '/assets/language');` - Do not need to have this in the theme as translations are handled by WordPress.org.
+* Added `totalpress_remove_hentry_class` to remove `hentry` from the `post_class` because we are using microdata.
+* Removed the ability to show or hide the `Back To Top` button. Moved this into the `TP-Primo` plugin.
+* Renamed `blog-section.php` to `post-section.php`.
+* Renamed `totalpress_content_section` in `post-section.php` to `totalpress_post_section`. This was done to better differentiate the post section from the page section in the `Content` section of `TotalPress Options`.
+* Renamed `style.css` in `Meta-Box-Conditional-Logic` extension to `mbcl-style.css` - This was done because the theme check plugin was throwing the following recommendation: `RECOMMENDED: Tags: is either empty or missing in style.css`. According to this thread https://github.com/WordPress/theme-check/issues/50 themes can only have one file called `style.css`
+
+###### [1.0.7] 2018-01-01
 * Rewrote the installation instructions above, as well as in the `README.txt` file
 * Updated Font-Awesome to 5.0.2 - Using `fa-brands.js` for the social icons.
 * Removed the `Font-Awesome` css from `style.css`, also removed all of the `Font-Awesome` web fonts. Now the only file in the `fonts` folder is `fa-brands.js`. This has reduced the size of the theme significantly. ***387kb compressesd!***

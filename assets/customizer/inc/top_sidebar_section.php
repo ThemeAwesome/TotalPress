@@ -1,12 +1,11 @@
-<?php /* @version 1.0.7 */
+<?php /* @version 1.0.8 */
 if ( ! defined('ABSPATH')) exit;
 TotalPress_Kirki::add_section( 'totalpress_top_sidebar_layout_section', array(
     'title'       => esc_attr__('Top Sidebar Layout','totalpress'),
     'panel'       => 'totalpress_top_sidebar_options',
     'priority'    => 1,
     'capability'  => 'edit_theme_options',
-) );
-
+));
 TotalPress_Kirki::add_field('totalpress_theme_customizer',array(
 	'type'        => 'select',
 	'settings'    => 'totalpress_top_sidebar_container',
@@ -20,8 +19,7 @@ TotalPress_Kirki::add_field('totalpress_theme_customizer',array(
 		'contain' => esc_attr__('Contain to Grid','totalpress'),
 		'full' => esc_attr__('Full Width','totalpress'),
 	),
-) );
-
+));
 TotalPress_Kirki::add_field('totalpress_theme_customizer',array(
 	'type'        => 'select',
 	'settings'    => 'totalpress_inner_top_sidebar_container',
@@ -35,8 +33,7 @@ TotalPress_Kirki::add_field('totalpress_theme_customizer',array(
 		'contain' => esc_attr__('Contain to Grid','totalpress'),
 		'full' => esc_attr__('Full Width','totalpress'),
 	),
-) );
-
+));
 TotalPress_Kirki::add_field('totalpress_theme_customizer',array(
 	'type'        => 'radio-buttonset',
 	'settings'    => 'totalpress_top_sidebar_alignment',
@@ -58,4 +55,4 @@ TotalPress_Kirki::add_field('totalpress_theme_customizer',array(
 			'property' => 'text-align',
 		),
 	),
-) );
+));
