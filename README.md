@@ -32,7 +32,7 @@ Installation
 
 Changelog
 ===
-### [1.0.9] 2018-01-08
+### [1.0.9] 2018-01-13
 * Moved Font-Awesome back to 4.7 - there was an issue with the 5.0.4 version. Will add later once it gets worked out. File size of 1.0.9 is bigger now.
 * Added font-awesome.css back into asstes/css folder and added function call to load the font-awesome.css file before the theme file so the icons would be loaded first.
 
