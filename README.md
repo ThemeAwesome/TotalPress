@@ -7,13 +7,13 @@
 **Donate:** [TotalPress Project](https://www.paypal.me/themeawesome)<br />
 **Requires at least:** 4.9.1<br />
 **Tested up to:** 5.0-alpha-42426<br />
-**Stable tag:** 1.0.8<br />
+**Stable tag:** 1.0.9<br />
 **License:** GNU General Public License v3.0<br />
 **License URI:** [http://www.gnu.org/licenses/gpl-3.0.html](http://www.gnu.org/licenses/gpl-3.0.html)<br />
 
 Description
 ===
-Hello world, meet TotalPress! I'm Based off _s (Underscores) and I also come with Zurb's Foundation for Sites fully integrated. What makes me awesome? I am small and fast **(I'm just 387kb compressed)**. I am fully responsive, meaning I adjust seamlessly to any screen resolution so I look good on any device. I've got a ton of hooks and filters, I've got ten (10) widget areas built in as well as 6 different sidebar page templates. I use [Kirki Plugin](https://wordpress.org/plugins/kirki/). Kirki provides 30 custom control types for the theme customizer ranging from simple sliders and tooltips to complex typography controls including Google-Fonts. Kirki makes developing themes a lot faster and easier for developers and more meaningful for users. I also use the [Meta Box Plugin](https://wordpress.org/plugins/meta-box/) which is a powerful, professional toolkit for developers to create and handle everything related to custom meta boxes and custom fields for WordPress. Did I mention that I work really well with page builders like Elementor. So what are you waiting for? Get to downloading and take me for a spin.
+Hello world, meet TotalPress! I'm Based off _s (Underscores) and I also come with Zurb's Foundation for Sites fully integrated. What makes me awesome? I am small and fast **(I'm just 890kb compressed)**. I am fully responsive, meaning I adjust seamlessly to any screen resolution so I look good on any device. I've got a ton of hooks and filters, I've got ten (10) widget areas built in as well as 6 different sidebar page templates. I use [Kirki Plugin](https://wordpress.org/plugins/kirki/). Kirki provides 30 custom control types for the theme customizer ranging from simple sliders and tooltips to complex typography controls including Google-Fonts. Kirki makes developing themes a lot faster and easier for developers and more meaningful for users. I also use the [Meta Box Plugin](https://wordpress.org/plugins/meta-box/) which is a powerful, professional toolkit for developers to create and handle everything related to custom meta boxes and custom fields for WordPress. Did I mention that I work really well with page builders like Elementor. So what are you waiting for? Get to downloading and take me for a spin.
 
 ### Demo ###
 
@@ -32,7 +32,11 @@ Installation
 
 Changelog
 ===
-### [1.0.8] 2018-01-08
+### [1.0.9] 2018-01-08
+* Moved Font-Awesome back to 4.7 - there was an issue with the 5.0.4 version. Will add later once it gets worked out. File size of 1.0.9 is bigger now.
+* Added font-awesome.css back into asstes/css folder and added function call to load the font-awesome.css file before the theme file so the icons would be loaded first.
+
+###### [1.0.8] 2018-01-08
 * Added some styles to `style.css` to help with landing pages.
 * Changed the name of the main sidebars back to `Right Sidebar` and `Left Sidebar`.
 * Removed the `language` folder as well as `load_theme_textdomain('totalpress', get_template_directory() . '/assets/language');` - Do not need to have this in the theme as translations are handled by WordPress.org.

@@ -1,4 +1,4 @@
-<?php /* @version 1.0.8 */
+<?php /* @version 1.0.9 */
 if ( ! defined('ABSPATH')) exit;
 
 if ( class_exists('WP_Customize_Panel')) {

@@ -1,21 +1,21 @@
-<?php /* @version 1.0.8 */
+<?php /* @version 1.0.9 */
 if ( ! defined('ABSPATH')) exit;
 /**************************************
  * Start theme
  *************************************/
 if ( ! function_exists('totalpress_build_start_theme')) :
-	function totalpress_build_start_theme() { ?>
-		<!DOCTYPE html>
-		<html <?php language_attributes(); ?> class="no-js">
-		<head>
-		<meta charset="<?php bloginfo('charset'); ?>">
-		<meta name="viewport" content="width=device-width,initial-scale=1">
-		<link rel="profile" href="http://gmpg.org/xfn/11">
-		<?php wp_head(); ?>
-		</head>
-	<?php
-	}
-	add_action('totalpress_start_theme','totalpress_build_start_theme');
+function totalpress_build_start_theme() { ?>
+<!DOCTYPE html>
+<html <?php language_attributes(); ?> class="no-js">
+<head>
+<meta charset="<?php bloginfo('charset'); ?>">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<?php wp_head(); ?>
+</head>
+<?php
+}
+add_action('totalpress_start_theme','totalpress_build_start_theme');
 endif;
 /**************************************
  * Open the body element
@@ -111,7 +111,7 @@ if ( ! function_exists('totalpress_build_header_sidebar')) :
     add_action('totalpress_header_sidebar','totalpress_build_header_sidebar');
 endif;
 /**************************************
- * Build the headr
+ * Build the header
  *************************************/
 if ( ! function_exists('totalpress_build_header')) :
 	function totalpress_build_header() { ?>

@@ -1,11 +1,11 @@
-<?php /* @version 1.0.8 */
+<?php /* @version 1.0.9 */
 if ( ! defined('ABSPATH')) exit;
 TotalPress_Kirki::add_section( 'totalpress_footer_section', array(
     'title'       => esc_attr__('Footer Layout','totalpress'),
     'panel'       => 'totalpress_footer_options',
     'priority'    => 1,
     'capability'  => 'edit_theme_options',
-) );
+));
 TotalPress_Kirki::add_field('totalpress_theme_customizer',array(
 	'type'        => 'select',
 	'settings'    => 'totalpress_main_footer_container',
@@ -18,7 +18,7 @@ TotalPress_Kirki::add_field('totalpress_theme_customizer',array(
 		'contain' => esc_attr__('Contain to Grid','totalpress'),
 		'full' => esc_attr__('Full Width','totalpress'),
 	),
-) );
+));
 TotalPress_Kirki::add_field('totalpress_theme_customizer',array(
 	'type'        => 'select',
 	'settings'    => 'totalpress_inner_footer_container',
@@ -31,4 +31,4 @@ TotalPress_Kirki::add_field('totalpress_theme_customizer',array(
 		'contain' => esc_attr__('Contain to Grid','totalpress'),
 		'full' => esc_attr__('Full Width','totalpress'),
 	),
-) );
+));

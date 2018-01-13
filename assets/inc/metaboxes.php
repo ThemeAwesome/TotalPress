@@ -1,4 +1,4 @@
-<?php /* @version 1.0.8 */
+<?php /* @version 1.0.9 */
 if ( ! defined('ABSPATH')) exit;
 // Add our tabbed metabox
 function totalpress_register_tabbed_meta_boxes($meta_boxes) {

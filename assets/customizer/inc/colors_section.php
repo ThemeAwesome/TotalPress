@@ -1,4 +1,4 @@
-<?php /* @version 1.0.8 */
+<?php /* @version 1.0.9 */
 if ( ! defined('ABSPATH')) exit;
 TotalPress_Kirki::add_section( 'totalpress_colors_section', array(
     'title'       => esc_attr__('Basic Colors','totalpress'),
@@ -6,7 +6,6 @@ TotalPress_Kirki::add_section( 'totalpress_colors_section', array(
     'priority'    => 3,
     'capability'  => 'edit_theme_options',
 ));
-
 TotalPress_Kirki::add_field('totalpress_theme_customizer',array(
 	'type'        => 'color',
 	'settings'    => 'totalpress_theme_font_colors',
@@ -23,7 +22,7 @@ TotalPress_Kirki::add_field('totalpress_theme_customizer',array(
 			'property' => 'color',
 		),
 	),
-) );
+));
 TotalPress_Kirki::add_field('totalpress_theme_customizer', array(
 	'type'        => 'color',
 	'settings'    => 'totalpress_theme_link_colors',
@@ -40,7 +39,7 @@ TotalPress_Kirki::add_field('totalpress_theme_customizer', array(
 			'property' => 'color',
 		),
 	),
-) );
+));
 TotalPress_Kirki::add_field('totalpress_theme_customizer', array(
 	'type'        => 'color',
 	'settings'    => 'totalpress_theme_link_hover_colors',
@@ -57,4 +56,4 @@ TotalPress_Kirki::add_field('totalpress_theme_customizer', array(
 			'property' => 'color',
 		),
 	),
-) );
+));

@@ -1,6 +1,6 @@
 <?php
 if ( ! defined('ABSPATH')) exit;
-define('TOTALPRESS_VERSION','1.0.8');
+define('TOTALPRESS_VERSION','1.0.9');
 define('TOTALPRESS_URI',get_template_directory_uri());
 define('TOTALPRESS_DIR',get_template_directory());
 //Sets up theme defaults and registers support for various WordPress features.
@@ -72,7 +72,7 @@ require_once TOTALPRESS_DIR . '/assets/extensions/meta-box-tabs/meta-box-tabs.ph
 // enqueue scripts and styles.
 if ( ! function_exists('totalpress_scripts')) :
 	function totalpress_scripts() {
-		wp_enqueue_script('fa-brands',TOTALPRESS_URI.'/assets/fonts/fa-brands.js',array('jquery'),TOTALPRESS_VERSION,false);
+		wp_enqueue_style('font-awesome',TOTALPRESS_URI . '/assets/css/font-awesome.css','',TOTALPRESS_VERSION );
 		wp_enqueue_style('totalpress',get_stylesheet_uri(),'',TOTALPRESS_VERSION );
 		wp_enqueue_script('what-input',TOTALPRESS_URI.'/assets/js/what-input.js',array('jquery'),TOTALPRESS_VERSION,true);
 		wp_enqueue_script('foundation',TOTALPRESS_URI.'/assets/js/foundation.js',array('jquery'),TOTALPRESS_VERSION,true);

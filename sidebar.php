@@ -1,4 +1,4 @@
-<?php /* @version 1.0.8 */
+<?php /* @version 1.0.9 */
 if ( ! defined('ABSPATH')) exit; ?>
 <?php if (is_active_sidebar('right-sidebar')) : ?>
 <?php do_action('totalpress_open_right_sidebar_container') ?>
