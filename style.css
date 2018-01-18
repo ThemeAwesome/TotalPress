@@ -1642,13 +1642,13 @@ hr {border: 0;margin: 30px auto 30px;color: #fff;background-color: #fff;height: 
 .sc_single_template .lfts,.woocommerce-page.sc_single_template .lfts {order:1;padding: 0 15px 0 0;width:33.33333%;}
 .sc_single_template .content-area,.woocommerce-page.sc_single_template .content-area {order:2;padding: 0 0 0 15px;width:66.66667%;}
 /* content | sidebar | sidebar */
-.css_single_template .lfts,.woocommerce-page.css_single_template .lfts {order:2;padding: 0 15px 0;width:25%;}
+.css_single_template .lfts,.woocommerce-page.css_single_template .lfts {order:2;padding: 0 15px 0 0;width:25%;}
 .css_single_template .rts,.woocommerce-page.css_single_template .rts {order:3;padding: 0 0 0 15px;width:25%;}
-.css_single_template .content-area,.woocommerce-page.css_single_template .content-area {order:1;padding: 0 15px 0 0;width:50%}
+.css_single_template .content-area,.woocommerce-page.css_single_template .content-area {order:1;padding: 0 30px 0 0;width:50%}
 /* sidebar | sidebar | content */
 .ssc_single_template .lfts,.woocommerce-page.ssc_single_template .lfts {order:1;padding: 0 15px 0 0;width:25%;}
-.ssc_single_template .rts,.woocommerce-page.ssc_single_template .rts {order:2;padding: 0 15px 0 12.5px;width:25%;}
-.ssc_single_template .content-area,.woocommerce-page.ssc .content-area {order:3;padding: 0 0 0 15px;width:50%}
+.ssc_single_template .rts,.woocommerce-page.ssc_single_template .rts {order:2;padding: 0 0 0 15px;width:25%;}
+.ssc_single_template .content-area,.woocommerce-page.ssc .content-area {order:3;padding: 0 0 0 30px;width:50%}
 /* sidebar | content | sidebar */
 .scs_single_template .lfts,.woocommerce-page.scs_single_template .lfts {order:1;padding: 0;width:25%;}
 .scs_single_template .rts,.woocommerce-page.scs_single_template .rts {order:3;padding: 0;width:25%;}
@@ -2193,7 +2193,6 @@ a.button.wc-forward:after {content: "\f105";font-family: FontAwesome;line-height
 .woocommerce-page .woocommerce-message .button {background: #b02329;}
 .woocommerce-page .woocommerce-message .button:hover {background: #222222;}
 .woocommerce-page .woo-.cell {padding: 0}
-
 /**************************************
  * Media Query CSS
  *************************************/
@@ -2251,7 +2250,6 @@ a.button.wc-forward:after {content: "\f105";font-family: FontAwesome;line-height
       .site-info {margin-bottom: 25px;text-align: center}
       .back-to-top {bottom:8px;right:8px;}
 }
-
  /* Medium Only - from 640px up to a max resolution of 1023px */
 @media screen and (min-width: 40em) and (max-width: 63.9375em) {
       li>ol,li>ul {margin:0;padding:0;}

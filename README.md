@@ -29,7 +29,6 @@ Installation
 * Once you have installed and activated the Kirki Plugin, go to `Appearance > Customizer > Theme Options` and start customizing your site.
 * Once you have installed the Meta Box plugin, you will see an additional metabox below the post/page editor. This is a tabbed metabox called TotalPress Post/Page Options.
 
-
 Changelog
 ===
 ### [1.0.10] 2018-01-18
@@ -38,6 +37,7 @@ Changelog
 * Corrected issue where `sub navs` were displaying in a menu in the `header sidebar`. This will be added later in an update.
 * Corrected a padding issue with the left and right sidebar in the `sidebar-content-sidebar.php` file.
 * Removed `totalpress_header_items()` function from `template-functions.php`. Also rewrote `totalpress_build_logo()` and `totalpress_build_site_title()` functions and turned them into actions. This was done to make it easier for the end user to set the layout of the logo and site title/description in `TP-Primo.`
+* Corrected some padding issues with the template pages.
 
 ###### [1.0.9] 2018-01-13
 * Moved Font-Awesome back to 4.7 - there was an issue with the 5.0.4 version. Will add later once it gets worked out. File size of `1.0.9` is bigger now.
