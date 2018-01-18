@@ -1,6 +1,6 @@
 <?php
 if ( ! defined('ABSPATH')) exit;
-define('TOTALPRESS_VERSION','1.0.9');
+define('TOTALPRESS_VERSION','1.0.10');
 define('TOTALPRESS_URI',get_template_directory_uri());
 define('TOTALPRESS_DIR',get_template_directory());
 //Sets up theme defaults and registers support for various WordPress features.

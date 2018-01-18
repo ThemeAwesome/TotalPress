@@ -1,4 +1,4 @@
-<?php /* @version 1.0.9 */
+<?php /* @version 1.0.10 */
 if ( ! defined('ABSPATH')) exit;
 TotalPress_Kirki::add_section( 'totalpress_top_sidebar_layout_section', array(
     'title'       => esc_attr__('Top Sidebar Layout','totalpress'),
@@ -38,7 +38,7 @@ TotalPress_Kirki::add_field('totalpress_theme_customizer',array(
 	'type'        => 'radio-buttonset',
 	'settings'    => 'totalpress_top_sidebar_alignment',
 	'label'       => esc_attr__('Top SideBar Alignment','totalpress'),
-	'tooltip'     => esc_attr__('Set the alignment of the Top Sidebar area.','totalpress'),
+	'tooltip'     => esc_attr__('Set the alignment of the Top Sidebar area. Default is Right.','totalpress'),
 	'section'     => 'totalpress_top_sidebar_layout_section',
 	'default'     => 'right',
 	'priority'    => 999,

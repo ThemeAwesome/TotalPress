@@ -1,4 +1,4 @@
-<?php /* @version 1.0.9 */
+<?php /* @version 1.0.10 */
 if ( ! defined('ABSPATH')) exit;
 /**************************************
  * Start theme
@@ -43,17 +43,6 @@ if ( ! function_exists('totalpress_build_top_sidebar')) :
     add_action('totalpress_top_sidebar','totalpress_build_top_sidebar');
 endif;
 /**************************************
- * Position the logo and site title
- *************************************/
-if ( ! function_exists('totalpress_header_items')) :
-	function totalpress_header_items() {
-		// Site logo
-		totalpress_build_logo();
-		// Site title and tagline
-		totalpress_build_site_title();
-	}
-endif;
-/**************************************
  * Build the logo
  *************************************/
 if ( ! function_exists('totalpress_build_logo')) :
@@ -69,12 +58,13 @@ if ( ! function_exists('totalpress_build_logo')) :
 			));
 		}
 	}
+	add_action('totalpress_logo','totalpress_build_logo');
 endif;
 /**************************************
  * Build site title and tagline
  *************************************/
-if ( ! function_exists('totalpress_build_site_title')) :
-	function totalpress_build_site_title() {
+if ( ! function_exists('totalpress_build_title_tagline')) :
+	function totalpress_build_title_tagline() {
 		if (is_front_page() && is_home()) {
 			echo apply_filters('totalpress_brand_text',sprintf(
 				'<div class="brand-text"><h1 class="site-title"><a href="%1$s" rel="home">%2$s</a></h1>',
@@ -96,6 +86,7 @@ if ( ! function_exists('totalpress_build_site_title')) :
 			));
 		}
 	}
+	add_action('totalpress_title_tagline','totalpress_build_title_tagline');
 endif;
 /**************************************
  * Build the header sidebar
@@ -124,12 +115,14 @@ if ( ! function_exists('totalpress_build_header')) :
 					<div class="grid-x grid-padding-x">
 						<?php if (is_active_sidebar('header-sidebar')): ?>
 							<div class="site-branding small-12 large-6 cell">
-								<?php totalpress_header_items(); ?>
+								<?php do_action('totalpress_logo'); ?>
+								<?php do_action('totalpress_title_tagline'); ?>
 							</div><!-- .site-branding -->
 						    <?php do_action('totalpress_header_sidebar'); ?>
 						<?php else: ?>
 							<div class="site-branding small-12 large-auto cell">
-								<?php totalpress_header_items(); ?>
+								<?php do_action('totalpress_logo'); ?>
+								<?php do_action('totalpress_title_tagline'); ?>
 							</div>
 						<?php endif; ?>
 					</div><!-- .grid-x .grid-padding-x -->
@@ -690,10 +683,10 @@ endif;
 /**************************************
  * close our theme
  *************************************/
-if ( ! function_exists('totalpress_build_close_theme')) :
-	function totalpress_build_close_theme() { ?>
+if ( ! function_exists('totalpress_build_end_theme')) :
+	function totalpress_build_end_theme() { ?>
 		</html>
 	<?php
 	}
-	add_action('totalpress_close_theme','totalpress_build_close_theme');
+	add_action('totalpress_end_theme','totalpress_build_end_theme');
 endif;

@@ -5,9 +5,9 @@
 **Theme Name:** TotalPress<br />
 **Tags:** blog, one-column, two-columns, three-columns, right-sidebar, left-sidebar, footer-widgets, custom-background, flexible-header, custom-menu, editor-style, featured-images, full-width-template, microformats, post-formats, sticky-post, translation-ready, theme-options, custom-logo, custom-colors<br />
 **Donate:** [TotalPress Project](https://www.paypal.me/themeawesome)<br />
-**Requires at least:** 4.9.1<br />
-**Tested up to:** 5.0-alpha-42426<br />
-**Stable tag:** 1.0.9<br />
+**Requires at least:** 4.9.2<br />
+**Tested up to:** 5.0-alpha-42525<br />
+**Stable tag:** 1.0.10<br />
 **License:** GNU General Public License v3.0<br />
 **License URI:** [http://www.gnu.org/licenses/gpl-3.0.html](http://www.gnu.org/licenses/gpl-3.0.html)<br />
 
@@ -27,14 +27,21 @@ Installation
 * Once you have activated TotalPress, you will be promted by the TGM Plugin to install the [Kirki Plugin](https://wordpress.org/plugins/kirki/) as well as the the [Meta Box Plugin](https://wordpress.org/plugins/meta-box/): `This theme requires the following plugins: Kirki Plugin and Meta Box.`.
 * Keep in mind that if you do not install either one of these plugins, you will not be able to see the `Theme Options` section in the customizer nor will you will see the metaboxes in the post/page editor..
 * Once you have installed and activated the Kirki Plugin, go to `Appearance > Customizer > Theme Options` and start customizing your site.
-* Once you have installed the Meta Box plugin, you will see an additional metabox below the editor. This is a tabbed metabox called TotalPress Post/Page Options.
+* Once you have installed the Meta Box plugin, you will see an additional metabox below the post/page editor. This is a tabbed metabox called TotalPress Post/Page Options.
 
 
 Changelog
 ===
-### [1.0.9] 2018-01-13
-* Moved Font-Awesome back to 4.7 - there was an issue with the 5.0.4 version. Will add later once it gets worked out. File size of 1.0.9 is bigger now.
-* Added font-awesome.css back into asstes/css folder and added function call to load the font-awesome.css file before the theme file so the icons would be loaded first.
+### [1.0.10] 2018-01-18
+* Accidentally added two instances of `../fonts` to the `font-awesome.css` file. This was causing an issue, but now it's corrected.
+* Tidied up `Foundation for Sites` and `MotionUI` css in `styles.css` - Cleaned up a lot of empty space. Didn't make that big of a difference however it did reduce the overall theme size by **2kb**!
+* Corrected issue where `sub navs` were displaying in a menu in the `header sidebar`. This will be added later in an update.
+* Corrected a padding issue with the left and right sidebar in the `sidebar-content-sidebar.php` file.
+* Removed `totalpress_header_items()` function from `template-functions.php`. Also rewrote `totalpress_build_logo()` and `totalpress_build_site_title()` functions and turned them into actions. This was done to make it easier for the end user to set the layout of the logo and site title/description in `TP-Primo.`
+
+###### [1.0.9] 2018-01-13
+* Moved Font-Awesome back to 4.7 - there was an issue with the 5.0.4 version. Will add later once it gets worked out. File size of `1.0.9` is bigger now.
+* Added `font-awesome.css` back into `asstes/css` folder and added function call to load the `font-awesome.css` file before the theme file so the icons would be loaded first.
 
 ###### [1.0.8] 2018-01-08
 * Added some styles to `style.css` to help with landing pages.
