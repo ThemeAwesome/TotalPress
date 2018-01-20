@@ -1,82 +1,62 @@
 <?php
 if ( ! defined('ABSPATH')) exit;
-define('TOTALPRESS_VERSION','1.0.10');
-define('TOTALPRESS_URI',get_template_directory_uri());
-define('TOTALPRESS_DIR',get_template_directory());
+define('TOTALPRESS_VERSION','1.0.11');
 //Sets up theme defaults and registers support for various WordPress features.
 if ( ! function_exists('setup_totalpress') ) :
 	function setup_totalpress() {
 		// Set the content width
 		global $content_width;
-		if ( ! isset($content_width))
-			$content_width = 866; /* pixels */
-		//Adjusts content_width value for full-width and single image attachment templates
-		if ( ! function_exists('totalpress_adjust_content_width')) {
-			function totalpress_adjust_content_width() {
-			    global $content_width;
-			    if ( is_page_template('full-width.php' ) || is_attachment() )
-			        $content_width = 1270;
-			}
-			add_action('template_redirect','totalpress_adjust_content_width');
+		if ( ! isset( $content_width ) ) {
+			$content_width = 865; /* pixels */
 		}
-		// Add default posts and comments RSS feed links to head.
+		// Make theme translatable
+		load_theme_textdomain('totalpress');
+
 		add_theme_support('automatic-feed-links');
-		//Enable support for Post Thumbnails on posts and pages.
 		add_theme_support('post-thumbnails');
-		set_post_thumbnail_size(785, 9999); // Unlimited height, soft crop
-		//Full width image size added for featured image support in pages
-		add_image_size('full-width-thumb', 1200, 9999); // Fixed width, Unlimited height, soft crop
-		// Register any menus
-		register_nav_menus( array(
-			'primary' => esc_html__('Main Menu','totalpress'), ));
-		// Enable support for Post Formats
+		set_post_thumbnail_size(785, 9999);
+		add_image_size('full-width-thumb', 1200, 9999);
 		add_theme_support('post-formats', array('aside','audio','chat','gallery','image','link','quote','status','video'));
-		// Enable support for WooCommerce
 		add_theme_support('woocommerce');
-		// Enable support for <title> tag
 		add_theme_support('title-tag');
-		// Switch default core markup for search form, comment form, and comments
 		add_theme_support('html5', array('search-form','comment-form','comment-list','gallery','caption',));
-		// add support for custom logo
-		add_theme_support('custom-logo', array('height' => 70,'width' => 350,'flex-width' => true,'flex-height' => true,));
-		// Add support for custom background
+		add_theme_support('customize-selective-refresh-widgets');
+		add_editor_style('assets/css/editor.css');
+
+		register_nav_menus( array(
+			'primary' => __('Main Menu','totalpress'),
+		) );
+
+		add_theme_support('custom-logo', array(
+			'height' => 70,
+			'width' => 350,
+			'flex-width' => true,
+			'flex-height' => true,));
+
 		add_theme_support('custom-background',apply_filters('totalpress_custom_background_args', array(
 			'default-color' => 'efefef',)));
-		// Add theme support for selective refresh for widgets.
-		add_theme_support('customize-selective-refresh-widgets');
-		add_post_type_support('page','excerpt');
-		// Adds support for Jetpacks Social Menu
-		add_theme_support('jetpack-social-menu');
-		// Add support for Jetpack's Infinite Scroll
-		add_theme_support('infinite-scroll', array(
-			'container' => 'content',
-			'footer' => 'page',	));
-		// This theme styles the visual editor to resemble the theme style
-		add_editor_style('assets/css/editor.css');
 	}
 	add_action('after_setup_theme','setup_totalpress');
 endif; //setup_totalpress
 
 // Load files we need
-require_once TOTALPRESS_DIR . '/assets/inc/template-functions.php';
-require_once TOTALPRESS_DIR . '/assets/inc/tgm-plugin-activation/class-tgm-plugin-activation.php';
-require_once TOTALPRESS_DIR . '/assets/inc/tgm-config.php';
-require_once TOTALPRESS_DIR . '/assets/inc/include_kirki.php';
-require_once TOTALPRESS_DIR . '/assets/customizer/customizer.php';
-require_once TOTALPRESS_DIR . '/assets/inc/metaboxes.php';
-require_once TOTALPRESS_DIR . '/assets/inc/extras.php';
-require_once TOTALPRESS_DIR . '/assets/inc/plugin-support.php';
-require_once TOTALPRESS_DIR . '/assets/extensions/meta-box-conditional-logic/meta-box-conditional-logic.php';
-require_once TOTALPRESS_DIR . '/assets/extensions/meta-box-tabs/meta-box-tabs.php';
+require get_template_directory() . '/assets/inc/template-functions.php';
+require get_template_directory() . '/assets/inc/tgm-plugin-activation/class-tgm-plugin-activation.php';
+require get_template_directory() . '/assets/inc/tgm-config.php';
+require get_template_directory() . '/assets/inc/include_kirki.php';
+require get_template_directory() . '/assets/customizer/customizer.php';
+require get_template_directory() . '/assets/inc/metaboxes.php';
+require get_template_directory() . '/assets/inc/extras.php';
+require get_template_directory() . '/assets/inc/plugin-support.php';
+require get_template_directory() . '/assets/extensions/meta-box-tabs/meta-box-tabs.php';
 
 // enqueue scripts and styles.
 if ( ! function_exists('totalpress_scripts')) :
 	function totalpress_scripts() {
-		wp_enqueue_style('font-awesome',TOTALPRESS_URI . '/assets/css/font-awesome.css','',TOTALPRESS_VERSION );
+		wp_enqueue_style('font-awesome',get_template_directory_uri() . '/assets/css/font-awesome.css','',TOTALPRESS_VERSION );
 		wp_enqueue_style('totalpress',get_stylesheet_uri(),'',TOTALPRESS_VERSION );
-		wp_enqueue_script('what-input',TOTALPRESS_URI.'/assets/js/what-input.js',array('jquery'),TOTALPRESS_VERSION,true);
-		wp_enqueue_script('foundation',TOTALPRESS_URI.'/assets/js/foundation.js',array('jquery'),TOTALPRESS_VERSION,true);
-		wp_enqueue_script ('app',TOTALPRESS_URI.'/assets/js/app.js',array('foundation'),TOTALPRESS_VERSION,true);
+		wp_enqueue_script('foundation',get_template_directory_uri().'/assets/js/foundation.js',array('jquery'),TOTALPRESS_VERSION,true);
+		wp_enqueue_script ('app',get_template_directory_uri().'/assets/js/app.js',array('foundation'),TOTALPRESS_VERSION,true);
 		if (is_singular() && comments_open() && get_option('thread_comments')) {
 			wp_enqueue_script('comment-reply');
 		}
@@ -117,13 +97,7 @@ if ( ! function_exists('totalpress_widgets_init')) :
 	}
 	add_action('widgets_init','totalpress_widgets_init');
 endif;
-// Custom Excerpt Length
-if ( ! function_exists('totalpress_custom_excerpt')) :
-	function totalpress_custom_excerpt( $number ) {
-		return 65;
-	}
-	add_filter('excerpt_length','totalpress_custom_excerpt');
-endif;
+
 // excerpt more
 if ( ! function_exists('totalpress_excerpt_more') && ! is_admin() ) :
 	function totalpress_excerpt_more( $more ) {
@@ -135,6 +109,7 @@ if ( ! function_exists('totalpress_excerpt_more') && ! is_admin() ) :
 	}
 	add_filter('excerpt_more','totalpress_excerpt_more');
 endif;
+
 // style the visual editor to resemble the theme front end.
 if ( ! function_exists('totalpress_add_editor_styles')) :
 	function totalpress_add_editor_styles() {
@@ -156,13 +131,6 @@ if (! function_exists('totalpress_filter_post_class')) :
 	}
 	add_filter('post_class','totalpress_filter_post_class',20);
 endif;
-// removes recent comments styling
-if ( ! function_exists('totalpress_remove_recent_comments_style')) {
-	function totalpress_remove_recent_comments_style() {
-		global $wp_widget_factory;
-		remove_action('wp_head',array( $wp_widget_factory->widgets['WP_Widget_Recent_Comments'],'recent_comments_style')); }
-	add_action('widgets_init','totalpress_remove_recent_comments_style');
-}
 // threaded comments in footer
 if ( ! function_exists('totalpress_enqueue_comments_reply')) {
 	function totalpress_enqueue_comments_reply() {

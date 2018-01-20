@@ -1,4 +1,4 @@
-/* @version 1.0.10 */
+/* @version 1.0.11 */
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};

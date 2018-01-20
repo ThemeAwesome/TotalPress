@@ -1,4 +1,4 @@
-<?php /* @version 1.0.10 */
+<?php /* @version 1.0.11 */
 if ( ! defined('ABSPATH')) exit;
 /**************************************
  * Start theme
@@ -51,7 +51,7 @@ if ( ! function_exists('totalpress_build_logo')) :
 		$logo = wp_get_attachment_image_src($custom_logo_id ,'full');
 		if (has_custom_logo()) {
 			// If we have a header image, get to buildin' the logo area
-			echo apply_filters( 'totalpress_header_image', sprintf(
+			echo apply_filters('totalpress_header_image', sprintf(
 				'<div class="site-logo"><a href="%1$s" title="%2$s" rel="home"><img src="'. esc_url( $logo[0] ) .'" class="header-image" alt="%2$s" /></a></div>',
 				esc_url(home_url( '/' )),
 				esc_attr(get_bloginfo('name','display'))
@@ -144,7 +144,7 @@ if ( ! function_exists('totalpress_topbar_navigation')) :
     function totalpress_topbar_navigation() { ?>
 		<nav id="site-navigation" class="main-navigation grid-container" itemtype="http://schema.org/SiteNavigationElement" itemscope="itemscope" role="navigation">
 	        <div class="title-bar" data-responsive-toggle="main-menu">
-	            <button class="icon-menu" type="button" data-toggle><?php _e('&#9776; Menu','totalpress'); ?></button>
+	            <button class="icon-menu" type="button" data-toggle><?php esc_html_e('&#9776; Menu','totalpress'); ?></button>
 	        </div><!-- .title-bar -->
 	        <div class="top-bar grid-x grid-padding-x" id="main-menu">
 	        	<div class="<?php echo get_theme_mod('totalpress_theme_nav_alignment','top-bar-left'); ?> hide-for-small-only"><?php do_action('totalpress_top_bar'); ?></div><!-- .top-bar -->

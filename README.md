@@ -7,7 +7,7 @@
 **Donate:** [TotalPress Project](https://www.paypal.me/themeawesome)<br />
 **Requires at least:** 4.9.2<br />
 **Tested up to:** 5.0-alpha-42525<br />
-**Stable tag:** 1.0.10<br />
+**Stable tag:** 1.0.11<br />
 **License:** GNU General Public License v3.0<br />
 **License URI:** [http://www.gnu.org/licenses/gpl-3.0.html](http://www.gnu.org/licenses/gpl-3.0.html)<br />
 
@@ -31,7 +31,23 @@ Installation
 
 Changelog
 ===
-### [1.0.10] 2018-01-18
+### [1.0.11] 2018-01-20
+* added `load_theme_textdomain` to make the theme translatable.
+* Switched from using `TOTALPRESS_DIR` to `get_template_directory()` in `functions.php` and `customizer.php`
+Removed some of the features from the `setup_totalpress` function in `functions.php` - just trying to trim the fat some more.
+* Corrected css issue where social icon links in the left and right sidebar were not using the hover tranisitons set `transition: all .2s ease-in!important;`
+* Set the requirement for the `Kirki` and `Meta Box` plugin to `false`, meaning they are not required even though they are - per the theme review team.
+* Removed the `totalpress_remove_recent_comments_style` from `functions.php` - per theme review team.
+* Removed custom excerpt length - per theme review team. Will make available via `TP-Primo`.
+* Added ecerpt function from `TwentySeventeen` per the theme review team. Apprantly the old ecerpt function was affecting the admin side and this is not allowed.
+* Declared my `copyright` in the `readme.txt` file - per the theme review team.
+* Changed to the `WordPress.org` version of the `TGM Plugin Activation` plugin - per theme review team.
+* Removed `totalpress_display_author` - this can be done via a plugin or hand coded. Just trimming more.
+* Removed the `Featured Image Options` from being hidden unless there was an actual `featured image` attached to the post/page. This will be added back once I get with the dev's over at `MetaBox.io` so the issue can get corrected.
+* Removed the `Meta Box COnditionals` plugin from the theme. Until the previous issue is corrected it is not needed. Will add it once the previous issue is taken care of.
+* Replaced all instances of `_e` with `esc_html_e`.
+
+###### [1.0.10] 2018-01-18
 * Accidentally added two instances of `../fonts` to the `font-awesome.css` file. This was causing an issue, but now it's corrected.
 * Tidied up `Foundation for Sites` and `MotionUI` css in `styles.css` - Cleaned up a lot of empty space. Didn't make that big of a difference however it did reduce the overall theme size by **2kb**!
 * Corrected issue where `sub navs` were displaying in a menu in the `header sidebar`. This will be added later in an update.
@@ -81,18 +97,14 @@ Changelog
 * Added `full-width-thumb` thumbnail size to `functions.php`. The actual size is 1200 wide with unlimited height.
 
 ###### [1.0.5] 2017-12-10
-
 * Turned all the loops into hooks for easier modification.
 * Moved all html into hooks as well, still have a few files with html in them. That is for 1.0.6
 
-
 ###### [1.0.4] 2017-12-05
-
 * Changed the order of the sidebars to reflect a "top down" approach.
 * renamed sidebar-1 and sidebar-2 in functions.php, sidebar-1 is now content sidebar one and sidebar-2 is now content sidebar two. Someone pointed out to me that right and left sidebars do not matter on mobile as the content is stacked. Made sense so I changed the names.
 
 ###### [1.0.3.1] 2017-12-04
-
 * Corrected an issue with a PHP short tag in one of the files.
 * Removed `admin.css` as it was not being used.
 * Corrected typo in the header sidebar area.
@@ -101,21 +113,17 @@ Changelog
 * Changed the name of the right sidebar from Main to Right Sidebar.
 
 ###### [1.0.3] 2017-12-04
-
 * This version did not make it into the theme repo. There was an error with a PHP short tag being used in the theme.
 
 ###### [1.0.2] 2017-11-16
-
 * Corrected issue where certain options were not working due to the fact that I did not updated those functions when I added the unique names in 1.0.1
 * Adjusted a few css styles.
 * Changed the order of appearance in the customizer of Header Alignment.
 
 ###### [1.0.1] 2017-11-13
-
 * Added CHANGELOG.txt file to keep track of changes made to the theme.
 * Removed an extra occurance of `add_theme_support('post-thumbnails');` which was located on line 31 of `functions.php`.
 * Added unique prefix for everything the Theme defines in the public namespace, including options, functions, global variables, constants, post meta, etc.
 
 ###### [1.0.0] 2017-11-02
-
 * Initial submission to the theme review team on 11/02/2017

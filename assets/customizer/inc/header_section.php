@@ -1,4 +1,4 @@
-<?php /* @version 1.0.10 */
+<?php /* @version 1.0.11 */
 if ( ! defined('ABSPATH')) exit;
 TotalPress_Kirki::add_section( 'totalpress_header_section', array(
     'title'       => esc_attr__('Header Layout','totalpress'),

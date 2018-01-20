@@ -1,4 +1,4 @@
-<?php /* @version 1.0.10 */
+<?php /* @version 1.0.11 */
 if ( ! defined('ABSPATH')) exit;
 
 if ( class_exists('WP_Customize_Panel')) {
@@ -234,13 +234,13 @@ TotalPress_Kirki::add_config('totalpress_theme_customizer',array(
   'option_type' => 'theme_mod',
 ));
 
-require TOTALPRESS_DIR . '/assets/customizer/inc/layout_section.php'; //loads layout options
-require TOTALPRESS_DIR . '/assets/customizer/inc/post_section.php'; //loads content options
-require TOTALPRESS_DIR . '/assets/customizer/inc/colors_section.php'; //loads color options
-require TOTALPRESS_DIR . '/assets/customizer/inc/footer_section.php'; //loads footer options
-require TOTALPRESS_DIR . '/assets/customizer/inc/footer_widgets_section.php'; //loads footer widgets options
-require TOTALPRESS_DIR . '/assets/customizer/inc/header_section.php'; //loads header options
-require TOTALPRESS_DIR . '/assets/customizer/inc/header_sidebar_section.php'; //loads header options
-require TOTALPRESS_DIR . '/assets/customizer/inc/navigation_section.php'; //loads header options
-require TOTALPRESS_DIR . '/assets/customizer/inc/top_sidebar_section.php'; //loads top sidebar options
-require TOTALPRESS_DIR . '/assets/customizer/inc/typography_section.php'; //loads typography options
+require get_template_directory() . '/assets/customizer/inc/layout_section.php'; //loads layout options
+require get_template_directory() . '/assets/customizer/inc/post_section.php'; //loads content options
+require get_template_directory() . '/assets/customizer/inc/colors_section.php'; //loads color options
+require get_template_directory() . '/assets/customizer/inc/footer_section.php'; //loads footer options
+require get_template_directory() . '/assets/customizer/inc/footer_widgets_section.php'; //loads footer widgets options
+require get_template_directory() . '/assets/customizer/inc/header_section.php'; //loads header options
+require get_template_directory() . '/assets/customizer/inc/header_sidebar_section.php'; //loads header options
+require get_template_directory() . '/assets/customizer/inc/navigation_section.php'; //loads header options
+require get_template_directory() . '/assets/customizer/inc/top_sidebar_section.php'; //loads top sidebar options
+require get_template_directory() . '/assets/customizer/inc/typography_section.php'; //loads typography options

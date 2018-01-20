@@ -1,4 +1,4 @@
-<?php /* @version 1.0.10 */
+<?php /* @version 1.0.11 */
 if ( ! defined('ABSPATH')) exit;
 
 // Flush transients used in totalpress_categorized_blog.
@@ -227,7 +227,7 @@ if ( ! function_exists( 'totalpress_build_archive_title' ) ) :
 			<?php the_post(); ?>
 			<div class="author-info small-12 cell">
 				<h1 class="page-title">
-					<?php printf( __('%s','totalpress'),'<span class="vcard">'. get_the_author().'</span>'); ?>
+					<?php the_archive_title(); ?>
 				</h1>
 				
 					<div class="author-img small-12 cell">
@@ -255,6 +255,11 @@ if ( ! function_exists( 'totalpress_build_archive_title' ) ) :
 	add_action('totalpress_archive_title','totalpress_build_archive_title');
 endif;
 
+			$title = sprintf( '%1$s<span class="vcard">%2$s</span>',
+				get_avatar( get_the_author_meta( 'ID' ), 75 ),
+				get_the_author()
+			);
+
 // modify archive title
 if ( ! function_exists('modify_archive_title')) :
 	function modify_archive_title($title) {
@@ -272,36 +277,6 @@ if ( ! function_exists('modify_archive_title')) :
 		return $title;
 	}
 	add_filter('get_the_archive_title','modify_archive_title');
-endif;
-
-// display author
-if ( ! function_exists('totalpress_build_author')) :
-	function totalpress_build_author() { ?>
-		<?php if ( is_singular() && get_the_author_meta( 'description' ) && is_multi_author() ) : ?>
-			<div class="author-info small-12 cell clearfix">
-				<div class="the_auth small-12">
-					<h2 class="author-title">
-						<?php printf( __('%s','totalpress'),'<span class="vcard">'. get_the_author().'</span>'); ?>
-					</h2>
-					<?php if ( get_the_author_meta( 'description' ) ) : ?>
-					<div class="author-description">
-						<div class="author-img">
-							<?php echo get_avatar(get_the_author_meta('user_email'),apply_filters('thempress_avatar_size',90)); ?>
-						</div><!-- .author-img -->
-						<p><?php the_author_meta( 'description' ); ?></p>
-						<div class="author-link text-right">
-							<a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" rel="author">
-								<?php printf( __( 'View all posts by %s &raquo;', 'totalpress' ), get_the_author() ); ?>
-							</a>
-						</div><!-- .author-link	-->
-					</div><!-- .author-description -->
-					<?php endif; ?>
-				</div><!-- grid-x grid-padding-x -->
-			</div><!-- .author-info -->
-		<?php endif; ?>
-	<?php
-	}
-	add_action('totalpress_display_author','totalpress_build_author');
 endif;
 
 // prints html for categories, tags and comments
@@ -375,7 +350,7 @@ function totalpress_comments( $comment, $args, $depth ) {
 	if ( 'pingback' == $comment->comment_type || 'trackback' == $comment->comment_type ) : ?>
 	<li id="comment-<?php comment_ID(); ?>" <?php comment_class(); ?>>
 		<div class="comment-body">
-			<?php _e('Pingback:','totalpress'); ?> <?php comment_author_link(); ?> <?php edit_comment_link( __('Edit','totalpress'),
+			<?php esc_html_e('Pingback:','totalpress'); ?> <?php comment_author_link(); ?> <?php edit_comment_link( __('Edit','totalpress'),
 			'<span class="edit-link">','</span>'); ?>
 		</div>
 	<?php else : ?>
@@ -404,7 +379,7 @@ function totalpress_comments( $comment, $args, $depth ) {
 					</div><!-- .comment-metadata -->
 				</div><!-- .comment-author-info -->
 				<?php if ( '0' == $comment->comment_approved ) : ?>
-				<p class="comment-awaiting-moderation"><?php _e('Your comment is awaiting moderation.','totalpress'); ?></p>
+				<p class="comment-awaiting-moderation"><?php esc_html_e('Your comment is awaiting moderation.','totalpress'); ?></p>
 				<?php endif; ?>
 			</footer><!-- .comment-meta -->
 			<div class="comment-content">
@@ -423,7 +398,7 @@ if ( ! function_exists( 'totalpress_content_nav' ) ) :
 	$html_id = esc_attr( $html_id );
 	if ( $wp_query->max_num_pages > 1) : ?>
 		<nav id="<?php echo $html_id; ?>" class="navigation" role="navigation">
-			<h3 class="assistive-text"><?php _e('Post Navigation','totalpress'); ?></h3>
+			<h3 class="assistive-text"><?php esc_html_e('Post Navigation','totalpress'); ?></h3>
 			<div class="pagination-previous alignleft"><?php next_posts_link( __('Older Posts','totalpress')); ?></div>
 			<div class="pagination-next alignright"><?php previous_posts_link( __('Newer Posts','totalpress')); ?></div>
 		</nav><!-- #<?php echo $html_id; ?> .navigation -->

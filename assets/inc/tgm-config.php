@@ -1,4 +1,4 @@
-<?php /* @version 1.0.10 */
+<?php /* @version 1.0.11 */
 // TGM Plugin Activation Configuration
 function totalpress_require_plugins() {
  	//Plugins
@@ -6,12 +6,12 @@ function totalpress_require_plugins() {
     	array(
 			'name'     				=> esc_html('Kirki Plugin','totalpress'),
 			'slug'     				=> 'kirki',
-			'required' 				=> true,
+			'required' 				=> false,
 		),
     	array(
 			'name'     				=> esc_html('Meta Box','totalpress'),
 			'slug'     				=> 'meta-box',
-			'required' 				=> true,
+			'required' 				=> false,
 		)
 	);
     //Configs
@@ -25,7 +25,6 @@ function totalpress_require_plugins() {
 		'is_automatic' => false,                   // Automatically activate plugins after installation or not.
 		'message'      => '',                      // Message to output right before the plugins table.
     );
-
     tgmpa( $plugins, $config );
 }
 add_action('tgmpa_register','totalpress_require_plugins');

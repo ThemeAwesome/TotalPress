@@ -4,7 +4,7 @@ Theme URI: https://themeawesome.com/totalpress-wordpress-foundation-theme/
 Author: ThemeAWESOME
 Author URI: https://themeawesome.com/
 Description: Hello world, meet TotalPress! I'm Based off _s (Underscores) and I also come with Zurb's Foundation for Sites fully integrated. What makes me awesome? I am small and fast (I'm just 387kb compressed). I am fully responsive, meaning I adjust seamlessly to any screen resolution so I look good on any device. I've got a ton of hooks and filters, I've got ten (10) widget areas built in as well as 6 different sidebar page templates. I use the Kirki plugin. Kirki provides 30 custom control types for the theme customizer ranging from simple sliders and tooltips to complex typography controls including Google-Fonts. Kirki makes developing themes a lot faster and easier for developers and more meaningful for users. I also use the Meta Box plugin which is a powerful, professional toolkit for developers to create and handle everything related to custom meta boxes and custom fields for WordPress. Did I mention that I work really well with page builders like Elementor. So what are you waiting for? Download me today and take me for a spin.
-Version: 1.0.10
+Version: 1.0.11
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Tags: blog, one-column, two-columns, three-columns, right-sidebar, left-sidebar, footer-widgets, custom-background, flexible-header, custom-menu, editor-style, featured-images, full-width-template, microformats, post-formats, sticky-post, translation-ready, theme-options, custom-logo, custom-colors
@@ -1734,7 +1734,7 @@ p.site-description {color: #999999;font-size: 0.9375rem;line-height: normal;marg
  * Navigation
  *************************************/
 .main-navigation.grid-container {background-color:#000000;}
-.title-bar {background-color:#000000;padding:10px;}
+.title-bar {background-color:#000000;padding:15px;}
 .top-bar {margin:0 auto;padding:0;}
 .top-bar,.top-bar ul {background-color:#000000;}
 .top-bar-center {margin:0 auto;}
@@ -1816,8 +1816,6 @@ h2.author-title {line-height: normal;margin-bottom: 16px;}
   font-size: 14px;}
 span.required {
   color: #b02329;font-weight: 900;}
-#comments textarea {
-  margin-bottom: 40px;}
 #comments p.form-submit {margin-bottom: 0;}
 #comments cite::before {
   content: "";}
@@ -1827,8 +1825,15 @@ span.required {
   display: inline-block;vertical-align: middle;}
 .comments-title,.comment-reply-title {
   font-size: 30px;margin-bottom: 32px;}
-.comment-reply-title {
-  margin-bottom: 0;}
+.comment-reply-title {margin-bottom: 16px;}
+.comment-form-comment {margin-bottom:35px;width:100%;}
+
+.comment-fields {margin-bottom: 30px;}
+.comment-form-author,.comment-form-email,.comment-form-url {margin-bottom: 0;}
+
+.comment-form-author #author,.comment-form-email #email,.comment-form-url #url {margin-bottom: 0;}
+
+
 .comment-navigation {
   margin-bottom: 32px;position: relative;float: left;display: block;width: 100%;}
 .comment-navigation > .nav-previous,.comment-navigation > .previous-image {
@@ -1839,8 +1844,6 @@ span.required {
   padding-left: 0;}
 #comments p.comment-form-email.columns {
   padding-right: 0;}
-p.comment-form-url {
-  margin-bottom: 32px;}
 .comment .children {
   padding-left: 30px;margin-top: -30px;}
 .comment-meta .avatar {
@@ -2027,14 +2030,10 @@ h2.entry-title a:hover {
   text-decoration: none;}
 #comments .comment-metadata a:hover {
   text-decoration: underline;}
-#right-sidebar.rts a {
-  color:#b02329;}
-#right-sidebar.rts a:hover {
-  color: #3F3F3F;}
-#right-sidebar.rts .widget .menu-social-container .menu > li > a {
-  color: #3f3f3f}
-#right-sidebar.rts .widget .menu-social-container .menu > li > a:hover {
-  color: #b02329;}
+#right-sidebar.rts a,#left-sidebar.lfts a {color: #b02329;outline:0!important;transition: all .2s ease-in!important;}
+#right-sidebar.rts a:hover,#right-sidebar.rts a:focus,#left-sidebar.lfts a:hover,#left-sidebar.lfts a:focus {color: #3F3F3F;}
+#right-sidebar.rts .widget .menu-social-container .menu > li > a,#left-sidebar.lfts .widget .menu-social-container .menu > li > a {color: #3f3f3f;outline:0!important;transition: all .2s ease-in!important;}
+#right-sidebar.rts .widget .menu-social-container .menu > li > a:hover,#right-sidebar.rts .widget .menu-social-container .menu > li > a:focus,#left-sidebar.lfts .widget .menu-social-container .menu > li > a:hover,#left-sidebar.lfts .widget .menu-social-container .menu > li > a:focus {color: #b02329;}
 .footer-sidebar a {
   color:#b02329;}
 .footer-sidebar a:hover {
@@ -2193,6 +2192,7 @@ a.button.wc-forward:after {content: "\f105";font-family: FontAwesome;line-height
 .woocommerce-page .woocommerce-message .button {background: #b02329;}
 .woocommerce-page .woocommerce-message .button:hover {background: #222222;}
 .woocommerce-page .woo-.cell {padding: 0}
+
 /**************************************
  * Media Query CSS
  *************************************/
@@ -2239,6 +2239,9 @@ a.button.wc-forward:after {content: "\f105";font-family: FontAwesome;line-height
       .comment-content {padding: 10px 10px 0;}
       .comment-navigation > .nav-previous a,.comment-navigation > .nav-next a {font-size: 14px}
       #comments textarea {margin-bottom: 30px;}
+      .comment-fields {margin-bottom:;}
+      .comment-form-author #author, .comment-form-email #email{margin-bottom: 30px;}
+       .comment-form-url #url {margin-bottom: 0;}
       .one-container .inside-article {padding:0 30px;}
       div.author-info h1.page-title {font-size:35px;}
       .site-content.grid-container {padding: 0 0 30px;}
@@ -2250,6 +2253,7 @@ a.button.wc-forward:after {content: "\f105";font-family: FontAwesome;line-height
       .site-info {margin-bottom: 25px;text-align: center}
       .back-to-top {bottom:8px;right:8px;}
 }
+
  /* Medium Only - from 640px up to a max resolution of 1023px */
 @media screen and (min-width: 40em) and (max-width: 63.9375em) {
       li>ol,li>ul {margin:0;padding:0;}

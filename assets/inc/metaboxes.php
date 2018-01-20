@@ -1,4 +1,4 @@
-<?php /* @version 1.0.10 */
+<?php /* @version 1.0.11 */
 if ( ! defined('ABSPATH')) exit;
 // Add our tabbed metabox
 function totalpress_register_tabbed_meta_boxes($meta_boxes) {
@@ -72,20 +72,20 @@ function totalpress_register_tabbed_meta_boxes($meta_boxes) {
       'tab_style' => 'left',
       'tab_wrapper' => true,
       'tabs' =>   array (
-        'totalpress_featured_image_options' => array (
-          'label' => esc_html__('Featured Image Options','totalpress'),
-          'icon' => 'dashicons-arrow-right',
-        ),
         'totalpress_hide_post_page_elements' => array (
           'label' => esc_html__('Hide Post/Page Elements','totalpress'),
+          'icon' => 'dashicons-arrow-right',
+        ),
+        'totalpress_page_builder_options' =>  array (
+          'label' => esc_html__('Page Builder Options','totalpress'),
           'icon' => 'dashicons-arrow-right',
         ),
         'totalpress-hide-footer-widgets' =>  array (
           'label' => esc_html__('Hide Footer Widgets','totalpress'),
           'icon' => 'dashicons-arrow-right',
         ),
-        'totalpress_page_builder_options' =>  array (
-          'label' => esc_html__('Page Builder Options','totalpress'),
+        'totalpress_featured_image_options' => array (
+          'label' => esc_html__('Featured Image Options','totalpress'),
           'icon' => 'dashicons-arrow-right',
         ),
       ),
@@ -93,14 +93,3 @@ function totalpress_register_tabbed_meta_boxes($meta_boxes) {
     return $meta_boxes;
 }
 add_filter('rwmb_meta_boxes','totalpress_register_tabbed_meta_boxes');
-
-// hide our featured image options tab if there is no featured image being used.
-add_filter( 'rwmb_outside_conditions', function ( $conditions ) {
-  $conditions['.rwmb-tab-totalpress_featured_image_options'] = array(
-    'visible' => array('_thumbnail_id', '!=', '-1'),
-  );
-  $conditions['.rwmb-tab-panel-totalpress_featured_image_options'] = array(
-    'visible' => array('_thumbnail_id', '!=', '-1'),
-  );
-  return $conditions;
-} );
