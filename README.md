@@ -31,7 +31,14 @@ Installation
 
 Changelog
 ===
-### [1.0.11] 2018-01-20
+### [1.0.12] 2018-01-24
+* Prefixed `modify_archive_title()` in `extras.php` with `totalpress`.
+* Prefixed `add_image_size()` in `functions.php` with `totalpress`. Changed it from `full-width` to `totalpress-full-width`.
+* Removed `search-form` from `add_theme_support('html5')` as I am customizing it myself.
+* Corrected a fatal error that was occurring after the theme was activated and the user went to the customizer. I corrected it by removing the function `active_plugins` from `customizer.php`.
+* Removed the `Meta Box Tabs` plugin. **This is a premium plugin and cannot be included in a free plugin or theme** according to the [Meta Box FAQ](https://metabox.io/faq/). This will be added to `TP-Primo`.
+
+###### [1.0.11] 2018-01-20
 * added `load_theme_textdomain` to make the theme translatable.
 * Switched from using `TOTALPRESS_DIR` to `get_template_directory()` in `functions.php` and `customizer.php`
 Removed some of the features from the `setup_totalpress` function in `functions.php` - just trying to trim the fat some more.
@@ -44,7 +51,7 @@ Removed some of the features from the `setup_totalpress` function in `functions.
 * Changed to the `WordPress.org` version of the `TGM Plugin Activation` plugin - per theme review team.
 * Removed `totalpress_display_author` - this can be done via a plugin or hand coded. Just trimming more.
 * Removed the `Featured Image Options` from being hidden unless there was an actual `featured image` attached to the post/page. This will be added back once I get with the dev's over at `MetaBox.io` so the issue can get corrected.
-* Removed the `Meta Box COnditionals` plugin from the theme. Until the previous issue is corrected it is not needed. Will add it once the previous issue is taken care of.
+* Removed the `Meta Box Conditionals` plugin from the theme. Until the previous issue is corrected it is not needed. Will add it once the previous issue is taken care of.
 * Replaced all instances of `_e` with `esc_html_e`.
 
 ###### [1.0.10] 2018-01-18

@@ -1,17 +1,15 @@
-<?php /* @version 1.0.11 */
+<?php /* @version 1.0.12 */
 if ( ! defined('ABSPATH')) exit;
-
 // Flush transients used in totalpress_categorized_blog.
 function totalpress_category_transient_flusher() {
 	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
 		return;
 	}
 	// Like, scram kid yah bother me!
-	delete_transient( 'totalpress_categories' );
+	delete_transient('totalpress_categories');
 }
-add_action( 'edit_category', 'totalpress_category_transient_flusher' );
-add_action( 'save_post',     'totalpress_category_transient_flusher' );
-
+add_action('edit_category','totalpress_category_transient_flusher');
+add_action('save_post','totalpress_category_transient_flusher');
 // returns true if blog has more than one category
 if ( ! function_exists( 'totalpress_categorized_blog' ) ) :
 	function totalpress_categorized_blog() {
@@ -37,7 +35,6 @@ if ( ! function_exists( 'totalpress_categorized_blog' ) ) :
 		}
 	}
 endif;
-
 // prints html for current post-date/time and author
 if ( ! function_exists( 'totalpress_build_posted_on' ) ) :
 	function totalpress_build_posted_on() {
@@ -51,9 +48,9 @@ if ( ! function_exists( 'totalpress_build_posted_on' ) ) :
 		}
 		$time_stamp = sprintf( $time_stamp,
 			esc_attr( get_the_date( 'c' ) ),
-			esc_html( get_the_date() ),
+			esc_attr( get_the_date() ),
 			esc_attr( get_the_modified_date( 'c' ) ),
-			esc_html( get_the_modified_date() )
+			esc_attr( get_the_modified_date() )
 		);
 		$open_entry_meta = sprintf( '<div class="entry-meta">' );
 		echo apply_filters( 'totalpress_open_entry_meta', $open_entry_meta );
@@ -70,17 +67,17 @@ if ( ! function_exists( 'totalpress_build_posted_on' ) ) :
 		if ( $show_author ) {
 			echo apply_filters('totalpress_post_author_output',sprintf( ' <span class="byline">%1$s</span>',
 				sprintf( '<span class="author vcard" itemtype="http://schema.org/Person" itemscope="itemscope" itemprop="author">%1$s <a class="url fn n" href="%2$s" title="%3$s" rel="author" itemprop="url"><span class="author-name" itemprop="name">%4$s</span></a> </span>',
-					__( 'by','totalpress'),
+					esc_attr( 'by','totalpress'),
 					esc_url(get_author_posts_url(get_the_author_meta('ID'))),
-					esc_attr(sprintf( __('View all posts by %s','totalpress'),get_the_author())),
-					esc_html(get_the_author() ))
+					esc_attr(sprintf( esc_attr('View all posts by %s','totalpress'),get_the_author())),
+					esc_attr(get_the_author() ))
 			));
 		}
 		// If comment links are enabled, show them
 		if ( $show_comments_top ) {
 			echo '<span class="comments-link-top">';
 			/* translators: %s: post title */
-			comments_popup_link( sprintf( wp_kses( __( 'Leave a Comment<span class="screen-reader-text"> on %s</span>', 'totalpress' ), array( 'span' => array( 'class' => array() ) ) ), get_the_title() ) );
+			comments_popup_link( sprintf( wp_kses( esc_attr( 'Leave a Comment<span class="screen-reader-text"> on %s</span>', 'totalpress' ), array( 'span' => array( 'class' => array() ) ) ), get_the_title() ) );
 			echo '</span>';
 		}
 		// If display author is enabled, show him/her
@@ -88,7 +85,7 @@ if ( ! function_exists( 'totalpress_build_posted_on' ) ) :
 			edit_post_link(
 				sprintf(
 					/* translators: %s: Name of current post */
-					esc_html__( 'Edit %s', 'totalpress' ),
+					esc_attr( 'Edit %s', 'totalpress' ),
 					the_title( '<span class="screen-reader-text">"', '"</span>', false )
 				),
 				'<span class="edit-link-top">','</span>'
@@ -201,7 +198,7 @@ if ( ! function_exists('totalpress_order_classes')) {
 }
 
 // Add a pingback url auto-discovery header for singularly identifiable articles.
-if ( ! function_exists( 'totalpress_pingback_header' ) ) :
+if ( ! function_exists('totalpress_pingback_header')) :
 	function totalpress_pingback_header() {
 		if ( is_singular() && pings_open() ) {
 			echo '<link rel="pingback" href="', esc_url( get_bloginfo('pingback_url')), '">';
@@ -211,7 +208,7 @@ if ( ! function_exists( 'totalpress_pingback_header' ) ) :
 endif;
 
 // Get our wp_nav_menu() fallback, wp_page_menu(), to show a home link
-if ( ! function_exists( 'totalpress_page_menu_args' ) ) :
+if ( ! function_exists('totalpress_page_menu_args')) :
 	function totalpress_page_menu_args( $args ) {
 		$args['show_home'] = true;
 		return $args;
@@ -220,7 +217,7 @@ if ( ! function_exists( 'totalpress_page_menu_args' ) ) :
 endif;
 
 // archive title
-if ( ! function_exists( 'totalpress_build_archive_title' ) ) :
+if ( ! function_exists('totalpress_build_archive_title')) :
 	function totalpress_build_archive_title() { ?>
 		<?php if (is_author() && get_the_author_meta('description') && is_multi_author() ) : ?>
 			<?php if (have_posts()) : ?>
@@ -229,16 +226,14 @@ if ( ! function_exists( 'totalpress_build_archive_title' ) ) :
 				<h1 class="page-title">
 					<?php the_archive_title(); ?>
 				</h1>
-				
 					<div class="author-img small-12 cell">
-						<?php echo get_avatar(get_the_author_meta('user_email'),apply_filters('thempress_avatar_size',90)); ?>
+						<?php echo get_avatar(get_the_author_meta('user_email'),apply_filters('thempress_avatar_size',75)); ?>
 					</div><!-- .author-img -->
 					<?php if ( get_the_author_meta('description')) : ?>
 					<div class="author-description small-12 cell">
 						<p><?php the_author_meta('description'); ?></p>
 					</div><!-- .author-description -->
 					<?php endif; ?>
-				
 			</div><!-- .author-info -->
 			<?php rewind_posts(); ?>
 			<?php endif; ?>
@@ -255,28 +250,21 @@ if ( ! function_exists( 'totalpress_build_archive_title' ) ) :
 	add_action('totalpress_archive_title','totalpress_build_archive_title');
 endif;
 
-			$title = sprintf( '%1$s<span class="vcard">%2$s</span>',
-				get_avatar( get_the_author_meta( 'ID' ), 75 ),
-				get_the_author()
-			);
-
 // modify archive title
-if ( ! function_exists('modify_archive_title')) :
-	function modify_archive_title($title) {
+if ( ! function_exists('totalpress_modify_archive_title')) :
+	function totalpress_modify_archive_title($title) {
 		if (is_category()) {
 			$title = single_cat_title('', false);
 		} elseif (is_tag()) {
 			$title = single_tag_title('', false);
-		} elseif (is_day()) {
-			$title = single_day_title('', false);
 		} elseif (is_month()) {
-			$title = single_month_title('', false);
-		} elseif (is_year()) {
-			$title = single_year_title('', false);
-		}
+			$title = single_month_title(' ', false);
+		} elseif ( is_author() ) {
+            $title = '<span class="vcard">' . get_the_author() . '</span>' ;
+        }
 		return $title;
 	}
-	add_filter('get_the_archive_title','modify_archive_title');
+	add_filter('get_the_archive_title','totalpress_modify_archive_title');
 endif;
 
 // prints html for categories, tags and comments
@@ -293,22 +281,22 @@ if ( ! function_exists( 'totalpress_build_entry_footer' ) ) :
 			// If show categories is set to true, show it
 			if ( $show_cats ) {
 				/* translators: used between list items, there is a space after the comma */
-				$categories_list = get_the_category_list( esc_html__( ', ', 'totalpress' ) );
+				$categories_list = get_the_category_list( esc_attr( ', ', 'totalpress' ) );
 				if ( $categories_list && totalpress_categorized_blog() ) {
-					printf('<span class="cat-links">' . esc_html__('Posted in: %1$s', 'totalpress') . '</span>', $categories_list); }
+					printf('<span class="cat-links">' . esc_attr('Posted in: %1$s', 'totalpress') . '</span>', $categories_list); }
 			}
 			// If show tags are set to true, show them
 			if ( $show_tags ) {
 				/* translators: used between list items, there is a space after the comma */
-				$tags_list = get_the_tag_list('', esc_html__(',','totalpress'));
+				$tags_list = get_the_tag_list('', esc_attr(',','totalpress'));
 				if ( $tags_list ) {
-					printf('<span class="tags-links">' . esc_html__('Tagged: %1$s','totalpress') . '</span>', $tags_list); }
+					printf('<span class="tags-links">' . esc_attr('Tagged: %1$s','totalpress') . '</span>', $tags_list); }
 			}
 			// If show comments below is set to true, show comments link
 			if ( $show_comments_bottom ) {
 				echo '<span class="comments-link-bottom">';
 				/* translators: %s: post title */
-				comments_popup_link( sprintf( wp_kses( __('Leave a Comment<span class="screen-reader-text"> on %s</span>','totalpress'), array( 'span' => array( 'class' => array() ) ) ), get_the_title() ) );
+				comments_popup_link( sprintf( wp_kses( esc_attr('Leave a Comment<span class="screen-reader-text"> on %s</span>','totalpress'), array( 'span' => array( 'class' => array() ) ) ), get_the_title() ) );
 				echo '</span>';
 			}
 			// If display author is enabled, show him/her
@@ -316,7 +304,7 @@ if ( ! function_exists( 'totalpress_build_entry_footer' ) ) :
 				edit_post_link(
 					sprintf(
 						/* translators: %s: Name of current post */
-						esc_html__( 'Edit %s', 'totalpress' ),
+						esc_attr( 'Edit %s', 'totalpress' ),
 						the_title( '<span class="screen-reader-text">"', '"</span>', false )
 					),
 					'<span class="edit-link-bottom">','</span>'
@@ -336,7 +324,7 @@ if ( ! function_exists( 'totalpress_build_entry_page_footer' ) ) :
 		if ( $show_page_edit ) {
 			echo apply_filters('totalpress_footer_entry_output', sprintf(
 				'<footer class="entry-footer">%1$s</footer><!-- .entry-footer -->',
-				edit_post_link( __('Edit Page','totalpress'),'<span class="edit-link">','</span>')
+				edit_post_link( esc_attr('Edit Page','totalpress'),'<span class="edit-link">','</span>')
 			));
 		}
 	}
@@ -350,7 +338,7 @@ function totalpress_comments( $comment, $args, $depth ) {
 	if ( 'pingback' == $comment->comment_type || 'trackback' == $comment->comment_type ) : ?>
 	<li id="comment-<?php comment_ID(); ?>" <?php comment_class(); ?>>
 		<div class="comment-body">
-			<?php esc_html_e('Pingback:','totalpress'); ?> <?php comment_author_link(); ?> <?php edit_comment_link( __('Edit','totalpress'),
+			<?php esc_attr('Pingback:','totalpress'); ?> <?php comment_author_link(); ?> <?php edit_comment_link( esc_attr('Edit','totalpress'),
 			'<span class="edit-link">','</span>'); ?>
 		</div>
 	<?php else : ?>
@@ -365,10 +353,10 @@ function totalpress_comments( $comment, $args, $depth ) {
 					<div class="entry-meta comment-metadata">
 						<a href="<?php echo esc_url(get_comment_link( $comment->comment_ID)); ?>">
 							<time datetime="<?php comment_time( 'c' ); ?>">
-								<?php printf( _x('%1$s at %2$s','1: date,2: time','totalpress'),get_comment_date(),get_comment_time()); ?>
+								<?php printf( esc_attr('%1$s at %2$s','1: date,2: time','totalpress'),get_comment_date(),get_comment_time()); ?>
 							</time>
 						</a>
-						<?php edit_comment_link( __('Edit','totalpress'),'<span class="edit-link">','</span>'); ?>
+						<?php edit_comment_link( esc_attr('Edit','totalpress'),'<span class="edit-link">','</span>'); ?>
 						<?php comment_reply_link( array_merge( $args, array(
 							'add_below' => 'div-comment',
 							'depth'     => $depth,
@@ -379,7 +367,7 @@ function totalpress_comments( $comment, $args, $depth ) {
 					</div><!-- .comment-metadata -->
 				</div><!-- .comment-author-info -->
 				<?php if ( '0' == $comment->comment_approved ) : ?>
-				<p class="comment-awaiting-moderation"><?php esc_html_e('Your comment is awaiting moderation.','totalpress'); ?></p>
+				<p class="comment-awaiting-moderation"><?php esc_attr('Your comment is awaiting moderation.','totalpress'); ?></p>
 				<?php endif; ?>
 			</footer><!-- .comment-meta -->
 			<div class="comment-content">
@@ -398,9 +386,9 @@ if ( ! function_exists( 'totalpress_content_nav' ) ) :
 	$html_id = esc_attr( $html_id );
 	if ( $wp_query->max_num_pages > 1) : ?>
 		<nav id="<?php echo $html_id; ?>" class="navigation" role="navigation">
-			<h3 class="assistive-text"><?php esc_html_e('Post Navigation','totalpress'); ?></h3>
-			<div class="pagination-previous alignleft"><?php next_posts_link( __('Older Posts','totalpress')); ?></div>
-			<div class="pagination-next alignright"><?php previous_posts_link( __('Newer Posts','totalpress')); ?></div>
+			<h3 class="assistive-text"><?php esc_attr('Post Navigation','totalpress'); ?></h3>
+			<div class="pagination-previous alignleft"><?php next_posts_link( esc_attr('Older Posts','totalpress')); ?></div>
+			<div class="pagination-next alignright"><?php previous_posts_link( esc_attr('Newer Posts','totalpress')); ?></div>
 		</nav><!-- #<?php echo $html_id; ?> .navigation -->
 	<?php endif;
 }

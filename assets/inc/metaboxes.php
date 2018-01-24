@@ -1,95 +1,87 @@
-<?php /* @version 1.0.11 */
+<?php /* @version 1.0.12 */
 if ( ! defined('ABSPATH')) exit;
-// Add our tabbed metabox
-function totalpress_register_tabbed_meta_boxes($meta_boxes) {
-    $meta_boxes[] = array (
-      'id' => 'totalpress-post-page-options',
-      'title' => esc_html__('TotalPress Post/Page Options','totalpress'),
-      'pages' =>   array (
-         'post',
-         'page',
+//Hide Post/Page Elelments Metabox
+function totalpress_hide_post_page_elements_metabox( $meta_boxes ) {
+  $prefix = 'totalpress_';
+  $meta_boxes[] = array(
+    'id' => 'hide-post-page-elements',
+    'title' => esc_html__('Hide Post/Page Elements','totalpress'),
+    'post_types' => array('post','page'),
+    'context' => 'side',
+    'priority' => 'default',
+    'autosave' => true,
+    'fields' => array(
+      array(
+        'id' => $prefix . 'page_options_hide_title',
+        'type' => 'checkbox',
+        'desc' => esc_html__('Hide Post/Page Title','totalpress'),
       ),
-      'context' => 'normal',
-      'priority' => 'high',
-      'autosave' => true,
-      'fields' =>   array (
-        array (
-          'id' => 'totalpress_featured_image_layout_options',
-          'type' => 'radio',
-          'options' =>       array (
-            'show_below_title' => esc_html__('Featured Image Below Title','totalpress'),
-            'show_above_title' => esc_html__('Featured Image Above Title','totalpress'),
-          ),
-          'tab' => 'totalpress_featured_image_options',
-          'inline' => false,
-          'std' =>  array (
-             'show_below_title',
-          ),
-        ),
-        array (
-          'id' => 'totalpress_page_options_hide_title',
-          'type' => 'checkbox',
-          'desc' => esc_html__('Hide Post/Page Title','totalpress'),
-          'tab' => 'totalpress_hide_post_page_elements',
-        ),
-        array (
-          'id' => 'totalpress_hide_widget_one',
-          'type' => 'checkbox',
-          'desc' => esc_html__('Hide Footer Widget One','totalpress'),
-          'tab' => 'totalpress-hide-footer-widgets',
-        ),
-        array (
-          'id' => 'totalpress_hide_widget_two',
-          'type' => 'checkbox',
-          'desc' => esc_html__('Hide Footer Widget Two','totalpress'),
-          'tab' => 'totalpress-hide-footer-widgets',
-        ),
-        array (
-          'id' => 'totalpress_hide_widget_three',
-          'type' => 'checkbox',
-          'desc' => esc_html__('Hide Footer Widget Three','totalpress'),
-          'tab' => 'totalpress-hide-footer-widgets',
-        ),
-        array (
-          'id' => 'totalpress_hide_widget_four',
-          'type' => 'checkbox',
-          'desc' => esc_html__('Hide Footer Widget Four','totalpress'),
-          'tab' => 'totalpress-hide-footer-widgets',
-        ),
-        array (
-          'id' => 'totalpress_hide_widget_five',
-          'type' => 'checkbox',
-          'desc' => esc_html__('Hide Footer Widget Five','totalpress'),
-          'tab' => 'totalpress-hide-footer-widgets',
-        ),
-        array (
-          'id' => 'totalpress_remove_content_area_padding',
-          'type' => 'checkbox',
-          'desc' => esc_html__('Remove Content Area Padding','totalpress'),
-          'tab' => 'totalpress_page_builder_options',
-        ),
-      ),
-      'tab_style' => 'left',
-      'tab_wrapper' => true,
-      'tabs' =>   array (
-        'totalpress_hide_post_page_elements' => array (
-          'label' => esc_html__('Hide Post/Page Elements','totalpress'),
-          'icon' => 'dashicons-arrow-right',
-        ),
-        'totalpress_page_builder_options' =>  array (
-          'label' => esc_html__('Page Builder Options','totalpress'),
-          'icon' => 'dashicons-arrow-right',
-        ),
-        'totalpress-hide-footer-widgets' =>  array (
-          'label' => esc_html__('Hide Footer Widgets','totalpress'),
-          'icon' => 'dashicons-arrow-right',
-        ),
-        'totalpress_featured_image_options' => array (
-          'label' => esc_html__('Featured Image Options','totalpress'),
-          'icon' => 'dashicons-arrow-right',
-        ),
-      ),
-    );
-    return $meta_boxes;
+    ),
+  );
+  return $meta_boxes;
 }
-add_filter('rwmb_meta_boxes','totalpress_register_tabbed_meta_boxes');
+add_filter( 'rwmb_meta_boxes', 'totalpress_hide_post_page_elements_metabox' );
+
+//Hide Footer Widgets Metabox
+function totalpress_hide_footer_widgets_metabox( $meta_boxes ) {
+  $prefix = 'totalpress_';
+  $meta_boxes[] = array(
+    'id' => 'hide-footer-widgets',
+    'title' => esc_html__('Hide Footer Widgets','totalpress'),
+    'post_types' => array('post','page'),
+    'context' => 'side',
+    'priority' => 'default',
+    'autosave' => true,
+    'fields' => array(
+      array(
+        'id' => $prefix . 'hide_widget_one',
+        'type' => 'checkbox',
+        'desc' => esc_html__('Hide Footer Widget One','totalpress'),
+      ),
+      array(
+        'id' => $prefix . 'hide_widget_two',
+        'type' => 'checkbox',
+        'desc' => esc_html__('Hide Footer Widget Two','totalpress'),
+      ),
+      array(
+        'id' => $prefix . 'hide_widget_three',
+        'type' => 'checkbox',
+        'desc' => esc_html__('Hide Footer Widget Three','totalpress'),
+      ),
+      array(
+        'id' => $prefix . 'hide_widget_four',
+        'type' => 'checkbox',
+        'desc' => esc_html__('Hide Footer Widget Four','totalpress'),
+      ),
+      array(
+        'id' => $prefix . 'hide_widget_five',
+        'type' => 'checkbox',
+        'desc' => esc_html__('Hide Footer Widget Five','totalpress'),
+      ),
+    ),
+  );
+  return $meta_boxes;
+}
+add_filter('rwmb_meta_boxes','totalpress_hide_footer_widgets_metabox');
+
+//Page Builder Options Metabox
+function totalpress_page_builder_options_meta_box($meta_boxes) {
+  $prefix = 'totalpress_';
+  $meta_boxes[] = array(
+    'id' => 'page-builder-options',
+    'title' => esc_html__('Page Builder Options','totalpress'),
+    'post_types' => array('post','page'),
+    'context' => 'side',
+    'priority' => 'default',
+    'autosave' => true,
+    'fields' => array(
+      array(
+        'id' => $prefix . 'remove_content_area_padding',
+        'type' => 'checkbox',
+        'desc' => esc_html__('Remove Content Area Padding','totalpress'),
+      ),
+    ),
+  );
+  return $meta_boxes;
+}
+add_filter('rwmb_meta_boxes','totalpress_page_builder_options_meta_box');

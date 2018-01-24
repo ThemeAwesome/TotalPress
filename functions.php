@@ -1,7 +1,6 @@
 <?php
 if ( ! defined('ABSPATH')) exit;
-define('TOTALPRESS_VERSION','1.0.11');
-//Sets up theme defaults and registers support for various WordPress features.
+define('TOTALPRESS_VERSION','1.0.12');
 if ( ! function_exists('setup_totalpress') ) :
 	function setup_totalpress() {
 		// Set the content width
@@ -9,36 +8,30 @@ if ( ! function_exists('setup_totalpress') ) :
 		if ( ! isset( $content_width ) ) {
 			$content_width = 865; /* pixels */
 		}
-		// Make theme translatable
 		load_theme_textdomain('totalpress');
-
 		add_theme_support('automatic-feed-links');
 		add_theme_support('post-thumbnails');
 		set_post_thumbnail_size(785, 9999);
-		add_image_size('full-width-thumb', 1200, 9999);
+		add_image_size('totalpress-full-width', 1200, 9999);
 		add_theme_support('post-formats', array('aside','audio','chat','gallery','image','link','quote','status','video'));
 		add_theme_support('woocommerce');
 		add_theme_support('title-tag');
-		add_theme_support('html5', array('search-form','comment-form','comment-list','gallery','caption',));
+		add_theme_support('html5', array('comment-form','comment-list','gallery','caption',));
 		add_theme_support('customize-selective-refresh-widgets');
 		add_editor_style('assets/css/editor.css');
-
 		register_nav_menus( array(
-			'primary' => __('Main Menu','totalpress'),
+			'primary' => esc_attr('Main Menu','totalpress'),
 		) );
-
 		add_theme_support('custom-logo', array(
 			'height' => 70,
 			'width' => 350,
 			'flex-width' => true,
 			'flex-height' => true,));
-
 		add_theme_support('custom-background',apply_filters('totalpress_custom_background_args', array(
 			'default-color' => 'efefef',)));
 	}
 	add_action('after_setup_theme','setup_totalpress');
-endif; //setup_totalpress
-
+endif; 
 // Load files we need
 require get_template_directory() . '/assets/inc/template-functions.php';
 require get_template_directory() . '/assets/inc/tgm-plugin-activation/class-tgm-plugin-activation.php';
@@ -48,8 +41,6 @@ require get_template_directory() . '/assets/customizer/customizer.php';
 require get_template_directory() . '/assets/inc/metaboxes.php';
 require get_template_directory() . '/assets/inc/extras.php';
 require get_template_directory() . '/assets/inc/plugin-support.php';
-require get_template_directory() . '/assets/extensions/meta-box-tabs/meta-box-tabs.php';
-
 // enqueue scripts and styles.
 if ( ! function_exists('totalpress_scripts')) :
 	function totalpress_scripts() {
@@ -73,16 +64,16 @@ endif;
 if ( ! function_exists('totalpress_widgets_init')) :
 	function totalpress_widgets_init() {	
 		$widgets = array(
-			'top-sidebar' => __('Top Sidebar','totalpress'),
-			'header-sidebar' => __('Header Sidebar','totalpress'),
-			'right-sidebar' => __('Right Sidebar','totalpress'),
-			'left-sidebar' => __('Left Sidebar','totalpress'),
-			'footer-1' => __('Footer Widget Area One','totalpress'),
-			'footer-2' => __('Footer Widget Area Two','totalpress'),
-			'footer-3' => __('Footer Widget Area Three','totalpress'),
-			'footer-4' => __('Footer Widget Area Four','totalpress'),
-			'footer-5' => __('Footer Widget Area Five','totalpress'),
-			'footer-sidebar' => __('Inside Footer Sidebar','totalpress'),
+			'top-sidebar' => esc_attr('Top Sidebar','totalpress'),
+			'header-sidebar' => esc_attr('Header Sidebar','totalpress'),
+			'right-sidebar' => esc_attr('Right Sidebar','totalpress'),
+			'left-sidebar' => esc_attr('Left Sidebar','totalpress'),
+			'footer-1' => esc_attr('Footer Widget Area One','totalpress'),
+			'footer-2' => esc_attr('Footer Widget Area Two','totalpress'),
+			'footer-3' => esc_attr('Footer Widget Area Three','totalpress'),
+			'footer-4' => esc_attr('Footer Widget Area Four','totalpress'),
+			'footer-5' => esc_attr('Footer Widget Area Five','totalpress'),
+			'footer-sidebar' => esc_attr('Inside Footer Sidebar','totalpress'),
 		);
 		foreach ( $widgets as $id => $name ) {
 			register_sidebar( array(
@@ -97,19 +88,17 @@ if ( ! function_exists('totalpress_widgets_init')) :
 	}
 	add_action('widgets_init','totalpress_widgets_init');
 endif;
-
 // excerpt more
 if ( ! function_exists('totalpress_excerpt_more') && ! is_admin() ) :
 	function totalpress_excerpt_more( $more ) {
 		$link = sprintf( '<a href="%1$s" class="more-link">%2$s</a>',
 			esc_url( get_permalink( get_the_ID() ) ),
-				sprintf( __('Continue reading %s <span class="meta-nav">&raquo;</span>','totalpress' ), '<span class="screen-reader-text">' . get_the_title( get_the_ID() ) . '</span>')
+				sprintf( esc_attr('Continue reading %s <span class="meta-nav">&raquo;</span>','totalpress' ), '<span class="screen-reader-text">' . get_the_title( get_the_ID() ) . '</span>')
 			);
 		return ' &hellip; ' . $link;
 	}
 	add_filter('excerpt_more','totalpress_excerpt_more');
 endif;
-
 // style the visual editor to resemble the theme front end.
 if ( ! function_exists('totalpress_add_editor_styles')) :
 	function totalpress_add_editor_styles() {

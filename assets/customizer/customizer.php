@@ -1,4 +1,4 @@
-<?php /* @version 1.0.11 */
+<?php /* @version 1.0.12 */
 if ( ! defined('ABSPATH')) exit;
 
 if ( class_exists('WP_Customize_Panel')) {
@@ -33,8 +33,8 @@ if ( class_exists( 'WP_Customize_Section' ) ) {
 // Enqueue our scripts and styles
 if ( ! function_exists('totalpress_customizer_live_preview')) :
   function totalpress_customize_controls_scripts() {
-    wp_enqueue_script('pe-customize-controls',get_theme_file_uri( '/assets/customizer/js/customize-controls.js'),array(),TOTALPRESS_VERSION, true);
-    wp_enqueue_style('customizer',get_theme_file_uri('/assets/customizer/css/customizer.css'),array(),TOTALPRESS_VERSION);
+    wp_enqueue_script('totalpress-pe-customize-controls',get_theme_file_uri( '/assets/customizer/js/customize-controls.js'),array(),TOTALPRESS_VERSION, true);
+    wp_enqueue_style('totalpress-customizer',get_theme_file_uri('/assets/customizer/css/customizer.css'),array(),TOTALPRESS_VERSION);
   }
   add_action('customize_controls_enqueue_scripts','totalpress_customize_controls_scripts');
 endif;
@@ -73,7 +73,7 @@ if ( ! function_exists('totalpress_customize_register')) :
       }
     endif;
 
-    $wp_customize->add_setting( 'totalpress_hide_sitetitle',
+    $wp_customize->add_setting('totalpress_hide_sitetitle',
         array(
             'sanitize_callback' => 'totalpress_sanitize_checkbox',
             'default'           => 0,
@@ -169,44 +169,6 @@ if ( ! function_exists('totalpress_customize_register')) :
           'priority' => 11,
         ));
         $wp_customize->add_panel($totalpress_footer_options);
-
-        // Load these panels if TP-Primo is active
-        if ( is_plugin_active( 'tp-primo/tp-primo.php' ) ) {
-          $totalpress_page_options = new TotalPress_WP_Customize_Panel($wp_customize,'totalpress_page_options',array(
-            'title' => __('Pages','totalpress'),
-            'panel' => 'totalpress_content_options',
-            'priority' => 2,
-          ));
-          $wp_customize->add_panel($totalpress_page_options);
-
-          $totalpress_right_sidebar_options = new TotalPress_WP_Customize_Panel($wp_customize,'totalpress_right_sidebar_options',array(
-            'title' => __('Right Sidebar','totalpress'),
-            'panel' => 'totalpress_theme_options',
-            'priority' => 7,
-          ));
-          $wp_customize->add_panel($totalpress_right_sidebar_options);
-
-          $totalpress_left_sidebar_options = new TotalPress_WP_Customize_Panel($wp_customize,'totalpress_left_sidebar_options',array(
-            'title' => __('Left Sidebar','totalpress'),
-            'panel' => 'totalpress_theme_options',
-            'priority' => 8,
-          ));
-          $wp_customize->add_panel($totalpress_left_sidebar_options);
-
-          $totalpress_footer_sidebar_options = new TotalPress_WP_Customize_Panel($wp_customize,'totalpress_footer_sidebar_options',array(
-            'title' => __('Footer Sidebar','totalpress'),
-            'panel' => 'totalpress_theme_options',
-            'priority' => 10,
-          ));
-          $wp_customize->add_panel($totalpress_footer_sidebar_options);
-
-          $totalpress_misc_theme_options = new TotalPress_WP_Customize_Panel($wp_customize,'totalpress_misc_theme_options',array(
-            'title' => __('Misc. Options','totalpress'),
-            'panel' => 'totalpress_theme_options',
-            'priority' => 12,
-          ));
-          $wp_customize->add_panel($totalpress_misc_theme_options);
-        }
         
     if ( ! function_exists('totalpress_sanitize_checkbox')) :
         function totalpress_sanitize_checkbox($input) {
@@ -233,14 +195,13 @@ TotalPress_Kirki::add_config('totalpress_theme_customizer',array(
   'capability'  => 'edit_theme_options',
   'option_type' => 'theme_mod',
 ));
-
-require get_template_directory() . '/assets/customizer/inc/layout_section.php'; //loads layout options
-require get_template_directory() . '/assets/customizer/inc/post_section.php'; //loads content options
-require get_template_directory() . '/assets/customizer/inc/colors_section.php'; //loads color options
-require get_template_directory() . '/assets/customizer/inc/footer_section.php'; //loads footer options
-require get_template_directory() . '/assets/customizer/inc/footer_widgets_section.php'; //loads footer widgets options
-require get_template_directory() . '/assets/customizer/inc/header_section.php'; //loads header options
-require get_template_directory() . '/assets/customizer/inc/header_sidebar_section.php'; //loads header options
-require get_template_directory() . '/assets/customizer/inc/navigation_section.php'; //loads header options
-require get_template_directory() . '/assets/customizer/inc/top_sidebar_section.php'; //loads top sidebar options
-require get_template_directory() . '/assets/customizer/inc/typography_section.php'; //loads typography options
+require get_template_directory() . '/assets/customizer/inc/totalpress-layout-section.php'; //loads layout options
+require get_template_directory() . '/assets/customizer/inc/totalpress-post-section.php'; //loads content options
+require get_template_directory() . '/assets/customizer/inc/totalpress-colors-section.php'; //loads color options
+require get_template_directory() . '/assets/customizer/inc/totalpress-footer-section.php'; //loads footer options
+require get_template_directory() . '/assets/customizer/inc/totalpress-footer-widgets-section.php'; //loads footer widgets options
+require get_template_directory() . '/assets/customizer/inc/totalpress-header-section.php'; //loads header options
+require get_template_directory() . '/assets/customizer/inc/totalpress-header-sidebar-section.php'; //loads header options
+require get_template_directory() . '/assets/customizer/inc/totalpress-navigation-section.php'; //loads header options
+require get_template_directory() . '/assets/customizer/inc/totalpress-top-sidebar-section.php'; //loads top sidebar options
+require get_template_directory() . '/assets/customizer/inc/totalpress-typography-section.php'; //loads typography options

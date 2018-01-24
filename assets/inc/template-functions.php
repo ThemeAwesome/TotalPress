@@ -1,4 +1,4 @@
-<?php /* @version 1.0.11 */
+<?php /* @version 1.0.12 */
 if ( ! defined('ABSPATH')) exit;
 /**************************************
  * Start theme
@@ -22,7 +22,7 @@ endif;
  *************************************/
 if ( ! function_exists('totalpress_build_open_body')) :
 	function totalpress_build_open_body() { ?>
-		<body <?php totalpress_body_schema();?> <?php body_class(); ?>><section><a class="skip-link screen-reader-text" href="#content"><?php esc_html_e('Skip to content','totalpress'); ?></a></section>
+		<body <?php totalpress_body_schema();?> <?php body_class(); ?>><section><a class="skip-link screen-reader-text" href="#content"><?php esc_attr('Skip to content','totalpress'); ?></a></section>
 	<?php
 	}
 	add_action('totalpress_open_body','totalpress_build_open_body');
@@ -144,7 +144,7 @@ if ( ! function_exists('totalpress_topbar_navigation')) :
     function totalpress_topbar_navigation() { ?>
 		<nav id="site-navigation" class="main-navigation grid-container" itemtype="http://schema.org/SiteNavigationElement" itemscope="itemscope" role="navigation">
 	        <div class="title-bar" data-responsive-toggle="main-menu">
-	            <button class="icon-menu" type="button" data-toggle><?php esc_html_e('&#9776; Menu','totalpress'); ?></button>
+	            <button class="icon-menu" type="button" data-toggle><?php esc_attr('&#9776; Menu','totalpress'); ?></button>
 	        </div><!-- .title-bar -->
 	        <div class="top-bar grid-x grid-padding-x" id="main-menu">
 	        	<div class="<?php echo get_theme_mod('totalpress_theme_nav_alignment','top-bar-left'); ?> hide-for-small-only"><?php do_action('totalpress_top_bar'); ?></div><!-- .top-bar -->
@@ -308,7 +308,7 @@ if ( ! function_exists('totalpress_build_excerpt_full_post')) :
 		<div class="entry-content" itemprop="text">
 			<?php the_content(); ?>
 			<?php wp_link_pages( array(
-			'before' => '<div class="page-links">' . esc_html__('Pages:','totalpress'),
+			'before' => '<div class="page-links">' . esc_attr('Pages:','totalpress'),
 			'after'  => '</div>',
 			)); ?>
 		</div><!-- .entry-content -->
@@ -410,7 +410,7 @@ if ( ! function_exists('totalpress_build_search_loop')) :
 	function totalpress_build_search_loop() { ?>
 		<?php if ( have_posts() ) : ?>
 		<header class="page-header">
-			<h1 class="page-title"><?php printf(esc_html__('Search Results for: %s','totalpress'), '<span>' . get_search_query() . '</span>'); ?></h1>
+			<h1 class="page-title"><?php printf(esc_attr('Search Results for: %s','totalpress'), '<span>' . get_search_query() . '</span>'); ?></h1>
 		</header><!-- .page-header -->
 		<?php while ( have_posts() ) : the_post(); ?>
 			<?php get_template_part('template-parts/post/content',get_post_format()); ?>
@@ -533,8 +533,8 @@ endif;
 if ( ! function_exists('totalpress_build_search_form')) :
 	function totalpress_build_search_form() { ?>
 		<form method="get" class="search-form" action="<?php echo esc_url( home_url( '/' )); ?>">
-			<label><span class="screen-reader-text"><?php apply_filters('totalpress_search_label', _ex('Search for:','label','totalpress')); ?></span>
-				<input type="search" class="search-field" placeholder="<?php echo esc_attr(apply_filters('totalpress_search_placeholder', _x( 'Search &hellip;','placeholder','totalpress'))); ?>" value="<?php echo esc_attr(get_search_query()); ?>" name="s" title="<?php esc_attr( apply_filters('totalpress_search_label', _ex('Search for:', 'label','totalpress'))); ?>"></label>
+			<label><span class="screen-reader-text"><?php apply_filters('totalpress_search_label', esc_attr('Search for:','label','totalpress')); ?></span>
+				<input type="search" class="search-field" placeholder="<?php echo esc_attr(apply_filters('totalpress_search_placeholder', _x( 'Search &hellip;','placeholder','totalpress'))); ?>" value="<?php echo esc_attr(get_search_query()); ?>" name="s" title="<?php esc_attr( apply_filters('totalpress_search_label', esc_attr('Search for:', 'label','totalpress'))); ?>"></label>
 			<input type="submit" class="search-submit" value="<?php echo esc_attr(apply_filters('totalpress_search_button', _x('Search','submit button','totalpress'))); ?>">
 		</form><!-- end .search-form -->
 	<?php

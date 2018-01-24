@@ -2,7 +2,7 @@
 Tags: blog, one-column, two-columns, three-columns, right-sidebar, left-sidebar, footer-widgets, custom-background, flexible-header, custom-menu, editor-style, featured-images, full-width-template, microformats, post-formats, sticky-post, translation-ready, theme-options, custom-logo, custom-colors
 Requires at least: 4.9.2
 Tested up to: 5.0-alpha-42426
-Stable tag: 1.0.11
+Stable tag: 1.0.12
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -28,27 +28,23 @@ Hello world, I'm TotalPress! I'm Based off _s (Underscores) and I also come with
 - Answer: The Kirki Plugin provides a set of customizer controls that were built using WordPress standards. Without the Kirki plugin, you will not have access to the TotalPress theme options in the customizer.
 
 - Question: Why do I need to install the Meta Box Plugin?
-- Answer: The Meta Box plugin provides an easier way for developers to create, maintain and present custom meta boxes and custom fields to the user.
+- Answer: The Meta Box plugin creates the metaboxes you will see and use in the post/page editor.
 
-= Supported Plugins =
-
+== Supported Plugins ==
 * WooCommerce
-* Yoast SEO
-* Jetpack Infinite Scroll
 
 == License ==
 All of the components used in the creation of TotalPress are licensed as follows:
 * WordPress - [GPLv2](http://www.gnu.org/licenses/gpl-2.0.html)
+* Underscores - http://underscores.me/, (C) 2012-2016 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
 * Foundation Framework - [MIT License](https://github.com/zurb/foundation/blob/master/LICENSE)
 * Motion-UI - [MIT License](https://github.com/zurb/motion-ui/commit/2a6617b9e45eaaa7f8888ba04a811002c5ebff5e)
-* What-Input - [MIT License](https://github.com/ten1seven/what-input/blob/master/LICENSE)
 * Font-Awesome - [fully open source and GPL friendly](http://fortawesome.github.io/Font-Awesome/license/)
-* Underscores - http://underscores.me/, (C) 2012-2016 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
 
 == Credits ==
 
-* Some of the code (a very small amount) used in TotalPress was derived from the GeneratePress theme created by Tom Usborne https://wordpress.org/themes/generatepress/ - GPLv2 or later, https://www.gnu.org/licenses/gpl-2.0.html - You created a very nice theme Tom. Thanks for the inspiration.
-* Metaboxes were created using the "Meta Box PLugin" as well as the "Meta Box Builder" plugin extension, both from MetaBox.io. If you would like more inforamtion please visit the following: https://wordpress.org/plugins/meta-box/ and https://metabox.io/plugins/meta-box-builder/
+* Some of the code (a very small amount, I might add) used in TotalPress was derived from the GeneratePress theme created by Tom Usborne https://wordpress.org/themes/generatepress/ - GPLv2 or later, https://www.gnu.org/licenses/gpl-2.0.html - You created a very nice theme Tom. Thanks for the inspiration.
+* Metaboxes were created using the "Meta Box PLugin" as well as the "Meta Box Builder" plugin extension, both from MetaBox.io. If you would like more information please visit the following: https://wordpress.org/plugins/meta-box/ and https://metabox.io/plugins/meta-box-builder/
 * For the additional panels in the customizer I used the folowing gist: Extending WordPress Customizer Panels and Sections to allow nesting: pe-customize-controls.css, https://gist.github.com/OriginalEXE/9a6183e09f4cae2f30b006232bb154af created by OriginalEXE.
 
 == Changelog ==

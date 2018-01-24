@@ -1,4 +1,4 @@
-/* @version 1.0.11 */
+/* @version 1.0.12 */
 jQuery(document).foundation();
 	// Add button class submit buttons in the theme
 	jQuery('input[type="submit"]').addClass('button');
