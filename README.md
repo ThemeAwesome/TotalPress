@@ -40,7 +40,7 @@ Changelog
 * Theme was approved by theme review team.
 
 
-### [1.0.13] 2018-01-24
+###### [1.0.13] 2018-01-24
 * Corrected an issue where `<span class="screen-reader-text">` was appearing next to `Leave a Comment`. I change `__(` to `esc_html(` which caused the issue.
 * Added some styles to fix some issues with the padding of the content and right sidebar areas in `archive`, `page-template-default` and `search` pages.
 * Added a few styles to `WooCommerce`.
