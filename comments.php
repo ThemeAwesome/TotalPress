@@ -1,4 +1,4 @@
-<?php /* @version 1.0.12 */
+<?php /* @version 1.0.14 */
 if ( ! defined('ABSPATH')) exit;
 if ( post_password_required() ) {
 	return; }
@@ -6,7 +6,6 @@ do_action( 'totalpress_before_comments' ); ?>
 <div id="comments">
 <div class="inside-comments">
 	<?php do_action( 'totalpress_inside_comments' );
-
 	if ( have_comments() ) : ?>
 		<h3 class="comments-title">
 			<?php
@@ -33,10 +32,8 @@ do_action( 'totalpress_before_comments' ); ?>
 			}
 			?>
 		</h3>
-
 		<?php
 		do_action( 'totalpress_below_comments_title' );
-
 		if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
 			<nav id="comment-nav-above" class="comment-navigation" role="navigation">
 				<h2 class="screen-reader-text"><?php esc_html_e('Comment navigation','totalpress'); ?></h2>
@@ -44,14 +41,12 @@ do_action( 'totalpress_before_comments' ); ?>
 				<div class="nav-next"><?php next_comments_link( __('Newer Comments &raquo;','totalpress')); ?></div>
 			</nav><!-- #comment-nav-above -->
 		<?php endif; ?>
-
 		<ol class="comment-list">
 			<?php wp_list_comments( array(
 				'callback' => 'totalpress_comments',
 			) );
 			?>
 		</ol><!-- .comment-list -->
-
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
 			<nav id="comment-nav-above" class="comment-navigation" role="navigation">
 				<h2 class="screen-reader-text"><?php esc_html_e('Comment navigation','totalpress'); ?></h2>
@@ -59,24 +54,19 @@ do_action( 'totalpress_before_comments' ); ?>
 				<div class="nav-next"><?php next_comments_link( __('Newer Comments &raquo;','totalpress')); ?></div>
 			</nav><!-- #comment-nav-above -->
 		<?php endif;
-
 	endif;
-
 	// If comments are closed
 	if ( ! comments_open() && '0' != get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) : ?>
 		<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'totalpress' ); // WPCS: XSS OK. ?></p>
 	<?php endif;
-
 	$commenter = wp_get_current_commenter();
-
 	$fields = array(
 		'before_fields' => '<div class="grid container comment-fields"><div class="grid-x grid-padding-x">',
-		'author' => '<label for="author" class="screen-reader-text">' . esc_html__( 'Name', 'totalpress' ) . '</label><p class="comment-form-author large-auto cell"><input placeholder="' . esc_attr__( 'Name', 'totalpress' ) . ' *" id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30" /></p>',
-		'email' => '<label for="email" class="screen-reader-text">' . esc_html__( 'Email', 'totalpress' ) . '</label><p class="comment-form-email large-auto cell"><input placeholder="' . esc_attr__( 'Email', 'totalpress' ) . ' *" id="email" name="email" type="email" value="' . esc_attr( $commenter['comment_author_email'] ) . '" size="30" /></p>',
-		'url' => '<label for="url" class="screen-reader-text">' . esc_html__( 'Website', 'totalpress' ) . '</label><p class="comment-form-url large-auto cell"><input placeholder="' . esc_attr__( 'Website', 'totalpress' ) . '" id="url" name="url" type="url" value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" /></p>',
+		'author' => '<label for="author" class="screen-reader-text">' . esc_html__( 'Name', 'totalpress' ) . '</label><p class="comment-form-author large-auto cell"><input placeholder="' . esc_html__( 'Name', 'totalpress' ) . ' *" id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30" /></p>',
+		'email' => '<label for="email" class="screen-reader-text">' . esc_html__( 'Email', 'totalpress' ) . '</label><p class="comment-form-email large-auto cell"><input placeholder="' . esc_html__( 'Email', 'totalpress' ) . ' *" id="email" name="email" type="email" value="' . esc_attr( $commenter['comment_author_email'] ) . '" size="30" /></p>',
+		'url' => '<label for="url" class="screen-reader-text">' . esc_html__( 'Website', 'totalpress' ) . '</label><p class="comment-form-url large-auto cell"><input placeholder="' . esc_html__( 'Website', 'totalpress' ) . '" id="url" name="url" type="url" value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" /></p>',
 		'after_fields' => '</div></div>',
 	);
-
 	$defaults = array(
 		'fields'		=> apply_filters( 'comment_form_default_fields', $fields ),
 		'comment_field' => '<p class="comment-form-comment"><label for="comment" class="screen-reader-text">' . esc_html__( 'Comment', 'totalpress' ) . '</label><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea></p>',
@@ -87,7 +77,6 @@ do_action( 'totalpress_before_comments' ); ?>
 		'title_reply'          => apply_filters( 'totalpress_leave_comment', __( 'Leave a Comment', 'totalpress' ) ),
 		'label_submit'         => apply_filters( 'totalpress_post_comment', __( 'Post Comment', 'totalpress' ) ),
 	);
-
 	comment_form( $defaults );
 	?>
 </div><!-- end .inside-comments -->	

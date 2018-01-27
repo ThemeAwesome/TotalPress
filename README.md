@@ -7,7 +7,7 @@
 **Donate:** [TotalPress Project](https://www.paypal.me/themeawesome)<br />
 **Requires at least:** 4.9.2<br />
 **Tested up to:** 5.0-alpha-42525<br />
-**Stable tag:** 1.0.12<br />
+**Stable tag:** 1.0.14<br />
 **License:** GNU General Public License v3.0<br />
 **License URI:** [http://www.gnu.org/licenses/gpl-3.0.html](http://www.gnu.org/licenses/gpl-3.0.html)<br />
 
@@ -31,7 +31,21 @@ Installation
 
 Changelog
 ===
-### [1.0.12] 2018-01-24
+### [1.0.14] 2018-01-25 
+* Took out the `Kirki_Installer_Section` of `totalpress-include-kirki.php` per the theme review. This creates a a `Admin notice` that is not dismissable and is also not needed as the theme uses `TGM PLugin`.
+* Switched `esc_attr__` to `esc_html__` per theme review.
+* Reworked `screenshot.png` to reflect how the site will actually look once the theme is activated.
+* Changed `app.js` to `totalpress-app.js` per theme review.
+* Added `totalpress-` prefix to all files that are called with `require` per theme review.
+* Theme was approved by theme review team.
+
+
+### [1.0.13] 2018-01-24
+* Corrected an issue where `<span class="screen-reader-text">` was appearing next to `Leave a Comment`. I change `__(` to `esc_html(` which caused the issue.
+* Added some styles to fix some issues with the padding of the content and right sidebar areas in `archive`, `page-template-default` and `search` pages.
+* Added a few styles to `WooCommerce`.
+
+###### [1.0.12] 2018-01-24
 * Prefixed `modify_archive_title()` in `extras.php` with `totalpress`.
 * Prefixed `add_image_size()` in `functions.php` with `totalpress`. Changed it from `full-width` to `totalpress-full-width`.
 * Removed `search-form` from `add_theme_support('html5')` as I am customizing it myself.

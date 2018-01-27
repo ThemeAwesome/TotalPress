@@ -1,22 +1,17 @@
-/* @version 1.0.12 */
+/* @version 1.0.14 */
 ( function( $ ) {
-
-/***********************************
- * Header
- **********************************/
+// Header
 	// Site title and description.
 	wp.customize( 'blogname', function( value ) {
 		value.bind( function( to ) {
 			$( '.site-title a' ).text( to );
-		} );
-	} );
-
+		});
+	});
 	wp.customize( 'blogdescription', function( value ) {
 		value.bind( function( to ) {
 			$( '.site-description' ).text( to );
-		} );
-	} );
-	
+		});
+	});
 	wp.customize( 'totalpress_hide_sitetitle', function( value ) {
 		value.bind( function( to ) {
 			if ( to ) {
@@ -24,9 +19,8 @@
 			} else {
 				$( 'body' ).removeClass( 'no-site-title' ).addClass('has-site-title');
 			}
-		} );
-	} );
-
+		});
+	});
 	wp.customize( 'totalpress_hide_tagline', function( value ) {
 		value.bind( function( to ) {
 			if ( to ) {
@@ -34,7 +28,6 @@
 			} else {
 				$( 'body' ).removeClass( 'no-site-tagline' ).addClass('has-site-tagline');
 			}
-		} );
-	} );
-
+		});
+	});
 } )( jQuery );

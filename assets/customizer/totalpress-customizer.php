@@ -1,4 +1,4 @@
-<?php /* @version 1.0.12 */
+<?php /* @version 1.0.14 */
 if ( ! defined('ABSPATH')) exit;
 
 if ( class_exists('WP_Customize_Panel')) {
@@ -33,8 +33,8 @@ if ( class_exists( 'WP_Customize_Section' ) ) {
 // Enqueue our scripts and styles
 if ( ! function_exists('totalpress_customizer_live_preview')) :
   function totalpress_customize_controls_scripts() {
-    wp_enqueue_script('totalpress-pe-customize-controls',get_theme_file_uri( '/assets/customizer/js/customize-controls.js'),array(),TOTALPRESS_VERSION, true);
-    wp_enqueue_style('totalpress-customizer',get_theme_file_uri('/assets/customizer/css/customizer.css'),array(),TOTALPRESS_VERSION);
+    wp_enqueue_script('pe-customize-controls',get_theme_file_uri( '/assets/customizer/js/pe-customize-controls.js'),array(),TOTALPRESS_VERSION, true);
+    wp_enqueue_style('totalpress-customizer',get_theme_file_uri('/assets/customizer/css/totalpress-customizer.css'),array(),TOTALPRESS_VERSION);
   }
   add_action('customize_controls_enqueue_scripts','totalpress_customize_controls_scripts');
 endif;
@@ -186,7 +186,7 @@ endif;
 // theme customize-preview
 if ( ! function_exists('totalpress_customizer_live_preview')) :
     function totalpress_customizer_live_preview() {
-      wp_enqueue_script('totalpress_customizer_js',trailingslashit(get_template_directory_uri()) .'/assets/customizer/js/customizer.js',array('customize-preview'),TOTALPRESS_VERSION,true);
+      wp_enqueue_script('totalpress_customizer_js',trailingslashit(get_template_directory_uri()) .'/assets/customizer/js/totalpress-customizer.js',array('customize-preview'),TOTALPRESS_VERSION,true);
     }
     add_action('customize_preview_init','totalpress_customizer_live_preview');
 endif;

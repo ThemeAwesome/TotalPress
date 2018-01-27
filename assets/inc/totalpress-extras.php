@@ -1,4 +1,4 @@
-<?php /* @version 1.0.12 */
+<?php /* @version 1.0.14 */
 if ( ! defined('ABSPATH')) exit;
 // Flush transients used in totalpress_categorized_blog.
 function totalpress_category_transient_flusher() {
@@ -77,7 +77,7 @@ if ( ! function_exists( 'totalpress_build_posted_on' ) ) :
 		if ( $show_comments_top ) {
 			echo '<span class="comments-link-top">';
 			/* translators: %s: post title */
-			comments_popup_link( sprintf( wp_kses( esc_attr( 'Leave a Comment<span class="screen-reader-text"> on %s</span>', 'totalpress' ), array( 'span' => array( 'class' => array() ) ) ), get_the_title() ) );
+			comments_popup_link( sprintf( wp_kses( __( 'Leave a Comment<span class="screen-reader-text"> on %s</span>', 'totalpress' ), array( 'span' => array( 'class' => array() ) ) ), get_the_title() ) );
 			echo '</span>';
 		}
 		// If display author is enabled, show him/her
@@ -268,7 +268,7 @@ if ( ! function_exists('totalpress_modify_archive_title')) :
 endif;
 
 // prints html for categories, tags and comments
-if ( ! function_exists( 'totalpress_build_entry_footer' ) ) :
+if ( ! function_exists('totalpress_build_entry_footer')) :
 	function totalpress_build_entry_footer() { 
 		$show_cats= apply_filters( 'totalpress_show_cats', true );
 		$show_tags = apply_filters( 'totalpress_show_tags', true );
@@ -318,7 +318,7 @@ if ( ! function_exists( 'totalpress_build_entry_footer' ) ) :
 endif;
 
 // prints html for page footer
-if ( ! function_exists( 'totalpress_build_entry_page_footer' ) ) :
+if ( ! function_exists('totalpress_build_entry_page_footer')) :
 	function totalpress_build_entry_page_footer() { 
 		$show_page_edit = apply_filters( 'totalpress_show_page_edit', true );
 		if ( $show_page_edit ) {
@@ -332,7 +332,7 @@ if ( ! function_exists( 'totalpress_build_entry_page_footer' ) ) :
 endif;
 
 // comments and pingback template - thanks TU
-if ( ! function_exists( 'totalpress_comments' ) ) :
+if ( ! function_exists('totalpress_comments')) :
 function totalpress_comments( $comment, $args, $depth ) {
 	$args['avatar_size'] = apply_filters('totalpress_comment_avatar_size',50);
 	if ( 'pingback' == $comment->comment_type || 'trackback' == $comment->comment_type ) : ?>

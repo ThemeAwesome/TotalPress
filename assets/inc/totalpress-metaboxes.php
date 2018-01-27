@@ -1,4 +1,4 @@
-<?php /* @version 1.0.12 */
+<?php /* @version 1.0.14 */
 if ( ! defined('ABSPATH')) exit;
 //Hide Post/Page Elelments Metabox
 function totalpress_hide_post_page_elements_metabox( $meta_boxes ) {
@@ -21,7 +21,6 @@ function totalpress_hide_post_page_elements_metabox( $meta_boxes ) {
   return $meta_boxes;
 }
 add_filter( 'rwmb_meta_boxes', 'totalpress_hide_post_page_elements_metabox' );
-
 //Hide Footer Widgets Metabox
 function totalpress_hide_footer_widgets_metabox( $meta_boxes ) {
   $prefix = 'totalpress_';
@@ -63,7 +62,6 @@ function totalpress_hide_footer_widgets_metabox( $meta_boxes ) {
   return $meta_boxes;
 }
 add_filter('rwmb_meta_boxes','totalpress_hide_footer_widgets_metabox');
-
 //Page Builder Options Metabox
 function totalpress_page_builder_options_meta_box($meta_boxes) {
   $prefix = 'totalpress_';

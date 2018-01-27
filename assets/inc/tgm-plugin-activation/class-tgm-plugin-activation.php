@@ -1,4 +1,4 @@
-<?php /* @version 1.0.12 */
+<?php /* @version 1.0.14 */
 /**
  * Plugin installation and activation for WordPress themes.
  *
@@ -519,7 +519,7 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 			$actions['update'] = sprintf(
 				'<a href="%1$s" title="%2$s" class="edit">%3$s</a>',
 				esc_url( $this->get_tgmpa_status_url( 'update' ) ),
-				esc_attr__( 'This plugin needs to be updated to be compatible with your theme.','totalpress'),
+				esc_html__( 'This plugin needs to be updated to be compatible with your theme.','totalpress'),
 				esc_html__( 'Update Required','totalpress')
 			);
 

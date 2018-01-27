@@ -1,6 +1,6 @@
 <?php
 if ( ! defined('ABSPATH')) exit;
-define('TOTALPRESS_VERSION','1.0.12');
+define('TOTALPRESS_VERSION','1.0.14');
 if ( ! function_exists('setup_totalpress') ) :
 	function setup_totalpress() {
 		// Set the content width
@@ -18,7 +18,7 @@ if ( ! function_exists('setup_totalpress') ) :
 		add_theme_support('title-tag');
 		add_theme_support('html5', array('comment-form','comment-list','gallery','caption',));
 		add_theme_support('customize-selective-refresh-widgets');
-		add_editor_style('assets/css/editor.css');
+		add_editor_style('assets/css/totalpress-editor.css');
 		register_nav_menus( array(
 			'primary' => esc_attr('Main Menu','totalpress'),
 		) );
@@ -36,18 +36,18 @@ endif;
 require get_template_directory() . '/assets/inc/template-functions.php';
 require get_template_directory() . '/assets/inc/tgm-plugin-activation/class-tgm-plugin-activation.php';
 require get_template_directory() . '/assets/inc/tgm-config.php';
-require get_template_directory() . '/assets/inc/include_kirki.php';
-require get_template_directory() . '/assets/customizer/customizer.php';
-require get_template_directory() . '/assets/inc/metaboxes.php';
-require get_template_directory() . '/assets/inc/extras.php';
-require get_template_directory() . '/assets/inc/plugin-support.php';
+require get_template_directory() . '/assets/inc/totalpress-kirki-class.php';
+require get_template_directory() . '/assets/customizer/totalpress-customizer.php';
+require get_template_directory() . '/assets/inc/totalpress-metaboxes.php';
+require get_template_directory() . '/assets/inc/totalpress-extras.php';
+require get_template_directory() . '/assets/inc/totalpress-plugin-support.php';
 // enqueue scripts and styles.
 if ( ! function_exists('totalpress_scripts')) :
 	function totalpress_scripts() {
 		wp_enqueue_style('font-awesome',get_template_directory_uri() . '/assets/css/font-awesome.css','',TOTALPRESS_VERSION );
 		wp_enqueue_style('totalpress',get_stylesheet_uri(),'',TOTALPRESS_VERSION );
 		wp_enqueue_script('foundation',get_template_directory_uri().'/assets/js/foundation.js',array('jquery'),TOTALPRESS_VERSION,true);
-		wp_enqueue_script ('app',get_template_directory_uri().'/assets/js/app.js',array('foundation'),TOTALPRESS_VERSION,true);
+		wp_enqueue_script ('totalpress-app',get_template_directory_uri().'/assets/js/totalpress-app.js',array('foundation'),TOTALPRESS_VERSION,true);
 		if (is_singular() && comments_open() && get_option('thread_comments')) {
 			wp_enqueue_script('comment-reply');
 		}
@@ -93,7 +93,7 @@ if ( ! function_exists('totalpress_excerpt_more') && ! is_admin() ) :
 	function totalpress_excerpt_more( $more ) {
 		$link = sprintf( '<a href="%1$s" class="more-link">%2$s</a>',
 			esc_url( get_permalink( get_the_ID() ) ),
-				sprintf( esc_attr('Continue reading %s <span class="meta-nav">&raquo;</span>','totalpress' ), '<span class="screen-reader-text">' . get_the_title( get_the_ID() ) . '</span>')
+				sprintf( __('Continue reading %s <span class="meta-nav">&raquo;</span>','totalpress' ), '<span class="screen-reader-text">' . get_the_title( get_the_ID() ) . '</span>')
 			);
 		return ' &hellip; ' . $link;
 	}

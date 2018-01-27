@@ -4,7 +4,7 @@ Theme URI: https://themeawesome.com/totalpress-wordpress-foundation-theme/
 Author: ThemeAWESOME
 Author URI: https://themeawesome.com/
 Description: Hello world, meet TotalPress! I'm Based off _s (Underscores) and I also come with Zurb's Foundation for Sites fully integrated. What makes me awesome? I am small and fast (I'm just 387kb compressed). I am fully responsive, meaning I adjust seamlessly to any screen resolution so I look good on any device. I've got a ton of hooks and filters, I've got ten (10) widget areas built in as well as 6 different sidebar page templates. I use the Kirki plugin. Kirki provides 30 custom control types for the theme customizer ranging from simple sliders and tooltips to complex typography controls including Google-Fonts. Kirki makes developing themes a lot faster and easier for developers and more meaningful for users. I also use the Meta Box plugin which is a powerful, professional toolkit for developers to create and handle everything related to custom meta boxes and custom fields for WordPress. Did I mention that I work really well with page builders like Elementor. So what are you waiting for? Download me today and take me for a spin.
-Version: 1.0.12
+Version: 1.0.14
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Tags: blog, one-column, two-columns, three-columns, right-sidebar, left-sidebar, footer-widgets, custom-background, flexible-header, custom-menu, editor-style, featured-images, full-width-template, microformats, post-formats, sticky-post, translation-ready, theme-options, custom-logo, custom-colors
@@ -1530,9 +1530,10 @@ hr{border:0;margin:30px auto 30px;color:#fff;background-color:#fff;height:0;bord
 /**************************************
  * Body Source Ordering
  *************************************/
-.blog .rts,.woocommerce-page.cs .rts{order:2;padding:0 0 0 15px;width:33.33333%;}
-.blog .content-area,.woocommerce-page.cs .content-area{order:1;padding:0 15px 0 0;width:66.66667%;}
-.blog .content-area-404.cell{padding:0;}
+.blog .rts,.archive .rts,.search .rts,.page-template-default .rts,.post-template-default .rts{order:2;padding:0 0 0 15px;width:33.33333%;}
+.blog .content-area,.archive .content-area,.search .content-area,.page-template-default .content-area,.post-template-default .content-area{order:1;padding:0 15px 0 0;width:66.66667%;}
+.blog .content-area-404.cell,.archive .content-area-404.cell,.search .content-area-404.cell,.page-template-default .content-area-404.cell{padding:0;}
+
 /* content | sidebar */
 .cs .rts,.woocommerce-page.cs .rts{order:2;padding:0 0 0 15px;width:33.33333%;}
 .cs .content-area,.woocommerce-page.cs .content-area{order:1;padding:0 15px 0 0;width:66.66667%;}
@@ -1682,7 +1683,7 @@ article{margin-bottom:30px;}
 .byline,.updated:not(.published){display:none;}
 .single .byline,.group-blog .byline{display:inline;}
 .post h1.entry-title,.post h2.entry-title{font-size:35px;font-weight:900;line-height:1.2;margin-bottom:16px;}
-.page h1.entry-title{font-size:35px;font-weight:700;line-height:1.2;margin-bottom:16px;}
+.page h1.entry-title{font-size:35px;font-weight:900;line-height:1.2;margin-bottom:16px;}
 .entry-meta{margin-bottom:16px;}
 .comments-link-top::before{content:"-";margin:0 6px 0 2px;}
 .edit-link-top::before,.edit-link-bottom::before {content:"-";margin:0 6px;}
@@ -1766,17 +1767,17 @@ p.comment-subscription-form{margin-bottom:0;}
 #right-sidebar .widget-title{font-size:16px;}
 #right-sidebar.widget-area .widget .menu-social-container .menu > li{display:inline-block;}
 #right-sidebar .widget .menu-social-container .menu > li > a{line-height:normal;font-size:0;padding:0 3px;}
-.cs #right-sidebar .menu-social-container a:before,.sc #right-sidebar .menu-social-container a:before{font-size:25px;}
-.css #right-sidebar .menu-social-container a:before,.ssc #right-sidebar .menu-social-container a:before,
-.scs #right-sidebar .menu-social-container a:before{font-size:23px;}
+#right-sidebar .menu-social-container a:before,.sc #right-sidebar .menu-social-container a:before{font-size:25px;}
+#right-sidebar .menu-social-container a:before,.ssc #right-sidebar .menu-social-container a:before,
+#right-sidebar .menu-social-container a:before{font-size:23px;}
 /**************************************
  * Left Sidebar
  *************************************/
 #left-sidebar .widget-title{font-size:16px;}
 #left-sidebar.widget-area .widget .menu-social-container .menu > li{display:inline-block;}
 #left-sidebar .widget .menu-social-container .menu > li > a{line-height:normal;font-size:0;padding:0 3px;}
-.cs #left-sidebar .menu-social-container a:before,.sc #left-sidebar .menu-social-container a:before{font-size:25px;}
-.css #left-sidebar .menu-social-container a:before,.ssc #left-sidebar .menu-social-container a:before,.scs #left-sidebar .menu-social-container a:before{font-size:23px;}
+#left-sidebar .menu-social-container a:before,.sc #left-sidebar .menu-social-container a:before{font-size:25px;}
+#left-sidebar .menu-social-container a:before,.ssc #left-sidebar .menu-social-container a:before,.scs #left-sidebar .menu-social-container a:before{font-size:23px;}
 /**************************************
  * Footer Widget Area
  *************************************/
@@ -2023,8 +2024,8 @@ td.value{padding:0!important;}
 .woocommerce-info{background-color:#3F3F3F;color:#FFFFFF;}
 .woocommerce-error{background-color:#b02329;color:#FFFFFF;}
 .woocommerce-error,.woocommerce-info,.woocommerce-message{padding:20px 30px;border:0;border-left:10px solid rgba(0,0,0,.3);}
-.woocommerce-message a,.woocommerce-info a,.woocommerce-error a{color:#FFFFFF;font-weight:900;}
-.woocommerce-message a:hover,.woocommerce-info a:hover,.woocommerce-error a:hover{color:#e6e6e6;}
+.woocommerce-message a,.woocommerce-info a,.woocommerce-error a{color:#FFFFFF!important;font-weight:900!important;}
+.woocommerce-message a:hover,.woocommerce-info a:hover,.woocommerce-error a:hover{color:#e6e6e6!important;text-decoration:underline!important;}
 .woocommerce-message > button.wc-forward{padding:0!important;background-color:transparent!important;}
 .woocommerce div.product form.cart{width:60%;}
 .woocommerce div.product form.cart .variations select{max-width:75%;}

@@ -1,4 +1,4 @@
-<?php /* @version 1.0.12 */
+<?php /* @version 1.0.14 */
 if ( ! defined('ABSPATH')) exit;
 get_header(); ?>
 <?php do_action('totalpress_open_post_container') ?>
