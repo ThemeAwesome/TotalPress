@@ -1,4 +1,4 @@
-<?php /* @version 1.0.14 */
+<?php /* @version 1.0.16 */
 if ( ! defined('ABSPATH')) exit;
 TotalPress_Kirki::add_section( 'totalpress_navigation_section', array(
     'title'       => esc_html__('Navigation Layout','totalpress'),
@@ -10,7 +10,7 @@ TotalPress_Kirki::add_field('totalpress_theme_customizer',array(
 	'type'        => 'select',
 	'settings'    => 'totalpress_nav_container',
 	'label'       => __('Main Navigation Width','totalpress' ),
-	'tooltip'     => esc_html__('Select &quot;Contain to Grid&quot; to keep the main navigation container within the grid container. Select &quot;Full Width&quot; have the main navigation container expand 100% to fill the screen. Default is &quot;Contain to Grid&quot;','totalpress'),
+	'tooltip'     => esc_html__('Select &quot;Contain to Grid&quot; to keep the main menu container within the grid container. Select &quot;Full Width&quot; have the main menu container expand 100% to fill the screen. Default is &quot;Contain to Grid&quot;','totalpress'),
 	'section'     => 'totalpress_navigation_section',
 	'default'     => 'contain',
 	'priority'    => 1,
@@ -22,8 +22,8 @@ TotalPress_Kirki::add_field('totalpress_theme_customizer',array(
 TotalPress_Kirki::add_field('totalpress_theme_customizer',array(
 	'type'        => 'select',
 	'settings'    => 'totalpress_inner_nav_container',
-	'label'       => __('Top-Bar Width','totalpress' ),
-	'tooltip'     => esc_html__('Select &quot;Contain to Grid&quot; to keep the Top Bar contained within the grid container. Select &quot;Full Width&quot; to have the Top-Bar expand 100% to fill the screen. Default is &quot;Contain to Grid&quot;','totalpress'),
+	'label'       => __('Inner Main Menu Width','totalpress' ),
+	'tooltip'     => esc_html__('Select &quot;Contain to Grid&quot; to keep the main menu contained within the grid container. Select &quot;Full Width&quot; to have the main menu expand 100% to fill the screen. Default is &quot;Contain to Grid&quot;','totalpress'),
 	'section'     => 'totalpress_navigation_section',
 	'default'     => 'contain',
 	'priority'    => 2,
@@ -35,8 +35,8 @@ TotalPress_Kirki::add_field('totalpress_theme_customizer',array(
 TotalPress_Kirki::add_field( 'theme_customizer', array(
 	'type'        => 'select',
 	'settings'    => 'totalpress_nav_position',
-	'label'       => esc_html__('Top-Bar Position','totalpress'),
-	'tooltip'     => esc_html__('Select where you want to display the Top-Bar.','totalpress'),
+	'label'       => esc_html__('Main Menu Position','totalpress'),
+	'tooltip'     => esc_html__('Select where you want to display the Main Menu.','totalpress'),
 	'section'     => 'totalpress_navigation_section',
 	'default'     => 'bottom_of_header',
 	'priority'    => 3,
@@ -49,8 +49,8 @@ TotalPress_Kirki::add_field( 'theme_customizer', array(
 TotalPress_Kirki::add_field('totalpress_theme_customizer',array( //control
 	'type'        => 'radio-buttonset',
 	'settings'    => 'totalpress_theme_nav_alignment',
-	'label'       => esc_html__('Top-Bar Alignment','totalpress'),
-	'tooltip'     => esc_html__('Set the alignment of the Top-Bar.','totalpress'),
+	'label'       => esc_html__('Main Menu Alignment','totalpress'),
+	'tooltip'     => esc_html__('Set the alignment of the Main Menu.','totalpress'),
 	'section'     => 'totalpress_navigation_section',
 	'default'     => 'top-bar-left',
 	'priority'    => 4,

@@ -1,4 +1,4 @@
-<?php /* @version 1.0.14 */
+<?php /* @version 1.0.16 */
 /**
  * Template Name: Content | Sidebar
  * Template Post Type: post, page, aside, audio, chat, gallery, image, link, quote, status, video

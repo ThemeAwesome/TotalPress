@@ -1,4 +1,4 @@
-<?php /* @version 1.0.14 */
+<?php /* @version 1.0.16 */
 if ( ! defined('ABSPATH')) exit;
 TotalPress_Kirki::add_section( 'totalpress_top_sidebar_layout_section', array(
     'title'       => esc_html__('Top Sidebar Layout','totalpress'),

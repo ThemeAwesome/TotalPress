@@ -5,40 +5,73 @@
 **Theme Name:** TotalPress<br />
 **Tags:** blog, one-column, two-columns, three-columns, right-sidebar, left-sidebar, footer-widgets, custom-background, flexible-header, custom-menu, editor-style, featured-images, full-width-template, microformats, post-formats, sticky-post, translation-ready, theme-options, custom-logo, custom-colors<br />
 **Donate:** [TotalPress Project](https://www.paypal.me/themeawesome)<br />
-**Requires at least:** 4.9.2<br />
-**Tested up to:** 5.0-alpha-42525<br />
-**Stable tag:** 1.0.14<br />
+**Requires at least:** 4.9.4<br />
+**Tested up to:** 4.9.4<br />
+**Stable tag:** 1.0.16<br />
 **License:** GNU General Public License v3.0<br />
 **License URI:** [http://www.gnu.org/licenses/gpl-3.0.html](http://www.gnu.org/licenses/gpl-3.0.html)<br />
 
 Description
 ===
-Hello world, meet TotalPress! I'm Based off _s (Underscores) and I also come with Zurb's Foundation for Sites fully integrated. What makes me awesome? I am small and fast **(I'm just 890kb compressed)**. I am fully responsive, meaning I adjust seamlessly to any screen resolution so I look good on any device. I've got a ton of hooks and filters, I've got ten (10) widget areas built in as well as 6 different sidebar page templates. I use [Kirki Plugin](https://wordpress.org/plugins/kirki/). Kirki provides 30 custom control types for the theme customizer ranging from simple sliders and tooltips to complex typography controls including Google-Fonts. Kirki makes developing themes a lot faster and easier for developers and more meaningful for users. I also use the [Meta Box Plugin](https://wordpress.org/plugins/meta-box/) which is a powerful, professional toolkit for developers to create and handle everything related to custom meta boxes and custom fields for WordPress. Did I mention that I work really well with page builders like Elementor. So what are you waiting for? Get to downloading and take me for a spin.
+Hello world, meet TotalPress! I'm Based off _s (Underscores) and I also come with Zurb's Foundation for Sites fully integrated. What makes me awesome? I am small and fast (**I'm just 436kb compressed**). I am fully responsive, meaning I adjust to any screen resolution so I look good on any device. I've got a ton of hooks and filters, ten (10) widget areas built in as well as 6 different sidebar page templates. I use the Kirki plugin which provides 30 custom control types for the theme customizer ranging from simple sliders and tooltips to complex typography controls including Google-Fonts. I also use the Meta-Box plugin which is a powerful, professional toolkit for developers to create and handle everything related to custom meta boxes and custom fields for WordPress. Did I mention that I work really well with page builders like Elementor. So what are you waiting for? Download me today and take me for a spin.
 
-### Demo ###
+### Theme Demo ###
 
 [TotalPress Theme Demo](https://themeawesome.com/themes/totalpress/)
 
+### Theme Documentation (in progress) ###
+
+[TotalPress Documentation](https://themeawesome.com/docs/totalpress/)
+
 Installation
 ===
-* In your admin panel, go to `Appearance > Themes` and click the `Add New` button.
-* Use the Search or Filter options to locate the TotalPress theme or click `Upload Theme`, then click `Choose File`, then select the TotalPress's ZIP file. Click Install Now.
-* Click Activate to start using Totalpress.
-* Once you have activated TotalPress, you will be promted by the TGM Plugin to install the [Kirki Plugin](https://wordpress.org/plugins/kirki/) as well as the the [Meta Box Plugin](https://wordpress.org/plugins/meta-box/): `This theme requires the following plugins: Kirki Plugin and Meta Box.`.
-* Keep in mind that if you do not install either one of these plugins, you will not be able to see the `Theme Options` section in the customizer nor will you will see the metaboxes in the post/page editor..
-* Once you have installed and activated the Kirki Plugin, go to `Appearance > Customizer > Theme Options` and start customizing your site.
-* Once you have installed the Meta Box plugin, you will see an additional metabox below the post/page editor. This is a tabbed metabox called TotalPress Post/Page Options.
+Installing theme from within WordPress
+
+1. Visit `Appearance > Themes > Add New`.
+2. Search for `TotalPress`.
+3. Click the `Install Now` button to install the theme.
+4. Click the `Activate` button to activate the theme.
+
+Installing theme manually
+
+1. Unzip the download package.
+2. Upload `totalpress` to the `/wp-content/themes/` directory.
+3. Activate the theme through the `Themes` menu in WordPress.
+
+Additional Installation
+
+1. Once you have activated TotalPress, you will be promted to install the Kirki Plugin, as well as the the Meta-Box Plugin. You will see the following message: "This theme requires the following plugins: Kirki Plugin and Meta Box".
+2. When you have installed and activated the Kirki Plugin, go to `Appearance > Customizer > TotalPress Options` and start customizing your site.
+3. Once you have installed the Meta-Box plugin, you will see an additional metaboxes in the post/page editor.
+4. If you do not install either one of these plugins, you will not see the `TotalPress Options` section in the customizer and you will not see the metaboxes in the post/page editor.
 
 Changelog
 ===
-### [1.0.14] 2018-01-25 
+### [1.0.16] 2018-03-22
+* Corrected an issue where under `TotalPress Options > Navigation Layout`, most of the options had `Top-Bar` in the title. Switched them all to reflect `Main Menu`.
+* Corrected a link style issue in the `Top Sidebar`.
+* Added new version of `FontAwesome 5.0.6` - Using the `svg-with-js` and loading the `fontawesome-all.min.js`.
+* Added `defer` attributes to `fontawesome-all.min.js`. I am still trying to correct the issue where any `Font-Awesome` icons `flash` on page load.
+* Added some additional styles to the `previous post` and `next post butons` in mobile view.
+* Adjusted the styles for `code` and `pre` elements.
+* Renamed `template-functions.php` to `totalpress-functions.php`.
+* Wrapped the `totalpress-copyright` flter in a action called `totalpress_credits`. This was done to add support to change the footer copyright message via the `TP-Primo` plugin.
+* Added `.cell` to the stylesheet elements for `.header-sidebar`. Now all of the css targets `.header-sidebar.cell` instead of just `.header-sidebar`.
+* Added support for `Gutenberg` wide images and color pallet.
+* Adjusted the width of the left and right sidebars. Instead of being set with an actual column size, i.e. `large-4`, I have set them to `large-auto` while leaving the content container set to `large-8`. This will cause the sidebars to `auto` adjust to fill the necessary space. I have also removed the widths from `Body Source Ordering` and `Template Source Ordering` sections of `style.css`.
+* Renamed the function `totalpress_open_post_container` to `totalpress_build_open_post_container` to go along more inline with the action `totalpress_open_post_container`.
+* Added `p.attachment` to `style.css` and the value to `text-align:center`. Now when viewing an attachment page the image will display centered instead of left aligned.
+
+###### [1.0.15] 2018-01-30
+* Switched to minmized versions of `foundation.js`, `foundation.css`, `motionui.css`, `font-awesome.css`.
+
+###### [1.0.14] 2018-01-25 
 * Took out the `Kirki_Installer_Section` of `totalpress-include-kirki.php` per the theme review. This creates a a `Admin notice` that is not dismissable and is also not needed as the theme uses `TGM PLugin`.
 * Switched `esc_attr__` to `esc_html__` per theme review.
 * Reworked `screenshot.png` to reflect how the site will actually look once the theme is activated.
 * Changed `app.js` to `totalpress-app.js` per theme review.
 * Added `totalpress-` prefix to all files that are called with `require` per theme review.
-* Theme was approved by theme review team.
-
+* **Theme was approved by theme review team**.
 
 ###### [1.0.13] 2018-01-24
 * Corrected an issue where `<span class="screen-reader-text">` was appearing next to `Leave a Comment`. I change `__(` to `esc_html(` which caused the issue.

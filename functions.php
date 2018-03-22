@@ -1,6 +1,6 @@
 <?php
 if ( ! defined('ABSPATH')) exit;
-define('TOTALPRESS_VERSION','1.0.14');
+define('TOTALPRESS_VERSION','1.0.16');
 if ( ! function_exists('setup_totalpress') ) :
 	function setup_totalpress() {
 		// Set the content width
@@ -17,11 +17,13 @@ if ( ! function_exists('setup_totalpress') ) :
 		add_theme_support('woocommerce');
 		add_theme_support('title-tag');
 		add_theme_support('html5', array('comment-form','comment-list','gallery','caption',));
+		add_theme_support('gutenberg', array('wide-images' => true,));
+		add_theme_support('gutenberg', array('colors' => array('#b02329','#3f3f3f','#e6e6e6','#222222','#ffffff'),));
 		add_theme_support('customize-selective-refresh-widgets');
 		add_editor_style('assets/css/totalpress-editor.css');
 		register_nav_menus( array(
 			'primary' => esc_attr('Main Menu','totalpress'),
-		) );
+		));
 		add_theme_support('custom-logo', array(
 			'height' => 70,
 			'width' => 350,
@@ -33,20 +35,32 @@ if ( ! function_exists('setup_totalpress') ) :
 	add_action('after_setup_theme','setup_totalpress');
 endif; 
 // Load files we need
-require get_template_directory() . '/assets/inc/template-functions.php';
+require get_template_directory() . '/assets/inc/totalpress-functions.php';
 require get_template_directory() . '/assets/inc/tgm-plugin-activation/class-tgm-plugin-activation.php';
 require get_template_directory() . '/assets/inc/tgm-config.php';
-require get_template_directory() . '/assets/inc/totalpress-kirki-class.php';
+require get_template_directory() . '/assets/inc/totalpress-include-kirki.php';
 require get_template_directory() . '/assets/customizer/totalpress-customizer.php';
 require get_template_directory() . '/assets/inc/totalpress-metaboxes.php';
 require get_template_directory() . '/assets/inc/totalpress-extras.php';
 require get_template_directory() . '/assets/inc/totalpress-plugin-support.php';
+
+// load font awesome script
+function totalpress_load_fontawesome() {
+    wp_enqueue_script('fontawesome-all',get_template_directory_uri().'/assets/js/fontawesome-all.min.js',array(),TOTALPRESS_VERSION,false);
+}
+add_filter('wp_enqueue_scripts','totalpress_load_fontawesome',0);
+function add_defer_attribute($tag, $handle) {
+    if ( 'fontawesome-all' !== $handle )
+        return $tag;
+    return str_replace(' src',' defer="defer" src', $tag );
+}
+add_filter('script_loader_tag','add_defer_attribute',10,2);
+
 // enqueue scripts and styles.
 if ( ! function_exists('totalpress_scripts')) :
 	function totalpress_scripts() {
-		wp_enqueue_style('font-awesome',get_template_directory_uri() . '/assets/css/font-awesome.css','',TOTALPRESS_VERSION );
 		wp_enqueue_style('totalpress',get_stylesheet_uri(),'',TOTALPRESS_VERSION );
-		wp_enqueue_script('foundation',get_template_directory_uri().'/assets/js/foundation.js',array('jquery'),TOTALPRESS_VERSION,true);
+		wp_enqueue_script('foundation',get_template_directory_uri().'/assets/js/foundation.min.js',array('jquery'),TOTALPRESS_VERSION,true);
 		wp_enqueue_script ('totalpress-app',get_template_directory_uri().'/assets/js/totalpress-app.js',array('foundation'),TOTALPRESS_VERSION,true);
 		if (is_singular() && comments_open() && get_option('thread_comments')) {
 			wp_enqueue_script('comment-reply');
@@ -93,7 +107,7 @@ if ( ! function_exists('totalpress_excerpt_more') && ! is_admin() ) :
 	function totalpress_excerpt_more( $more ) {
 		$link = sprintf( '<a href="%1$s" class="more-link">%2$s</a>',
 			esc_url( get_permalink( get_the_ID() ) ),
-				sprintf( __('Continue reading %s <span class="meta-nav">&raquo;</span>','totalpress' ), '<span class="screen-reader-text">' . get_the_title( get_the_ID() ) . '</span>')
+				sprintf( __('Read more %s','totalpress' ), '<span class="screen-reader-text">' . get_the_title( get_the_ID() ) . '</span>')
 			);
 		return ' &hellip; ' . $link;
 	}

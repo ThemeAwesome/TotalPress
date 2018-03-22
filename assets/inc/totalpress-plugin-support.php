@@ -1,4 +1,4 @@
-<?php /* @version 1.0.14 */
+<?php /* @version 1.0.16 */
 if ( ! defined('ABSPATH')) exit;
 function totalpress_setup_woocommerce() {
 	if ( ! class_exists('WooCommerce') ) {

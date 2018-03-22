@@ -1,4 +1,4 @@
-<?php /* @version 1.0.14 */
+<?php /* @version 1.0.16 */
 if ( ! defined('ABSPATH')) exit;
 // Start theme
 if ( ! function_exists('totalpress_build_start_theme')) :
@@ -128,7 +128,7 @@ if ( ! function_exists('totalpress_topbar_navigation')) :
     function totalpress_topbar_navigation() { ?>
 		<nav id="site-navigation" class="main-navigation grid-container" itemtype="http://schema.org/SiteNavigationElement" itemscope="itemscope" role="navigation">
 	        <div class="title-bar" data-responsive-toggle="main-menu">
-	            <button class="icon-menu" type="button" data-toggle><?php esc_attr('&#9776; Menu','totalpress'); ?></button>
+	            <button class="icon-menu" type="button" data-toggle><i class="fa fa-bars" aria-hidden="true"></i> <?php _e('Menu','totalpress'); ?></button>
 	        </div><!-- .title-bar -->
 	        <div class="top-bar grid-x grid-padding-x" id="main-menu">
 	        	<div class="<?php echo get_theme_mod('totalpress_theme_nav_alignment','top-bar-left'); ?> hide-for-small-only"><?php do_action('totalpress_top_bar'); ?></div><!-- .top-bar -->
@@ -160,13 +160,23 @@ if ( ! function_exists('totalpress_content_container_close')) :
 	add_action('totalpress_close_content_container','totalpress_content_container_close');
 endif;
 // Open the post container
-if ( ! function_exists('totalpress_post_open_container')) :
-	function totalpress_post_open_container() { ?>
-		<div id="primary" class="content-area small-12 large-8 cell">
-			<main id="main" class="site-main" role="main">
+if ( ! function_exists('totalpress_build_post_open_container')) :
+	function totalpress_build_post_open_container() { ?>
+		<?php if (is_page_template('page-templates/content-sidebar.php') || is_page_template('page-templates/sidebar-content.php') || get_theme_mod('totalpress_blog_layout') == 'right_sidebar'): ?>
+			<div id="primary" class="content-area small-12 large-8 cell">
+				<main id="main" class="site-main" role="main">
+		<?php endif; ?>
+		<?php if (is_page_template('page-templates/content-sidebar-sidebar.php') || is_page_template('page-templates/sidebar-sidebar-content.php') || is_page_template('page-templates/sidebar-content-sidebar.php') || get_theme_mod('totalpress_blog_layout') == 'sidebars_left' || get_theme_mod('totalpress_blog_layout') == 'sidebars_left' || get_theme_mod('totalpress_blog_layout') == 'sidebars_right' || get_theme_mod('totalpress_blog_layout') == 'both_sidebars'): ?>
+			<div id="primary" class="content-area small-12 large-6 cell">
+				<main id="main" class="site-main" role="main">
+		<?php endif; ?>
+		<?php if (is_page_template('page-templates/full-width.php')): ?>
+			<div id="primary" class="content-area small-12 large-auto cell">
+				<main id="main" class="site-main" role="main">
+		<?php endif; ?>
 	<?php
 	}
-	add_action('totalpress_open_post_container','totalpress_post_open_container');
+	add_action('totalpress_open_post_container','totalpress_build_post_open_container');
 endif;
 // Close the post container
 if ( ! function_exists('totalpress_post_close_container')) :
@@ -245,7 +255,7 @@ if ( ! function_exists('totalpress_build_content_page_entry_header')) :
 	}
 	add_action('totalpress_content_page_entry_header','totalpress_build_content_page_entry_header');
 endif;
-// Show entry content - used in content-page.php and content single.php
+// Show entry content - used in content-page.php and content-single.php
 if ( ! function_exists('totalpress_build_entry_content')) :
 	function totalpress_build_entry_content() { ?>
 		<div class="entry-content" itemprop="text">
@@ -315,7 +325,6 @@ if ( ! function_exists('totalpress_build_page_loop')) :
 	}
 	add_action('totalpress_page_loop','totalpress_build_page_loop');
 endif;
-
 // 404 opening containers - used in 404.php
 if ( ! function_exists('totalpress_build_404_start')) :
 	function totalpress_build_404_start() { ?>
@@ -326,7 +335,6 @@ if ( ! function_exists('totalpress_build_404_start')) :
 	}
 	add_action('totalpress_404_start','totalpress_build_404_start');
 endif;
-
 // 404 entry content - used in 404.php
 if ( ! function_exists('totalpress_build_404_entry_content')) :
 	function totalpress_build_404_entry_content() { ?>
@@ -341,7 +349,6 @@ if ( ! function_exists('totalpress_build_404_entry_content')) :
 	}
 	add_action('totalpress_404_entry_content','totalpress_build_404_entry_content');
 endif;
-
 // 404 closing containers - used in 404.php
 if ( ! function_exists('totalpress_build_404_end')) :
 	function totalpress_build_404_end() { ?>
@@ -352,7 +359,6 @@ if ( ! function_exists('totalpress_build_404_end')) :
 	}
 	add_action('totalpress_404_end','totalpress_build_404_end');
 endif;
-
 // Search loop - used in search.php
 if ( ! function_exists('totalpress_build_search_loop')) :
 	function totalpress_build_search_loop() { ?>
@@ -371,15 +377,15 @@ if ( ! function_exists('totalpress_build_search_loop')) :
 	}
 	add_action('totalpress_search_loop','totalpress_build_search_loop');
 endif;
-// Open content sidebar one container
+// Open right sidebar container
 if ( ! function_exists('totalpress_right_sidebar_open_container')) :
 	function totalpress_right_sidebar_open_container() { ?>
-		<div id="right-sidebar" itemtype="http://schema.org/WPSideBar" itemscope="itemscope" role="complementary" class="rts widget-area  small-12 large-4 cell">
+		<div id="right-sidebar" itemtype="http://schema.org/WPSideBar" itemscope="itemscope" role="complementary" class="rts widget-area small-12 large-auto cell">
 	<?php
 	}
 	add_action('totalpress_open_right_sidebar_container','totalpress_right_sidebar_open_container');
 endif;
-// Close content sidebar one container
+// Close right sidebar container
 if ( ! function_exists('totalpress_right_sidebar_close_container')) :
 	function totalpress_right_sidebar_close_container() { ?>
 		</div><!-- #right-sidebar -->
@@ -387,15 +393,15 @@ if ( ! function_exists('totalpress_right_sidebar_close_container')) :
 	}
 	add_action('totalpress_close_right_sidebar_container','totalpress_right_sidebar_close_container');
 endif;
-// Start content sidebar two container
+// Open left sidebar container
 if ( ! function_exists('totalpress_left_sidebar_open_container')) :
 	function totalpress_left_sidebar_open_container() { ?>
-		<div id="left-sidebar" itemtype="http://schema.org/WPSideBar" itemscope="itemscope" role="complementary" class="lfts widget-area  small-12 large-4 cell">
+		<div id="left-sidebar" itemtype="http://schema.org/WPSideBar" itemscope="itemscope" role="complementary" class="lfts widget-area small-12 large-auto cell">
 	<?php
 	}
 	add_action('totalpress_open_left_sidebar_container','totalpress_left_sidebar_open_container');
 endif;
-// Close content sidebar two container
+// Close left sidebar container
 if ( ! function_exists('totalpress_left_sidebar_close_container')) :
 	function totalpress_left_sidebar_close_container() { ?>
 		</div><!-- #left-sidebar -->
@@ -415,7 +421,7 @@ if ( ! function_exists('totalpress_build_page_template_container')) :
 				<main id="main" class="site-main" role="main">
 		<?php endif; ?>
 		<?php if (is_page_template('page-templates/full-width.php')): ?>
-			<div id="primary" class="content-area small-12 cell">
+			<div id="primary" class="content-area small-12 large-auto cell">
 				<main id="main" class="site-main" role="main">
 		<?php endif; ?>
 	<?php
@@ -555,10 +561,10 @@ if ( ! function_exists('totalpress_build_footer')) :
 			<?php do_action('totalpress_before_footer_content'); ?>
 			<div class="inside-footer grid-x grid-padding-x">
 				<?php if (is_active_sidebar( 'footer-sidebar')): ?>
-					<div class="site-info large-auto cell"><?php totalpress_footer_credits(); ?></div><!-- .site-info -->
+					<div class="site-info large-auto cell"><?php do_action('totalpress_credits'); ?></div><!-- .site-info -->
 			    	<?php do_action('totalpress_footer_sidebar'); ?>
 				<?php else: ?>
-					<div class="site-info large-auto cell text-center"><?php totalpress_footer_credits(); ?></div><!-- .site-info -->
+					<div class="site-info large-auto cell text-center"><?php do_action('totalpress_credits'); ?></div><!-- .site-info -->
 				<?php endif; ?>
 			</div><!-- .inside-footer -->
 			<?php do_action('totalpress_after_footer_content'); ?>
@@ -569,21 +575,22 @@ if ( ! function_exists('totalpress_build_footer')) :
 	add_action('totalpress_footer','totalpress_build_footer');
 endif;
 // Build footer credits
-if ( ! function_exists('totalpress_footer_credits')) :
-	function totalpress_footer_credits() {
-		$copyright = sprintf('Built with <a href="%1$s" rel="follow" target="_blank" itemprop="url"><strong>%2$s</strong></a> &#8211; Powered by <a href="%3$s" target="_blank" itemprop="url"><strong>%4$s</strong></a> ',
-			esc_url('https://themeawesome.com/totalpress-wordpress-foundation-theme/'),
-			__('TotalPress','totalpress'),
+if ( ! function_exists('totalpress_add_footer_info')) {
+	function totalpress_add_footer_info() {
+		$copyright = sprintf('Built with <a href="%1$s" rel="follow" target="_blank" itemprop="url"><strong>%2$s</strong></a> &#8211; Powered by <a href="%3$s" target="_blank" itemprop="url"><strong>%4$s</strong></a>',
+			esc_url( 'https://generatepress.com' ),
+			__( 'TotalPress', 'totalpress' ),
 			esc_url( 'https://wordpress.org'),
 			__('WordPress','totalpress')
 		);
-		echo apply_filters('totalpress_copyright',$copyright);
+		echo apply_filters('totalpress_copyright', $copyright ); // WPCS: XSS ok.
 	}
-endif;
+	add_action('totalpress_credits','totalpress_add_footer_info');
+}
 // Build the back to top button
 if ( ! function_exists('totalpress_back_to_top')) :
 	function totalpress_back_to_top() {
-		$backtotop = sprintf( '<div class="back-to-top"><i class="arrow-up"></i></div>');
+		$backtotop = sprintf( '<div class="back-to-top"><i class="fas fa-angle-up fa-lg"></i></div>');
 		echo apply_filters('totalpress_back_to_top',$backtotop);
 	}
 	add_action('wp_footer','totalpress_back_to_top');
