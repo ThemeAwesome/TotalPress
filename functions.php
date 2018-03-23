@@ -1,6 +1,6 @@
 <?php
 if ( ! defined('ABSPATH')) exit;
-define('TOTALPRESS_VERSION','1.0.16');
+define('TOTALPRESS_VERSION','1.0.17');
 if ( ! function_exists('setup_totalpress') ) :
 	function setup_totalpress() {
 		// Set the content width
