@@ -1,4 +1,4 @@
-<?php /* @version 1.0.16 */
+<?php /* @version 1.0.17 */
 if ( ! defined('ABSPATH')) exit;
 // Start theme
 if ( ! function_exists('totalpress_build_start_theme')) :
@@ -162,7 +162,7 @@ endif;
 // Open the post container
 if ( ! function_exists('totalpress_build_post_open_container')) :
 	function totalpress_build_post_open_container() { ?>
-		<?php if (is_page_template('page-templates/content-sidebar.php') || is_page_template('page-templates/sidebar-content.php') || get_theme_mod('totalpress_blog_layout') == 'right_sidebar'): ?>
+		<?php if (is_page_template('page-templates/content-sidebar.php') || is_page_template('page-templates/sidebar-content.php') || get_theme_mod('totalpress_blog_layout','right_sidebar') == 'right_sidebar'): ?>
 			<div id="primary" class="content-area small-12 large-8 cell">
 				<main id="main" class="site-main" role="main">
 		<?php endif; ?>

@@ -7,7 +7,7 @@
 **Donate:** [TotalPress Project](https://www.paypal.me/themeawesome)<br />
 **Requires at least:** 4.9.4<br />
 **Tested up to:** 4.9.4<br />
-**Stable tag:** 1.0.16<br />
+**Stable tag:** 1.0.17<br />
 **License:** GNU General Public License v3.0<br />
 **License URI:** [http://www.gnu.org/licenses/gpl-3.0.html](http://www.gnu.org/licenses/gpl-3.0.html)<br />
 
@@ -47,7 +47,10 @@ Additional Installation
 
 Changelog
 ===
-### [1.0.16] 2018-03-22
+### [1.0.17] 2018-03-22
+* Corrected an issue where I forgot to add the customizer setting for the default layout. It should be corrected now.
+
+###### [1.0.16] 2018-03-22
 * Corrected an issue where under `TotalPress Options > Navigation Layout`, most of the options had `Top-Bar` in the title. Switched them all to reflect `Main Menu`.
 * Corrected a link style issue in the `Top Sidebar`.
 * Added new version of `FontAwesome 5.0.6` - Using the `svg-with-js` and loading the `fontawesome-all.min.js`.

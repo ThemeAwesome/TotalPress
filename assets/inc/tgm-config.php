@@ -1,4 +1,4 @@
-<?php /* @version 1.0.16 */
+<?php /* @version 1.0.17 */
 function totalpress_require_plugins() {
     $plugins = array( 
     	array(

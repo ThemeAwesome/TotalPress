@@ -1,4 +1,4 @@
-<?php /* @version 1.0.16 */
+<?php /* @version 1.0.17 */
 if ( ! defined('ABSPATH')) exit; ?>
 <section class="no-results not-found">
 	<?php do_action('totalpress_before_post'); ?>
