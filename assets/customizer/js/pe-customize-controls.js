@@ -1,4 +1,4 @@
-/* @version 1.0.17 */
+/* @version 1.0.18 */
 ( function( $ ) {
   var api = wp.customize;
   api.bind( 'pane-contents-reflowed', function() {

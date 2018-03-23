@@ -1,4 +1,4 @@
-<?php /* @version 1.0.17 */
+<?php /* @version 1.0.18 */
 if ( ! defined('ABSPATH')) exit;
 //Hide Post/Page Elelments Metabox
 function totalpress_hide_post_page_elements_metabox( $meta_boxes ) {

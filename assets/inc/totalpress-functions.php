@@ -1,4 +1,4 @@
-<?php /* @version 1.0.17 */
+<?php /* @version 1.0.18 */
 if ( ! defined('ABSPATH')) exit;
 // Start theme
 if ( ! function_exists('totalpress_build_start_theme')) :
@@ -162,15 +162,23 @@ endif;
 // Open the post container
 if ( ! function_exists('totalpress_build_post_open_container')) :
 	function totalpress_build_post_open_container() { ?>
-		<?php if (is_page_template('page-templates/content-sidebar.php') || is_page_template('page-templates/sidebar-content.php') || get_theme_mod('totalpress_blog_layout','right_sidebar') == 'right_sidebar'): ?>
+		<?php if (is_page_template('page-templates/content-sidebar.php') || 
+		is_page_template('page-templates/sidebar-content.php') || 
+		get_theme_mod('totalpress_blog_layout','right_sidebar') == 'right_sidebar' || get_theme_mod('totalpress_blog_layout') == 'left_sidebar'): ?>
 			<div id="primary" class="content-area small-12 large-8 cell">
 				<main id="main" class="site-main" role="main">
 		<?php endif; ?>
-		<?php if (is_page_template('page-templates/content-sidebar-sidebar.php') || is_page_template('page-templates/sidebar-sidebar-content.php') || is_page_template('page-templates/sidebar-content-sidebar.php') || get_theme_mod('totalpress_blog_layout') == 'sidebars_left' || get_theme_mod('totalpress_blog_layout') == 'sidebars_left' || get_theme_mod('totalpress_blog_layout') == 'sidebars_right' || get_theme_mod('totalpress_blog_layout') == 'both_sidebars'): ?>
+		<?php if (is_page_template('page-templates/content-sidebar-sidebar.php') || 
+		is_page_template('page-templates/sidebar-sidebar-content.php') || 
+		is_page_template('page-templates/sidebar-content-sidebar.php') || 
+		get_theme_mod('totalpress_blog_layout') == 'sidebars_left' || 
+		get_theme_mod('totalpress_blog_layout') == 'sidebars_left' || 
+		get_theme_mod('totalpress_blog_layout') == 'sidebars_right' || 
+		get_theme_mod('totalpress_blog_layout') == 'both_sidebars'): ?>
 			<div id="primary" class="content-area small-12 large-6 cell">
 				<main id="main" class="site-main" role="main">
 		<?php endif; ?>
-		<?php if (is_page_template('page-templates/full-width.php')): ?>
+		<?php if (is_page_template('page-templates/full-width.php') || get_theme_mod('totalpress_blog_layout') == 'sidebars_left'): ?>
 			<div id="primary" class="content-area small-12 large-auto cell">
 				<main id="main" class="site-main" role="main">
 		<?php endif; ?>
