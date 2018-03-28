@@ -1,7 +1,7 @@
 # Changelog
-All notable changes to TotalPress will be documented in this file as of 1.0.19. The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/).
 
-===
+### [Unreleased]
+
 ### [1.0.18] 2018-03-23
 ###### `Fixed`
 * Fixed issue with missing customizer setting `Sidebar | Content` for the default layout.
@@ -147,3 +147,7 @@ Removed some of the features from the `setup_totalpress` function in `functions.
 
 ###### [1.0.0] 2017-11-02
 * Initial submission to the theme review team on 11/02/2017
+
+[unreleased]: https://github.com/themeawesome/totalpress/compare/v1.0.18...HEAD
+[1.0.18]: https://github.com/themeawesome/totalpress/compare/1.0.17...1.0.18
+[1.0.17]: https://github.com/themeawesome/totalpress/compare/1.0.16...1.0.17
