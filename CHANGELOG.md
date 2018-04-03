@@ -2,7 +2,21 @@
 
 ### [Unreleased]
 
-### [1.0.18] 2018-03-23
+### [1.0.19] 2018-04-03
+###### `Added`
+* Styling for the content area of 404 pages.
+* `large-auto` to `totalpress_404_start` action.
+* Extra space after the `,` on line 291 of `totalpress-extras.php`. Adds space in between all of the tags assigned to a post.
+
+###### `Changed`
+* Default font `Source Sans Pro` was changed to a default `System Font Stack`. This was done to make the theme load faster on the user end.
+* Changed `get_theme_mod('totalpress_blog_layout') == 'sidebars_left')` in `totalpres-functions.php` on line 180 to `get_theme_mod('totalpress_blog_layout') == 'no_sidebars')`.
+* Link in the footer section of the theme.
+
+###### `Removed`
+* Extra instance of `get_theme_mod('totalpress_blog_layout') == 'sidebars_left` in `totalpress-functions.php` in the `totalpress_open_post_container` action.
+
+###### [1.0.18] 2018-03-23
 ###### `Fixed`
 * Fixed issue with missing customizer setting `Sidebar | Content` for the default layout.
 
@@ -148,6 +162,7 @@ Removed some of the features from the `setup_totalpress` function in `functions.
 ###### [1.0.0] 2017-11-02
 * Initial submission to the theme review team on 11/02/2017
 
-[unreleased]: https://github.com/themeawesome/totalpress/compare/v1.0.18...HEAD
+[unreleased]: https://github.com/themeawesome/totalpress/compare/v1.0.19...HEAD
+[1.0.19]: https://github.com/themeawesome/totalpress/compare/1.0.18...1.0.19
 [1.0.18]: https://github.com/themeawesome/totalpress/compare/1.0.17...1.0.18
 [1.0.17]: https://github.com/themeawesome/totalpress/compare/1.0.16...1.0.17

@@ -1,4 +1,4 @@
-<?php /* @version 1.0.18 */
+<?php /* @version 1.0.19 */
 if ( ! defined('ABSPATH')) exit;
 // Start theme
 if ( ! function_exists('totalpress_build_start_theme')) :
@@ -162,23 +162,16 @@ endif;
 // Open the post container
 if ( ! function_exists('totalpress_build_post_open_container')) :
 	function totalpress_build_post_open_container() { ?>
-		<?php if (is_page_template('page-templates/content-sidebar.php') || 
-		is_page_template('page-templates/sidebar-content.php') || 
-		get_theme_mod('totalpress_blog_layout','right_sidebar') == 'right_sidebar' || get_theme_mod('totalpress_blog_layout') == 'left_sidebar'): ?>
+		<?php if (is_page_template('page-templates/content-sidebar.php') || is_page_template('page-templates/sidebar-content.php') || get_theme_mod('totalpress_blog_layout','right_sidebar') == 'right_sidebar' || get_theme_mod('totalpress_blog_layout') == 'left_sidebar'): ?>
 			<div id="primary" class="content-area small-12 large-8 cell">
 				<main id="main" class="site-main" role="main">
 		<?php endif; ?>
-		<?php if (is_page_template('page-templates/content-sidebar-sidebar.php') || 
-		is_page_template('page-templates/sidebar-sidebar-content.php') || 
-		is_page_template('page-templates/sidebar-content-sidebar.php') || 
-		get_theme_mod('totalpress_blog_layout') == 'sidebars_left' || 
-		get_theme_mod('totalpress_blog_layout') == 'sidebars_left' || 
-		get_theme_mod('totalpress_blog_layout') == 'sidebars_right' || 
-		get_theme_mod('totalpress_blog_layout') == 'both_sidebars'): ?>
+		<?php if (is_page_template('page-templates/content-sidebar-sidebar.php') || is_page_template('page-templates/sidebar-sidebar-content.php') || is_page_template('page-templates/sidebar-content-sidebar.php') || 
+		get_theme_mod('totalpress_blog_layout') == 'sidebars_left' || get_theme_mod('totalpress_blog_layout') == 'sidebars_right' || get_theme_mod('totalpress_blog_layout') == 'both_sidebars'): ?>
 			<div id="primary" class="content-area small-12 large-6 cell">
 				<main id="main" class="site-main" role="main">
 		<?php endif; ?>
-		<?php if (is_page_template('page-templates/full-width.php') || get_theme_mod('totalpress_blog_layout') == 'sidebars_left'): ?>
+		<?php if (is_page_template('page-templates/full-width.php') || get_theme_mod('totalpress_blog_layout') == 'no_sidebars'): ?>
 			<div id="primary" class="content-area small-12 large-auto cell">
 				<main id="main" class="site-main" role="main">
 		<?php endif; ?>
@@ -336,7 +329,7 @@ endif;
 // 404 opening containers - used in 404.php
 if ( ! function_exists('totalpress_build_404_start')) :
 	function totalpress_build_404_start() { ?>
-		<div id="primary" class="content-area-404 small-12 cell">
+		<div id="primary" class="content-area-404 small-12 large-auto cell">
 			<main id="main" class="site-main" role="main">
 				<section class="error-404 not-found">
 	<?php
@@ -585,13 +578,13 @@ endif;
 // Build footer credits
 if ( ! function_exists('totalpress_add_footer_info')) {
 	function totalpress_add_footer_info() {
-		$copyright = sprintf('Built with <a href="%1$s" rel="follow" target="_blank" itemprop="url"><strong>%2$s</strong></a> &#8211; Powered by <a href="%3$s" target="_blank" itemprop="url"><strong>%4$s</strong></a>',
-			esc_url( 'https://generatepress.com' ),
+		$totalpress_copyright = sprintf('Built with <a href="%1$s" rel="follow" target="_blank" itemprop="url"><strong>%2$s</strong></a> &#8211; Powered by <a href="%3$s" target="_blank" itemprop="url"><strong>%4$s</strong></a>',
+			esc_url( 'https://themeawesome.com/totalpress-wordpress-foundation-theme/' ),
 			__( 'TotalPress', 'totalpress' ),
 			esc_url( 'https://wordpress.org'),
 			__('WordPress','totalpress')
 		);
-		echo apply_filters('totalpress_copyright', $copyright ); // WPCS: XSS ok.
+		echo apply_filters('totalpress_copyright', $totalpress_copyright ); // WPCS: XSS ok.
 	}
 	add_action('totalpress_credits','totalpress_add_footer_info');
 }

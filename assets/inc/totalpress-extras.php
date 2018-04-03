@@ -1,4 +1,4 @@
-<?php /* @version 1.0.18 */
+<?php /* @version 1.0.19 */
 if ( ! defined('ABSPATH')) exit;
 // Flush transients used in totalpress_categorized_blog.
 function totalpress_category_transient_flusher() {
@@ -288,7 +288,7 @@ if ( ! function_exists('totalpress_build_entry_footer')) :
 			// If show tags are set to true, show them
 			if ( $show_tags ) {
 				/* translators: used between list items, there is a space after the comma */
-				$tags_list = get_the_tag_list('', esc_attr(',','totalpress'));
+				$tags_list = get_the_tag_list('', esc_attr(', ','totalpress'));
 				if ( $tags_list ) {
 					printf('<span class="tags-links">' . esc_attr('Tagged: %1$s','totalpress') . '</span>', $tags_list); }
 			}

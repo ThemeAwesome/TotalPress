@@ -1,14 +1,14 @@
 /*
-Theme Name: TotalPress
-Theme URI: https://themeawesome.com/totalpress-wordpress-foundation-theme/
-Author: ThemeAWESOME
-Author URI: https://themeawesome.com/
-Description: Hello world, meet TotalPress! I'm Based off _s (Underscores) and I also come with Zurb's Foundation for Sites fully integrated. What makes me awesome? I am small and fast (I'm less than 438kb compressed). I am fully responsive, meaning I adjust to any screen resolution so I look good on any device. I've got a ton of hooks and filters, ten (10) widget areas built in as well as 6 different sidebar page templates. I use the Kirki plugin which provides 30 custom control types for the theme customizer ranging from simple sliders and tooltips to complex typography controls including Google-Fonts. I also use the Meta Box plugin which is a powerful, professional toolkit for developers to create and handle everything related to custom meta boxes and custom fields for WordPress. Did I mention that I work really well with page builders like Elementor. So what are you waiting for? Download me today and take me for a spin. Be sure to read the <a href="https://themeawesome.com/docs/totalpress/">theme documentation</a>.
-Version: 1.0.18
-License: GNU General Public License v3.0
-License URI: http://www.gnu.org/licenses/gpl-3.0.html
-Tags: blog, one-column, two-columns, three-columns, right-sidebar, left-sidebar, footer-widgets, custom-background, flexible-header, custom-menu, editor-style, featured-images, full-width-template, microformats, post-formats, sticky-post, translation-ready, theme-options, custom-logo, custom-colors
-Text Domain: totalpress
+Theme Name:TotalPress
+Theme URI:https://themeawesome.com/totalpress-wordpress-foundation-theme/
+Author:ThemeAWESOME
+Author URI:https://themeawesome.com/
+Description:Hello world, meet TotalPress! I'm Based off _s (Underscores) and I also come with Zurb's Foundation for Sites fully integrated. What makes me awesome? I am small and fast (I'm less than 438kb compressed). I am fully responsive, meaning I adjust to any screen resolution so I look good on any device. I've got a ton of hooks and filters, ten (10) widget areas built in as well as 6 different sidebar page templates. I use the Kirki plugin which provides 30 custom control types for the theme customizer ranging from simple sliders and tooltips to complex typography controls including Google-Fonts. I also use the Meta Box plugin which is a powerful, professional toolkit for developers to create and handle everything related to custom meta boxes and custom fields for WordPress. Did I mention that I work really well with page builders like Elementor. So what are you waiting for? Download me today and take me for a spin. Be sure to read the <a href="https://themeawesome.com/docs/totalpress/">theme documentation</a>.
+Version:1.0.19
+License:GNU General Public License v3.0
+License URI:http://www.gnu.org/licenses/gpl-3.0.html
+Tags:blog, one-column, two-columns, three-columns, right-sidebar, left-sidebar, footer-widgets, custom-background, flexible-header, custom-menu, editor-style, featured-images, full-width-template, microformats, post-formats, sticky-post, translation-ready, theme-options, custom-logo, custom-colors
+Text Domain:totalpress
 
 TotalPress, Copyright (c) 2018 V Enterprises, LLC
 TotalPress is distributed under the terms of the GNU General Public License v3.0.
@@ -91,6 +91,7 @@ hr{border:0;margin:30px auto 30px;color:#fff;background-color:#fff;height:0;bord
 /* no sidebars | full width */
 .nsb_single_template .content-area,.woocommerce-page.nsb_single_template .content-area{order:1;padding:0;}
 .cs_single_template .content-area-404.cell,.sc_single_template .content-area-404.cell,.css_single_template .content-area-404.cell,.ssc_single_template .content-area-404.cell,.scs_single_template .content-area-404.cell,.nsb_single_template .content-area-404.cell{padding:0;}
+.error404 .content-area-404{padding:0}
 /**************************************
  * One Container CSS
  *************************************/
@@ -291,7 +292,7 @@ p.comment-subscription-form{margin-bottom:0;}
 .inside-footer-widgets{margin:0 auto;}
 .inside-footer-widgets .grid-padding-x > .cell{padding-right:0;padding-left:0;}
 .inside-footer-widgets .column-block{margin-bottom:0;}
-.inside-footer-widgets h4.widget-title{font-size:17px;}
+.inside-footer-widgets h4.widget-title{font-size:17px;font-weight:bold;}
 .inside-footer-widgets .widget{background:transparent;margin-bottom:0;padding:0;}
 .fw_one.cell{padding-left:0;}
 .fw_five.cell{padding-right:0;}
@@ -385,7 +386,7 @@ p.attachment {text-align:center;}
 /**************************************
  * Links
  *************************************/
-.inside-top-sidebar.cell a{color:#FFFFFF;padding: 0 8px;}
+.inside-top-sidebar.cell a{color:#FFFFFF;padding:0 8px;}
 .inside-top-sidebar.cell a:hover{color:#e6e6e6;}
 h1.site-title a,p.site-title a{color:#3F3F3F;text-decoration:none;}
 h1.site-title a:hover,p.site-title a:hover{color:#b02329;text-decoration:none;}
@@ -424,16 +425,13 @@ footer.site-footer a:hover,footer.site-footer a:hover:before{color:#e6e6e6;}
  *************************************/
 .menu-social-container a::before{
   display:inline-block;font-family:'FontAwesome';font-style:normal;font-weight:normal;font-variant:normal;speak:none;
-  -moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;}.menu-social-container a[href*="500px.com"]:before{content:"\f26e"}.menu-social-container a[href*="bandcamp.com"]:before{content:"\f2d5"}.menu-social-container a[href*="behance.net"]:before{content:"\f1b5"}.menu-social-container a[href*="bitbucket.org"]:before{content:"\f171"}.menu-social-container a[href*="codepen.io"]:before{content:"\f1cb"}.menu-social-container a[href*="deviantart.com"]:before{content:"\f1bd"}.menu-social-container a[href*="digg.com"]:before{content:"\f1a6"}.menu-social-container a[href*="dribbble.com"]:before{content:"\f17d"}.menu-social-container a[href*="dropbox.com"]:before{content:"\f16b"}.menu-social-container a[href*="facebook.com"]:before{content:"\f082"}.menu-social-container a[href*="/feed/"]:before{content:"\f143"}.menu-social-container a[href*="flickr.com"]:before{content:"\f16e"}.menu-social-container a[href*="foursquare.com"]:before{content:"\f180"}.menu-social-container a[href*="plus.google.com"]:before{content:"\f0d4"}.menu-social-container a[href*="github.com"]:before{content:"\f092"}.menu-social-container a[href*="instagram.com"]:before{content:"\f16d"}.menu-social-container a[href*="jsfiddle.net"]:before{content:"\f1cc"}.menu-social-container a[href*="last.fm"]:before{content:"\f203"}.menu-social-container a[href*="linkedin.com"]:before{content:"\f08c"}.menu-social-container a[href*="mixcloud.com"]:before{content:"\f289"}.menu-social-container a[href*="pinterest.com"]:before{content:"\f0d3"}.menu-social-container a[href*="getpocket.com"]:before{content:"\f265"}.menu-social-container a[href*="reddit.com"]:before{content:"\f1a2"}.menu-social-container a[href*="soundcloud.com"]:before{content:"\f1be"}.menu-social-container a[href*="spotify.com"]:before{content:"\f1bc"}.menu-social-container a[href*="snapchat.com"]:before{content:"\f2ad"}.menu-social-container a[href*="stackoverflow.com"]:before{content:"\f16c"}.menu-social-container a[href*="stumbleupon.com"]:before{content:"\f1a3"}.menu-social-container a[href*="tumblr.com"]:before{content:"\f174"}.menu-social-container a[href*="twitter.com"]:before{content:"\f081"}.menu-social-container a[href*="vimeo.com"]:before{content:"\f194"}.menu-social-container a[href*="vine.co"]:before{content:"\f1ca"}.menu-social-container a[href*="wordpress.com"]:before,.menu-social-container a[href*="wordpress.org"]:before{content:"\f19a"}.menu-social-container a[href*="youtube.com"]:before{content:"\f431"}.menu-social-container a[href*="mailto:"]:before{content:"\f199"}.menu-social-container a[href*="twitch.tv"]:before{content:"\f1e8"}.menu-social-container a[href*="xing.com"]:before{content:"\f169"}
+  -moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;}.menu-social-container a[href*="500px.com"]:before{content:"\f26e"}.menu-social-container a[href*="bandcamp.com"]:before{content:"\f2d5"}.menu-social-container a[href*="behance.net"]:before{content:"\f1b5"}.menu-social-container a[href*="bitbucket.org"]:before{content:"\f171"}.menu-social-container a[href*="codepen.io"]:before{content:"\f1cb"}.menu-social-container a[href*="deviantart.com"]:before{content:"\f1bd"}.menu-social-container a[href*="digg.com"]:before{content:"\f1a6"}.menu-social-container a[href*="dribbble.com"]:before{content:"\f17d"}.menu-social-container a[href*="dropbox.com"]:before{content:"\f16b"}.menu-social-container a[href*="facebook.com"]:before{content:"\f082"}.menu-social-container a[href*="/feed/"]:before{content:"\f143"}.menu-social-container a[href*="flickr.com"]:before{content:"\f16e"}.menu-social-container a[href*="foursquare.com"]:before{content:"\f180"}.menu-social-container a[href*="plus.google.com"]:before{content:"\f0d4"}.menu-social-container a[href*="github.com"]:before{content:"\f092"}.menu-social-container a[href*="instagram.com"]:before{content:"\f16d"}.menu-social-container a[href*="jsfiddle.net"]:before{content:"\f1cc"}.menu-social-container a[href*="last.fm"]:before{content:"\f203"}.menu-social-container a[href*="linkedin.com"]:before{content:"\f08c"}.menu-social-container a[href*="mixcloud.com"]:before{content:"\f289"}.menu-social-container a[href*="pinterest.com"]:before{content:"\f0d3"}.menu-social-container a[href*="getpocket.com"]:before{content:"\f265"}.menu-social-container a[href*="reddit.com"]:before{content:"\f1a2"}.menu-social-container a[href*="soundcloud.com"]:before{content:"\f1be"}.menu-social-container a[href*="spotify.com"]:before{content:"\f1bc"}.menu-social-container a[href*="snapchat.com"]:before{content:"\f2ad"}.menu-social-container a[href*="stackoverflow.com"]:before{content:"\f16c"}.menu-social-container a[href*="stumbleupon.com"]:before{content:"\f1a3"}.menu-social-container a[href*="tumblr.com"]:before{content:"\f174"}.menu-social-container a[href*="twitter.com"]:before{content:"\f081"}.menu-social-container a[href*="vimeo.com"]:before{content:"\f194"}.menu-social-container a[href*="vine.co"]:before{content:"\f1ca"}.menu-social-container a[href*="wordpress.com"]:before,.menu-social-container a[href*="wordpress.org"]:before{content:"\f19a"}.menu-social-container a[href*="youtube.com"]:before{content:"\f167"}.menu-social-container a[href*="mailto:"]:before{content:"\f199"}.menu-social-container a[href*="twitch.tv"]:before{content:"\f1e8"}.menu-social-container a[href*="xing.com"]:before{content:"\f169"}
 /**************************************
  * Misc Elelments
  *************************************/
-label{font-size:16px;}
-cite{font-weight:900;}
-code,kbd {font-size: 15px;word-break: break-all;word-wrap: break-word;white-space: pre;white-space: pre-wrap;background-color:#f7f7f7;border: 1px solid #ccc;border: 1px solid rgba(0,0,0,.15);-webkit-border-radius: 4px;-moz-border-radius: 4px;border-radius: 4px;}
-var,sub,sup,strong,b{font-weight:900;}
+label{font-size:16px;}cite{color:#636363;font-weight:900;}q{font-style:italic;}code,kbd{font-size:15px;word-break:break-all;word-wrap:break-word;white-space:pre;white-space:pre-wrap;background-color:#f7f7f7;border:1px solid #ccc;border:1px solid rgba(0,0,0,.15);-webkit-border-radius:4px;-moz-border-radius:4px;border-radius:4px;}var,sub,sup,strong,b{font-weight:900;}
 ins{background:#fff9c0;text-decoration:none;padding:0 3px;}
-pre {display: block;padding: 8.5px;margin: 0 0 1.5em;font-size: 15px;line-height: 18px;word-break: break-all;word-wrap: break-word; white-space: pre;white-space: pre-wrap;background-color: #f5f5f5;border: 1px solid #ccc;border: 1px solid rgba(0,0,0,.15);   -webkit-border-radius: 4px;-moz-border-radius: 4px;border-radius: 4px;}
+pre {display:block;padding:8.5px;margin:0 0 1.5em;font-size:15px;line-height:18px;background-color:#f5f5f5;border:1px solid #ccc;border:1px solid rgba(0,0,0,.15);-webkit-border-radius:4px;-moz-border-radius:4px;border-radius:4px;word-break:break-all;word-wrap:break-word;white-space:pre;white-space:-moz-pre-wrap;white-space:pre-wrap;white-space:pre\9;}
 address{margin:0 0 24px;}
 table{border:1px solid #f1f1f1;}
 table tbody th, table tbody td{font-size:smaller;padding:5px 4px;}
@@ -593,7 +591,7 @@ a.button.wc-forward:after{content:"\f105";font-family:FontAwesome;line-height:1e
       .main-navigation .menu > li > a{padding:15px;}
       .top-bar,.top-bar ul,.is-dropdown-submenu{background-color:#222222;}
       .submenu-toggle{top:7px;}
-      nav.navigation {margin-bottom: 30px;}
+      nav.navigation {margin-bottom:30px;}
       .pagination-previous {margin-left:30px;margin-right:30px;}
       .pagination-next {margin-right:30px;margin-left:30px;}
       .one-container .author-info,.one-container .rts,.one-container .lfts{padding:30px;}

@@ -2,7 +2,7 @@
 Tags: blog, one-column, two-columns, three-columns, right-sidebar, left-sidebar, footer-widgets, custom-background, flexible-header, custom-menu, editor-style, featured-images, full-width-template, microformats, post-formats, sticky-post, translation-ready, theme-options, custom-logo, custom-colors
 Requires at least: 4.9.4
 Tested up to: 4.9.4
-Stable tag: 1.0.18
+Stable tag: 1.0.19
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -66,4 +66,4 @@ All of the components used in the creation of TotalPress are licensed as follows
 
 == Changelog ==
 
-* For a full list of changes, please visit https://github.com/ThemeAwesome/TotalPress/blob/master/README.md
+* For a full list of changes, please visit https://github.com/ThemeAwesome/TotalPress/blob/master/CHANGELOG.md
