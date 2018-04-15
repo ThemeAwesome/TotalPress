@@ -1,4 +1,4 @@
-<?php /* @version 1.0.20 */
+<?php /* @version 1.0.22 */
 if ( ! defined('ABSPATH')) exit;
 class TotalPress_Kirki {
 	protected static $config = array();

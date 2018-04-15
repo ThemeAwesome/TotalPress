@@ -2,7 +2,15 @@
 
 ### [Unreleased]
 
-### [1.0.20] 2018-04-15
+###### [1.0.22] 2018-04-15
+###### `Removed`
+* Again, i left a few choice words in the code that should not be there so I removed them. Note to self "Do not do that anymore".
+
+###### [1.0.21] 2018-04-15
+###### `Removed`
+* A few extra letters that are not so appropriate. I ususally add a saying when I am trying to figure stuff out and usually remove them, however I accidentally left it in this time.
+
+###### [1.0.20] 2018-04-15
 ###### `Changed`
 * The layout of the code in `totalpress-functions.php`. This was done to make the flow of the code more logical and easier to understand. The code is supposed to take a `top-down` approach.
 * name of `Footer Widget Layout` to `Footer Widgets Layout`.

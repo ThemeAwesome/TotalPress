@@ -1,4 +1,4 @@
-/* @version 1.0.20 */
+/* @version 1.0.22 */
 ( function( $ ) {
 // Header
 	// Site title and description.

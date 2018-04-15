@@ -4,7 +4,7 @@ Theme URI:https://themeawesome.com/totalpress-wordpress-foundation-theme/
 Author:ThemeAWESOME
 Author URI:https://themeawesome.com/
 Description:Hello world, meet TotalPress! I'm Based off _s (Underscores) and I also come with Zurb's Foundation for Sites fully integrated. What makes me awesome? I am small and fast (I'm less than 438kb compressed). I am fully responsive, meaning I adjust to any screen resolution so I look good on any device. I've got a ton of hooks and filters, ten (10) widget areas built in as well as 6 different sidebar page templates. I use the Kirki plugin which provides 30 custom control types for the theme customizer ranging from simple sliders and tooltips to complex typography controls including Google-Fonts. I also use the Meta Box plugin which is a powerful, professional toolkit for developers to create and handle everything related to custom meta boxes and custom fields for WordPress. Did I mention that I work really well with page builders like Elementor. So what are you waiting for? Download me today and take me for a spin. Be sure to read the <a href="https://themeawesome.com/docs/totalpress/">theme documentation</a>.
-Version:1.0.20
+Version:1.0.22
 License:GNU General Public License v3.0
 License URI:http://www.gnu.org/licenses/gpl-3.0.html
 Tags:blog, one-column, two-columns, three-columns, right-sidebar, left-sidebar, footer-widgets, custom-background, flexible-header, custom-menu, editor-style, featured-images, full-width-template, microformats, post-formats, sticky-post, translation-ready, theme-options, custom-logo, custom-colors
@@ -104,7 +104,10 @@ hr{border:0;margin:30px auto 30px;color:#fff;background-color:#fff;height:0;bord
 .one-container .comment-body{margin-bottom:0;}
 .one-container .comment-navigation{margin-bottom:0;padding:30px 0;}
 .archive.author.one-container .author-info{border-top:0; padding-top:0}
-.one-container .pagination-previous a, .one-container .pagination-next a{background-color:#3F3F3F;color:#FFFFFF;}
+.one-container .pagination-previous a, .one-container .pagination-next a{background-color:#e6e6e6;color:#3f3f3f;}
+.one-container .pagination .current{background-color:#3f3f3f;color:#FFFFFF;padding:8px 12px;}
+.one-container .pagination .current a {background-color:transparent;color:#fff;padding:0;}
+.one-container .pagination {margin-bottom:30px;padding:0 30px;}
 .one-container nav.navigation{margin:0;padding:40px 30px 5px;}
 .one-container .widget-title{margin-bottom:10px;}
 .one-container .entry-footer{border-bottom:1px solid rgba(0,0,0,.05);padding:30px 0 40px;}
@@ -466,10 +469,9 @@ select{font-size:inherit;height:auto;padding:14px;padding-right:24px;}
 .screen-reader-text,.assistive-text{clip:rect(1px, 1px, 1px, 1px);position:absolute!important;height:1px;width:1px;overflow:hidden;word-wrap:normal!important;}
 .screen-reader-text:focus{background-color:#f1f1f1;border-radius:3px;box-shadow:0 0 2px 2px rgba(0, 0, 0, 0.6);clip:auto !important;color:#21759b;display:block;font-size:14px;font-weight:bold;height:auto;left:5px;line-height:normal;padding:15px 23px 14px;text-decoration:none;top:5px;width:auto;z-index:100000;}
 /* Pagination */
-.pagination{margin-bottom:40px;}
-.pagination li{font-size:20px; }
+.pagination{margin-bottom:30px;}
 .pagination a,.pagination button{background-color:#FFFFFF;padding:8px 12px;border-radius:0;color:#3F3F3F;font-size:inherit; }
-.pagination a:hover,.pagination button:hover{background:#b02329;color:#FFFFFF;}
+.pagination a:hover,.pagination button:hover{background:#3f3f3f;color:#ffffff;}
 .pagination .current{background-color:#b02329;color:#FFFFFF;padding:8px 12px;}
 .pagination .current a{background-color:#b02329;color:#fff;padding:0;}
 /* buttons */

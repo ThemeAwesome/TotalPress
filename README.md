@@ -7,7 +7,7 @@
 **Donate:** [TotalPress Project](https://www.paypal.me/themeawesome)<br />
 **Requires at least:** 4.9.5<br />
 **Tested up to:** 4.9.5<br />
-**Stable tag:** 1.0.20<br />
+**Stable tag:** 1.0.22<br />
 **License:** GNU General Public License v3.0<br />
 **License URI:** [http://www.gnu.org/licenses/gpl-3.0.html](http://www.gnu.org/licenses/gpl-3.0.html)<br />
 
