@@ -2,7 +2,7 @@
 
 ### [Unreleased]
 
-###### [1.0.22] 2018-04-15
+### [1.0.22] 2018-04-15
 ###### `Removed`
 * Again, i left a few choice words in the code that should not be there so I removed them. Note to self "Do not do that anymore".
 
