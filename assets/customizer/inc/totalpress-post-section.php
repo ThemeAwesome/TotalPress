@@ -1,7 +1,7 @@
-<?php /* @version 1.0.19 */
+<?php /* @version 1.0.20 */
 if ( ! defined('ABSPATH')) exit;
 TotalPress_Kirki::add_section( 'totalpress_post_section', array(
-    'title'      => esc_html__('Blog Layout','totalpress'),
+    'title'      => esc_html__('Layout','totalpress'),
     'panel'      => 'totalpress_blog_options',
     'priority'   => 2,
     'capability' => 'edit_theme_options',

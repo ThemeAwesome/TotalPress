@@ -2,7 +2,24 @@
 
 ### [Unreleased]
 
-### [1.0.19] 2018-04-03
+### [1.0.20] 2018-04-15
+###### `Changed`
+* The layout of the code in `totalpress-functions.php`. This was done to make the flow of the code more logical and easier to understand. The code is supposed to take a `top-down` approach.
+* name of `Footer Widget Layout` to `Footer Widgets Layout`.
+* Moved `Theme Layout` under `General Options` to the first position.
+* Default font set to `sans-serif`.
+* `totalpress_posted_on` action as well as the `totalpress_entry_footer` action hook in `totalpress-extras.php`.
+
+###### `Added`
+* Padding styles for the `one-container` content area of 404 pages.
+* Top and bottom margins for images with a post that are linked. Line `389` of `style.css`
+* `totalpress_single_entry_footer` and `totalpress_single_posted_on`
+
+###### `Removed`
+* Remeoved `h4` from line 296 of `style.css`. This was done to group all of the css produced by Kirki.
+* `$show_edit_top` from `totalpress-extras.php` on line `44`, which shows the edit button below the title.
+
+###### [1.0.19] 2018-04-03
 ###### `Added`
 * Styling for the content area of 404 pages.
 * `large-auto` to `totalpress_404_start` action.
@@ -162,7 +179,8 @@ Removed some of the features from the `setup_totalpress` function in `functions.
 ###### [1.0.0] 2017-11-02
 * Initial submission to the theme review team on 11/02/2017
 
-[unreleased]: https://github.com/themeawesome/totalpress/compare/v1.0.19...HEAD
+[unreleased]: https://github.com/themeawesome/totalpress/compare/v1.0.20...HEAD
+[1.0.20]: https://github.com/themeawesome/totalpress/compare/1.0.19...1.0.20
 [1.0.19]: https://github.com/themeawesome/totalpress/compare/1.0.18...1.0.19
 [1.0.18]: https://github.com/themeawesome/totalpress/compare/1.0.17...1.0.18
 [1.0.17]: https://github.com/themeawesome/totalpress/compare/1.0.16...1.0.17

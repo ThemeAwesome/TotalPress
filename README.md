@@ -5,9 +5,9 @@
 **Theme Name:** TotalPress<br />
 **Tags:** blog, one-column, two-columns, three-columns, right-sidebar, left-sidebar, footer-widgets, custom-background, flexible-header, custom-menu, editor-style, featured-images, full-width-template, microformats, post-formats, sticky-post, translation-ready, theme-options, custom-logo, custom-colors<br />
 **Donate:** [TotalPress Project](https://www.paypal.me/themeawesome)<br />
-**Requires at least:** 4.9.4<br />
-**Tested up to:** 4.9.4<br />
-**Stable tag:** 1.0.19<br />
+**Requires at least:** 4.9.5<br />
+**Tested up to:** 4.9.5<br />
+**Stable tag:** 1.0.20<br />
 **License:** GNU General Public License v3.0<br />
 **License URI:** [http://www.gnu.org/licenses/gpl-3.0.html](http://www.gnu.org/licenses/gpl-3.0.html)<br />
 

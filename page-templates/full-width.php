@@ -1,4 +1,4 @@
-<?php /* @version 1.0.19 */
+<?php /* @version 1.0.20 */
 /**
  * Template Name: Full-Width | No Sidebars
  * Template Post Type: post, page, aside, audio, chat, gallery, image, link, quote, status, video

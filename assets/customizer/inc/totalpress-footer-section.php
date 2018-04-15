@@ -1,7 +1,7 @@
-<?php /* @version 1.0.19 */
+<?php /* @version 1.0.20 */
 if ( ! defined('ABSPATH')) exit;
 TotalPress_Kirki::add_section( 'totalpress_footer_section', array(
-    'title'       => esc_html__('Footer Layout','totalpress'),
+    'title'       => esc_html__('Layout','totalpress'),
     'panel'       => 'totalpress_footer_options',
     'priority'    => 1,
     'capability'  => 'edit_theme_options',
@@ -9,7 +9,7 @@ TotalPress_Kirki::add_section( 'totalpress_footer_section', array(
 TotalPress_Kirki::add_field('totalpress_theme_customizer',array(
 	'type'        => 'select',
 	'settings'    => 'totalpress_main_footer_container',
-	'label'       => __('Main Footer Width','totalpress' ),
+	'label'       => __('Main Container Width','totalpress' ),
 	'tooltip'     => esc_html__('Select &quot;Contain to Grid&quot; to keep the main footer container within the grid container. Select &quot;Full Width&quot; have the main footer container expand 100% to fill the screen. Default is &quot;Contain to Grid&quot;','totalpress'),
 	'section'     => 'totalpress_footer_section',
 	'default'     => 'contain',
@@ -22,7 +22,7 @@ TotalPress_Kirki::add_field('totalpress_theme_customizer',array(
 TotalPress_Kirki::add_field('totalpress_theme_customizer',array(
 	'type'        => 'select',
 	'settings'    => 'totalpress_inner_footer_container',
-	'label'       => __('Inside Footer Width','totalpress' ),
+	'label'       => __('Inner Container Width','totalpress' ),
 	'tooltip'     => esc_html__('Select &quot;Contain to Grid&quot; to keep the inner footer container within the grid container. Select &quot;Full Width&quot; to have the inside footer conatiner expand 100% to fill the screen. Default is &quot;Contain to Grid&quot;','totalpress'),
 	'section'     => 'totalpress_footer_section',
 	'default'     => 'contain',

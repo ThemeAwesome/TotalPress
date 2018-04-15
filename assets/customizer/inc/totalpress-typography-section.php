@@ -1,4 +1,4 @@
-<?php /* @version 1.0.19 */
+<?php /* @version 1.0.20 */
 if ( ! defined('ABSPATH')) exit;
 TotalPress_Kirki::add_section( 'totalpress_typography_section', array(
     'title'       => esc_html__('Typography','totalpress'),
@@ -9,14 +9,13 @@ TotalPress_Kirki::add_section( 'totalpress_typography_section', array(
 TotalPress_Kirki::add_field('totalpress_theme_customizer',array(
 	'type'        => 'typography',
 	'settings'    => 'totalpress_theme_body_font',
-	'label'       => esc_html__('Body Font','totalpress' ),
-	'tooltip'     => esc_html__('Change the font family of your theme. Default is Source Sans Pro.','totalpress'),
+	'label'       => esc_html__('Text','totalpress' ),
+	'tooltip'     => esc_html__('Change the font family of your theme. Default is sans-serif.','totalpress'),
 	'section'     => 'totalpress_typography_section',
 	'priority'    => 1,
 	'transport'   => 'auto',
 	'default'     => array(
-		'font-family' => 'Georgia,Times,"Times New Roman",serif',
-			'Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif',
+		'font-family' => 'sans-serif',
 		'variant'        => 'regular',
 		'font-size'      => '17px',
 		'line-height'    => '1.5',

@@ -1,4 +1,4 @@
-<?php /* @version 1.0.19 */
+<?php /* @version 1.0.20 */
 if ( ! defined('ABSPATH')) exit;
 // Flush transients used in totalpress_categorized_blog.
 function totalpress_category_transient_flusher() {
@@ -35,68 +35,6 @@ if ( ! function_exists( 'totalpress_categorized_blog' ) ) :
 		}
 	}
 endif;
-// prints html for current post-date/time and author
-if ( ! function_exists( 'totalpress_build_posted_on' ) ) :
-	function totalpress_build_posted_on() {
-		$show_date = apply_filters('totalpress_post_date', true);
-		$show_author = apply_filters('totalpress_post_author', true);
-		$show_comments_top = apply_filters('totalpress_show_comments_top', true);
-		$show_edit_top = apply_filters('totalpress_show_edit_top', true);
-		$time_stamp = '<time class="entry-date published" datetime="%1$s" itemprop="datePublished">%2$s</time>';
-		if ( get_the_time( 'U' ) !== get_the_modified_time('U')) {
-			$time_stamp .= '<time class="updated" datetime="%3$s" itemprop="dateModified">%4$s</time>';
-		}
-		$time_stamp = sprintf( $time_stamp,
-			esc_attr( get_the_date( 'c' ) ),
-			esc_attr( get_the_date() ),
-			esc_attr( get_the_modified_date( 'c' ) ),
-			esc_attr( get_the_modified_date() )
-		);
-		$open_entry_meta = sprintf( '<div class="entry-meta">' );
-		echo apply_filters( 'totalpress_open_entry_meta', $open_entry_meta );
-		// If our date is enabled, show it
-		if ( $show_date ) {
-			echo apply_filters( 'totalpress_post_date_output', sprintf( '<span class="posted-on">%1$s</span>',
-				sprintf( '<a href="%1$s" title="%2$s" rel="bookmark">%3$s</a>',
-					esc_url( get_permalink() ),
-					esc_attr( get_the_time() ),
-					$time_stamp	)
-			));
-		}
-		// If our author is enabled, show it
-		if ( $show_author ) {
-			echo apply_filters('totalpress_post_author_output',sprintf( ' <span class="byline">%1$s</span>',
-				sprintf( '<span class="author vcard" itemtype="http://schema.org/Person" itemscope="itemscope" itemprop="author">%1$s <a class="url fn n" href="%2$s" title="%3$s" rel="author" itemprop="url"><span class="author-name" itemprop="name">%4$s</span></a> </span>',
-					esc_attr( 'by','totalpress'),
-					esc_url(get_author_posts_url(get_the_author_meta('ID'))),
-					esc_attr(sprintf( esc_attr('View all posts by %s','totalpress'),get_the_author())),
-					esc_attr(get_the_author() ))
-			));
-		}
-		// If comment links are enabled, show them
-		if ( $show_comments_top ) {
-			echo '<span class="comments-link-top">';
-			/* translators: %s: post title */
-			comments_popup_link( sprintf( wp_kses( __( 'Leave a Comment<span class="screen-reader-text"> on %s</span>', 'totalpress' ), array( 'span' => array( 'class' => array() ) ) ), get_the_title() ) );
-			echo '</span>';
-		}
-		// If display author is enabled, show him/her
-		if ( $show_edit_top ) {
-			edit_post_link(
-				sprintf(
-					/* translators: %s: Name of current post */
-					esc_attr( 'Edit %s', 'totalpress' ),
-					the_title( '<span class="screen-reader-text">"', '"</span>', false )
-				),
-				'<span class="edit-link-top">','</span>'
-			);
-		}
-		$close_entry_meta = sprintf( '</div><!-- .entry-meta -->' );
-		echo apply_filters( 'totalpress_close_entry_meta', $close_entry_meta );
-	}
-	add_action('totalpress_posted_on','totalpress_build_posted_on');
-endif;
-
 // add classes for the body element.
 if ( ! function_exists('totalpress_body_classes')) :
 	function totalpress_body_classes( $classes ) {
@@ -120,7 +58,6 @@ if ( ! function_exists('totalpress_body_classes')) :
 	}
 	add_filter('body_class','totalpress_body_classes');
 endif;
-
 if ( ! function_exists('totalpress_layout_classes')) {
 	function totalpress_layout_classes($classes) {
 		// pagetemplate source ordering
@@ -150,7 +87,6 @@ if ( ! function_exists('totalpress_layout_classes')) {
 	}
 	add_filter('body_class','totalpress_layout_classes');
 }
-
 if ( ! function_exists('totalpress_order_classes')) {
 	function totalpress_order_classes($classes) {
 		// pagetemplate source ordering
@@ -267,56 +203,6 @@ if ( ! function_exists('totalpress_modify_archive_title')) :
 	add_filter('get_the_archive_title','totalpress_modify_archive_title');
 endif;
 
-// prints html for categories, tags and comments
-if ( ! function_exists('totalpress_build_entry_footer')) :
-	function totalpress_build_entry_footer() { 
-		$show_cats= apply_filters( 'totalpress_show_cats', true );
-		$show_tags = apply_filters( 'totalpress_show_tags', true );
-		$show_comments_bottom = apply_filters( 'totalpress_show_comments_below', false );
-		$show_edit_bottom = apply_filters( 'totalpress_show_edit_top', false );
-		$open_entry_footer = sprintf( '<footer class="entry-footer"><p class="entry-meta">' );
-		echo apply_filters( 'totalpress_open_entry_footer', $open_entry_footer ); 
-		// Hide category and tag text for pages.
-		if ( 'post' === get_post_type() ) {
-			// If show categories is set to true, show it
-			if ( $show_cats ) {
-				/* translators: used between list items, there is a space after the comma */
-				$categories_list = get_the_category_list( esc_attr( ', ', 'totalpress' ) );
-				if ( $categories_list && totalpress_categorized_blog() ) {
-					printf('<span class="cat-links">' . esc_attr('Posted in: %1$s', 'totalpress') . '</span>', $categories_list); }
-			}
-			// If show tags are set to true, show them
-			if ( $show_tags ) {
-				/* translators: used between list items, there is a space after the comma */
-				$tags_list = get_the_tag_list('', esc_attr(', ','totalpress'));
-				if ( $tags_list ) {
-					printf('<span class="tags-links">' . esc_attr('Tagged: %1$s','totalpress') . '</span>', $tags_list); }
-			}
-			// If show comments below is set to true, show comments link
-			if ( $show_comments_bottom ) {
-				echo '<span class="comments-link-bottom">';
-				/* translators: %s: post title */
-				comments_popup_link( sprintf( wp_kses( esc_attr('Leave a Comment<span class="screen-reader-text"> on %s</span>','totalpress'), array( 'span' => array( 'class' => array() ) ) ), get_the_title() ) );
-				echo '</span>';
-			}
-			// If display author is enabled, show him/her
-			if ( $show_edit_bottom ) {
-				edit_post_link(
-					sprintf(
-						/* translators: %s: Name of current post */
-						esc_attr( 'Edit %s', 'totalpress' ),
-						the_title( '<span class="screen-reader-text">"', '"</span>', false )
-					),
-					'<span class="edit-link-bottom">','</span>'
-				);
-			}
-		}
-		$close_entry_footer = sprintf( '</p></footer><!-- .entry-footer -->' );
-		echo apply_filters( 'totalpress_close_entry_footer', $close_entry_footer );
-	}
-	add_action('totalpress_entry_footer','totalpress_build_entry_footer');
-endif;
-
 // prints html for page footer
 if ( ! function_exists('totalpress_build_entry_page_footer')) :
 	function totalpress_build_entry_page_footer() { 
@@ -329,6 +215,88 @@ if ( ! function_exists('totalpress_build_entry_page_footer')) :
 		}
 	}
 	add_action('totalpress_entry_page_footer','totalpress_build_entry_page_footer');
+endif;
+
+// prints html for current post-date/time and author
+if ( ! function_exists( 'totalpress_build_posted_on' ) ) :
+	function totalpress_build_posted_on() {
+		$date = apply_filters('totalpress_post_date',true);
+		$author = apply_filters('totalpres_post_author',true);
+		$time_string = '<time class="entry-date published" datetime="%1$s" itemprop="datePublished">%2$s</time>';
+		if ( get_the_time( 'U' ) !== get_the_modified_time('U')) {
+			$time_string .= '<time class="updated" datetime="%3$s" itemprop="dateModified">%4$s</time>';
+		}
+		$time_string = sprintf( $time_string,
+			esc_attr( get_the_date( 'c' ) ),
+			esc_html( get_the_date() ),
+			esc_attr( get_the_modified_date( 'c' ) ),
+			esc_html( get_the_modified_date() )
+		);
+		$open_entry_meta = sprintf('<div class="entry-meta">');
+		echo apply_filters('totalpress_open_entry_meta',$open_entry_meta);
+			// If our date is enabled, show it.
+			if ( $date ) {
+				echo apply_filters( 'totalpress_post_date_output', sprintf( '<span class="posted-on">%1$s</span>', // WPCS: XSS ok, sanitization ok.
+					sprintf( '<a href="%1$s" title="%2$s" rel="bookmark">%3$s</a>',
+						esc_url( get_permalink() ),
+						esc_attr( get_the_time() ),
+						$time_string
+					)
+				), $time_string );
+			}
+			// If our author is enabled, show it.
+			if ( $author ) {
+				echo apply_filters('totalpress_post_author_output', sprintf( '<span class="byline"> %1$s</span>', // WPCS: XSS ok, sanitization ok.
+					sprintf( '<span class="author vcard" itemtype="http://schema.org/Person" itemscope="itemscope" itemprop="author">%1$s <a class="url fn n" href="%2$s" title="%3$s" rel="author" itemprop="url"><span class="author-name" itemprop="name">%4$s</span></a></span>',
+						__( 'by','totalpress' ),
+						esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
+						/* translators: 1: Author name */
+						esc_attr( sprintf( __('View all posts by %s','totalpress'), get_the_author() ) ),
+						esc_html( get_the_author() )
+					)
+				) );
+			}
+
+		$close_entry_meta = sprintf( '</div><!-- .entry-meta -->' );
+		echo apply_filters( 'totalpress_close_entry_meta', $close_entry_meta );
+	}
+	add_action('totalpress_posted_on','totalpress_build_posted_on');
+endif;
+
+// prints html for categories, tags and comments
+if ( ! function_exists('totalpress_build_entry_footer')) :
+	function totalpress_build_entry_footer() { 
+		$categories = apply_filters( 'totalpress_show_categories', true );
+		$tags = apply_filters( 'totalpress_show_tags', true );
+		$comments = apply_filters( 'totalpress_show_comments', true );
+		$open_entry_footer = sprintf( '<footer class="entry-footer"><p class="entry-meta">' );
+		echo apply_filters( 'totalpress_open_entry_footer', $open_entry_footer ); 
+		// Hide category and tag text for pages.
+		if ( 'post' === get_post_type() ) {
+			$categories_list = get_the_category_list( _x( ', ', 'Used between list items, there is a space after the comma.','totalpress' ));
+			if ($categories_list && $categories) {
+				echo apply_filters( 'totalpress_category_list_output', sprintf( '<span class="cat-links">Posted in: <span class="screen-reader-text">%1$s </span>%2$s</span>', // WPCS: XSS ok, sanitization ok.
+					esc_html_x( 'Categories', 'Used before category names.', 'totalpress' ),
+					$categories_list
+				));
+			}
+			$tags_list = get_the_tag_list( '', _x( ', ','Used between list items, there is a space after the comma.','totalpress'));
+			if ( $tags_list && $tags ) {
+				echo apply_filters( 'totalpress_tag_list_output', sprintf( '<span class="tags-links"> Tagged: <span class="screen-reader-text">%1$s </span>%2$s</span>', // WPCS: XSS ok, sanitization ok.
+					esc_html_x( 'Tags', 'Used before tag names.', 'totalpress' ),
+					$tags_list
+				));
+			}
+			if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) && $comments ) {
+				echo '<span class="comments-link">';
+					comments_popup_link( __('Leave a comment','totalpress'), __('1 Comment','totalpress'), __('% Comments', 'totalpress' ) );
+				echo '</span>';
+			}
+		}
+		$close_entry_footer = sprintf( '</p></footer><!-- .entry-footer -->' );
+		echo apply_filters( 'totalpress_close_entry_footer', $close_entry_footer );
+	}
+	add_action('totalpress_entry_footer','totalpress_build_entry_footer');
 endif;
 
 // comments and pingback template - thanks TU

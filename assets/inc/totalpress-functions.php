@@ -1,4 +1,4 @@
-<?php /* @version 1.0.19 */
+<?php /* @version 1.0.20 */
 if ( ! defined('ABSPATH')) exit;
 // Start theme
 if ( ! function_exists('totalpress_build_start_theme')) :
@@ -210,9 +210,9 @@ endif;
 if ( ! function_exists('totalpress_build_blog_entry_header')) :
 	function totalpress_build_blog_entry_header() { ?>
 	<?php do_action('totalpress_before_entry_header'); ?>
-	<header class="entry-header">
+	<header class="entry-header">THIS IS BULLSHIT
 		<?php do_action( 'totalpress_before_entry_title'); ?>
-		<?php the_title( sprintf( '<h2 class="entry-title" itemprop="headline"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
+		<?php the_title( sprintf( '<h2 class="entry-title BEEEEYOTCH" itemprop="headline"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
 		<?php do_action('totalpress_posted_on'); ?>
 	</header><!-- .entry-header -->
 	<?php do_action('totalpress_after_entry_header'); ?>

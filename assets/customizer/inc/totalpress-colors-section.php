@@ -1,7 +1,7 @@
-<?php /* @version 1.0.19 */
+<?php /* @version 1.0.20 */
 if ( ! defined('ABSPATH')) exit;
 TotalPress_Kirki::add_section( 'totalpress_colors_section', array(
-    'title'       => esc_html__('Basic Colors','totalpress'),
+    'title'       => esc_html__('Colors','totalpress'),
     'panel'       => 'totalpress_general_options',
     'priority'    => 3,
     'capability'  => 'edit_theme_options',
@@ -9,7 +9,7 @@ TotalPress_Kirki::add_section( 'totalpress_colors_section', array(
 TotalPress_Kirki::add_field('totalpress_theme_customizer',array(
 	'type'        => 'color',
 	'settings'    => 'totalpress_theme_font_colors',
-	'label'       => esc_html__('Font Color','totalpress'),
+	'label'       => esc_html__('Text','totalpress'),
 	'tooltip'     => esc_html__('Change default font color.','totalpress'),
 	'section'     => 'totalpress_colors_section',
 	'default'     => '#3f3f3f',
@@ -26,7 +26,7 @@ TotalPress_Kirki::add_field('totalpress_theme_customizer',array(
 TotalPress_Kirki::add_field('totalpress_theme_customizer', array(
 	'type'        => 'color',
 	'settings'    => 'totalpress_theme_link_colors',
-	'label'       => esc_html__('Link Color','totalpress'),
+	'label'       => esc_html__('Links','totalpress'),
 	'tooltip'     => esc_html__('Change default link color. Does not change link color of other areas, i.e. .entry-meta a, etc.','totalpress'),
 	'section'     => 'totalpress_colors_section',
 	'default'     => '#b02329',
@@ -43,7 +43,7 @@ TotalPress_Kirki::add_field('totalpress_theme_customizer', array(
 TotalPress_Kirki::add_field('totalpress_theme_customizer', array(
 	'type'        => 'color',
 	'settings'    => 'totalpress_theme_link_hover_colors',
-	'label'       => esc_html__('Link Hover Color','totalpress'),
+	'label'       => esc_html__('Hover','totalpress'),
 	'tooltip'     => esc_html__('Change default link hover color. Does not change link hover color of other areas, i.e. .entry-meta a:hover, etc.','totalpress'),
 	'section'     => 'totalpress_colors_section',
 	'default'     => '#3f3f3f',
