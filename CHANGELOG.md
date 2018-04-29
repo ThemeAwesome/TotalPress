@@ -199,7 +199,8 @@ Removed some of the features from the `setup_totalpress` function in `functions.
 ###### [1.0.0] 2017-11-02
 * Initial submission to the theme review team on 11/02/2017
 
-[unreleased]: https://github.com/themeawesome/totalpress/compare/v1.0.20...HEAD
+[unreleased]: https://github.com/themeawesome/totalpress/compare/v1.0.23...HEAD
+[1.0.20]: https://github.com/themeawesome/totalpress/compare/1.0.20...1.0.23
 [1.0.20]: https://github.com/themeawesome/totalpress/compare/1.0.19...1.0.20
 [1.0.19]: https://github.com/themeawesome/totalpress/compare/1.0.18...1.0.19
 [1.0.18]: https://github.com/themeawesome/totalpress/compare/1.0.17...1.0.18
