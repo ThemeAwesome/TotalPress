@@ -1,4 +1,4 @@
-<?php /* @version 1.0.22 */
+<?php /* @version 1.0.23 */
 if ( ! defined('ABSPATH')) exit;
 
 if ( class_exists('WP_Customize_Panel')) {
@@ -107,10 +107,18 @@ if ( ! function_exists('totalpress_customize_register')) :
     ));
     $wp_customize->add_panel( $totalpress_theme_options );
 
+        $totalpress_more_options = new TotalPress_WP_Customize_Panel($wp_customize,'totalpress_more_options',array(
+          'title' => __('Get More Options','totalpress'),
+          'panel' => 'totalpress_theme_options',
+          'priority' => 1,
+        ));
+        $wp_customize->add_panel($totalpress_more_options);
+
+
         $totalpress_general_options = new TotalPress_WP_Customize_Panel($wp_customize,'totalpress_general_options',array(
           'title' => __('General','totalpress'),
           'panel' => 'totalpress_theme_options',
-          'priority' => 1,
+          'priority' => 2,
         ));
         $wp_customize->add_panel($totalpress_general_options);
 
@@ -169,6 +177,11 @@ if ( ! function_exists('totalpress_customize_register')) :
           'priority' => 11,
         ));
         $wp_customize->add_panel($totalpress_footer_options);
+
+        $wp_customize->add_section('upsell_section', array(
+          'title' => __('Extend TotalPress', 'totalpress'),
+          'priority' => 1,
+        ));
         
     if ( ! function_exists('totalpress_sanitize_checkbox')) :
         function totalpress_sanitize_checkbox($input) {
@@ -205,3 +218,4 @@ require get_template_directory() . '/assets/customizer/inc/totalpress-header-sid
 require get_template_directory() . '/assets/customizer/inc/totalpress-navigation-section.php'; //loads header options
 require get_template_directory() . '/assets/customizer/inc/totalpress-top-sidebar-section.php'; //loads top sidebar options
 require get_template_directory() . '/assets/customizer/inc/totalpress-typography-section.php'; //loads typography options
+require get_template_directory() . '/assets/customizer/inc/totalpress-more-options.php'; //loads option upsell

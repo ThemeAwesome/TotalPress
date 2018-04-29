@@ -1,4 +1,4 @@
-<?php /* @version 1.0.22 */
+<?php /* @version 1.0.23 */
 if ( ! defined('ABSPATH')) exit;
 // Start theme
 if ( ! function_exists('totalpress_build_start_theme')) :
@@ -591,7 +591,7 @@ if ( ! function_exists('totalpress_add_footer_info')) {
 // Build the back to top button
 if ( ! function_exists('totalpress_back_to_top')) :
 	function totalpress_back_to_top() {
-		$backtotop = sprintf( '<div class="back-to-top"><i class="fas fa-angle-up fa-lg"></i></div>');
+		$backtotop = sprintf( '<div class="back-to-top"><div class="top-arrow center"></div></div>');
 		echo apply_filters('totalpress_back_to_top',$backtotop);
 	}
 	add_action('wp_footer','totalpress_back_to_top');

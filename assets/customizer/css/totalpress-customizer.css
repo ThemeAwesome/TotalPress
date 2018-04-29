@@ -1,9 +1,19 @@
-/* @version 1.0.22 */
+/* @version 1.0.23 */
 #customize-theme-controls .customize-pane-child.current-section-parent,.in-sub-panel #customize-theme-controls .customize-pane-child.current-panel-parent{-webkit-transform:translateX(-100%);-ms-transform:translateX(-100%);transform:translateX(-100%)}
 #customize-controls .description,li.customize-section-description-container .description{font-size:12px}
-.customize-control-title,.tooltip-wrapper .tooltip-content.open{font-size:12px;}
+.customize-control-title,.tooltip-wrapper .tooltip-content.open{font-size:12px;line-height: 1.5}
 .customize-control-kirki-radio-buttonset .buttonset .switch-input:checked+.switch-label,.customize-control-kirki-switch .switch input:checked+label{background:#3f3f3f;font-size:11px}
 .tooltip-wrapper .tooltip-content{z-index:9999999!important}
 #customize-control-blogdescription,#customize-control-blogname{margin-bottom:0!important}
 .customize-control-kirki-switch .switch-off{display:inline-block;float:right;}
 .customize-control-kirki-radio-buttonset .buttonset .switch-label {font-size:11px;}
+#accordion-section-upsell_section h3.accordion-section-title{background:#3f3f3f;border-left:4px solid #3f3f3f;color:#ffffff;font-size:17px;}
+#accordion-section-upsell_section h3.accordion-section-title:focus,
+#accordion-section-upsell_section h3.accordion-section-title:hover{color:#ffffff!important;background:#252525!important;border-left-color:#000000!important;border-left:4px solid #000000;}
+#accordion-section-upsell_section h3.accordion-section-title:focus:after,
+#accordion-section-upsell_section h3.accordion-section-title:hover:after {color: #ffffff!important;}
+#customize-control-tp-primo-link span.customize-control-title{cursor:default;font-weight:normal;color:#3f3f3f;}
+.tp.button.expanded {display:block;width:100%;margin:0 0 1rem 0;font-family:inherit;padding:20px 0 35px;border:1px solid transparent;
+border-radius:0;transition: background-color 0.25s ease-out, color 0.25s ease-out;font-size:15px;line-height: 1;text-align:center;
+cursor:pointer;background-color:#3f3f3f;color:#ffffff;vertical-align:middle;font-weight:bold;text-shadow: 1px 1px 1px #3f3f3f;}
+.tp.button.expanded:hover {background-color:#b02329;}

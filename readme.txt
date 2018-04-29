@@ -2,7 +2,7 @@
 Tags: blog, one-column, two-columns, three-columns, right-sidebar, left-sidebar, footer-widgets, custom-background, flexible-header, custom-menu, editor-style, featured-images, full-width-template, microformats, post-formats, sticky-post, translation-ready, theme-options, custom-logo, custom-colors
 Requires at least: 4.9.5
 Tested up to: 4.9.5
-Stable tag: 1.0.22
+Stable tag: 1.0.23
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -11,7 +11,7 @@ TotalPress is distributed under the terms of the GNU General Public License v3.0
 
 == Description ==
 
-Hello world, meet TotalPress! I'm Based off _s (Underscores) and I also come with Zurb's Foundation for Sites fully integrated. What makes me awesome? I am small and fast (I'm less than 430kb compressed). I am fully responsive, meaning I adjust to any screen resolution so I look good on any device. I've got a ton of hooks and filters, ten (10) widget areas built in as well as 6 different sidebar page templates. I use the Kirki plugin which provides 30 custom control types for the theme customizer ranging from simple sliders and tooltips to complex typography controls including Google-Fonts. I also use the Meta-Box plugin which is a powerful, professional toolkit for developers to create and handle everything related to custom meta boxes and custom fields for WordPress. Did I mention that I work really well with page builders like Elementor. So what are you waiting for? Download me today and take me for a spin.
+My name is TotalPress! I'm based off _s (Underscores) and built with Zurb's Foundation for Sites, so I'm responsive and look good on any device. I'm light weight and super fast (I'm 185kb compressed). I have lots of hooks and filters, 10 widget areas and 6 different sidebar page templates. I use the Kirki plugin for the theme customizer and the Meta Box plugin for metaboxes. Did I mention that I work really well with page builders like Elementor? So what are you waiting for? Download me today and take me for a spin.
 
 == Installation ==
 

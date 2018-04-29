@@ -1,4 +1,4 @@
-<?php /* @version 1.0.22 */
+<?php /* @version 1.0.23 */
 if ( ! defined('ABSPATH')) exit;
 TotalPress_Kirki::add_field( 'theme_customizer', array(
 	'type'        => 'select',
@@ -27,7 +27,7 @@ TotalPress_Kirki::add_section( 'totalpress_layout_options', array(
 TotalPress_Kirki::add_field('totalpress_theme_customizer',array(
 	'type'        => 'dimension',
 	'settings'    => 'totalpress_main_grid_container_width',
-	'label'       => esc_html__('Grid Container Width','totalpress'),
+	'label'       => esc_html__('Container Width','totalpress'),
 	'tooltip'     => esc_html__('Set the width of Foundations&#39; main grid container. Default is 1200px (75rem).','totalpress'),
 	'section'     => 'totalpress_layout_options',
 	'default'     => '1200px',
@@ -44,7 +44,7 @@ TotalPress_Kirki::add_field('totalpress_theme_customizer',array(
 TotalPress_Kirki::add_field('totalpress_theme_customizer',array(
 	'type'        => 'select',
 	'settings'    => 'totalpress_theme_layout_container',
-	'label'       => __('Grid Container Layout','totalpress' ),
+	'label'       => __('Container Layout','totalpress' ),
 	'tooltip'     => esc_html__('Select &quot;Separate Containers&quot; to keep a space between all elements in the content area such as, articles, widgets, footer and so on. Select &quot;One Container&quot; have the main footer container expand 100% to fill the screen. Default is &quot;Contain to Grid&quot;','totalpress'),
 	'section'     => 'totalpress_layout_options',
 	'default'     => 'separate_containers',

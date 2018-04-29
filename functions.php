@@ -1,6 +1,6 @@
 <?php
 if ( ! defined('ABSPATH')) exit;
-define('TOTALPRESS_VERSION','1.0.22');
+define('TOTALPRESS_VERSION','1.0.23');
 if ( ! function_exists('setup_totalpress') ) :
 	function setup_totalpress() {
 		// Set the content width
@@ -43,18 +43,6 @@ require get_template_directory() . '/assets/customizer/totalpress-customizer.php
 require get_template_directory() . '/assets/inc/totalpress-metaboxes.php';
 require get_template_directory() . '/assets/inc/totalpress-extras.php';
 require get_template_directory() . '/assets/inc/totalpress-plugin-support.php';
-
-// load font awesome script
-function totalpress_load_fontawesome() {
-    wp_enqueue_script('fontawesome-all',get_template_directory_uri().'/assets/js/fontawesome-all.min.js',array(),TOTALPRESS_VERSION,false);
-}
-add_filter('wp_enqueue_scripts','totalpress_load_fontawesome',0);
-function add_defer_attribute($tag, $handle) {
-    if ( 'fontawesome-all' !== $handle )
-        return $tag;
-    return str_replace(' src',' defer="defer" src', $tag );
-}
-add_filter('script_loader_tag','add_defer_attribute',10,2);
 
 // enqueue scripts and styles.
 if ( ! function_exists('totalpress_scripts')) :

@@ -2,9 +2,21 @@
 
 ### [Unreleased]
 
-### [1.0.22] 2018-04-15
+### [1.0.23] 2018-04-29
+###### `Added`
+* `Upsell section` to the customizer.
+* Added styles to the customizer css to highlight the `upsell section`.
+
+###### `Changed`
+*Back to Top arrow. Uses pure css to create the arrow.
+
 ###### `Removed`
-* Again, i left a few choice words in the code that should not be there so I removed them. Note to self "Do not do that anymore".
+*FontAwesome from the theme. It was really not needed and did not perform very well. Trying to get the new version to work was a pain and switching back to FA4 would increase the size of the theme. Best just to gid rid of it.
+*Styles associated with FA. This section was called `Social Navigation`. Also removed the `.menu-social-container` css.
+
+###### [1.0.22] 2018-04-15
+###### `Removed`
+* Again, I left a few choice words in the code that should not be there so I removed them. Note to self "Do not do that anymore".
 
 ###### [1.0.21] 2018-04-15
 ###### `Removed`
