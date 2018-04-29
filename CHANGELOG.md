@@ -8,11 +8,11 @@
 * Added styles to the customizer css to highlight the `upsell section`.
 
 ###### `Changed`
-*Back to Top arrow. Uses pure css to create the arrow.
+* Back to Top arrow. Uses pure css to create the arrow.
 
 ###### `Removed`
-*FontAwesome from the theme. It was really not needed and did not perform very well. Trying to get the new version to work was a pain and switching back to FA4 would increase the size of the theme. Best just to gid rid of it.
-*Styles associated with FA. This section was called `Social Navigation`. Also removed the `.menu-social-container` css.
+* FontAwesome from the theme. It was really not needed and did not perform very well. Trying to get the new version to work was a pain and switching back to FA4 would increase the size of the theme. Best just to gid rid of it.
+* Styles associated with FA. This section was called `Social Navigation`. Also removed the `.menu-social-container` css.
 
 ###### [1.0.22] 2018-04-15
 ###### `Removed`
