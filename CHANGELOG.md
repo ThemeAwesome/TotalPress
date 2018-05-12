@@ -2,7 +2,7 @@
 
 ### [Unreleased]
 
-### [1.0.24] 2018-05-09
+### [1.0.24] 2018-05-12
 
 ###### `Added`
 * Padding options to `Navigation > Layout`. Now users can adjust the padding of top level links as well as sub links.
