@@ -1,4 +1,4 @@
-<?php /* @version 1.0.23 */
+<?php /* @version 1.0.24 */
 if ( ! defined('ABSPATH')) exit;
 TotalPress_Kirki::add_section( 'totalpress_top_sidebar_layout_section', array(
     'title'       => esc_html__('Layout','totalpress'),
@@ -50,7 +50,7 @@ TotalPress_Kirki::add_field('totalpress_theme_customizer',array(
 	),
 	'output'      => array(
 		array(
-			'element' => '.inside-top-sidebar',
+			'element' => '.inside-top-sidebar.cell',
 			'function' => 'css',
 			'property' => 'text-align',
 		),

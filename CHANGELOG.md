@@ -2,7 +2,32 @@
 
 ### [Unreleased]
 
-### [1.0.23] 2018-04-29
+### [1.0.24] 2018-05-09
+
+###### `Added`
+* Padding options to `Navigation > Layout`. Now users can adjust the padding of top level links as well as sub links.
+* `Top-Bar Colors` the `Navigation` panel. This will allow the user to change all of the colors associated with the `Top-Bar` navigation menu.
+* Typography options to the `Navigation` panel. Allows the user to change the font family for links in the main menu.
+* Function to `totalpress-app.js` to remove empty `p` and `br` tags from `Accordion` and `Orbit` that are added automatically by the post/page editor.
+* `Equalizer` to the `Footer Widgets` area. `Equalizer` gives multiple items equal height. You can read more about it over at [Foundation for Sites: Equalizer](https://foundation.zurb.com/sites/docs/equalizer.html).
+* `Content Layout` section to the `Content` panel of `TotalPress Options`.
+* `.site-content-full` body class. This is for when the end user selects `Full Width` in the new `Content Layout` section that was added to the `Content` section.
+* Styles for the new body class elements `.inside-content`,`.site-content-full .site-content.grid-container` and `.site-content-inner-full .inside-content`.
+* `Padding` and `Margin` control for the new `.inside-content` container.
+
+###### `Changed`
+* Some styles related to the navigation area. These changes correspond to the addition of navigation color options in TP Primo.
+* The priority of the `Layout` section of the `Navigation` panel to 1, making it the first section in that panel.
+* The name of the `Layout` section under `Content > Posts` to `Blog Posts`. This was done to better differentiate between posts on the blog page or single view posts.
+* Some of the styles pertaining to the `Top Sidebar`. The padding was removed from the main container that holds the `Top Sidebar` and moved to the inner `Top Sidebar` container.
+* Some of the styles pertaining to the `Footer Widgets`. The padding was removed from the main container that holds the `Footer Widgets` and moved to the inner `Footer Widget` container.
+* Some of the styles pertaining to the `Footer`. The padding was removed from the main container that holds the `Footer` and moved to the inner `Footer` container.
+
+###### `Removed`
+* `Links` section from `style.css` and added all the link styles into their appropriate section. I did this to make it easier to modify each section more easiley.
+* The function from `totalpress-app.js` that added `<span class="screen-reader-text"></span>` to `.menu-social-container a` as the social icons were removed when `Font Awesome` was removed.
+
+###### [1.0.23] 2018-04-29
 ###### `Added`
 * `Upsell section` to the customizer.
 * Added styles to the customizer css to highlight the `upsell section`.
@@ -199,7 +224,8 @@ Removed some of the features from the `setup_totalpress` function in `functions.
 ###### [1.0.0] 2017-11-02
 * Initial submission to the theme review team on 11/02/2017
 
-[unreleased]: https://github.com/themeawesome/totalpress/compare/v1.0.23...HEAD
+[unreleased]: https://github.com/themeawesome/totalpress/compare/v1.0.24...HEAD
+[1.0.20]: https://github.com/themeawesome/totalpress/compare/1.0.23...1.0.24
 [1.0.20]: https://github.com/themeawesome/totalpress/compare/1.0.20...1.0.23
 [1.0.20]: https://github.com/themeawesome/totalpress/compare/1.0.19...1.0.20
 [1.0.19]: https://github.com/themeawesome/totalpress/compare/1.0.18...1.0.19

@@ -2,7 +2,7 @@
 Tags: blog, one-column, two-columns, three-columns, right-sidebar, left-sidebar, footer-widgets, custom-background, flexible-header, custom-menu, editor-style, featured-images, full-width-template, microformats, post-formats, sticky-post, translation-ready, theme-options, custom-logo, custom-colors
 Requires at least: 4.9.5
 Tested up to: 4.9.5
-Stable tag: 1.0.23
+Stable tag: 1.0.24
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 

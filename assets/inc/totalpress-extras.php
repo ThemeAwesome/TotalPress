@@ -1,4 +1,4 @@
-<?php /* @version 1.0.23 */
+<?php /* @version 1.0.24 */
 if ( ! defined('ABSPATH')) exit;
 // Flush transients used in totalpress_categorized_blog.
 function totalpress_category_transient_flusher() {
@@ -75,6 +75,10 @@ if ( ! function_exists('totalpress_layout_classes')) {
 			$classes[] = 'nav-container-full';
 		if (get_theme_mod('totalpress_inner_nav_container') == 'full')
 			$classes[] = 'top-bar-full';
+		if (get_theme_mod('totalpress_main_content_container') == 'full')
+			$classes[] = 'site-content-full';
+		if (get_theme_mod('totalpress_inner_content_container') == 'full')
+			$classes[] = 'site-content-inner-full';
 		if (get_theme_mod('totalpress_footer_widgets_main_container') == 'full')
 			$classes[] = 'footer-widgets-full';
 		if (get_theme_mod('totalpress_inner_footer_widgets_container') == 'full')

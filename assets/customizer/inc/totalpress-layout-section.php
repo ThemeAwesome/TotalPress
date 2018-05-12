@@ -1,4 +1,4 @@
-<?php /* @version 1.0.23 */
+<?php /* @version 1.0.24 */
 if ( ! defined('ABSPATH')) exit;
 TotalPress_Kirki::add_field( 'theme_customizer', array(
 	'type'        => 'select',
@@ -28,14 +28,14 @@ TotalPress_Kirki::add_field('totalpress_theme_customizer',array(
 	'type'        => 'dimension',
 	'settings'    => 'totalpress_main_grid_container_width',
 	'label'       => esc_html__('Container Width','totalpress'),
-	'tooltip'     => esc_html__('Set the width of Foundations&#39; main grid container. Default is 1200px (75rem).','totalpress'),
+	'tooltip'     => esc_html__('Set the width of Foundations&#39; main grid container. Default is 1200px.','totalpress'),
 	'section'     => 'totalpress_layout_options',
 	'default'     => '1200px',
 	'priority'    => 2,
 	'transport'   => 'auto',
 	'output'      => array(
 		array(
-			'element' => '.grid-container,.inside-top-sidebar,.inside-header,.top-bar,.inside-footer-widgets,.inside-footer',
+			'element' => '.grid-container,.inside-top-sidebar,.inside-header,.top-bar,.inside-content,.inside-footer-widgets,.inside-footer',
 			'function' => 'css',
 			'property' => 'max-width',
 		),
@@ -45,7 +45,7 @@ TotalPress_Kirki::add_field('totalpress_theme_customizer',array(
 	'type'        => 'select',
 	'settings'    => 'totalpress_theme_layout_container',
 	'label'       => __('Container Layout','totalpress' ),
-	'tooltip'     => esc_html__('Select &quot;Separate Containers&quot; to keep a space between all elements in the content area such as, articles, widgets, footer and so on. Select &quot;One Container&quot; have the main footer container expand 100% to fill the screen. Default is &quot;Contain to Grid&quot;','totalpress'),
+	'tooltip'     => esc_html__('Select "Separate Containers" to keep a space between all elements in the content area such as, articles, widgets, footer and so on. Select "One Container" to have no spaces between any of the elements.','totalpress'),
 	'section'     => 'totalpress_layout_options',
 	'default'     => 'separate_containers',
 	'priority'    => 3,

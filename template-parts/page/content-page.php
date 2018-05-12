@@ -1,4 +1,4 @@
-<?php /* @version 1.0.23 */
+<?php /* @version 1.0.24 */
 if ( ! defined('ABSPATH')) exit; ?>
 <?php do_action('totalpress_open_article_container'); ?>
 <?php do_action('totalpress_content_page_entry_header'); ?>

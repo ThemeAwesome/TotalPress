@@ -1,9 +1,9 @@
-<?php /* @version 1.0.23 */
+<?php /* @version 1.0.24 */
 if ( ! defined('ABSPATH')) exit;
 TotalPress_Kirki::add_section( 'totalpress_navigation_section', array(
     'title'       => esc_html__('Layout','totalpress'),
     'panel'       => 'totalpress_navigation_options',
-    'priority'    => 4,
+    'priority'    => 1,
     'capability'  => 'edit_theme_options',
 ));
 TotalPress_Kirki::add_field('totalpress_theme_customizer',array(

@@ -1,4 +1,4 @@
-<?php /* @version 1.0.23 */
+<?php /* @version 1.0.24 */
 if ( ! defined('ABSPATH')) exit;
 // Start theme
 if ( ! function_exists('totalpress_build_start_theme')) :
@@ -144,7 +144,7 @@ if ( ! function_exists('totalpress_content_container')) :
 	function totalpress_content_container() { ?>
 	<?php do_action('totalpress_before_main_content'); ?>
 			<div id="content" class="site-content grid-container">
-				<div class="grid-x grid-padding-x">
+				<div class="inside-content grid-x grid-padding-x">
 	<?php
 	}
 	add_action('totalpress_open_content_container','totalpress_content_container');
@@ -508,31 +508,31 @@ if ( ! function_exists( 'totalpress_build_footer_widgets' ) ) :
 	function totalpress_build_footer_widgets() { 
 		if ( ! is_active_sidebar('footer-1') && ! is_active_sidebar('footer-2') && ! is_active_sidebar('footer-3') && ! is_active_sidebar('footer-4') && ! is_active_sidebar('footer-5'))
 		return; ?>
-		<div id="footer-secondary" class="footer-widgets grid-container widget-area" itemtype="http://schema.org/WPSideBar" itemscope="itemscope" role="complementary">
+		<div id="footer-secondary" class="footer-widgets grid-container widget-area" itemtype="http://schema.org/WPSideBar" itemscope="itemscope" role="complementary" data-equalizer>
 			<?php do_action('totalpress_before_footer_widgets_content'); ?>
 	 		<div class="inside-footer-widgets grid-x grid-padding-x">
 				<?php if (is_active_sidebar('footer-1')) : ?>
-					<div class="fw_one large-auto cell">
+					<div class="fw_one large-auto cell" data-equalizer>
 			            <?php dynamic_sidebar('footer-1'); ?>
 			        </div><!-- .fw_one -->
 		        <?php endif; ?>
 		        <?php if (is_active_sidebar('footer-2')) : ?>
-					<div class="fw_two large-auto cell">
+					<div class="fw_two large-auto cell" data-equalizer-watch>
 			            <?php dynamic_sidebar('footer-2'); ?>
 			        </div><!-- .fw_two -->
 		        <?php endif; ?>
 		        <?php if (is_active_sidebar('footer-3')) : ?>
-					<div class="fw_three large-auto cell">
+					<div class="fw_three large-auto cell" data-equalizer-watch>
 			            <?php dynamic_sidebar('footer-3'); ?>
 			        </div><!-- .fw_three -->
 		        <?php endif; ?>
 		        <?php if (is_active_sidebar('footer-4')) : ?>
-					<div class="fw_four large-auto cell">
+					<div class="fw_four large-auto cell" data-equalizer-watch>
 			            <?php dynamic_sidebar('footer-4'); ?>
 			        </div><!-- .fw_four -->
 		        <?php endif; ?>
 		        <?php if (is_active_sidebar('footer-5')) : ?>
-					<div class="fw_five large-auto cell">
+					<div class="fw_five large-auto cell" data-equalizer-watch>
 			            <?php dynamic_sidebar('footer-5'); ?>
 			        </div><!-- .fw_five -->
 		        <?php endif; ?>
