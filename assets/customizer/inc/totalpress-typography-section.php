@@ -1,4 +1,4 @@
-<?php /* @version 1.0.24 */
+<?php
 if ( ! defined('ABSPATH')) exit;
 TotalPress_Kirki::add_section( 'totalpress_typography_section', array(
     'title'       => esc_html__('Typography','totalpress'),

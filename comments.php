@@ -1,4 +1,4 @@
-<?php /* @version 1.0.24 */
+<?php
 if ( ! defined('ABSPATH')) exit;
 if ( post_password_required() ) {
 	return; }
@@ -60,12 +60,16 @@ do_action( 'totalpress_before_comments' ); ?>
 		<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'totalpress' ); // WPCS: XSS OK. ?></p>
 	<?php endif;
 	$commenter = wp_get_current_commenter();
+	$consent  = empty( $commenter['comment_author_email'] ) ? '' : ' checked="checked"';
 	$fields = array(
 		'before_fields' => '<div class="grid container comment-fields"><div class="grid-x grid-padding-x">',
 		'author' => '<label for="author" class="screen-reader-text">' . esc_html__( 'Name', 'totalpress' ) . '</label><p class="comment-form-author large-auto cell"><input placeholder="' . esc_html__( 'Name', 'totalpress' ) . ' *" id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30" /></p>',
 		'email' => '<label for="email" class="screen-reader-text">' . esc_html__( 'Email', 'totalpress' ) . '</label><p class="comment-form-email large-auto cell"><input placeholder="' . esc_html__( 'Email', 'totalpress' ) . ' *" id="email" name="email" type="email" value="' . esc_attr( $commenter['comment_author_email'] ) . '" size="30" /></p>',
 		'url' => '<label for="url" class="screen-reader-text">' . esc_html__( 'Website', 'totalpress' ) . '</label><p class="comment-form-url large-auto cell"><input placeholder="' . esc_html__( 'Website', 'totalpress' ) . '" id="url" name="url" type="url" value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" /></p>',
 		'after_fields' => '</div></div>',
+// Now we will add our new privacy checkbox optin
+        'cookies' => '<p class="comment-form-cookies-consent"><input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox" value="yes"' . $consent . ' />' .
+            '<label for="wp-comment-cookies-consent">' . __('Save my name, email, and website in this browser for the next time I comment.','totalpress') . '</label></p>',
 	);
 	$defaults = array(
 		'fields'		=> apply_filters( 'comment_form_default_fields', $fields ),

@@ -3,8 +3,8 @@ Theme Name:TotalPress
 Theme URI:https://themeawesome.com/totalpress-wordpress-foundation-theme/
 Author:ThemeAWESOME
 Author URI:https://themeawesome.com/
-Description: My name is TotalPress! I'm based off _s (Underscores) and built with Zurb's Foundation for Sites, so I'm responsive and look good on any device. I'm light weight and super fast <strong>(I'm 184kb compressed!)</strong>. I have lots of hooks and filters, 10 widget areas and 6 different sidebar page templates. I use the Kirki plugin for the theme customizer and the Meta Box plugin for metaboxes. Did I mention that I work really well with page builders like Elementor? So what are you waiting for? Download me today and take me for a spin.
-Version:1.0.24
+Description: My name is TotalPress! Based off _s (Underscores) and built with Zurb's Foundation for Sites, so I'm responsive and look good on any device. I'm light weight and super fast <strong>(184kb compressed!)</strong>. I have lots of hooks and filters, 10 widget areas and 6 different sidebar page templates. I use the Kirki plugin for the theme customizer and the Meta Box plugin for metaboxes. Did I mention that I work really well with page builders like Elementor and Header Footer Elementor. Download me today and take me for a spin.
+Version:1.0.25
 License:GNU General Public License v3.0
 License URI:http://www.gnu.org/licenses/gpl-3.0.html
 Tags:blog, one-column, two-columns, three-columns, right-sidebar, left-sidebar, footer-widgets, custom-background, flexible-header, custom-menu, editor-style, featured-images, full-width-template, microformats, post-formats, sticky-post, translation-ready, theme-options, custom-logo, custom-colors
@@ -133,7 +133,7 @@ body.no-footer-widgets #footer-secondary{display:none;}
  * Top Sidebar
  *************************************/
 #top-sidebar.grid-container{background-color:#222222;padding:0;}
-.inside-top-sidebar.cell{color:#fff;line-height:normal;margin:0 auto;}
+.inside-top-sidebar.cell{color:#fff;line-height:normal;margin:0 auto;padding:10px 30px;}
 .inside-top-sidebar.cell a{color:#fff;padding:0 8px;}
 .inside-top-sidebar.cell a:hover{color:#e6e6e6;}
 .inside-top-sidebar .widget-title,.inside-top-sidebar .sub-menu{display:none;}
@@ -174,7 +174,7 @@ p.site-description{color:#999999;font-size:0.9375rem;line-height:normal;margin:0
 /**************************************
  * Navigation
  *************************************/
-.main-navigation.grid-container{background:#000000;}
+.main-navigation.grid-container{background:#000000;z-index:1;}
 .title-bar{background:#000000;display:none;padding:15px;}
 .top-bar{margin:0 auto;padding:0;}
 .top-bar,.top-bar ul{background-color:#000000;}
@@ -237,7 +237,7 @@ span.nav-next a{position:relative;float:left;margin-top:10px;width:100%}
 .error404 input[type="submit"],.search input[type="submit"]{margin-bottom:0;}
 span.cat-links,span.tags-links{display:block;}
 span.cat-links{margin-bottom:10px;}
-img[class*="align"],img[class*="wp-image-"],img[class*="attachment-"]{height:auto;}
+img[class*="align"],img[class*="wp-image-"],img[class*="attachment-"]{border:1px solid #eee;height:auto;padding:4px;}
 img.size-full,img.size-large,img.header-image,img.wp-post-image{margin-bottom:16px; max-width:100%;height:auto;}
 .attachment-post-thumbnail{display:block;margin:0 auto 40px;}
 .avatar{border-radius:50%;float:left;margin-right:20px;}
@@ -289,6 +289,7 @@ span.edit-link::before,span.reply-link::before{content:"-";margin:0 6px 0 2px;}
 p.comment-subscription-form{margin-bottom:0;}
 #comments .comment-metadata a{color:#555555;margin-right:2px;text-decoration:none;}
 #comments .comment-metadata a:hover{text-decoration:underline;}
+p.comment-form-cookies-consent label{font-size:14px;}
 /**************************************
  * Right Sidebar
  *************************************/
@@ -371,9 +372,8 @@ embed,iframe,object{max-width:100%;width:100%;}
 /* Alignments */
 .alignleft{display:inline;float:left;margin-right:28px;}
 .alignright{display:inline;float:right;margin-left:28px;}
-.aligncenter{clear:both;display:block;margin-left:auto;margin-right:auto;}
-.alignwide {}/* Gutenberg */
-.alignfull {} /*Gutenberg*/
+.aligncenter{clear:both;display:block;margin-left:auto;margin-right:auto;text-align:center;}
+.alignfull {width:100vw;position:relative;left:50%;right:50%;margin-left:-50vw;margin-right:-50vw;text-align:center;}/*Gutenberg*/
 /* Captions */
 .wp-caption{
   margin-bottom:28px;max-width:100%;}
@@ -563,6 +563,7 @@ a.button.wc-forward:after{content:"\f105";font-family:FontAwesome;line-height:1e
       .header-sidebar{text-align:center!important;}
       .main-navigation .menu > li > a{padding:15px;}
       .top-bar,.top-bar ul,.is-dropdown-submenu{background-color:#222222;}
+      .title-bar,.top-bar,.top-bar ul {position:relative;z-index:1;}
       .submenu-toggle{top:7px;}
       nav.navigation {margin-bottom:30px;}
       .pagination-previous {margin-left:30px;margin-right:30px;}

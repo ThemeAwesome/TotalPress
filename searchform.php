@@ -1,3 +1,3 @@
-<?php /* @version 1.0.24 */
+<?php
 if ( ! defined('ABSPATH')) exit; ?>
 <?php do_action('totalpress_search_form'); ?>

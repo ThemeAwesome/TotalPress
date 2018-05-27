@@ -1,4 +1,4 @@
-<?php /* @version 1.0.24 */
+<?php
 /**
  * Plugin installation and activation for WordPress themes.
  *

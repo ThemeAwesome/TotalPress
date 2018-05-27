@@ -1,4 +1,4 @@
-<?php /* @version 1.0.24 */
+<?php
 if ( ! defined('ABSPATH')) exit;
 // Start theme
 if ( ! function_exists('totalpress_build_start_theme')) :
@@ -27,6 +27,9 @@ endif;
 if ( ! function_exists('totalpress_build_top_sidebar')) :
     function totalpress_build_top_sidebar() {
 		if (is_active_sidebar('top-sidebar')) : ?>
+		<?php if (get_theme_mod('totalpress_nav_position','bottom_of_header') == 'top_of_header'): ?>
+			<?php do_action('totalpress_topbar_menu'); ?>
+		<?php endif; ?>
 	 			<div id="top-sidebar" class="widget-area grid-container" itemtype="http://schema.org/WPSideBar" itemscope="itemscope" role="complementary">
 	 				<div class="inside-top-sidebar small-12 large-auto cell">
 	 				<?php dynamic_sidebar('top-sidebar'); ?>
@@ -92,9 +95,6 @@ endif;
 // Build the header
 if ( ! function_exists('totalpress_build_header')) :
 	function totalpress_build_header() { ?>
-		<?php if (get_theme_mod('totalpress_nav_position','bottom_of_header') == 'top_of_header'): ?>
-			<?php do_action('totalpress_topbar_menu'); ?>
-		<?php endif; ?>
 			<header id="masthead" class="site-header grid-container" itemtype="http://schema.org/WPHeader" itemscope="itemscope">
 				<div class="inside-header grid-container">
 					<?php do_action('totalpress_before_header_content'); ?>
@@ -118,7 +118,6 @@ if ( ! function_exists('totalpress_build_header')) :
 		<?php if (get_theme_mod('totalpress_nav_position','bottom_of_header') == 'bottom_of_header'): ?>
 			<?php do_action('totalpress_topbar_menu'); ?>
 		<?php endif; ?>
-		<?php do_action('totalpress_after_header'); ?>
 	<?php
 	}
 	add_action('totalpress_header','totalpress_build_header');
@@ -130,7 +129,7 @@ if ( ! function_exists('totalpress_topbar_navigation')) :
 	        <div class="title-bar" data-responsive-toggle="main-menu">
 	            <button class="icon-menu" type="button" data-toggle><i class="fa fa-bars" aria-hidden="true"></i> <?php _e('Menu','totalpress'); ?></button>
 	        </div><!-- .title-bar -->
-	        <div class="top-bar grid-x grid-padding-x" id="main-menu">
+	        <div class="top-bar" id="main-menu">
 	        	<div class="<?php echo get_theme_mod('totalpress_theme_nav_alignment','top-bar-left'); ?> hide-for-small-only"><?php do_action('totalpress_top_bar'); ?></div><!-- .top-bar -->
 	        	<div class="top-bar-left show-for-small-only"><?php do_action('totalpress_top_bar'); ?></div><!-- .top-bar -->
 			</div><!-- .top-bar .grid-x -->

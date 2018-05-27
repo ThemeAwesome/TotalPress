@@ -1,4 +1,4 @@
-<?php /* @version 1.0.24 */
+<?php
 if ( ! defined('ABSPATH')) exit;
 // Flush transients used in totalpress_categorized_blog.
 function totalpress_category_transient_flusher() {

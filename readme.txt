@@ -1,8 +1,8 @@
 === TotalPress ===
 Tags: blog, one-column, two-columns, three-columns, right-sidebar, left-sidebar, footer-widgets, custom-background, flexible-header, custom-menu, editor-style, featured-images, full-width-template, microformats, post-formats, sticky-post, translation-ready, theme-options, custom-logo, custom-colors
-Requires at least: 4.9.5
-Tested up to: 4.9.5
-Stable tag: 1.0.24
+Requires at least: 4.9.6
+Tested up to: 4.9.6
+Stable tag: 1.0.25
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -59,9 +59,9 @@ All of the components used in the creation of TotalPress are licensed as follows
 
 == Credits ==
 
-* Customizer awesomeness was made possible because of the freakin' amazing Kirki Plugin - https://wordpress.org/plugins/kirki/ that was developed by Aristeides Stathopoulos - https://aristath.github.io/
+* Customizer awesomeness was made possible with the freakin' amazing Kirki Plugin - https://wordpress.org/plugins/kirki/ that was developed by Aristeides Stathopoulos - https://aristath.github.io/
 * Metabox goodness was made possible by the freakishly awesome folks over at MetaBox.io - https://metabox.io/, makers of the Meta Box plugin - https://wordpress.org/plugins/meta-box/
-* Nested customizer panels - folowing gist was used: Extending WordPress Customizer Panels and Sections to allow nesting: pe-customize-controls.css, https://gist.github.com/OriginalEXE/9a6183e09f4cae2f30b006232bb154af created by OriginalEXE.
+* Nested customizer panels - I used the following gist: Extending WordPress Customizer Panels and Sections to allow nesting: pe-customize-controls.css, https://gist.github.com/OriginalEXE/9a6183e09f4cae2f30b006232bb154af created by OriginalEXE.
 * Some of the code (a very small amount, I might add) used in TotalPress was derived from the GeneratePress theme created by Tom Usborne https://wordpress.org/themes/generatepress/ - GPLv2 or later, https://www.gnu.org/licenses/gpl-2.0.html - You created a very nice theme Tom. Thanks for the inspiration.
 
 == Changelog ==

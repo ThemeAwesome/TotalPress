@@ -1,4 +1,4 @@
-<?php /* @version 1.0.24 */
+<?php
 if ( ! defined('ABSPATH')) exit;
 TotalPress_Kirki::add_field( 'theme_customizer', array(
 	'type'        => 'select',

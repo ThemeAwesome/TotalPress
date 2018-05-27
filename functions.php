@@ -1,6 +1,6 @@
 <?php
 if ( ! defined('ABSPATH')) exit;
-define('TOTALPRESS_VERSION','1.0.24');
+define('TOTALPRESS_VERSION','1.0.25');
 if ( ! function_exists('setup_totalpress') ) :
 	function setup_totalpress() {
 		// Set the content width
@@ -11,24 +11,18 @@ if ( ! function_exists('setup_totalpress') ) :
 		load_theme_textdomain('totalpress');
 		add_theme_support('automatic-feed-links');
 		add_theme_support('post-thumbnails');
-		set_post_thumbnail_size(785, 9999);
-		add_image_size('totalpress-full-width', 1200, 9999);
+		set_post_thumbnail_size(785,9999);
+		add_image_size('totalpress-full-width',1200,9999);
 		add_theme_support('post-formats', array('aside','audio','chat','gallery','image','link','quote','status','video'));
 		add_theme_support('woocommerce');
 		add_theme_support('title-tag');
 		add_theme_support('html5', array('comment-form','comment-list','gallery','caption',));
-		add_theme_support('gutenberg', array('wide-images' => true,));
-		add_theme_support('gutenberg', array('colors' => array('#b02329','#3f3f3f','#e6e6e6','#222222','#ffffff'),));
 		add_theme_support('customize-selective-refresh-widgets');
+		add_theme_support('gutenberg', array('wide-images' => true,'colors' => array('#b02329','#3f3f3f',),));
 		add_editor_style('assets/css/totalpress-editor.css');
-		register_nav_menus( array(
-			'primary' => esc_attr('Main Menu','totalpress'),
-		));
-		add_theme_support('custom-logo', array(
-			'height' => 70,
-			'width' => 350,
-			'flex-width' => true,
-			'flex-height' => true,));
+		add_theme_support('header-footer-elementor');
+		register_nav_menus( array('primary' => esc_attr('Main Menu','totalpress'),));
+		add_theme_support('custom-logo', array('height' => 70,'width' => 350,'flex-width' => true,'flex-height' => true,));
 		add_theme_support('custom-background',apply_filters('totalpress_custom_background_args', array(
 			'default-color' => 'efefef',)));
 	}

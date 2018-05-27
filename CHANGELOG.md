@@ -2,8 +2,29 @@
 
 ### [Unreleased]
 
-### [1.0.24] 2018-05-12
+### [1.0.25] 2018-05-27
+###### `Added`
+* Theme support for the [`Header Footer Elementor plugin`](https://wordpress.org/plugins/header-footer-elementor/).
+* Added `position` and `z-index` to the `top-bar` for `small only` media queries.
+* Support for `Gutenberg wide/fullimages` in `functions.php`.
+* Primary colors for theme to `Gutenberg` color block.
+* CSS for `Gutenberg wide/fullimages` in `style.css`.
+* Added padding to the `.inside-top-sidebar.cell` element, for some reason this was missing.
+* Added `z-index:1` to `.main-navigation.grid-container`.
+* Added to `border and padding` to `img[class*="align"],img[class*="wp-image-"],img[class*="attachment-"]`.
+* Added `GDPR` compliance to the comment form.
+* Added styles for `p.comment-form-cookies-consent`.
+* Added `$consent` parameter to `comments.php` - this is to avoid a php `Notice` that would appear when `WP_DEBUG` in `wp-config.php` was set to true.
 
+###### `Changed`
+* Background color of `switch controls` to match the default `customizer` colors.
+* background color of `tooltips` to match the default `customizer` colors.
+
+###### `Removed`
+* `grid-x grid-padding-x` from the `top-bar`.
+* Removed the commented version from all files. It looked like this `/* @version 1.0.24 */`I would change this commented version everytime time to match the latest version being released. This made it look like all files had been changed. This was keeping anyone from seeing just the latest changes on GitHub or in the WordPress.org repo.
+
+###### [1.0.24] 2018-05-12
 ###### `Added`
 * Padding options to `Navigation > Layout`. Now users can adjust the padding of top level links as well as sub links.
 * `Top-Bar Colors` the `Navigation` panel. This will allow the user to change all of the colors associated with the `Top-Bar` navigation menu.
@@ -224,7 +245,8 @@ Removed some of the features from the `setup_totalpress` function in `functions.
 ###### [1.0.0] 2017-11-02
 * Initial submission to the theme review team on 11/02/2017
 
-[unreleased]: https://github.com/themeawesome/totalpress/compare/v1.0.24...HEAD
+[unreleased]: https://github.com/themeawesome/totalpress/compare/v1.0.25...HEAD
+[1.0.20]: https://github.com/themeawesome/totalpress/compare/1.0.24...1.0.25
 [1.0.20]: https://github.com/themeawesome/totalpress/compare/1.0.23...1.0.24
 [1.0.20]: https://github.com/themeawesome/totalpress/compare/1.0.20...1.0.23
 [1.0.20]: https://github.com/themeawesome/totalpress/compare/1.0.19...1.0.20

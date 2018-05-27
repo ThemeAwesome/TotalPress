@@ -1,4 +1,4 @@
-<?php /* @version 1.0.24 */
+<?php
 if ( ! defined('ABSPATH')) exit;
 /* ======================= Content Layout Section ============================ */
 TotalPress_Kirki::add_section( 'totalpress_content_layout_section', array(

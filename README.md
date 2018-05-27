@@ -5,15 +5,15 @@
 **Theme Name:** TotalPress<br />
 **Tags:** blog, one-column, two-columns, three-columns, right-sidebar, left-sidebar, footer-widgets, custom-background, flexible-header, custom-menu, editor-style, featured-images, full-width-template, microformats, post-formats, sticky-post, translation-ready, theme-options, custom-logo, custom-colors<br />
 **Donate:** [TotalPress Project](https://www.paypal.me/themeawesome)<br />
-**Requires at least:** 4.9.5<br />
-**Tested up to:** 4.9.5<br />
-**Stable tag:** 1.0.24<br />
+**Requires at least:** 4.9.6<br />
+**Tested up to:** 4.9.6<br />
+**Stable tag:** 1.0.25<br />
 **License:** GNU General Public License v3.0<br />
 **License URI:** [http://www.gnu.org/licenses/gpl-3.0.html](http://www.gnu.org/licenses/gpl-3.0.html)<br />
 
 Description
 ===
-My name is TotalPress! I'm based off _s (Underscores) and built with Zurb's Foundation for Sites, so I'm responsive and look good on any device. I'm light weight and super fast (I'm 185kb compressed). I have lots of hooks and filters, 10 widget areas and 6 different sidebar page templates. I use the Kirki plugin for the theme customizer and the Meta Box plugin for metaboxes. Did I mention that I work really well with page builders like Elementor? So what are you waiting for? Download me today and take me for a spin.
+My name is TotalPress! I'm based off _s (Underscores) and built with Zurb's Foundation for Sites, so I'm responsive and look good on any device. I'm light weight and super fast <strong>(I'm 184kb compressed!)</strong>. I have lots of hooks and filters, 10 widget areas and 6 different sidebar page templates. I use the Kirki plugin for the theme customizer and the Meta Box plugin for metaboxes. Did I mention that I work really well with page builders like Elementor? I have built in support for Header Footer Elementor. So what are you waiting for? Download me today and take me for a spin.
 
 ### Demo ###
 
@@ -44,3 +44,7 @@ Additional Installation
 2. When you have installed and activated the Kirki Plugin, go to `Appearance > Customizer > TotalPress Options` and start customizing your site.
 3. Once you have installed the Meta-Box plugin, you will see an additional metaboxes in the post/page editor.
 4. If you do not install either one of these plugins, you will not see the `TotalPress Options` section in the customizer and you will not see the metaboxes in the post/page editor.
+
+About ThemeAWESOME
+===
+[ThemeAwesome.com](https://themeawesome.com), a site focused on building WordPress themes with [Foundation for Sites](http://foundation.zurb.com/).
