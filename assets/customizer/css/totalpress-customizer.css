@@ -7,13 +7,14 @@
 #customize-control-blogdescription,#customize-control-blogname{margin-bottom:0!important}
 .customize-control-kirki-switch .switch-off{display:inline-block;float:right;}
 .customize-control-kirki-radio-buttonset .buttonset .switch-label {font-size:11px;}
-#accordion-section-upsell_section h3.accordion-section-title{background:#008ec2;border-left:4px solid #0085ba;color:#ffffff;font-size:17px;font-weight:normal;}
+#accordion-section-upsell_section h3.accordion-section-title{background:#008ec2;border-left:4px solid #0085ba;color:#ffffff;font-weight:normal;}
+#accordion-section-upsell_section h3.accordion-section-title::after {color:#fff;text-shadow:none;}
 #accordion-section-upsell_section h3.accordion-section-title:focus,
 #accordion-section-upsell_section h3.accordion-section-title:hover{color:#ffffff!important;background:#008ec2!important;border-left-color:#00516f!important;border-left:4px solid #00516f;}
 #accordion-section-upsell_section h3.accordion-section-title:focus:after,
 #accordion-section-upsell_section h3.accordion-section-title:hover:after {color: #ffffff!important;}
 #customize-control-tp-primo-link span.customize-control-title{cursor:default;font-weight:normal;color:#3f3f3f;}
-.tp.button.expanded {display:block;width:100%;margin:0 0 1rem 0;font-family:inherit;padding:20px 0 35px;border:1px solid transparent;border-radius:0;transition:background-color 0.25s ease-out, color 0.25s ease-out;font-size:15px;line-height:1;text-align:center;cursor:pointer;background-color:#0085ba;color:#ffffff;vertical-align:middle;}
+.tp.button.expanded {display:block;width:100%;margin:0 0 1rem 0;font-family:inherit;padding:20px 0 35px;border:1px solid transparent;border-radius:0;transition:background-color 0.25s ease-out, color 0.25s ease-out;font-size:15px;line-height:1;text-align:center;cursor:pointer;background-color:#0085ba;color:#ffffff;vertical-align:middle;text-shadow:1px 1px #000;}
 .tp.button.expanded:hover {background-color:#008ec2;}
 .tooltip-wrapper .tooltip-content{background-color:#008ec2!important;color:#ffffff!important;font-size:11px!important;}
 .tooltip-wrapper .tooltip-content:after{color:#008ec2!important;}

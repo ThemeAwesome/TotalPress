@@ -44,7 +44,7 @@ TotalPress_Kirki::add_field('totalpress_theme_customizer',array(
 TotalPress_Kirki::add_field('totalpress_theme_customizer',array(
 	'type'        => 'select',
 	'settings'    => 'totalpress_theme_layout_container',
-	'label'       => __('Container Layout','totalpress' ),
+	'label'       => esc_html__('Container Layout','totalpress' ),
 	'tooltip'     => esc_html__('Select "Separate Containers" to keep a space between all elements in the content area such as, articles, widgets, footer and so on. Select "One Container" to have no spaces between any of the elements.','totalpress'),
 	'section'     => 'totalpress_layout_options',
 	'default'     => 'separate_containers',

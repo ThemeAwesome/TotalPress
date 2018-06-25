@@ -38,7 +38,7 @@ Installing theme manually
 2. Upload `totalpress` to the `/wp-content/themes/` directory.
 3. Activate the theme through the `Themes` menu in WordPress.
 
-Additional Installation
+Additional Installation Notes
 
 1. Once you have activated TotalPress, you will be promted to install the Kirki Plugin, as well as the the Meta-Box Plugin. You will see the following message: "This theme requires the following plugins: Kirki Plugin and Meta Box".
 2. When you have installed and activated the Kirki Plugin, go to `Appearance > Customizer > TotalPress Options` and start customizing your site.

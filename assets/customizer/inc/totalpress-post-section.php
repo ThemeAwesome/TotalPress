@@ -10,7 +10,7 @@ TotalPress_Kirki::add_section( 'totalpress_content_layout_section', array(
 TotalPress_Kirki::add_field('totalpress_theme_customizer',array(
 	'type'        => 'select',
 	'settings'    => 'totalpress_main_content_container',
-	'label'       => __('Main Content Container Width','totalpress' ),
+	'label'       => esc_html__('Main Content Container Width','totalpress' ),
 	'tooltip'     => esc_html__('Select &quot;Contain to Grid&quot; to keep the main header container within the grid container. Select &quot;Full Width&quot; have the main header container expand 100% to fill the screen. Default is &quot;Contain to Grid&quot;','totalpress'),
 	'section'     => 'totalpress_content_layout_section',
 	'default'     => 'contain',
@@ -23,7 +23,7 @@ TotalPress_Kirki::add_field('totalpress_theme_customizer',array(
 TotalPress_Kirki::add_field('totalpress_theme_customizer',array(
 	'type'        => 'select',
 	'settings'    => 'totalpress_inner_content_container',
-	'label'       => __('Inner Content Container Width','totalpress' ),
+	'label'       => esc_html__('Inner Content Container Width','totalpress' ),
 	'tooltip'     => esc_html__('Select &quot;Contain to Grid&quot; to keep the inner header container within the grid container. Select &quot;Full Width&quot; to have the inside header container expand 100% to fill the screen. Default is &quot;Contain to Grid&quot;','totalpress'),
 	'section'     => 'totalpress_content_layout_section',
 	'default'     => 'contain',

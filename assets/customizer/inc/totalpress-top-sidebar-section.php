@@ -9,7 +9,7 @@ TotalPress_Kirki::add_section( 'totalpress_top_sidebar_layout_section', array(
 TotalPress_Kirki::add_field('totalpress_theme_customizer',array(
 	'type'        => 'select',
 	'settings'    => 'totalpress_top_sidebar_container',
-	'label'       => __('Main Container Width','totalpress' ),
+	'label'       => esc_html__('Main Container Width','totalpress' ),
 	'tooltip'     => esc_html__('Select &quot;Contain to Grid&quot; to keep the main Top Sidebar contained within the grid container. Select &quot;Full Width&quot; have the main header expand 100% to fill the screen. Default is &quot;Contain to Grid&quot;','totalpress'),
 	'section'     => 'totalpress_top_sidebar_layout_section',
 	'default'     => 'contain',
@@ -23,7 +23,7 @@ TotalPress_Kirki::add_field('totalpress_theme_customizer',array(
 TotalPress_Kirki::add_field('totalpress_theme_customizer',array(
 	'type'        => 'select',
 	'settings'    => 'totalpress_inner_top_sidebar_container',
-	'label'       => __('Inner Container Width','totalpress' ),
+	'label'       => esc_html__('Inner Container Width','totalpress' ),
 	'tooltip'     => esc_html__('Select &quot;Contain to Grid&quot; to keep the inner Top Sidebar contained within the grid container. Select &quot;Full Width&quot; to have the inside header expand 100% to fill the screen. Default is &quot;Contain to Grid&quot;','totalpress'),
 	'section'     => 'totalpress_top_sidebar_layout_section',
 	'default'     => 'contain',

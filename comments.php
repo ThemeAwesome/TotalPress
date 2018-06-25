@@ -63,9 +63,9 @@ do_action( 'totalpress_before_comments' ); ?>
 	$consent  = empty( $commenter['comment_author_email'] ) ? '' : ' checked="checked"';
 	$fields = array(
 		'before_fields' => '<div class="grid container comment-fields"><div class="grid-x grid-padding-x">',
-		'author' => '<label for="author" class="screen-reader-text">' . esc_html__( 'Name', 'totalpress' ) . '</label><p class="comment-form-author large-auto cell"><input placeholder="' . esc_html__( 'Name', 'totalpress' ) . ' *" id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30" /></p>',
-		'email' => '<label for="email" class="screen-reader-text">' . esc_html__( 'Email', 'totalpress' ) . '</label><p class="comment-form-email large-auto cell"><input placeholder="' . esc_html__( 'Email', 'totalpress' ) . ' *" id="email" name="email" type="email" value="' . esc_attr( $commenter['comment_author_email'] ) . '" size="30" /></p>',
-		'url' => '<label for="url" class="screen-reader-text">' . esc_html__( 'Website', 'totalpress' ) . '</label><p class="comment-form-url large-auto cell"><input placeholder="' . esc_html__( 'Website', 'totalpress' ) . '" id="url" name="url" type="url" value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" /></p>',
+		'author' => '<label for="author" class="screen-reader-text">' . __( 'Name', 'totalpress' ) . '</label><p class="comment-form-author large-auto cell"><input placeholder="' . __( 'Name', 'totalpress' ) . ' *" id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30" /></p>',
+		'email' => '<label for="email" class="screen-reader-text">' . __( 'Email', 'totalpress' ) . '</label><p class="comment-form-email large-auto cell"><input placeholder="' . __( 'Email', 'totalpress' ) . ' *" id="email" name="email" type="email" value="' . esc_attr( $commenter['comment_author_email'] ) . '" size="30" /></p>',
+		'url' => '<label for="url" class="screen-reader-text">' . __( 'Website', 'totalpress' ) . '</label><p class="comment-form-url large-auto cell"><input placeholder="' . __( 'Website', 'totalpress' ) . '" id="url" name="url" type="url" value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" /></p>',
 		'after_fields' => '</div></div>',
 // Now we will add our new privacy checkbox optin
         'cookies' => '<p class="comment-form-cookies-consent"><input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox" value="yes"' . $consent . ' />' .
@@ -73,7 +73,7 @@ do_action( 'totalpress_before_comments' ); ?>
 	);
 	$defaults = array(
 		'fields'		=> apply_filters( 'comment_form_default_fields', $fields ),
-		'comment_field' => '<p class="comment-form-comment"><label for="comment" class="screen-reader-text">' . esc_html__( 'Comment', 'totalpress' ) . '</label><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea></p>',
+		'comment_field' => '<p class="comment-form-comment"><label for="comment" class="screen-reader-text">' . __( 'Comment', 'totalpress' ) . '</label><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea></p>',
 		'comment_notes_before' => null,
 		'comment_notes_after'  => null,
 		'id_form'              => 'commentform',

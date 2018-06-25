@@ -2,6 +2,19 @@
 
 ### [Unreleased]
 
+### [1.0.26] 2018-06-XX
+###### `Added`
+* CSS for `Motion UI 2.0` which was released on June 7,2018.
+* CSS for the `Akismet Privavcy Notice`.
+* Added `is_plugin_active` function to `totalpres-customizer.php`. This will load new panels if/when the `TP Primo` plugin is activated. This was added because once the user switched themes and went into the new theme's customizer, a `Fatal error:` would be generated. To remove the error the user would have to navigate to the Plugins page and deactivate `TP Primo`. This corrects that issue.
+
+###### `Changed`
+* Modified code for the metaboxes. The metaboxes will show for any custom post type. Thanks `@wordpressguy`.
+* Modified the css that handles the color of links in the footer, specifically `.site-info a`.
+
+###### `Removed`
+* CSS for lists in mobile. For some reason I added some css to remove the way lists looked on mobile. All list types will now look the way they are supposed to on mobile devices.
+
 ### [1.0.25] 2018-05-27
 ###### `Added`
 * Theme support for the [`Header Footer Elementor plugin`](https://wordpress.org/plugins/header-footer-elementor/).
@@ -11,7 +24,7 @@
 * CSS for `Gutenberg wide/fullimages` in `style.css`.
 * Added padding to the `.inside-top-sidebar.cell` element, for some reason this was missing.
 * Added `z-index:1` to `.main-navigation.grid-container`.
-* Added to `border and padding` to `img[class*="align"],img[class*="wp-image-"],img[class*="attachment-"]`.
+* Added `border and padding` to `img[class*="align"],img[class*="wp-image-"],img[class*="attachment-"]`.
 * Added `GDPR` compliance to the comment form.
 * Added styles for `p.comment-form-cookies-consent`.
 * Added `$consent` parameter to `comments.php` - this is to avoid a php `Notice` that would appear when `WP_DEBUG` in `wp-config.php` was set to true.
@@ -22,7 +35,7 @@
 
 ###### `Removed`
 * `grid-x grid-padding-x` from the `top-bar`.
-* Removed the commented version from all files. It looked like this `/* @version 1.0.24 */`I would change this commented version everytime time to match the latest version being released. This made it look like all files had been changed. This was keeping anyone from seeing just the latest changes on GitHub or in the WordPress.org repo.
+* Removed commented versioning from all files. It looked like this `/* @version 1.0.24 */`I would change this commented versioning everytime time to match the latest version being released. This made it look like all files had been changed. This was keeping anyone from seeing just the latest changes on GitHub or in the WordPress.org repo.
 
 ###### [1.0.24] 2018-05-12
 ###### `Added`
@@ -245,10 +258,11 @@ Removed some of the features from the `setup_totalpress` function in `functions.
 ###### [1.0.0] 2017-11-02
 * Initial submission to the theme review team on 11/02/2017
 
-[unreleased]: https://github.com/themeawesome/totalpress/compare/v1.0.25...HEAD
-[1.0.20]: https://github.com/themeawesome/totalpress/compare/1.0.24...1.0.25
-[1.0.20]: https://github.com/themeawesome/totalpress/compare/1.0.23...1.0.24
-[1.0.20]: https://github.com/themeawesome/totalpress/compare/1.0.20...1.0.23
+[unreleased]: https://github.com/themeawesome/totalpress/compare/v1.0.26...HEAD
+[1.0.26]: https://github.com/themeawesome/totalpress/compare/1.0.25...1.0.26
+[1.0.25]: https://github.com/themeawesome/totalpress/compare/1.0.24...1.0.25
+[1.0.24]: https://github.com/themeawesome/totalpress/compare/1.0.23...1.0.24
+[1.0.23]: https://github.com/themeawesome/totalpress/compare/1.0.20...1.0.23
 [1.0.20]: https://github.com/themeawesome/totalpress/compare/1.0.19...1.0.20
 [1.0.19]: https://github.com/themeawesome/totalpress/compare/1.0.18...1.0.19
 [1.0.18]: https://github.com/themeawesome/totalpress/compare/1.0.17...1.0.18
