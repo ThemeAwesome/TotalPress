@@ -2,7 +2,7 @@
 
 ### [Unreleased]
 
-### [1.0.26] 2018-06-XX
+### [1.0.26] 2018-06-25
 ###### `Added`
 * CSS for `Motion UI 2.0` which was released on June 7,2018.
 * CSS for the `Akismet Privavcy Notice`.
