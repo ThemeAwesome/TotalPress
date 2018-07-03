@@ -1,4 +1,3 @@
-/* @version 1.0.25 */
 jQuery(document).foundation();
 	jQuery('input[type="submit"]').addClass('button');
 	jQuery('iframe[src*="youtube.com"],iframe[src*="vimeo.com"],iframe[src*="dailymotion.com"],iframe[src*="videopress.com"]').wrap('<div class="responsive-embed widescreen" />');

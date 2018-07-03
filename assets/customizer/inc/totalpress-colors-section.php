@@ -13,7 +13,7 @@ TotalPress_Kirki::add_field('totalpress_theme_customizer',array(
 	'tooltip'     => esc_html__('Change default font color.','totalpress'),
 	'section'     => 'totalpress_colors_section',
 	'default'     => '#3f3f3f',
-	'priority'    => 1,
+	'priority'    => 2,
 	'transport'   => 'auto',
 	'output'      => array(
 		array(
@@ -30,7 +30,7 @@ TotalPress_Kirki::add_field('totalpress_theme_customizer', array(
 	'tooltip'     => esc_html__('Change default link color. Does not change link color of other areas, i.e. .entry-meta a, etc.','totalpress'),
 	'section'     => 'totalpress_colors_section',
 	'default'     => '#b02329',
-	'priority'    => 2,
+	'priority'    => 3,
 	'transport'   => 'auto',
 	'output'      => array(
 		array(
@@ -47,7 +47,7 @@ TotalPress_Kirki::add_field('totalpress_theme_customizer', array(
 	'tooltip'     => esc_html__('Change default link hover color. Does not change link hover color of other areas, i.e. .entry-meta a:hover, etc.','totalpress'),
 	'section'     => 'totalpress_colors_section',
 	'default'     => '#3f3f3f',
-	'priority'    => 3,
+	'priority'    => 4,
 	'transport'   => 'auto',
 	'output'      => array(
 		array(

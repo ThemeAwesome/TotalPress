@@ -3,8 +3,8 @@ Theme Name:TotalPress
 Theme URI:https://themeawesome.com/totalpress-wordpress-foundation-theme/
 Author:ThemeAWESOME
 Author URI:https://themeawesome.com/
-Description: My name is TotalPress! Based off _s (Underscores) and built with Zurb's Foundation for Sites, so I'm responsive and look good on any device. I'm light weight and super fast <strong>(184kb compressed!)</strong>. I have lots of hooks and filters, 10 widget areas and 6 different sidebar page templates. I use the Kirki plugin for the theme customizer and the Meta Box plugin for metaboxes. Did I mention that I work really well with page builders like Elementor and Header Footer Elementor. Download me today and take me for a spin.
-Version:1.0.26
+Description: My name is TotalPress! Based off _s (Underscores) and built with Zurb's Foundation for Sites, so I'm responsive and look good on any device. I'm light weight and super fast <strong>(200kb compressed!)</strong>. I have lots of hooks and filters, 10 widget areas and 6 different sidebar page templates. I use the Kirki plugin for the theme customizer and the Meta Box plugin for metaboxes. Did I mention that I work really well with page builders like Elementor and Header Footer Elementor. Download me today and take me for a spin.
+Version: 1.0.27
 License:GNU General Public License v3.0
 License URI:http://www.gnu.org/licenses/gpl-3.0.html
 Tags:blog, one-column, two-columns, three-columns, right-sidebar, left-sidebar, footer-widgets, custom-background, flexible-header, custom-menu, editor-style, featured-images, full-width-template, microformats, post-formats, sticky-post, translation-ready, theme-options, custom-logo, custom-colors
@@ -147,7 +147,7 @@ body.no-footer-widgets #footer-secondary{display:none;}
  *************************************/
 .header-sidebar.cell {padding:0;}
 .header-sidebar a,.header-sidebar a:before{color:#3F3F3F;}
-.header-sidebar a:hover,.,.header-sidebar .menu > li > a:hover{color:#b02329;}
+.header-sidebar a:hover,.header-sidebar .menu > li > a:hover{color:#b02329;}
 .header-sidebar.cell .widget-title,.header-sidebar .sub-menu{display:none;}
 .header-sidebar.cell .widget{background:none;display:inline-block;padding:0;margin:0;margin-right:10px;vertical-align:middle;}
 .header-sidebar .widget:last-child{margin-right:0;}
@@ -168,7 +168,7 @@ h1.site-title a,p.site-title a{color:#3F3F3F;text-decoration:none;}
 h1.site-title a:hover,p.site-title a:hover{color:#b02329;text-decoration:none;}
 p.site-description{color:#999999;font-size:0.9375rem;line-height:normal;margin:0;}
 .no-site-title .site-title,.no-site-tagline .site-description{display:none;}
-.site-logo{display:inline-block;margin-bottom:15px;}
+.site-logo{display:inline-block;}
 .site-logo .header-image{margin:0;}
 .brand-text{margin-bottom:0;}
 /**************************************
@@ -207,7 +207,7 @@ article{margin-bottom:30px;}
 h2.entry-title a{color:#3F3F3F;text-decoration:none;}
 h2.entry-title a:hover{color:#b02329;text-decoration:none;}
 .entry-meta{margin-bottom:16px;}
-.entry-meta a{color:#b02329;text-decoration:underline;}
+.entry-meta a{color:#b02329;}
 .entry-meta a:hover{color:#3F3F3F;text-decoration:none;}
 span.comments-link{display:block;margin-top:30px;}
 .edit-link-top::before,.edit-link-bottom::before {content:"-";margin:0 6px;}
@@ -247,6 +247,8 @@ img.size-full,img.size-large,img.header-image,img.wp-post-image{margin-bottom:16
 h2.author-title{line-height:normal;margin-bottom:16px;}
 .bypostauthor cite a{color:#555555;}
 .bypostauthor cite a:hover{color:#b02329;}
+.site-main .post .entry-content a.button,.site-main .post .entry-content a:hover.button,
+.site-main .post .entry-content .page-links a,.site-main .post .entry-content .page-links a:hover {color:#ffffff;}
 /**************************************
  * Comments
  *************************************/

@@ -15,7 +15,7 @@ TotalPress_Kirki::add_field('totalpress_theme_customizer',array(
 	'priority'    => 1,
 	'transport'   => 'auto',
 	'default'     => array(
-		'font-family' 		=> 'inherit',
+		'font-family' 		=> 'Source Sans Pro',
 		'variant'        	=> 'regular',
 		'font-size'      	=> '17px',
 		'line-height'    	=> '1.5',

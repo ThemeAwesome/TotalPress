@@ -1,6 +1,20 @@
 # Changelog
 
-### [Unreleased]
+### 1.0.27 - 2018-07-03
+###### `Fixed`
+* Error on line 150 of `styles.css`. There was an extra comma and period on this line.
+
+###### `Added`
+* Added new `Notification` which links to `About TotalPress`.
+* Added `About TotalPress` page under `Appearance`.
+* Added a `TotalPress Documentation` section in the customizer.
+
+###### `Removed`
+* The text decoration for `entry-meta` links. These links display under post titles.
+* Versioning comments from some of the files. These are no longer needed.
+
+###### `Changed`
+* Changed the `Extend TotalPress` section in the customizer.
 
 ### [1.0.26] 2018-06-25
 ###### `Added`
@@ -258,7 +272,7 @@ Removed some of the features from the `setup_totalpress` function in `functions.
 ###### [1.0.0] 2017-11-02
 * Initial submission to the theme review team on 11/02/2017
 
-[unreleased]: https://github.com/themeawesome/totalpress/compare/v1.0.26...HEAD
+[1.0.27]: https://github.com/themeawesome/totalpress/compare/1.0.26...1.0.27
 [1.0.26]: https://github.com/themeawesome/totalpress/compare/1.0.25...1.0.26
 [1.0.25]: https://github.com/themeawesome/totalpress/compare/1.0.24...1.0.25
 [1.0.24]: https://github.com/themeawesome/totalpress/compare/1.0.23...1.0.24

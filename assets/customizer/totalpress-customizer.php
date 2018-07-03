@@ -178,6 +178,11 @@ if ( ! function_exists('totalpress_customize_register')) :
         ));
         $wp_customize->add_panel($totalpress_footer_options);
 
+        $wp_customize->add_section('totalpress_docs_section', array(
+          'title' => esc_html__('TotalPress Documentation','totalpress'),
+          'priority' =>9998,
+        ));
+
         $wp_customize->add_section('upsell_section', array(
           'title' => esc_html__('Extend TotalPress', 'totalpress'),
           'priority' =>9999,
@@ -267,4 +272,5 @@ require get_template_directory() . '/assets/customizer/inc/totalpress-header-sid
 require get_template_directory() . '/assets/customizer/inc/totalpress-navigation-section.php'; //loads header options
 require get_template_directory() . '/assets/customizer/inc/totalpress-top-sidebar-section.php'; //loads top sidebar options
 require get_template_directory() . '/assets/customizer/inc/totalpress-typography-section.php'; //loads typography options
+require get_template_directory() . '/assets/customizer/inc/totalpress-documentation.php'; //loads doc section
 require get_template_directory() . '/assets/customizer/inc/totalpress-more-options.php'; //loads option upsell

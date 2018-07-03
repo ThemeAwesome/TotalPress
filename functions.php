@@ -1,6 +1,6 @@
 <?php
 if ( ! defined('ABSPATH')) exit;
-define('TOTALPRESS_VERSION','1.0.26');
+define('TOTALPRESS_VERSION','1.0.27');
 if ( ! function_exists('setup_totalpress') ) :
 	function setup_totalpress() {
 		// Set the content width
@@ -22,13 +22,14 @@ if ( ! function_exists('setup_totalpress') ) :
 		add_editor_style('assets/css/totalpress-editor.css');
 		add_theme_support('header-footer-elementor');
 		register_nav_menus( array('primary' => esc_attr('Main Menu','totalpress'),));
-		add_theme_support('custom-logo', array('height' => 70,'width' => 350,'flex-width' => true,'flex-height' => true,));
+		add_theme_support('custom-logo', array('width' => 350,'height' => 70,'flex-width' => true,'flex-height' => true,));
 		add_theme_support('custom-background',apply_filters('totalpress_custom_background_args', array(
 			'default-color' => 'efefef',)));
 	}
 	add_action('after_setup_theme','setup_totalpress');
 endif; 
 // Load files we need
+require get_template_directory() . '/assets/inc/totalpress-welcome.php';
 require get_template_directory() . '/assets/inc/totalpress-functions.php';
 require get_template_directory() . '/assets/inc/tgm-plugin-activation/class-tgm-plugin-activation.php';
 require get_template_directory() . '/assets/inc/tgm-config.php';
@@ -42,7 +43,7 @@ require get_template_directory() . '/assets/inc/totalpress-plugin-support.php';
 if ( ! function_exists('totalpress_scripts')) :
 	function totalpress_scripts() {
 		wp_enqueue_style('totalpress',get_stylesheet_uri(),'',TOTALPRESS_VERSION );
-		wp_enqueue_script('foundation',get_template_directory_uri().'/assets/js/foundation.min.js',array('jquery'),TOTALPRESS_VERSION,true);
+		wp_enqueue_script('foundation',get_template_directory_uri().'/assets/js/foundation.min.js',array('jquery'),'6.5.0.rc-1',true);
 		wp_enqueue_script ('totalpress-app',get_template_directory_uri().'/assets/js/totalpress-app.js',array('foundation'),TOTALPRESS_VERSION,true);
 		if (is_singular() && comments_open() && get_option('thread_comments')) {
 			wp_enqueue_script('comment-reply');
