@@ -33,7 +33,7 @@
 ###### `Changed`
 * Changed the `Extend TotalPress` section in the customizer.
 
-### [1.0.26] 2018-06-25
+###### [1.0.26] 2018-06-25
 ###### `Added`
 * CSS for `Motion UI 2.0` which was released on June 7,2018.
 * CSS for the `Akismet Privavcy Notice`.
@@ -46,7 +46,7 @@
 ###### `Removed`
 * CSS for lists in mobile. For some reason I added some css to remove the way lists looked on mobile. All list types will now look the way they are supposed to on mobile devices.
 
-### [1.0.25] 2018-05-27
+###### [1.0.25] 2018-05-27
 ###### `Added`
 * Theme support for the [`Header Footer Elementor plugin`](https://wordpress.org/plugins/header-footer-elementor/).
 * Added `position` and `z-index` to the `top-bar` for `small only` media queries.
@@ -289,6 +289,7 @@ Removed some of the features from the `setup_totalpress` function in `functions.
 ###### [1.0.0] 2017-11-02
 * Initial submission to the theme review team on 11/02/2017
 
+[1.0.28]: https://github.com/themeawesome/totalpress/compare/1.0.27...1.0.28
 [1.0.27]: https://github.com/themeawesome/totalpress/compare/1.0.26...1.0.27
 [1.0.26]: https://github.com/themeawesome/totalpress/compare/1.0.25...1.0.26
 [1.0.25]: https://github.com/themeawesome/totalpress/compare/1.0.24...1.0.25
