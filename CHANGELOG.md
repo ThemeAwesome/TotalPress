@@ -1,5 +1,5 @@
 # Changelog
-### 1.0.28 - 2018-08-23
+### [1.0.28] - 2018-08-23
 ###### `Fixed`
 * An issue where the theme support for `Gutenberg` had changed. If you used the `Gutenberg` plugin a bunch of errors would be displayed.
 * An issue with the `site-branding` portion of the header. If no `site title` was used or if no `site-description` was used and the `header-sidebar` was active, then the `header-sidebar` would reposition under the `site-branding` div.
