@@ -1,6 +1,23 @@
 # Changelog
+### 1.0.28 - 2018-08-23
+###### `Fixed`
+* An issue where the theme support for `Gutenberg` had changed. If you used the `Gutenberg` plugin a bunch of errors would be displayed.
+* An issue with the `site-branding` portion of the header. If no `site title` was used or if no `site-description` was used and the `header-sidebar` was active, then the `header-sidebar` would reposition under the `site-branding` div.
+* Issue with the `z-index` of a few elements related to `WooCommerce`. The `Sale` banner as well as the `serch` icon related to products had a very high `z-index`. This caused them to be above the menu when it was set to `Sticky`, `Scroll Hide` or `Sticky Shrink`.
+* Fixed issue where the wrong translation strings were added. I had `esc_attr_()` when in reality I should have had `__()`.
 
-### 1.0.27 - 2018-07-03
+###### `Added`
+* Created a `.po` file and added a `language` file to make the theme truly translatable.
+* Wrapped the content containers in section specific classes. If you are viewing the blog section or a post the classes that wrap them are now `post-container` and when viewing a page it is `page-container`. This was done to allow the user to target specific classes for each type instead of just one.
+
+###### `Changed`
+* Changed all `esc_attr_()` to `__()`
+* Changed the `bottom` positioning of the `Back to Top` from `25px` to `15px`. Also changed the `right` positioning from `30px` to `33px`. This gives the `Back to Top` button a better visual appearance.
+* Renamed `Content Layout` under `Content > Posts` to `Post Layout`. This was done to better identify and define this area.
+* Changed some of the styles related to the `Page Builder` metabox options to acount for the new post page/page content settings.
+* Changed the screenshot of TotalPress. This was done because the Theme Review team changed the rule regarding words that can be used in the screenshot of a theme. In other words they do not want the screenshot to look like an ad. To be safe I just made a new screenshot.
+
+###### 1.0.27 - 2018-07-03
 ###### `Fixed`
 * Error on line 150 of `styles.css`. There was an extra comma and period on this line.
 

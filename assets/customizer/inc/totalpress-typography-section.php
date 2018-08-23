@@ -9,7 +9,7 @@ TotalPress_Kirki::add_section( 'totalpress_typography_section', array(
 TotalPress_Kirki::add_field('totalpress_theme_customizer',array(
 	'type'        => 'typography',
 	'settings'    => 'totalpress_theme_body_font',
-	'label'       => esc_html__('Text','totalpress' ),
+	'label'       => esc_html__('Theme Text','totalpress' ),
 	'tooltip'     => esc_html__('Change the font family of your theme.','totalpress'),
 	'section'     => 'totalpress_typography_section',
 	'priority'    => 1,

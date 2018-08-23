@@ -3,8 +3,8 @@ Theme Name:TotalPress
 Theme URI:https://themeawesome.com/totalpress-wordpress-foundation-theme/
 Author:ThemeAWESOME
 Author URI:https://themeawesome.com/
-Description: My name is TotalPress! Based off _s (Underscores) and built with Zurb's Foundation for Sites, so I'm responsive and look good on any device. I'm light weight and super fast <strong>(200kb compressed!)</strong>. I have lots of hooks and filters, 10 widget areas and 6 different sidebar page templates. I use the Kirki plugin for the theme customizer and the Meta Box plugin for metaboxes. Did I mention that I work really well with page builders like Elementor and Header Footer Elementor. Download me today and take me for a spin.
-Version: 1.0.27
+Description: My name is TotalPress! I'm Based off _s (Underscores) and built with Zurb's Foundation for Sites, so I'm responsive and look good on any device. I'm light weight and super fast <strong>(250kb compressed!)</strong>. I have lots of hooks and filters, 10 widget areas and 6 different sidebar page templates. I use the Kirki plugin for the theme customizer and the Meta Box plugin for metaboxes. Did I mention that I work really well with page builders like Elementor and Header Footer Elementor. Download me today and take me for a spin.
+Version: 1.0.28
 License:GNU General Public License v3.0
 License URI:http://www.gnu.org/licenses/gpl-3.0.html
 Tags:blog, one-column, two-columns, three-columns, right-sidebar, left-sidebar, footer-widgets, custom-background, flexible-header, custom-menu, editor-style, featured-images, full-width-template, microformats, post-formats, sticky-post, translation-ready, theme-options, custom-logo, custom-colors
@@ -121,14 +121,17 @@ hr{border:0;margin:30px auto 30px;color:#fff;background-color:#fff;height:0;bord
  * Body Class CSS
  *************************************/
 body > .error404 > .cs .content-area, .error404 .sc .content-area, .error404 .css .content-area, .error404 .ssc .content-area, .error404 .scs .content-area, .error404 .ns .content-area{width:100%;}
-body.no-pad .inside-article{padding:0;}
+body.no-pad .site-content.page-container .inside-page-article,body.no-pad .site-content.post-container .inside-post-article{padding:0;}
 body.no-widget-one .fw_one{display:none;}
 body.no-widget-two .fw_two{display:none;}
 body.no-widget-three .fw_three{display:none;}
 body.no-widget-four .fw_four{display:none;}
 body.no-widget-five .fw_five{display:none;}
 body.no-footer-widgets #footer-secondary{display:none;}
-.top-sidebar-full #top-sidebar.grid-container,.inner-top-sidebar-full .inside-top-sidebar,.header-container-full .site-header.grid-container,.inner-head-container-full .inside-header,.nav-container-full .main-navigation.grid-container,.top-bar-full .top-bar,.footer-widgets-full .footer-widgets.grid-container,.site-content-full .site-content.grid-container,.site-content-inner-full .inside-content,.inner-footer-widgets-full .inside-footer-widgets,.site-footer-full .site-footer.grid-container,.inner-footer-full .inside-footer{max-width:100%;width:100%;}
+.top-sidebar-full #top-sidebar.grid-container,.inner-top-sidebar-full .inside-top-sidebar,.header-container-full .site-header.grid-container,.inner-head-container-full .inside-header,.nav-container-full .main-navigation.grid-container,.top-bar-full
+ .top-bar,.footer-widgets-full .footer-widgets.grid-container,
+.post-content-full .site-content.post-container,
+.post-inner-content-full .inside-content,.inner-footer-widgets-full .inside-footer-widgets,.site-footer-full .site-footer.grid-container,.inner-footer-full .inside-footer{max-width:100%;width:100%;}
 /**************************************
  * Top Sidebar
  *************************************/
@@ -198,8 +201,8 @@ p.site-description{color:#999999;font-size:0.9375rem;line-height:normal;margin:0
  *************************************/
 .sticky{/* Style not used but left in case you want to style the sticky in some way */}
 .inside-content{margin:0 auto;padding:30px 0;}
-article{margin-bottom:30px;}
-.inside-article{background-color:#fff;padding:30px}
+.site-content.post-container .inside-post-article{background-color:#fff;margin-bottom:30px;padding:30px}
+.site-content.page-container .inside-page-article{background-color:#fff;margin-bottom:30px;padding:30px}
 .byline,.updated:not(.published){display:none;}
 .single .byline,.group-blog .byline{display:inline;}
 .post h1.entry-title,.post h2.entry-title{font-size:35px;font-weight:900;line-height:1.2;margin-bottom:16px;}
@@ -423,9 +426,14 @@ select{font-size:inherit;height:auto;padding:14px;padding-right:24px;}
 .radius{border-radius:3px;}
 .round{border-radius:1000px;}
 /* orbit */
+.orbit, .orbit-container{z-index:1;}
 .orbit-bullets button{cursor:pointer;width:0;height:0.2rem;margin:0.2rem;background-color:#cacaca;border-radius:50%;border:1px;padding:0.5em}
 .orbit-bullets button:focus{outline:none;}
 .orbit-previous,.orbit-next{cursor:pointer;}
+.orbit-next {padding: 16px 16px 16px 10px;}
+.orbit-previous {padding: 16px 10px 16px 16px;}
+.leftarrow{width:12px;height:12px;border:1px solid;border-color:white transparent transparent white;transform:rotate(-45deg);}
+.rightarrow{width:12px;height:12px;border:1px solid;border-color:white transparent transparent white;transform:rotate(-225deg);}
 /* Infinite Scroll */
 /* Globally hidden elements when Infinite Scroll is supported and in use. */
 .infinite-scroll .posts-navigation,.infinite-scroll.neverending .site-footer{ /* Theme Footer (when set to scrolling) */
@@ -433,7 +441,7 @@ select{font-size:inherit;height:auto;padding:14px;padding-right:24px;}
 /* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before. */
 .infinity-end.neverending .site-footer{display:block;}
 /* Back to Top */
-.back-to-top{position:fixed;bottom:25px;right:30px;color:white;background-color:rgba(63,63,63,0.3);display:none;padding:16px 18px 10px;}
+.back-to-top{position:fixed;bottom:15px;right:33px;color:white;background-color:rgba(63,63,63,0.3);display:none;padding:16px 18px 10px;}
 .back-to-top:hover{background-color:rgba(63, 63, 63, 0.6);cursor:pointer;}
 .top-arrow{border-bottom:1px solid;border-right:1px solid;display:inline-block;width:12px;height:12px;color:#fff;
 	transform:rotate(-135deg);}
@@ -487,8 +495,8 @@ td.value{padding:0!important;}
 .woocommerce #reviews #comments ol.commentlist li img.avatar{padding:0;background:transparent;border:none;border-radius:100%;}
 .woocommerce #reviews #comments h2{margin-bottom:25px;}
 .woocommerce div.product .woocommerce-tabs .panel #comments{padding:0;}
-.woocommerce .star-rating span:before, .woocommerce .star-rating:before{color:#ffa200;}
-.woocommerce p.stars a{color:#ffa200;}
+.woocommerce .star-rating span:before, .woocommerce .star-rating:before{color:gold;}
+.woocommerce p.stars a{color:gold;}
 .woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button{border-radius:0;color:#fff;background-color:#3F3F3F;font-weight:normal;}
 .woocommerce #respond input#submit:hover, .woocommerce a.button:hover, .woocommerce button.button:hover, .woocommerce input.button:hover{color:#fff;background-color:#b02329;}
 .woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt, .woocommerce #respond input#submit.alt.disabled, .woocommerce #respond input#submit.alt.disabled:hover, .woocommerce #respond input#submit.alt:disabled, .woocommerce #respond input#submit.alt:disabled:hover, .woocommerce #respond input#submit.alt:disabled[disabled], .woocommerce #respond input#submit.alt:disabled[disabled]:hover, .woocommerce a.button.alt.disabled, .woocommerce a.button.alt.disabled:hover, .woocommerce a.button.alt:disabled, .woocommerce a.button.alt:disabled:hover, .woocommerce a.button.alt:disabled[disabled], .woocommerce a.button.alt:disabled[disabled]:hover, .woocommerce button.button.alt.disabled, .woocommerce button.button.alt.disabled:hover, .woocommerce button.button.alt:disabled, .woocommerce button.button.alt:disabled:hover, .woocommerce button.button.alt:disabled[disabled], .woocommerce button.button.alt:disabled[disabled]:hover, .woocommerce input.button.alt.disabled, .woocommerce input.button.alt.disabled:hover, .woocommerce input.button.alt:disabled, .woocommerce input.button.alt:disabled:hover, .woocommerce input.button.alt:disabled[disabled], .woocommerce input.button.alt:disabled[disabled]:hover{color:#fff;background-color:#3F3F3F;}
@@ -513,7 +521,7 @@ a.reset_variations{margin-left:15px;}
 .woocommerce-page .woocommerce-message .button:hover{background:transparent;}
 a.button.wc-forward:after{content:"\f105";font-family:FontAwesome;line-height:1em;speak:none;padding-left:10px;}
 .woocommerce #content table.cart td.actions .input-text, .woocommerce table.cart td.actions .input-text, .woocommerce-page #content table.cart td.actions .input-text, .woocommerce-page table.cart td.actions .input-text{padding:5px;width:120px;}
-.woocommerce span.onsale{ background-color:#b02329;color:#fff;text-transform:uppercase;}
+.woocommerce span.onsale{background-color:#b02329;color:#fff;text-transform:uppercase;z-index:1;}
 .archive.woocommerce ul.products li.product .onsale,.woocommerce section.related > ul.products li.product .onsale,.woocommerce section.up-sells ul.products li.product .onsale {margin:0;top:0;right:0}
 .archive.woocommerce span.onsale{border-radius:0;padding:5px 15px;line-height:normal;min-height:0;min-width:0;}
 .woocommerce ul.products li.product .onsale{top:8px;right:8px}
@@ -524,6 +532,8 @@ a.button.wc-forward:after{content:"\f105";font-family:FontAwesome;line-height:1e
 .woocommerce-page .woocommerce-message .button{background:#b02329;}
 .woocommerce-page .woocommerce-message .button:hover{background:#222222;}
 .woocommerce-page .woo-.cell{padding:0}
+.woocommerce div.product div.images .woocommerce-product-gallery__trigger{z-index:1;}
+input#submit:disabled[disabled], .woocommerce a.button.disabled, .woocommerce a.button:disabled, .woocommerce a.button:disabled[disabled], .woocommerce button.button.disabled, .woocommerce button.button:disabled, .woocommerce button.button:disabled[disabled], .woocommerce input.button.disabled, .woocommerce input.button:disabled, .woocommerce input.button:disabled[disabled] {color:#fff;}
 /**************************************
  * Media Query CSS
  *************************************/

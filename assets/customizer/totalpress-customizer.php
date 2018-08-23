@@ -188,7 +188,8 @@ if ( ! function_exists('totalpress_customize_register')) :
           'priority' =>9999,
         ));
 
-        // Load these panels if TP-Primo is active
+
+    // Check if TP Primo is active, if so remove a panel and load some additional panels
         if (is_plugin_active('tp-primo/tp-primo.php')) {
           
           $wp_customize->remove_section('upsell_section');
@@ -228,7 +229,8 @@ if ( ! function_exists('totalpress_customize_register')) :
           ));
           $wp_customize->add_panel($tp_primo_misc_theme_options);
         }
-        
+ 
+    // sanitize site title and site description check boxes
     if ( ! function_exists('totalpress_sanitize_checkbox')) :
         function totalpress_sanitize_checkbox($input) {
             if ( $input == 1 ) {
@@ -245,7 +247,7 @@ endif;
 // customizer logo
 function totalpress_customizer_styling( $config ) {
   return wp_parse_args(array(
-    'logo_image' => 'https://i.imgur.com/M5eV6H7.png',
+    'logo_image' => 'https://bit.ly/2J5dy84',
   ), $config );
 }
 add_filter('kirki_config','totalpress_customizer_styling');
@@ -262,15 +264,15 @@ TotalPress_Kirki::add_config('totalpress_theme_customizer',array(
   'capability'  => 'edit_theme_options',
   'option_type' => 'theme_mod',
 ));
-require get_template_directory() . '/assets/customizer/inc/totalpress-layout-section.php'; //loads layout options
-require get_template_directory() . '/assets/customizer/inc/totalpress-post-section.php'; //loads content options
-require get_template_directory() . '/assets/customizer/inc/totalpress-colors-section.php'; //loads color options
-require get_template_directory() . '/assets/customizer/inc/totalpress-footer-section.php'; //loads footer options
-require get_template_directory() . '/assets/customizer/inc/totalpress-footer-widgets-section.php'; //loads footer widgets options
-require get_template_directory() . '/assets/customizer/inc/totalpress-header-section.php'; //loads header options
-require get_template_directory() . '/assets/customizer/inc/totalpress-header-sidebar-section.php'; //loads header options
-require get_template_directory() . '/assets/customizer/inc/totalpress-navigation-section.php'; //loads header options
-require get_template_directory() . '/assets/customizer/inc/totalpress-top-sidebar-section.php'; //loads top sidebar options
-require get_template_directory() . '/assets/customizer/inc/totalpress-typography-section.php'; //loads typography options
-require get_template_directory() . '/assets/customizer/inc/totalpress-documentation.php'; //loads doc section
-require get_template_directory() . '/assets/customizer/inc/totalpress-more-options.php'; //loads option upsell
+require get_template_directory() . '/assets/customizer/inc/totalpress-layout-section.php'; //layout options
+require get_template_directory() . '/assets/customizer/inc/totalpress-post-section.php'; //content options
+require get_template_directory() . '/assets/customizer/inc/totalpress-colors-section.php'; //color options
+require get_template_directory() . '/assets/customizer/inc/totalpress-footer-section.php'; //footer options
+require get_template_directory() . '/assets/customizer/inc/totalpress-footer-widgets-section.php'; //footer widgets options
+require get_template_directory() . '/assets/customizer/inc/totalpress-header-section.php'; //header options
+require get_template_directory() . '/assets/customizer/inc/totalpress-header-sidebar-section.php'; //header options
+require get_template_directory() . '/assets/customizer/inc/totalpress-navigation-section.php'; //header options
+require get_template_directory() . '/assets/customizer/inc/totalpress-top-sidebar-section.php'; //top sidebar options
+require get_template_directory() . '/assets/customizer/inc/totalpress-typography-section.php'; //typography options
+require get_template_directory() . '/assets/customizer/inc/totalpress-documentation.php'; //doc section
+require get_template_directory() . '/assets/customizer/inc/totalpress-more-options.php'; //option upsell

@@ -18,7 +18,7 @@ endif;
 // Open the body element
 if ( ! function_exists('totalpress_build_open_body')) :
 	function totalpress_build_open_body() { ?>
-		<body <?php totalpress_body_schema();?> <?php body_class(); ?>><section><a class="skip-link screen-reader-text" href="#content"><?php esc_attr('Skip to content','totalpress'); ?></a></section>
+		<body <?php totalpress_body_schema();?> <?php body_class(); ?>><section><a class="skip-link screen-reader-text" href="#content"><?php __('Skip to content','totalpress'); ?></a></section>
 	<?php
 	}
 	add_action('totalpress_open_body','totalpress_build_open_body');
@@ -29,7 +29,7 @@ if ( ! function_exists('totalpress_build_top_sidebar')) :
 		if (is_active_sidebar('top-sidebar')) : ?>
 	 			<div id="top-sidebar" class="widget-area grid-container" itemtype="http://schema.org/WPSideBar" itemscope="itemscope" role="complementary">
 	 				<div class="inside-top-sidebar small-12 large-auto cell">
-	 				<?php dynamic_sidebar('top-sidebar'); ?>
+	 					<?php dynamic_sidebar('top-sidebar'); ?>
 	 				</div><!-- inside-top-sidebar -->
 	    		</div><!-- .top-sidebar -->
 		<?php endif;
@@ -44,7 +44,7 @@ if ( ! function_exists('totalpress_build_logo')) :
 		if (has_custom_logo()) {
 			// If we have a header image, get to buildin' the logo area
 			echo apply_filters('totalpress_header_image', sprintf(
-				'<div class="site-logo"><a href="%1$s" title="%2$s" rel="home"><img src="'. esc_url( $logo[0] ) .'" class="header-image" alt="%2$s" /></a></div>',
+				'<div class="site-logo"><a href="%1$s" title="%2$s" rel="home"><img src="'. esc_url( $logo[0] ) .'" class="header-image" alt="%2$s" /></a></div><!-- site-logo -->',
 				esc_url(home_url( '/' )),
 				esc_attr(get_bloginfo('name','display'))
 			));
@@ -57,13 +57,13 @@ if ( ! function_exists('totalpress_build_title_tagline')) :
 	function totalpress_build_title_tagline() {
 		if (is_front_page() && is_home()) {
 			echo apply_filters('totalpress_brand_text',sprintf(
-				'<div class="brand-text"><h1 class="site-title"><a href="%1$s" rel="home">%2$s</a></h1>',
+				'<h1 class="site-title"><a href="%1$s" rel="home">%2$s</a></h1>',
 				esc_url(home_url( '/' )),
 				esc_attr(get_bloginfo('name','display'))
 			));
 		} else {
 			echo apply_filters('totalpress_alt_brand_text',sprintf(
-				'<div class="brand-text"><p class="site-title"><a href="%1$s" rel="home">%2$s</a></p>',
+				'<p class="site-title"><a href="%1$s" rel="home">%2$s</a></p>',
 				esc_url(home_url('/')),
 				esc_attr(get_bloginfo('name','display'))
 			));
@@ -71,7 +71,7 @@ if ( ! function_exists('totalpress_build_title_tagline')) :
 		$description = get_bloginfo('description','display');
 		if ($description || is_customize_preview()) {
 			echo apply_filters('totalpress_site_description',sprintf(
-				'<p class="site-description">%1$s</p></div><!-- .brand_text -->',
+				'<p class="site-description">%1$s</p>',
 				$description
 			));
 		}
@@ -102,13 +102,17 @@ if ( ! function_exists('totalpress_build_header')) :
 					<?php if (is_active_sidebar('header-sidebar')): ?>
 						<div class="site-branding small-12 large-6 cell">
 							<?php do_action('totalpress_logo'); ?>
-							<?php do_action('totalpress_title_tagline'); ?>
+							<div class="brand-text">
+								<?php do_action('totalpress_title_tagline'); ?>
+							</div><!-- .brand_text -->
 						</div><!-- .site-branding -->
 					    <?php do_action('totalpress_header_sidebar'); ?>
 					<?php else: ?>
 						<div class="site-branding small-12 large-auto cell">
 							<?php do_action('totalpress_logo'); ?>
-							<?php do_action('totalpress_title_tagline'); ?>
+							<div class="brand-text">
+								<?php do_action('totalpress_title_tagline'); ?>
+							</div><!-- .brand_text -->
 						</div><!-- .site-branding -->
 					<?php endif; ?>
 				</div><!-- .grid-x .grid-padding-x -->
@@ -142,8 +146,13 @@ endif;
 if ( ! function_exists('totalpress_content_container')) :
 	function totalpress_content_container() { ?>
 	<?php do_action('totalpress_before_main_content'); ?>
-			<div id="content" class="site-content grid-container">
+		<?php if (is_page()): ?>
+			<div id="content" class="site-content page-container grid-container">
 				<div class="inside-content grid-x grid-padding-x">
+		<?php else: ?>
+			<div id="content" class="site-content post-container grid-container">
+				<div class="inside-content grid-x grid-padding-x">
+		<?php endif; ?>
 	<?php
 	}
 	add_action('totalpress_open_content_container','totalpress_content_container');
@@ -190,8 +199,13 @@ endif;
 // Open article container
 if ( ! function_exists('totalpress_article_open_container')) :
 	function totalpress_article_open_container() { ?>
-		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> <?php totalpress_article_schema('CreativeWork'); ?>>
-			<div class="inside-article">
+		<?php if (is_page()): ?>
+			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> <?php totalpress_article_schema('CreativeWork'); ?>>
+				<div class="inside-page-article">
+		<?php else: ?>
+			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> <?php totalpress_article_schema('CreativeWork'); ?>>
+				<div class="inside-post-article">
+		<?php endif; ?>
 	<?php
 	}
 	add_action('totalpress_open_article_container','totalpress_article_open_container');
@@ -280,7 +294,7 @@ if ( ! function_exists('totalpress_build_excerpt_full_post')) :
 		<div class="entry-content" itemprop="text">
 			<?php the_content(); ?>
 			<?php wp_link_pages( array(
-			'before' => '<div class="page-links">' . esc_attr('Pages:','totalpress'),
+			'before' => '<div class="page-links">' . __('Pages:','totalpress'),
 			'after'  => '</div>',
 			)); ?>
 		</div><!-- .entry-content -->
@@ -364,7 +378,7 @@ if ( ! function_exists('totalpress_build_search_loop')) :
 	function totalpress_build_search_loop() { ?>
 		<?php if ( have_posts() ) : ?>
 		<header class="page-header">
-			<h1 class="page-title"><?php printf(esc_attr('Search Results for: %s','totalpress'), '<span>' . get_search_query() . '</span>'); ?></h1>
+			<h1 class="page-title"><?php printf(__('Search Results for: %s','totalpress'), '<span>' . get_search_query() . '</span>'); ?></h1>
 		</header><!-- .page-header -->
 		<?php while ( have_posts() ) : the_post(); ?>
 			<?php get_template_part('template-parts/post/content',get_post_format()); ?>
@@ -469,8 +483,8 @@ endif;
 if ( ! function_exists('totalpress_build_search_form')) :
 	function totalpress_build_search_form() { ?>
 		<form method="get" class="search-form" action="<?php echo esc_url( home_url( '/' )); ?>">
-			<label><span class="screen-reader-text"><?php apply_filters('totalpress_search_label', esc_attr('Search for:','label','totalpress')); ?></span>
-				<input type="search" class="search-field" placeholder="<?php echo esc_attr(apply_filters('totalpress_search_placeholder', _x( 'Search &hellip;','placeholder','totalpress'))); ?>" value="<?php echo esc_attr(get_search_query()); ?>" name="s" title="<?php esc_attr( apply_filters('totalpress_search_label', esc_attr('Search for:', 'label','totalpress'))); ?>"></label>
+			<label><span class="screen-reader-text"><?php apply_filters('totalpress_search_label', __('Search for:','label','totalpress')); ?></span>
+				<input type="search" class="search-field" placeholder="<?php echo esc_attr(apply_filters('totalpress_search_placeholder', _x( 'Search &hellip;','placeholder','totalpress'))); ?>" value="<?php echo esc_attr(get_search_query()); ?>" name="s" title="<?php esc_attr( apply_filters('totalpress_search_label', __('Search for:', 'label','totalpress'))); ?>"></label>
 			<input type="submit" class="search-submit" value="<?php echo esc_attr(apply_filters('totalpress_search_button', _x('Search','submit button','totalpress'))); ?>">
 		</form><!-- end .search-form -->
 	<?php
@@ -579,7 +593,7 @@ if ( ! function_exists('totalpress_add_footer_info')) {
 	function totalpress_add_footer_info() {
 		$totalpress_copyright = sprintf('Built with <a href="%1$s" rel="follow" target="_blank" itemprop="url"><strong>%2$s</strong></a> &#8211; Powered by <a href="%3$s" target="_blank" itemprop="url"><strong>%4$s</strong></a>',
 			esc_url( 'https://themeawesome.com/totalpress-wordpress-foundation-theme/' ),
-			__( 'TotalPress', 'totalpress' ),
+			__('TotalPress', 'totalpress'),
 			esc_url( 'https://wordpress.org'),
 			__('WordPress','totalpress')
 		);

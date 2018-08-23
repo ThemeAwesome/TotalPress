@@ -1,0 +1,1273 @@
+# Copyright (C) 2018 ThemeAwesome.com
+# This file is distributed under the same license as the PACKAGE package.
+msgid ""
+msgstr ""
+"Project-Id-Version: TotalPress\n"
+"POT-Creation-Date: 2018-08-23 06:21-0700\n"
+"PO-Revision-Date: 2018-08-23 06:21-0700\n"
+"Last-Translator: Thomas E. Vasquez <tsquez@gmail.com>\n"
+"Language-Team: ThemeAwesome.com <tsquez@gmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.12\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-WPHeader: style.css\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"Language: en_US\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: assets/customizer/inc/totalpress-colors-section.php:4
+msgid "Colors"
+msgstr ""
+
+#: assets/customizer/inc/totalpress-colors-section.php:12
+#: assets/customizer/inc/totalpress-typography-section.php:12
+msgid "Theme Text"
+msgstr ""
+
+#: assets/customizer/inc/totalpress-colors-section.php:13
+msgid ""
+"Change default font color. Options to change the colors of other areas is "
+"available in TP Primo."
+msgstr ""
+
+#: assets/customizer/inc/totalpress-colors-section.php:29
+msgid "Theme Links"
+msgstr ""
+
+#: assets/customizer/inc/totalpress-colors-section.php:30
+msgid ""
+"Change default link color. Does not change link color of other areas, i.e. ."
+"entry-meta a, etc. These are available in TP Primo."
+msgstr ""
+
+#: assets/customizer/inc/totalpress-colors-section.php:46
+msgid "Theme Link Hover"
+msgstr ""
+
+#: assets/customizer/inc/totalpress-colors-section.php:47
+msgid ""
+"Change default link hover color. Does not change link hover color of other "
+"areas, i.e. .entry-meta a:hover, etc. This is available in TP Primo."
+msgstr ""
+
+#: assets/customizer/inc/totalpress-documentation.php:7
+msgid "View TotalPress Documentation"
+msgstr ""
+
+#: assets/customizer/inc/totalpress-footer-section.php:4
+#: assets/customizer/inc/totalpress-footer-widgets-section.php:4
+#: assets/customizer/inc/totalpress-header-section.php:4
+#: assets/customizer/inc/totalpress-header-sidebar-section.php:4
+#: assets/customizer/inc/totalpress-layout-section.php:22
+#: assets/customizer/inc/totalpress-navigation-section.php:4
+#: assets/customizer/inc/totalpress-top-sidebar-section.php:4
+msgid "Layout"
+msgstr ""
+
+#: assets/customizer/inc/totalpress-footer-section.php:12
+#: assets/customizer/inc/totalpress-footer-widgets-section.php:12
+#: assets/customizer/inc/totalpress-navigation-section.php:12
+#: assets/customizer/inc/totalpress-top-sidebar-section.php:12
+msgid "Main Container Width"
+msgstr ""
+
+#: assets/customizer/inc/totalpress-footer-section.php:13
+msgid ""
+"Select &quot;Contain to Grid&quot; to keep the main footer container within "
+"the grid container. Select &quot;Full Width&quot; have the main footer "
+"container expand 100% to fill the screen. Default is &quot;Contain to "
+"Grid&quot;"
+msgstr ""
+
+#: assets/customizer/inc/totalpress-footer-section.php:18
+#: assets/customizer/inc/totalpress-footer-section.php:31
+#: assets/customizer/inc/totalpress-footer-widgets-section.php:18
+#: assets/customizer/inc/totalpress-footer-widgets-section.php:31
+#: assets/customizer/inc/totalpress-header-section.php:18
+#: assets/customizer/inc/totalpress-header-section.php:31
+#: assets/customizer/inc/totalpress-navigation-section.php:18
+#: assets/customizer/inc/totalpress-navigation-section.php:31
+#: assets/customizer/inc/totalpress-post-section.php:19
+#: assets/customizer/inc/totalpress-post-section.php:32
+#: assets/customizer/inc/totalpress-top-sidebar-section.php:19
+#: assets/customizer/inc/totalpress-top-sidebar-section.php:33
+msgid "Contain to Grid"
+msgstr ""
+
+#: assets/customizer/inc/totalpress-footer-section.php:19
+#: assets/customizer/inc/totalpress-footer-section.php:32
+#: assets/customizer/inc/totalpress-footer-widgets-section.php:19
+#: assets/customizer/inc/totalpress-footer-widgets-section.php:32
+#: assets/customizer/inc/totalpress-header-section.php:19
+#: assets/customizer/inc/totalpress-header-section.php:32
+#: assets/customizer/inc/totalpress-navigation-section.php:19
+#: assets/customizer/inc/totalpress-navigation-section.php:32
+#: assets/customizer/inc/totalpress-post-section.php:20
+#: assets/customizer/inc/totalpress-post-section.php:33
+#: assets/customizer/inc/totalpress-top-sidebar-section.php:20
+#: assets/customizer/inc/totalpress-top-sidebar-section.php:34
+msgid "Full Width"
+msgstr ""
+
+#: assets/customizer/inc/totalpress-footer-section.php:25
+#: assets/customizer/inc/totalpress-footer-widgets-section.php:25
+#: assets/customizer/inc/totalpress-navigation-section.php:25
+#: assets/customizer/inc/totalpress-top-sidebar-section.php:26
+msgid "Inner Container Width"
+msgstr ""
+
+#: assets/customizer/inc/totalpress-footer-section.php:26
+msgid ""
+"Select &quot;Contain to Grid&quot; to keep the inner footer container within "
+"the grid container. Select &quot;Full Width&quot; to have the inside footer "
+"conatiner expand 100% to fill the screen. Default is &quot;Contain to "
+"Grid&quot;"
+msgstr ""
+
+#: assets/customizer/inc/totalpress-footer-widgets-section.php:13
+msgid ""
+"Select &quot;Contain to Grid&quot; to keep the main footer widgets container "
+"within the grid container. Select &quot;Full Width&quot; have the main "
+"header expand 100% to fill the screen. Default is &quot;Contain to Grid&quot;"
+msgstr ""
+
+#: assets/customizer/inc/totalpress-footer-widgets-section.php:26
+msgid ""
+"Select &quot;Contain to Grid&quot; to keep the inner footer widgets "
+"container within the grid container. Select &quot;Full Width&quot; to have "
+"the inside header expand 100% to fill the screen. Default is &quot;Contain "
+"to Grid&quot;"
+msgstr ""
+
+#: assets/customizer/inc/totalpress-header-section.php:12
+msgid "Main Header Width"
+msgstr ""
+
+#: assets/customizer/inc/totalpress-header-section.php:13
+msgid ""
+"Select &quot;Contain to Grid&quot; to keep the main header container within "
+"the grid container. Select &quot;Full Width&quot; have the main header "
+"container expand 100% to fill the screen. Default is &quot;Contain to "
+"Grid&quot;"
+msgstr ""
+
+#: assets/customizer/inc/totalpress-header-section.php:25
+msgid "Inner Header Width"
+msgstr ""
+
+#: assets/customizer/inc/totalpress-header-section.php:26
+msgid ""
+"Select &quot;Contain to Grid&quot; to keep the inner header container within "
+"the grid container. Select &quot;Full Width&quot; to have the inside header "
+"container expand 100% to fill the screen. Default is &quot;Contain to "
+"Grid&quot;"
+msgstr ""
+
+#: assets/customizer/inc/totalpress-header-section.php:39
+msgid "Header Alignment"
+msgstr ""
+
+#: assets/customizer/inc/totalpress-header-section.php:40
+msgid "Set the alignment of the Header area."
+msgstr ""
+
+#: assets/customizer/inc/totalpress-header-section.php:45
+#: assets/customizer/inc/totalpress-header-sidebar-section.php:19
+#: assets/customizer/inc/totalpress-navigation-section.php:73
+#: assets/customizer/inc/totalpress-top-sidebar-section.php:47
+msgid "Left"
+msgstr ""
+
+#: assets/customizer/inc/totalpress-header-section.php:46
+#: assets/customizer/inc/totalpress-header-sidebar-section.php:20
+#: assets/customizer/inc/totalpress-navigation-section.php:74
+#: assets/customizer/inc/totalpress-top-sidebar-section.php:48
+msgid "Center"
+msgstr ""
+
+#: assets/customizer/inc/totalpress-header-section.php:47
+#: assets/customizer/inc/totalpress-header-sidebar-section.php:21
+#: assets/customizer/inc/totalpress-navigation-section.php:75
+#: assets/customizer/inc/totalpress-top-sidebar-section.php:49
+msgid "Right"
+msgstr ""
+
+#: assets/customizer/inc/totalpress-header-sidebar-section.php:13
+#: assets/customizer/inc/totalpress-top-sidebar-section.php:40
+msgid "Alignment"
+msgstr ""
+
+#: assets/customizer/inc/totalpress-header-sidebar-section.php:14
+msgid "Set the alignment of the Header sidebar. Default is Right."
+msgstr ""
+
+#: assets/customizer/inc/totalpress-layout-section.php:7
+msgid "Theme Layout"
+msgstr ""
+
+#: assets/customizer/inc/totalpress-layout-section.php:8
+msgid ""
+"Set initial layout for the theme. Will also affect the layout of posts, "
+"pages, archives, categories etc."
+msgstr ""
+
+#: assets/customizer/inc/totalpress-layout-section.php:13
+msgid "Content | Sidebar"
+msgstr ""
+
+#: assets/customizer/inc/totalpress-layout-section.php:14
+msgid "Sidebar | Content"
+msgstr ""
+
+#: assets/customizer/inc/totalpress-layout-section.php:15
+msgid "Content | Sidebar | Sidebar"
+msgstr ""
+
+#: assets/customizer/inc/totalpress-layout-section.php:16
+msgid "Sidebar | Sidebar | Content"
+msgstr ""
+
+#: assets/customizer/inc/totalpress-layout-section.php:17
+msgid "Sidebar | Content | Sidebar"
+msgstr ""
+
+#: assets/customizer/inc/totalpress-layout-section.php:18
+msgid "No Sidebars (Full Width)"
+msgstr ""
+
+#: assets/customizer/inc/totalpress-layout-section.php:30
+msgid "Container Width"
+msgstr ""
+
+#: assets/customizer/inc/totalpress-layout-section.php:31
+msgid ""
+"Set the width of Foundations&#39; main grid container. Default is 1200px."
+msgstr ""
+
+#: assets/customizer/inc/totalpress-layout-section.php:47
+msgid "Container Layout"
+msgstr ""
+
+#: assets/customizer/inc/totalpress-layout-section.php:48
+msgid ""
+"Select \"Separate Containers\" to keep a space between all elements in the "
+"content area such as, articles, widgets, footer and so on. Select \"One "
+"Container\" to have no spaces between any of the elements."
+msgstr ""
+
+#: assets/customizer/inc/totalpress-layout-section.php:53
+msgid "Separate Containers"
+msgstr ""
+
+#: assets/customizer/inc/totalpress-layout-section.php:54
+msgid "One Container"
+msgstr ""
+
+#: assets/customizer/inc/totalpress-more-options.php:7
+msgid "View All TP Primo Options"
+msgstr ""
+
+#: assets/customizer/inc/totalpress-navigation-section.php:13
+msgid ""
+"Select &quot;Contain to Grid&quot; to keep the main menu container within "
+"the grid container. Select &quot;Full Width&quot; have the main menu "
+"container expand 100% to fill the screen. Default is &quot;Contain to "
+"Grid&quot;"
+msgstr ""
+
+#: assets/customizer/inc/totalpress-navigation-section.php:26
+msgid ""
+"Select &quot;Contain to Grid&quot; to keep the main menu contained within "
+"the grid container. Select &quot;Full Width&quot; to have the main menu "
+"expand 100% to fill the screen. Default is &quot;Contain to Grid&quot;"
+msgstr ""
+
+#: assets/customizer/inc/totalpress-navigation-section.php:38
+msgid "Menu Position"
+msgstr ""
+
+#: assets/customizer/inc/totalpress-navigation-section.php:39
+msgid "Select where you want to display the Main Menu."
+msgstr ""
+
+#: assets/customizer/inc/totalpress-navigation-section.php:59
+msgid "Bottom of Header"
+msgstr ""
+
+#: assets/customizer/inc/totalpress-navigation-section.php:60
+msgid "Top of Header"
+msgstr ""
+
+#: assets/customizer/inc/totalpress-navigation-section.php:66
+msgid "Menu Alignment"
+msgstr ""
+
+#: assets/customizer/inc/totalpress-navigation-section.php:67
+msgid "Set the alignment of links in the Main Menu."
+msgstr ""
+
+#: assets/customizer/inc/totalpress-post-section.php:5
+msgid "Post Layout"
+msgstr ""
+
+#: assets/customizer/inc/totalpress-post-section.php:13
+msgid "Post Main Content Container Width"
+msgstr ""
+
+#: assets/customizer/inc/totalpress-post-section.php:14
+msgid ""
+"Select &quot;Contain to Grid&quot; to keep the main post container within "
+"the grid container. Select &quot;Full Width&quot; have the main post "
+"container expand 100% to fill the screen. Default is &quot;Contain to "
+"Grid&quot;"
+msgstr ""
+
+#: assets/customizer/inc/totalpress-post-section.php:26
+msgid "Post Inner Content Container Width"
+msgstr ""
+
+#: assets/customizer/inc/totalpress-post-section.php:27
+msgid ""
+"Select &quot;Contain to Grid&quot; to keep the inner post container within "
+"the grid container. Select &quot;Full Width&quot; to have the inside post "
+"container expand 100% to fill the screen. Default is &quot;Contain to "
+"Grid&quot;"
+msgstr ""
+
+#: assets/customizer/inc/totalpress-post-section.php:37
+msgid "Blog Section"
+msgstr ""
+
+#: assets/customizer/inc/totalpress-post-section.php:45
+msgid "Post Display"
+msgstr ""
+
+#: assets/customizer/inc/totalpress-post-section.php:46
+msgid "Display the full content of each post or an excerpt of each post."
+msgstr ""
+
+#: assets/customizer/inc/totalpress-post-section.php:51
+msgid "Full"
+msgstr ""
+
+#: assets/customizer/inc/totalpress-post-section.php:52
+msgid "Excerpt"
+msgstr ""
+
+#: assets/customizer/inc/totalpress-top-sidebar-section.php:13
+msgid ""
+"Select &quot;Contain to Grid&quot; to keep the main Top Sidebar contained "
+"within the grid container. Select &quot;Full Width&quot; have the main "
+"header expand 100% to fill the screen. Default is &quot;Contain to Grid&quot;"
+msgstr ""
+
+#: assets/customizer/inc/totalpress-top-sidebar-section.php:27
+msgid ""
+"Select &quot;Contain to Grid&quot; to keep the inner Top Sidebar contained "
+"within the grid container. Select &quot;Full Width&quot; to have the inside "
+"header expand 100% to fill the screen. Default is &quot;Contain to Grid&quot;"
+msgstr ""
+
+#: assets/customizer/inc/totalpress-top-sidebar-section.php:41
+msgid "Set the alignment of the Top Sidebar area. Default is Right."
+msgstr ""
+
+#: assets/customizer/inc/totalpress-typography-section.php:4
+msgid "Typography"
+msgstr ""
+
+#: assets/customizer/inc/totalpress-typography-section.php:13
+msgid "Change the font family of your theme."
+msgstr ""
+
+#: assets/customizer/totalpress-customizer.php:84
+msgid "Hide Site Title"
+msgstr ""
+
+#: assets/customizer/totalpress-customizer.php:97
+msgid "Hide Site Tagline"
+msgstr ""
+
+#: assets/customizer/totalpress-customizer.php:111
+msgid "Get More Options"
+msgstr ""
+
+#: assets/customizer/totalpress-customizer.php:119
+msgid "General"
+msgstr ""
+
+#: assets/customizer/totalpress-customizer.php:126 functions.php:64
+msgid "Top Sidebar"
+msgstr ""
+
+#: assets/customizer/totalpress-customizer.php:133
+msgid "Header"
+msgstr ""
+
+#: assets/customizer/totalpress-customizer.php:140 functions.php:65
+msgid "Header Sidebar"
+msgstr ""
+
+#: assets/customizer/totalpress-customizer.php:147
+msgid "Navigation"
+msgstr ""
+
+#: assets/customizer/totalpress-customizer.php:154
+msgid "Content"
+msgstr ""
+
+#: assets/customizer/totalpress-customizer.php:161
+msgid "Posts"
+msgstr ""
+
+#: assets/customizer/totalpress-customizer.php:168
+msgid "Footer Widgets"
+msgstr ""
+
+#: assets/customizer/totalpress-customizer.php:175
+msgid "Footer"
+msgstr ""
+
+#: assets/customizer/totalpress-customizer.php:182
+#: assets/inc/totalpress-welcome.php:72
+msgid "TotalPress Documentation"
+msgstr ""
+
+#: assets/customizer/totalpress-customizer.php:187
+msgid "Extend TotalPress"
+msgstr ""
+
+#: assets/customizer/totalpress-customizer.php:198
+msgid "Pages"
+msgstr ""
+
+#: assets/customizer/totalpress-customizer.php:205 functions.php:66
+msgid "Right Sidebar"
+msgstr ""
+
+#: assets/customizer/totalpress-customizer.php:212 functions.php:67
+msgid "Left Sidebar"
+msgstr ""
+
+#: assets/customizer/totalpress-customizer.php:219
+msgid "Footer Sidebar"
+msgstr ""
+
+#: assets/customizer/totalpress-customizer.php:226
+msgid "Misc. Options"
+msgstr ""
+
+#: assets/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:327
+msgid "Install Required Plugins"
+msgstr ""
+
+#: assets/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:328
+msgid "Install Plugins"
+msgstr ""
+
+#: assets/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:330
+#, php-format
+msgid "Installing Plugin: %s"
+msgstr ""
+
+#: assets/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:332
+#, php-format
+msgid "Updating Plugin: %s"
+msgstr ""
+
+#: assets/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:333
+msgid "Something went wrong with the plugin API."
+msgstr ""
+
+#: assets/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:336
+#, php-format
+msgid "This theme requires the following plugin: %1$s."
+msgid_plural "This theme requires the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: assets/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:342
+#, php-format
+msgid "This theme recommends the following plugin: %1$s."
+msgid_plural "This theme recommends the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: assets/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:348
+#, php-format
+msgid ""
+"The following plugin needs to be updated to its latest version to ensure "
+"maximum compatibility with this theme: %1$s."
+msgid_plural ""
+"The following plugins need to be updated to their latest version to ensure "
+"maximum compatibility with this theme: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: assets/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:354
+#, php-format
+msgid "There is an update available for: %1$s."
+msgid_plural "There are updates available for the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: assets/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:360
+#, php-format
+msgid "The following required plugin is currently inactive: %1$s."
+msgid_plural "The following required plugins are currently inactive: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: assets/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:366
+#, php-format
+msgid "The following recommended plugin is currently inactive: %1$s."
+msgid_plural "The following recommended plugins are currently inactive: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: assets/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:371
+msgid "Begin installing plugin"
+msgid_plural "Begin installing plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: assets/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:376
+msgid "Begin updating plugin"
+msgid_plural "Begin updating plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: assets/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:381
+msgid "Begin activating plugin"
+msgid_plural "Begin activating plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: assets/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:385
+msgid "Return to Required Plugins Installer"
+msgstr ""
+
+#: assets/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:386
+#: assets/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:827
+#: assets/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:2533
+#: assets/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:3580
+msgid "Return to the Dashboard"
+msgstr ""
+
+#: assets/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:387
+#: assets/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:3159
+msgid "Plugin activated successfully."
+msgstr ""
+
+#: assets/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:388
+#: assets/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:2952
+msgid "The following plugin was activated successfully:"
+msgid_plural "The following plugins were activated successfully:"
+msgstr[0] ""
+msgstr[1] ""
+
+#: assets/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:390
+#, php-format
+msgid "No action taken. Plugin %1$s was already active."
+msgstr ""
+
+#: assets/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:392
+#, php-format
+msgid ""
+"Plugin not activated. A higher version of %s is needed for this theme. "
+"Please update the plugin."
+msgstr ""
+
+#: assets/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:394
+#, php-format
+msgid "All plugins installed and activated successfully. %1$s"
+msgstr ""
+
+#: assets/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:395
+msgid "Dismiss this notice"
+msgstr ""
+
+#: assets/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:396
+msgid ""
+"There are one or more required or recommended plugins to install, update or "
+"activate."
+msgstr ""
+
+#: assets/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:397
+msgid "Please contact the administrator of this site for help."
+msgstr ""
+
+#: assets/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:522
+msgid "This plugin needs to be updated to be compatible with your theme."
+msgstr ""
+
+#: assets/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:523
+msgid "Update Required"
+msgstr ""
+
+#: assets/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:934
+msgid ""
+"The remote plugin package does not contain a folder with the desired slug "
+"and renaming did not work."
+msgstr ""
+
+#: assets/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:934
+#: assets/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:937
+msgid ""
+"Please contact the plugin provider and ask them to package their plugin "
+"according to the WordPress guidelines."
+msgstr ""
+
+#: assets/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:937
+msgid ""
+"The remote plugin package consists of more than one file, but the files are "
+"not packaged in a folder."
+msgstr ""
+
+#: assets/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:1121
+#: assets/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:2948
+msgctxt "plugin A *and* plugin B"
+msgid "and"
+msgstr ""
+
+#: assets/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:1982
+#, php-format
+msgid "TGMPA v%s"
+msgstr ""
+
+#: assets/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:2273
+msgid "Required"
+msgstr ""
+
+#: assets/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:2276
+msgid "Recommended"
+msgstr ""
+
+#: assets/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:2292
+msgid "WordPress Repository"
+msgstr ""
+
+#: assets/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:2295
+msgid "External Source"
+msgstr ""
+
+#: assets/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:2298
+msgid "Pre-Packaged"
+msgstr ""
+
+#: assets/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:2315
+msgid "Not Installed"
+msgstr ""
+
+#: assets/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:2319
+msgid "Installed But Not Activated"
+msgstr ""
+
+#: assets/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:2321
+msgid "Active"
+msgstr ""
+
+#: assets/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:2327
+msgid "Required Update not Available"
+msgstr ""
+
+#: assets/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:2330
+msgid "Requires Update"
+msgstr ""
+
+#: assets/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:2333
+msgid "Update recommended"
+msgstr ""
+
+#: assets/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:2342
+#, php-format
+msgctxt "Install/Update Status"
+msgid "%1$s, %2$s"
+msgstr ""
+
+#: assets/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:2388
+#, php-format
+msgctxt "plugins"
+msgid "All <span class=\"count\">(%s)</span>"
+msgid_plural "All <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: assets/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:2392
+#, php-format
+msgid "To Install <span class=\"count\">(%s)</span>"
+msgid_plural "To Install <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: assets/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:2396
+#, php-format
+msgid "Update Available <span class=\"count\">(%s)</span>"
+msgid_plural "Update Available <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: assets/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:2400
+#, php-format
+msgid "To Activate <span class=\"count\">(%s)</span>"
+msgid_plural "To Activate <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: assets/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:2482
+msgctxt "as in: \"version nr unknown\""
+msgid "unknown"
+msgstr ""
+
+#: assets/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:2490
+msgid "Installed version:"
+msgstr ""
+
+#: assets/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:2498
+msgid "Minimum required version:"
+msgstr ""
+
+#: assets/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:2510
+msgid "Available version:"
+msgstr ""
+
+#: assets/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:2533
+msgid "No plugins to install, update or activate."
+msgstr ""
+
+#: assets/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:2547
+msgid "Plugin"
+msgstr ""
+
+#: assets/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:2548
+msgid "Source"
+msgstr ""
+
+#: assets/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:2549
+msgid "Type"
+msgstr ""
+
+#: assets/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:2553
+msgid "Version"
+msgstr ""
+
+#: assets/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:2554
+msgid "Status"
+msgstr ""
+
+#: assets/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:2603
+#, php-format
+msgid "Install %2$s"
+msgstr ""
+
+#: assets/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:2608
+#, php-format
+msgid "Update %2$s"
+msgstr ""
+
+#: assets/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:2614
+#, php-format
+msgid "Activate %2$s"
+msgstr ""
+
+#: assets/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:2684
+msgid "Upgrade message from the plugin author:"
+msgstr ""
+
+#: assets/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:2717
+msgid "Install"
+msgstr ""
+
+#: assets/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:2723
+msgid "Update"
+msgstr ""
+
+#: assets/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:2726
+msgid "Activate"
+msgstr ""
+
+#: assets/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:2757
+msgid "No plugins were selected to be installed. No action taken."
+msgstr ""
+
+#: assets/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:2759
+msgid "No plugins were selected to be updated. No action taken."
+msgstr ""
+
+#: assets/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:2800
+msgid "No plugins are available to be installed at this time."
+msgstr ""
+
+#: assets/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:2802
+msgid "No plugins are available to be updated at this time."
+msgstr ""
+
+#: assets/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:2908
+msgid "No plugins were selected to be activated. No action taken."
+msgstr ""
+
+#: assets/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:2934
+msgid "No plugins are available to be activated at this time."
+msgstr ""
+
+#: assets/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:3158
+msgid "Plugin activation failed."
+msgstr ""
+
+#: assets/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:3498
+#, php-format
+msgid "Updating Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: assets/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:3501
+#, php-format
+msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
+msgstr ""
+
+#: assets/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:3503
+#, php-format
+msgid "The installation of %1$s failed."
+msgstr ""
+
+#: assets/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:3507
+msgid ""
+"The installation and activation process is starting. This process may take a "
+"while on some hosts, so please be patient."
+msgstr ""
+
+#: assets/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:3509
+#, php-format
+msgid "%1$s installed and activated successfully."
+msgstr ""
+
+#: assets/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:3509
+#: assets/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:3517
+msgid "Show Details"
+msgstr ""
+
+#: assets/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:3509
+#: assets/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:3517
+msgid "Hide Details"
+msgstr ""
+
+#: assets/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:3510
+msgid "All installations and activations have been completed."
+msgstr ""
+
+#: assets/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:3512
+#, php-format
+msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: assets/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:3515
+msgid ""
+"The installation process is starting. This process may take a while on some "
+"hosts, so please be patient."
+msgstr ""
+
+#: assets/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:3517
+#, php-format
+msgid "%1$s installed successfully."
+msgstr ""
+
+#: assets/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:3518
+msgid "All installations have been completed."
+msgstr ""
+
+#: assets/inc/tgm-plugin-activation/class-tgm-plugin-activation.php:3520
+#, php-format
+msgid "Installing Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: assets/inc/totalpress-extras.php:217
+msgid "Edit Page"
+msgstr ""
+
+#: assets/inc/totalpress-extras.php:255
+msgid "by"
+msgstr ""
+
+#: assets/inc/totalpress-extras.php:258
+#, php-format
+msgid "View all posts by %s"
+msgstr ""
+
+#: assets/inc/totalpress-extras.php:280 assets/inc/totalpress-extras.php:287
+msgctxt "Used between list items, there is a space after the comma."
+msgid ", "
+msgstr ""
+
+#: assets/inc/totalpress-extras.php:283
+msgctxt "Used before category names."
+msgid "Categories"
+msgstr ""
+
+#: assets/inc/totalpress-extras.php:290
+msgctxt "Used before tag names."
+msgid "Tags"
+msgstr ""
+
+#: assets/inc/totalpress-extras.php:296
+msgid "Leave a comment"
+msgstr ""
+
+#: assets/inc/totalpress-extras.php:296
+msgid "1 Comment"
+msgstr ""
+
+#: assets/inc/totalpress-extras.php:296
+msgid "% Comments"
+msgstr ""
+
+#: assets/inc/totalpress-extras.php:313
+msgid "Pingback:"
+msgstr ""
+
+#: assets/inc/totalpress-extras.php:313 assets/inc/totalpress-extras.php:331
+msgid "Edit"
+msgstr ""
+
+#: assets/inc/totalpress-extras.php:328
+#, php-format
+msgid "%1$s at %2$s"
+msgstr ""
+
+#: assets/inc/totalpress-extras.php:342
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: assets/inc/totalpress-extras.php:361
+msgid "Post Navigation"
+msgstr ""
+
+#: assets/inc/totalpress-extras.php:362
+msgid "Older Posts"
+msgstr ""
+
+#: assets/inc/totalpress-extras.php:363
+msgid "Newer Posts"
+msgstr ""
+
+#: assets/inc/totalpress-functions.php:21
+msgid "Skip to content"
+msgstr ""
+
+#: assets/inc/totalpress-functions.php:134
+msgid "Menu"
+msgstr ""
+
+#: assets/inc/totalpress-functions.php:278
+#: assets/inc/totalpress-functions.php:297
+msgid "Pages:"
+msgstr ""
+
+#: assets/inc/totalpress-functions.php:356
+msgid "Sorry! Nothing was found."
+msgstr ""
+
+#: assets/inc/totalpress-functions.php:359
+msgid ""
+"Try doing another search, making sure that any spelling, cApitALiZaTiOn, and "
+"punctuation are correct."
+msgstr ""
+
+#: assets/inc/totalpress-functions.php:381
+#, php-format
+msgid "Search Results for: %s"
+msgstr ""
+
+#: assets/inc/totalpress-functions.php:486
+#: assets/inc/totalpress-functions.php:487
+msgid "Search for:"
+msgstr ""
+
+#: assets/inc/totalpress-functions.php:487
+msgctxt "placeholder"
+msgid "Search &hellip;"
+msgstr ""
+
+#: assets/inc/totalpress-functions.php:488
+msgctxt "submit button"
+msgid "Search"
+msgstr ""
+
+#. Theme Name of the plugin/theme
+#: assets/inc/totalpress-functions.php:596
+msgid "TotalPress"
+msgstr ""
+
+#: assets/inc/totalpress-functions.php:598
+msgid "WordPress"
+msgstr ""
+
+#: assets/inc/totalpress-metaboxes.php:9
+msgid "Hide Post/Page Elements"
+msgstr ""
+
+#: assets/inc/totalpress-metaboxes.php:18
+msgid "Hide Post/Page Title"
+msgstr ""
+
+#: assets/inc/totalpress-metaboxes.php:31
+msgid "Hide Footer Widgets"
+msgstr ""
+
+#: assets/inc/totalpress-metaboxes.php:40
+msgid "Hide Footer Widget One"
+msgstr ""
+
+#: assets/inc/totalpress-metaboxes.php:45
+msgid "Hide Footer Widget Two"
+msgstr ""
+
+#: assets/inc/totalpress-metaboxes.php:50
+msgid "Hide Footer Widget Three"
+msgstr ""
+
+#: assets/inc/totalpress-metaboxes.php:55
+msgid "Hide Footer Widget Four"
+msgstr ""
+
+#: assets/inc/totalpress-metaboxes.php:60
+msgid "Hide Footer Widget Five"
+msgstr ""
+
+#: assets/inc/totalpress-metaboxes.php:73
+msgid "Page Builder Options"
+msgstr ""
+
+#: assets/inc/totalpress-metaboxes.php:82
+msgid "Remove Content Area Padding"
+msgstr ""
+
+#: assets/inc/totalpress-welcome.php:13 assets/inc/totalpress-welcome.php:14
+msgid "About TotalPress"
+msgstr ""
+
+#: assets/inc/totalpress-welcome.php:23
+#, php-format
+msgid "Thanks for choosing <strong>%1$s</strong>! %2$s"
+msgstr ""
+
+#: assets/inc/totalpress-welcome.php:23
+msgid "Get Started with TotalPress"
+msgstr ""
+
+#: assets/inc/totalpress-welcome.php:48
+#, php-format
+msgid "Welcome to %s %1s"
+msgstr ""
+
+#: assets/inc/totalpress-welcome.php:50
+msgid ""
+"I&#39;m TotalPress. I have lots of hooks and filters, 10 widget areas and 6 "
+"different sidebar page templates. I use the Kirki plugin for the theme "
+"customizer and the Meta Box plugin for metaboxes. Did I mention that I work "
+"really well with page builders like Elementor and Header Footer Elementor. "
+"What are you waiting for? Let&#39;s get started."
+msgstr ""
+
+#: assets/inc/totalpress-welcome.php:54
+msgid "Get Started"
+msgstr ""
+
+#: assets/inc/totalpress-welcome.php:55
+msgid "Support"
+msgstr ""
+
+#: assets/inc/totalpress-welcome.php:56
+msgid "Go AWESOME with TP Primo"
+msgstr ""
+
+#: assets/inc/totalpress-welcome.php:65
+msgid "Theme Customizer"
+msgstr ""
+
+#: assets/inc/totalpress-welcome.php:66
+#, php-format
+msgid ""
+"%s uses the Theme Customizer for all theme settings. Click \"Customize "
+"TotalPress\" to start personalizing your site."
+msgstr ""
+
+#: assets/inc/totalpress-welcome.php:67
+msgid "Customize TotalPress"
+msgstr ""
+
+#: assets/inc/totalpress-welcome.php:70
+msgid "Theme Documentation"
+msgstr ""
+
+#: assets/inc/totalpress-welcome.php:71
+msgid ""
+"Need more details? Please check our full documentation for detailed "
+"information on how to use TotalPress."
+msgstr ""
+
+#: assets/inc/totalpress-welcome.php:75
+msgid "Having Trouble, Need some help?"
+msgstr ""
+
+#: assets/inc/totalpress-welcome.php:76
+#, php-format
+msgid "Support for %s is provided through the WordPress Support Forums."
+msgstr ""
+
+#: assets/inc/totalpress-welcome.php:77
+msgid "TotalPress Support Forums"
+msgstr ""
+
+#: assets/inc/totalpress-welcome.php:82
+msgid "What do you think of TotalPress?"
+msgstr ""
+
+#: assets/inc/totalpress-welcome.php:83
+msgid ""
+"Please <a target=\"_blank\" href=\"https://wordpress.org/support/theme/"
+"totalpress/reviews/\">rate and review TotalPress</a> on WordPress.org."
+msgstr ""
+
+#: comments.php:16
+#, php-format
+msgctxt "comments title"
+msgid "One thought on &ldquo;%s&rdquo;"
+msgstr ""
+
+#: comments.php:23
+#, php-format
+msgctxt "comments title"
+msgid "%1$s thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] ""
+msgstr[1] ""
+
+#: comments.php:39 comments.php:52
+msgid "Comment navigation"
+msgstr ""
+
+#: comments.php:40 comments.php:53
+msgid "&laquo; Older Comments"
+msgstr ""
+
+#: comments.php:41 comments.php:54
+msgid "Newer Comments &raquo;"
+msgstr ""
+
+#: comments.php:60
+msgid "Comments are closed."
+msgstr ""
+
+#: comments.php:66
+msgid "Name"
+msgstr ""
+
+#: comments.php:67
+msgid "Email"
+msgstr ""
+
+#: comments.php:68
+msgid "Website"
+msgstr ""
+
+#: comments.php:72
+msgid ""
+"Save my name, email, and website in this browser for the next time I comment."
+msgstr ""
+
+#: comments.php:76
+msgid "Comment"
+msgstr ""
+
+#: comments.php:81
+msgid "Leave a Comment"
+msgstr ""
+
+#: comments.php:82
+msgid "Post Comment"
+msgstr ""
+
+#: functions.php:24
+msgid "Main Menu"
+msgstr ""
+
+#: functions.php:68
+msgid "Footer Widget Area One"
+msgstr ""
+
+#: functions.php:69
+msgid "Footer Widget Area Two"
+msgstr ""
+
+#: functions.php:70
+msgid "Footer Widget Area Three"
+msgstr ""
+
+#: functions.php:71
+msgid "Footer Widget Area Four"
+msgstr ""
+
+#: functions.php:72
+msgid "Footer Widget Area Five"
+msgstr ""
+
+#: functions.php:73
+msgid "Inside Footer Sidebar"
+msgstr ""
+
+#: functions.php:93
+#, php-format
+msgid "Read more %s"
+msgstr ""
+
+#: template-parts/post/content-none.php:6
+#, php-format
+msgid "Nothing found for: %s"
+msgstr ""
+
+#: template-parts/post/content-none.php:10
+#, php-format
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: template-parts/post/content-none.php:12
+msgid ""
+"Try doing another search, making sure any spelling, cApitALiZaTiOn, and "
+"punctuation are correct."
+msgstr ""
+
+#: template-parts/post/content-none.php:15
+msgid ""
+"Sorry, we can&rsquo;t find what you&rsquo;re looking for. Maybe trying "
+"another search will help."
+msgstr ""
+
+#. Theme URI of the plugin/theme
+msgid "https://themeawesome.com/totalpress-wordpress-foundation-theme/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"My name is TotalPress! I'm Based off _s (Underscores) and built with Zurb's "
+"Foundation for Sites, so I'm responsive and look good on any device. I'm "
+"light weight and super fast <strong>(200kb compressed!)</strong>. I have "
+"lots of hooks and filters, 10 widget areas and 6 different sidebar page "
+"templates. I use the Kirki plugin for the theme customizer and the Meta Box "
+"plugin for metaboxes. Did I mention that I work really well with page "
+"builders like Elementor and Header Footer Elementor. Download me today and "
+"take me for a spin."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "ThemeAWESOME"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "https://themeawesome.com/"
+msgstr ""

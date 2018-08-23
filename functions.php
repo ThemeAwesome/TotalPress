@@ -8,7 +8,7 @@ if ( ! function_exists('setup_totalpress') ) :
 		if ( ! isset( $content_width ) ) {
 			$content_width = 865; /* pixels */
 		}
-		load_theme_textdomain('totalpress');
+		load_theme_textdomain('totalpress',get_template_directory() . '/language' );
 		add_theme_support('automatic-feed-links');
 		add_theme_support('post-thumbnails');
 		set_post_thumbnail_size(785,9999);
@@ -18,10 +18,10 @@ if ( ! function_exists('setup_totalpress') ) :
 		add_theme_support('title-tag');
 		add_theme_support('html5', array('comment-form','comment-list','gallery','caption',));
 		add_theme_support('customize-selective-refresh-widgets');
-		add_theme_support('gutenberg', array('wide-images' => true,'colors' => array('#b02329','#3f3f3f',),));
+		add_theme_support('align-wide');
 		add_editor_style('assets/css/totalpress-editor.css');
 		add_theme_support('header-footer-elementor');
-		register_nav_menus( array('primary' => esc_attr('Main Menu','totalpress'),));
+		register_nav_menus( array('primary' => __('Main Menu','totalpress'),));
 		add_theme_support('custom-logo', array('width' => 350,'height' => 70,'flex-width' => true,'flex-height' => true,));
 		add_theme_support('custom-background',apply_filters('totalpress_custom_background_args', array(
 			'default-color' => 'efefef',)));
@@ -61,16 +61,16 @@ endif;
 if ( ! function_exists('totalpress_widgets_init')) :
 	function totalpress_widgets_init() {	
 		$widgets = array(
-			'top-sidebar' => esc_attr('Top Sidebar','totalpress'),
-			'header-sidebar' => esc_attr('Header Sidebar','totalpress'),
-			'right-sidebar' => esc_attr('Right Sidebar','totalpress'),
-			'left-sidebar' => esc_attr('Left Sidebar','totalpress'),
-			'footer-1' => esc_attr('Footer Widget Area One','totalpress'),
-			'footer-2' => esc_attr('Footer Widget Area Two','totalpress'),
-			'footer-3' => esc_attr('Footer Widget Area Three','totalpress'),
-			'footer-4' => esc_attr('Footer Widget Area Four','totalpress'),
-			'footer-5' => esc_attr('Footer Widget Area Five','totalpress'),
-			'footer-sidebar' => esc_attr('Inside Footer Sidebar','totalpress'),
+			'top-sidebar' => __('Top Sidebar','totalpress'),
+			'header-sidebar' => __('Header Sidebar','totalpress'),
+			'right-sidebar' => __('Right Sidebar','totalpress'),
+			'left-sidebar' => __('Left Sidebar','totalpress'),
+			'footer-1' => __('Footer Widget Area One','totalpress'),
+			'footer-2' => __('Footer Widget Area Two','totalpress'),
+			'footer-3' => __('Footer Widget Area Three','totalpress'),
+			'footer-4' => __('Footer Widget Area Four','totalpress'),
+			'footer-5' => __('Footer Widget Area Five','totalpress'),
+			'footer-sidebar' => __('Inside Footer Sidebar','totalpress'),
 		);
 		foreach ( $widgets as $id => $name ) {
 			register_sidebar( array(

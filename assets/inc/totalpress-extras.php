@@ -5,7 +5,7 @@ function totalpress_category_transient_flusher() {
 	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
 		return;
 	}
-	// Like, scram kid yah bother me!
+	// Scram kid yah bother me!
 	delete_transient('totalpress_categories');
 }
 add_action('edit_category','totalpress_category_transient_flusher');
@@ -75,10 +75,10 @@ if ( ! function_exists('totalpress_layout_classes')) {
 			$classes[] = 'nav-container-full';
 		if (get_theme_mod('totalpress_inner_nav_container') == 'full')
 			$classes[] = 'top-bar-full';
-		if (get_theme_mod('totalpress_main_content_container') == 'full')
-			$classes[] = 'site-content-full';
-		if (get_theme_mod('totalpress_inner_content_container') == 'full')
-			$classes[] = 'site-content-inner-full';
+		if (get_theme_mod('totalpress_post_content_container') == 'full')
+			$classes[] = 'post-content-full';
+		if (get_theme_mod('totalpress_post_inner_content_container') == 'full')
+			$classes[] = 'post-inner-content-full';
 		if (get_theme_mod('totalpress_footer_widgets_main_container') == 'full')
 			$classes[] = 'footer-widgets-full';
 		if (get_theme_mod('totalpress_inner_footer_widgets_container') == 'full')
@@ -214,7 +214,7 @@ if ( ! function_exists('totalpress_build_entry_page_footer')) :
 		if ( $show_page_edit ) {
 			echo apply_filters('totalpress_footer_entry_output', sprintf(
 				'<footer class="entry-footer">%1$s</footer><!-- .entry-footer -->',
-				edit_post_link( esc_attr('Edit Page','totalpress'),'<span class="edit-link">','</span>')
+				edit_post_link( __('Edit Page','totalpress'),'<span class="edit-link">','</span>')
 			));
 		}
 	}
@@ -310,7 +310,7 @@ function totalpress_comments( $comment, $args, $depth ) {
 	if ( 'pingback' == $comment->comment_type || 'trackback' == $comment->comment_type ) : ?>
 	<li id="comment-<?php comment_ID(); ?>" <?php comment_class(); ?>>
 		<div class="comment-body">
-			<?php esc_attr('Pingback:','totalpress'); ?> <?php comment_author_link(); ?> <?php edit_comment_link( esc_attr('Edit','totalpress'),
+			<?php __('Pingback:','totalpress'); ?> <?php comment_author_link(); ?> <?php edit_comment_link( __('Edit','totalpress'),
 			'<span class="edit-link">','</span>'); ?>
 		</div>
 	<?php else : ?>
@@ -325,10 +325,10 @@ function totalpress_comments( $comment, $args, $depth ) {
 					<div class="entry-meta comment-metadata">
 						<a href="<?php echo esc_url(get_comment_link( $comment->comment_ID)); ?>">
 							<time datetime="<?php comment_time( 'c' ); ?>">
-								<?php printf( esc_attr('%1$s at %2$s','1: date,2: time','totalpress'),get_comment_date(),get_comment_time()); ?>
+								<?php printf( __('%1$s at %2$s','1: date,2: time','totalpress'),get_comment_date(),get_comment_time()); ?>
 							</time>
 						</a>
-						<?php edit_comment_link( esc_attr('Edit','totalpress'),'<span class="edit-link">','</span>'); ?>
+						<?php edit_comment_link( __('Edit','totalpress'),'<span class="edit-link">','</span>'); ?>
 						<?php comment_reply_link( array_merge( $args, array(
 							'add_below' => 'div-comment',
 							'depth'     => $depth,
@@ -339,7 +339,7 @@ function totalpress_comments( $comment, $args, $depth ) {
 					</div><!-- .comment-metadata -->
 				</div><!-- .comment-author-info -->
 				<?php if ( '0' == $comment->comment_approved ) : ?>
-				<p class="comment-awaiting-moderation"><?php esc_attr('Your comment is awaiting moderation.','totalpress'); ?></p>
+				<p class="comment-awaiting-moderation"><?php __('Your comment is awaiting moderation.','totalpress'); ?></p>
 				<?php endif; ?>
 			</footer><!-- .comment-meta -->
 			<div class="comment-content">
@@ -358,9 +358,9 @@ if ( ! function_exists( 'totalpress_content_nav' ) ) :
 	$html_id = esc_attr( $html_id );
 	if ( $wp_query->max_num_pages > 1) : ?>
 		<nav id="<?php echo $html_id; ?>" class="navigation" role="navigation">
-			<h3 class="assistive-text"><?php esc_attr('Post Navigation','totalpress'); ?></h3>
-			<div class="pagination-previous alignleft"><?php next_posts_link( esc_attr('Older Posts','totalpress')); ?></div>
-			<div class="pagination-next alignright"><?php previous_posts_link( esc_attr('Newer Posts','totalpress')); ?></div>
+			<h3 class="assistive-text"><?php __('Post Navigation','totalpress'); ?></h3>
+			<div class="pagination-previous alignleft"><?php next_posts_link( __('Older Posts','totalpress')); ?></div>
+			<div class="pagination-next alignright"><?php previous_posts_link( __('Newer Posts','totalpress')); ?></div>
 		</nav><!-- #<?php echo $html_id; ?> .navigation -->
 	<?php endif;
 }
