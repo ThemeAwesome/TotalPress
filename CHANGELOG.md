@@ -1,5 +1,12 @@
 # Changelog
-### [1.0.28] - 2018-08-23
+### [1.0.29] - 2018-08-23
+###### `Fixed`
+* Fixed an issue with the translation markup. There were a few `esc_attr_e` that were not needed and were throwing errors. This caused version `1.0.28` not to be accepted. Plus I should have tested the theme againt the `Theme Check Plugin`, which I normally do but didn't do it this time.
+
+###### `Changed`
+* Redid the `.po` file to make the translation strings were correct.
+
+##### [1.0.28] - 2018-08-23
 ###### `Fixed`
 * An issue where the theme support for `Gutenberg` had changed. If you used the `Gutenberg` plugin a bunch of errors would be displayed.
 * An issue with the `site-branding` portion of the header. If no `site title` was used or if no `site-description` was used and the `header-sidebar` was active, then the `header-sidebar` would reposition under the `site-branding` div.
@@ -289,6 +296,7 @@ Removed some of the features from the `setup_totalpress` function in `functions.
 ###### [1.0.0] 2017-11-02
 * Initial submission to the theme review team on 11/02/2017
 
+[1.0.29]: https://github.com/themeawesome/totalpress/compare/1.0.28...1.0.29
 [1.0.28]: https://github.com/themeawesome/totalpress/compare/1.0.27...1.0.28
 [1.0.27]: https://github.com/themeawesome/totalpress/compare/1.0.26...1.0.27
 [1.0.26]: https://github.com/themeawesome/totalpress/compare/1.0.25...1.0.26

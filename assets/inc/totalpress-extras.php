@@ -325,7 +325,7 @@ function totalpress_comments( $comment, $args, $depth ) {
 					<div class="entry-meta comment-metadata">
 						<a href="<?php echo esc_url(get_comment_link( $comment->comment_ID)); ?>">
 							<time datetime="<?php comment_time( 'c' ); ?>">
-								<?php printf( __('%1$s at %2$s','1: date,2: time','totalpress'),get_comment_date(),get_comment_time()); ?>
+								<?php printf( esc_attr('%1$s at %2$s','1: date,2: time','totalpress'),get_comment_date(),get_comment_time()); ?>
 							</time>
 						</a>
 						<?php edit_comment_link( __('Edit','totalpress'),'<span class="edit-link">','</span>'); ?>

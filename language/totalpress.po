@@ -2,16 +2,16 @@
 # This file is distributed under the same license as the PACKAGE package.
 msgid ""
 msgstr ""
-"Project-Id-Version: TotalPress\n"
-"POT-Creation-Date: 2018-08-23 06:21-0700\n"
-"PO-Revision-Date: 2018-08-23 06:21-0700\n"
+"Project-Id-Version: TotalPress 1.0.29\n"
+"POT-Creation-Date: 2018-08-23 08:54-0700\n"
+"PO-Revision-Date: 2018-08-23 08:53-0700\n"
 "Last-Translator: Thomas E. Vasquez <tsquez@gmail.com>\n"
 "Language-Team: ThemeAwesome.com <tsquez@gmail.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 1.8.12\n"
-"X-Poedit-Basepath: .\n"
+"X-Poedit-Basepath: ..\n"
 "X-Poedit-WPHeader: style.css\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
@@ -933,11 +933,6 @@ msgstr ""
 msgid "Edit"
 msgstr ""
 
-#: assets/inc/totalpress-extras.php:328
-#, php-format
-msgid "%1$s at %2$s"
-msgstr ""
-
 #: assets/inc/totalpress-extras.php:342
 msgid "Your comment is awaiting moderation."
 msgstr ""
@@ -983,13 +978,17 @@ msgid "Search Results for: %s"
 msgstr ""
 
 #: assets/inc/totalpress-functions.php:486
-#: assets/inc/totalpress-functions.php:487
+msgctxt "label"
 msgid "Search for:"
 msgstr ""
 
 #: assets/inc/totalpress-functions.php:487
 msgctxt "placeholder"
 msgid "Search &hellip;"
+msgstr ""
+
+#: assets/inc/totalpress-functions.php:487
+msgid "Search for:"
 msgstr ""
 
 #: assets/inc/totalpress-functions.php:488
@@ -1256,7 +1255,7 @@ msgstr ""
 msgid ""
 "My name is TotalPress! I'm Based off _s (Underscores) and built with Zurb's "
 "Foundation for Sites, so I'm responsive and look good on any device. I'm "
-"light weight and super fast <strong>(200kb compressed!)</strong>. I have "
+"light weight and super fast <strong>(240kb compressed!)</strong>. I have "
 "lots of hooks and filters, 10 widget areas and 6 different sidebar page "
 "templates. I use the Kirki plugin for the theme customizer and the Meta Box "
 "plugin for metaboxes. Did I mention that I work really well with page "

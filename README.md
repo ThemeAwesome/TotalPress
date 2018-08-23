@@ -7,13 +7,13 @@
 **Donate:** [TotalPress Project](https://www.paypal.me/themeawesome)<br />
 **Requires at least:** 4.9.8<br />
 **Tested up to:** 4.9.8<br />
-**Stable tag:** 1.0.28<br />
+**Stable tag:** 1.0.29<br />
 **License:** GNU General Public License v3.0<br />
 **License URI:** [http://www.gnu.org/licenses/gpl-3.0.html](http://www.gnu.org/licenses/gpl-3.0.html)<br />
 
 Description
 ===
-My name is TotalPress! I'm based off _s (Underscores) and built with Zurb's Foundation for Sites, so I'm responsive and look good on any device. I'm light weight and super fast <strong>(I'm 184kb compressed!)</strong>. I have lots of hooks and filters, 10 widget areas and 6 different sidebar page templates. I use the Kirki plugin for the theme customizer and the Meta Box plugin for metaboxes. Did I mention that I work really well with page builders like Elementor? I have built in support for Header Footer Elementor. So what are you waiting for? Download me today and take me for a spin.
+My name is TotalPress! I'm Based off _s (Underscores) and built with Zurb's Foundation for Sites, so I'm responsive and look good on any device. I'm light weight and super fast <strong>(250kb compressed!)</strong>. I have lots of hooks and filters, 10 widget areas and 6 different sidebar page templates. I use the Kirki plugin for the theme customizer and the Meta Box plugin for metaboxes. Did I mention that I work really well with page builders like Elementor and Header Footer Elementor. Download me today and take me for a spin.
 
 ### Demo ###
 
