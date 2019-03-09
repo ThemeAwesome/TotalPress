@@ -1,8 +1,8 @@
 === TotalPress ===
 Tags: blog, one-column, two-columns, three-columns, right-sidebar, left-sidebar, footer-widgets, custom-background, flexible-header, custom-menu, editor-style, featured-images, full-width-template, microformats, post-formats, sticky-post, translation-ready, theme-options, custom-logo, custom-colors
-Requires at least: 4.9.8
-Tested up to: 4.9.8
-Stable tag: 1.0.29
+Requires at least: 5.1
+Tested up to: 5.1
+Stable tag: 6.5.3
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 

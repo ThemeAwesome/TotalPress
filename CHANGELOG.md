@@ -1,12 +1,25 @@
 # Changelog
-### [1.0.29] - 2018-08-23
+### [6.5.3] - 2019-03-09
+###### `Update`
+* Updated to the latest version of `Foundation for Sites` which is `6.5.3`.
+
+###### `Changed`
+* Changed the versioning. Will follow `Foundation for Sites` versioning, just like `WP-Forge`. This of course, ensures that each version follows the latest release of Foundation for Sites.
+
+###### `Added`
+* Support for [`Freemius`](https://freemius.com) - This will allow me to gather information on how the theme is being used as well as allow users to give me feedback on how to improve `TotalPress`. However, adding this to the theme significantly increases the file size of the theme.
+
+###### `Removed`
+* Removed the `padding` from the `site-header grid-container`.
+
+###### [1.0.29] - 2018-08-23
 ###### `Fixed`
-* Fixed an issue with the translation markup. There were a few `esc_attr_e` that were not needed and were throwing errors. This caused version `1.0.28` not to be accepted. Plus I should have tested the theme againt the `Theme Check Plugin`, which I normally do but didn't do it this time.
+* Fixed an issue with the translation markup. There were a few `esc_attr_e` that were not needed and were throwing errors. This caused version `1.0.28` not to be accepted. Plus I should have tested the theme against the `Theme Check Plugin`, which I normally do but didn't do it this time.
 
 ###### `Changed`
 * Redid the `.po` file to make the translation strings were correct.
 
-##### [1.0.28] - 2018-08-23
+###### [1.0.28] - 2018-08-23
 ###### `Fixed`
 * An issue where the theme support for `Gutenberg` had changed. If you used the `Gutenberg` plugin a bunch of errors would be displayed.
 * An issue with the `site-branding` portion of the header. If no `site title` was used or if no `site-description` was used and the `header-sidebar` was active, then the `header-sidebar` would reposition under the `site-branding` div.
@@ -296,6 +309,7 @@ Removed some of the features from the `setup_totalpress` function in `functions.
 ###### [1.0.0] 2017-11-02
 * Initial submission to the theme review team on 11/02/2017
 
+ [6.5.1]: https://github.com/themeawesome/totalpress/compare/1.0.29...6.5.1
 [1.0.29]: https://github.com/themeawesome/totalpress/compare/1.0.28...1.0.29
 [1.0.28]: https://github.com/themeawesome/totalpress/compare/1.0.27...1.0.28
 [1.0.27]: https://github.com/themeawesome/totalpress/compare/1.0.26...1.0.27

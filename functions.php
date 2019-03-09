@@ -1,6 +1,36 @@
 <?php
+// Create a helper function for easy SDK access.
+function tp_fs() {
+    global $tp_fs;
+    if ( ! isset( $tp_fs ) ) {
+        // Include Freemius SDK.
+        require_once dirname(__FILE__) . '/freemius/start.php';
+        $tp_fs = fs_dynamic_init( array(
+            'id'                  => '2124',
+            'slug'                => 'totalpress',
+            'type'                => 'theme',
+            'public_key'          => 'pk_dbceebdd3d1742f98e3763bd8df6f',
+            'is_premium'          => false,
+            'has_addons'          => false,
+            'has_paid_plans'      => false,
+            'menu'                => array(
+                'slug'           => 'totalpress',
+                'account'        => false,
+                'parent'         => array(
+                    'slug' => 'themes.php',
+                ),
+            ),
+        ) );
+    }
+    return $tp_fs;
+}
+// Init Freemius.
+tp_fs();
+// Signal that SDK was initiated.
+do_action('tp_fs_loaded');
+
 if ( ! defined('ABSPATH')) exit;
-define('TOTALPRESS_VERSION','1.0.27');
+define('TOTALPRESS_VERSION','6.5.3');
 if ( ! function_exists('setup_totalpress') ) :
 	function setup_totalpress() {
 		// Set the content width
